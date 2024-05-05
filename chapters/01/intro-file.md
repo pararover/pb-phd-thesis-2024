@@ -1,1 +1,1 @@
-Contains chapter 1 titles *Introduction*
+Contains chapter 1 titled *Introduction*

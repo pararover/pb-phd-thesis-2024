@@ -1,0 +1,18 @@
+\dominitoc
+\pagenumbering{roman}
+\tableofcontents
+\listoffigures
+\listoftables
+\pagebreak
+\pagenumbering{arabic}
+\pagestyle{headings}
+\pagestyle{fancy}                       % Sets fancy header and footer
+%\fancyfoot{}                            % Delete current footer settings
+%\renewcommand{\chaptermark}[1]{         % Lower Case Chapter marker style
+%\markboth{\chaptername\ \thechapter.\ #1}{}} %
+\renewcommand{\sectionmark}[1]{         % Lower case Section marker style
+\markright{\thesection.\ #1}}         %
+\fancyhead[R]{\bfseries}    
+\renewcommand{\headrulewidth}{0.3pt}    % Width of head rule
+\titleformat{\chapter}[display]{\bfseries\centering}{\LARGE CHAPTER \thechapter}{1em}{\LARGE #1} %This is to make Chapter name in center aligment
+\titlespacing*{\chapter}{0pt}{-50pt}{40pt}

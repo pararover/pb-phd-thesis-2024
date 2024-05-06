@@ -1,7 +1,13 @@
-main.aux
+*.aux
 main.bbl
 main.blg
+main.lof
 main.log
+main.lot
+main.maf
+main.mt*
+main.toc
 main.out
 main.pdf
 main.synctex.gz
+

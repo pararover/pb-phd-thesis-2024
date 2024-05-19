@@ -4,7 +4,7 @@
     \minitoc
     \emph{Abstract of chapter \ref{chap:tool}}
     
-    \section{Working with RGS data files} \label{tool:rgs-files}
+    \section{Working with RGS Data Files} \label{tool:rgs-files}
         The RGS spectra are available in the public domain in the Flexible Image Transport System (FITS) file format \cite{chiappetti2018definition}, which is an open standard describing the digital file format for the storage, transmission and processing of data – formatted as multi-dimensional columns of tables. In spite of having the word ‘image’ in its acronym, FITS files are most often used to store non-image data as well. This standard was designed, keeping in mind specifically astronomical data, namely images, spectra, lightcurves, photon lists, event lists, and source lists. In order to download the raw science data collected by XMM-Newton for any given source, there are two options:
         \begin{enumerate}[a)]
             \item By accessing the XMM-Newton Science Archive (XSA) at the European Space Agency (ESA), using a web service (via a search form or a URL command access or methods from the \texttt{astroquery.esa.xmm\_newton} Python module) or by  table access protocol (TAP) queries to the XSA database \cite{arviset2002xmm}.
@@ -24,7 +24,7 @@
         
         In order get started, one first needs to obtain data of the atomic lines from credible databases, such as the Atomic Spectra Database (ASD) at the National Institute of Standards and Technology (NIST) \cite{ralchenko2008nist} and the Opacity Project online atomic database (TOPbase) \cite{cunto1993topbase}. To obtain this data, one may either use the web service provided to send queries to these databases, or one may use the relevant methods in various Python modules. Having identified the prominent lines in the RGS spectrum, one can then proceed to estimate the radial velocity of the source, the abundance of the elements in the emitting material and the interstellar absorption along the line-of-sight.
         
-        \subsection{Extraction of RGS spectra} \label{tool:rgs-files:extraction}
+        \subsection{Extraction of RGS Spectra} \label{tool:rgs-files:extraction}
         
             \subsubsection{Obtaining source-specific science data} \label{tool:rgs-files:extraction:data}
                 XMM-Newton data is publicly available at the online multi-mission science data archive known as HEASARC (\url{https://heasarc.gsfc.nasa.gov/}). The easiest way to access relevant data for any specific source is by using its browse service at \url{https://heasarc.gsfc.nasa.gov/db-perl/W3Browse/w3browse.pl} where one can enter the name of the source (or its right ascension and declination, if these are known) and the mission name (such as XMM-Newton or Chandra). One can supply additional information about the source as well, such as the observation dates. The more specific the query, the lesser would be the time taken to access and download the data.
@@ -36,7 +36,7 @@
                 
                 Subsequently, the data from both RGS instruments for the first and second spectral orders is extracted using the SAS task \texttt{rgsproc}. In five processing stages, this task extracts the events, the angles, the filter events, the spectra, the response matrices and the lightcurves.
         
-        \subsection{Accessing spectral data from FITS file} \label{tool:rgs-files:access}
+        \subsection{Accessing Spectral Data from FITS Files} \label{tool:rgs-files:access}
             One of the outputs of the \texttt{rgsproc} task are two fluxed spectra -- one for each spectral order. Each of these files contain the spectra fluxed from both the RGS instruments. One must bear in mind that these fluxed spectra are inherently just a qualitative summary of the data, and should not be used for quantitative analysis. However, in the current work, because the objective is to merely aid the user in the identification of atomic lines -- which could be a preliminary step before serious spectral modeling, these fluxed spectra are more than sufficient as input files.
             
             \subsubsection{The \texttt{astropy} Python module} \label{tool:rgs-files:access:astropy}
@@ -49,7 +49,7 @@
                 
                 In case of the fluxed spectra from RGS, the FITS files contain a single extension HDU corresponding to the spectrum -- accessed using \texttt{hdul[1]}, which is a table containing 3600 rows and 3 columns. Then the data attribute of \texttt{hdul[1]} (or \texttt{hdul[1].data}) would return a \texttt{NumPy} numerical array containing the channels/wavelengths (in \AA), the flux and the errors (both in s$^{-1}$cm$^{-2}$\AA$^{-1}$). The fluxes and errors corresponding to all bad channels contain \texttt{NaN} values, which can be filtered using the \texttt{isnan()} function and set to zero.
         
-        \subsection{Collecting atomic lines} \label{tool:rgs-files:line-collection}
+        \subsection{Collecting Atomic Lines} \label{tool:rgs-files:line-collection}
             In order to be able to identify atomic lines in a spectrum, one needs to have a line list that contains information about the lines present within a given wavelength range for all the ion stages of the atoms under consideration. With tremendous improvement in computing power, the various online databases of atomic data provide more accurate and updated information that may be used to built better line lists.
             
             So a code for qualitative atomic line identification in a spectrum becomes more reliable if it is able to access the current atomic data available online. This work achieves this objective by retrieving data for atomic transitions directly from ASD at NIST during runtime. So it is important to have an internet connection available while running the code for the first time or when one modifies the list of ions considered. As long as one keeps running the code subsequently on the same terminal session, using an unaltered ion list, the code would proceed to use the atomic data which is cached locally and one may work offline in that case.
@@ -203,10 +203,10 @@
         
         All hot stars with mass $\gtrsim 15$ M$_\odot$ show a high velocity outflow\cite{kudritzki2000winds}. Such an outflow is known as a stellar wind. Consequently, this leads to a mass loss from the star and the winds attaining a terminal velocity owing to Newton's first law of motion. Before proceeding further in the understanding of the driving mechanisms for stellar winds, one needs to be clear of these two important aspects.
         
-        \subsection{Mass-loss rate} \label{tool:stellar-winds:mass-loss}
+        \subsection{Mass-Loss Rate} \label{tool:stellar-winds:mass-loss}
         	Due to the outflow of stellar material, the star suffers a mass loss, which is quantified by its \emph{mass-loss rate} $\dot{M}=\dvt{M}{t}$. Typical mass-loss rates of hot stars lie in the range $10^{-7}-10^{-4}$ M$_\odot$/yr, or approximately $\dfrac{1}{30}-30$ M$_\text{earth}$/yr. In comparison, the sun also has a mass outflow, called \emph{solar wind}, with $\dot{M}\approx 10^{-14}$ M$_\odot$/yr.
         
-        \subsection{Terminal velocity} \label{tool:stellar-winds:term-vel}
+        \subsection{Terminal Velocity} \label{tool:stellar-winds:term-vel}
         	When stellar material is far from the surface of the star, it reaches its maximum velocity owing to the acceleration from the radiation pressure. At such large distances, due to the absence of any other external forces, the stellar velocity remains constant as per Newton's first law of motion. Therefore, this constant maximum velocity is known as the terminal velocity $v_\infty$.
         	
         	Typical values for $v_\infty$ lie between $\sim 200$ km/s (for A-type supergiants) and $\sim 3000$ km/s (for early O-type stars). Consequently, the speed of sounds in such atmospheres varies between 10 km/s to 30 km/s as per the relation:
@@ -214,7 +214,7 @@
         		V(R)=v_\infty\left(1-b\dfrac{R_*}{R}\right)^\beta
         	\end{align*}
 	
-	\section{Relevance of stellar winds} \label{tool:relevance}
+	\section{Relevance of Stellar Winds} \label{tool:relevance}
 		The analysis of stellar winds gains importance due to the reasons outlined below:
 		\begin{itemize}
 			\item The lifetime of hot stars is approximately $10^{-3}$ that of the sun, i.e. $\sim 10^7$ yr. Assuming $\dot{M}\sim 10^{-6}$ M$_\odot$/yr, the mass loss due to stellar winds is $\sim 10^7$ yr $\times 10^{-6}$ M$_\odot$/yr $\approx 10$ M$_\odot$ during its entire lifetime. This is a significant mass loss, e.g. for a star with an initial mass of $20$ M$_\odot$, half of its mass is lost due to stellar winds. Therefore, in order to have an accurate picture of the \emph{evolution of hot stars}, it is essential to know its mass loss rate, and hence the stellar wind.
@@ -222,7 +222,7 @@
 			\item Far away from hot stars, where the stellar wind attains supersonic terminal velocities, it may collide with the surrounding material, leading to the development of shocks, which may lead to local compressions in the surrounding material. This may trigger the formation of proto-stars, leading to the birth of new stars. Therefore, the \emph{formation of new stars} could be affected by the presence of stellar winds due to hot stars.
 		\end{itemize}
 	
-	\section{Radiative line-driving: mechanism of stellar winds} \label{tool:radiative-line-driving}
+	\section{Radiative Line-Driving: Mechanism of Stellar Winds} \label{tool:radiative-line-driving}
 		The physical mechanism which initiates and drives the outflow of matter from hot stars is known as radiative line driving. Given below is a qualitative description of the physical mechanism behind this process.
 		\begin{figure}[h!]
 			\centering

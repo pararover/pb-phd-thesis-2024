@@ -54,7 +54,7 @@
 			\end{tabular}
 		\end{table}
 	
-	\section{Models for data fitting} \label{hi-resolution:models}
+	\section{Models for Data Fitting} \label{hi-resolution:models}
 		Given below in table \ref{xmm-rgs-model-list} is the progression of Xspec models used in the analysis of the RGS spectrum of RX J0925.7-4758. Every model is given a model ID and hereinafter it will be referred to by the same. The progression of the models is evolutionary and follows the same sequence as each was built from the preceding model.
 		
 		For instance, the first model, i.e. M01 is a simple model which is composed of two model components -- an additive component (\texttt{bbody}) and a multiplicative component (\texttt{tbabs}). This particular model was mainly used to get started with the modelling of the continuum spectrum using a blackbody emission, subjected to absorption. Then, as one progresses downwards along table \ref{xmm-rgs-model-list}, one finds models which are improvements upon the previous model, in terms of the replacement of existing model components or the addition of newer ones.
@@ -80,7 +80,7 @@
 			\end{tabular}
 		\end{table}
 	
-		\subsection{Model components} \label{hi-resolution:models:components}
+		\subsection{Model Components} \label{hi-resolution:models:components}
 		
 			\subsubsection{X-ray photoabsorption model: \texttt{ismabs}}
 			The \texttt{ismabs} multiplicative model in Xspec provides a way to simulate X-ray photoabsorption \cite{ismabs_gatuzz}. This model incorporates variable columns for both neutral and ionized species from H, He, N, O, Ne, Mg, Si, S, Ar, Ca, Fe, Ni and Zn.
@@ -263,7 +263,7 @@
 	\section{Analysis of RGS Spectra} \label{hi-resolution:analysis}
 		Both the spectra of RX J0925.7-4758 obtained by the RGS instrument of XMM-Newton were analyzed using a subset of models from the list given in table \ref{xmm-rgs-model-list}. Models with IDs M07, M08, M09, M10, M11 and M12 were applied on the RGS data for both spectral orders.
 		
-		\subsection{Fitting of RGS1 spectra} \label{hi-resolution:analysis:rgs1}
+		\subsection{Fitting of RGS1 Spectra} \label{hi-resolution:analysis:rgs1}
 			The best fits for both diffraction orders were obtained using the model M11, i.e.
 			\begin{center}
 				\texttt{ismabs*(rauch*tbabs+apec+mekal)*swind1}
@@ -322,7 +322,7 @@
 			\end{figure}
 		
 		\clearpage
-		\subsection{Fitting of RGS2 spectra} \label{hi-resolution:analysis:rgs2}
+		\subsection{Fitting of RGS2 Spectra} \label{hi-resolution:analysis:rgs2}
 			Here as well the best fits for both diffraction orders were obtained using the model M11. This seems to suggest that model M11 might be the best candidate model for RX J0925.7-4758. All the other models yield $\chi^2_\text{red}$ to be outside the acceptable range, with the exception of the model M08, which lies almost on the borderline. The trend shown by the $\chi^2_\text{red}$ across all the models considered here are shown in figure \ref{fig:mrvel-rgs2-chisq}.
 			
 			\begin{figure}[h!]

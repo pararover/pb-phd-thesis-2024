@@ -8,8 +8,10 @@
 \newcommand{\pdvt}[2]{\dfrac{\partial #1}{\partial #2}}
 \newcommand{\pddvt}[2]{\dfrac{\partial^2 #1}{\partial #2^2}}
 \newcommand{\ddvt}[2]{\dfrac{\mathrm{d}^2#1}{\mathrm{d}#2^2}}
+\newcommand{\npdvt}[3]{\dfrac{\partial^{#1}{#2}}{\partial {#3}^{#1}}}
 \newcommand{\mixeddvt}[3]{\dfrac{\partial^2 #1}{\partial #2 \partial #3}}
 \newcommand{\mdvt}[3]{\dfrac{\mathrm{d}^#1#2}{\mathrm{d}#3^#1}}
+\newcommand{\integ}[4]{\int_{#1}^{#2}{#3\diff{#4}}}
 \newcommand{\fields}{($\vect{E}$, $\vect{B}$) }
 \newcommand{\potentials}{($\Phi$, $\vect{A}$) }
 \newcommand{\del}{\vect{\nabla}}
@@ -27,3 +29,9 @@
 \newcommand{\cstwo}[3]{\left\lbrace \begin{matrix}{#3}\\{#1\;#2}\end{matrix} \right\rbrace}
 \newcommand{\affinity}[3]{\Gamma^{#3}_{#1#2}}
 \newcommand{\curve}[1]{\boldsymbol{\mathsf{#1}}}
+
+\newcommand{\vsmat}[1]{\boldsymbol{\mathcal{#1}}}
+\newcommand{\vsvec}[1]{\boldsymbol{\mathrm{#1}}}
+
+\newcommand{\vmelem}[3]{\mathcal{#1}_{#2}{#3}}
+\newcommand{\vvelem}[2]{\mathrm{#1}_{#2}}

@@ -1,0 +1,7 @@
+Contains eufspec figure files for the observations:
+1. ASCA SIS1 43036000
+2. Chandra ACIS 644
+3. XMM-Newton EPIC-pn 0111150101
+4. NICER XTI 2611020101
+5. NICER XTI 2611020102
+6. NICER XTI 2611020103

@@ -73,7 +73,7 @@
         \subsection{Demonstration} \label{tool:rgs-files:demonstration}
             What follows is a demonstration of the developed tool using the flux spectrum of the galactic luminous supersoft X-ray source RX J0925.7-4758, which was discovered in the Galactic Plane Survey of the ROSAT All-Sky Survey \cite{motch1994}. The specific observations were made during 16-17 December 2000 with the RGS exposures being carried out for a duration of 61.2 ks \cite{motch02} under the observation ID 0111150101. The ODF files were downloaded from HEASARC and RGS data were processed using the SAS task \texttt{rgsproc} under default settings.
             
-            Because the objective of this work is to enable the identification of atomic lines for specfic ion stages present in the spectrum, the fluxed spectrum file named \texttt{P0111150101O BX000fluxed1000.FIT} (produced by \texttt{rgsproc}) is sufficient for the code to work. This specific file fluxes together the first-order spectra from both the RGS instruments. A copy of this file is provided with the distribution of the code for the user to reproduce the demonstrations that follow, as well as to try out variations of the run.
+            For the identification of atomic lines for specfic ion stages present in the spectrum, the fluxed spectrum file named \texttt{P0111150101OBX000fluxed1000.FIT} (produced by \texttt{rgsproc}) is sufficient for the code to work. This specific file fluxes together the first-order spectra from both the RGS instruments. A copy of this file is provided with the distribution of the code for the user to reproduce the demonstrations that follow, as well as to try out variations of the run.
             
             Three specific Python scripts are provided with the distribution, whose outputs are presented in this work. A study of these scripts provides the user with an experience of how to use the methods developed in this work. All the scripts take, as the second command-line argument, the name of the file containing the fluxed spectrum. Briefly, these scripts perform the following tasks:
             
@@ -127,9 +127,11 @@
     				\includegraphics[width=\textwidth]{images/mrvel_line-overlay}
 			    \end{figure}
                 
-                This method produces a set of three subplots: a plot of the spectrum only, a map of the lines within the wavelength region and a plot of the spectrum with the pertinent lines overlaid. The output of this code for the fluxed spectrum of RX J0925.7-4758 is shown in figure \ref{fig:line-overlay}. As expected, one can observe a profusion of spectral lines due to K-shell transitions of N and O, and due to L-shell transitions of the heavier element Fe. Such an overlay of spectral lines provides a grid of markers of prominent lines. But the actual presence of any line in the spectrum may be latched on to after a closer inspection of sub-regions, \textbf{as described in the following sub-section}.
+                This method produces a set of three subplots: a plot of the spectrum only, a map of the lines within the wavelength region and a plot of the spectrum with the pertinent lines overlaid. The output of this code for the fluxed spectrum of RX J0925.7-4758 is shown in figure \ref{fig:line-overlay}. As expected, one can observe a profusion of spectral lines due to K-shell transitions of N and O, and due to L-shell transitions of the heavier element Fe. Such an overlay of spectral lines provides a grid of markers of prominent lines. But the actual presence of any line in the spectrum may be latched on to after a closer inspection of sub-regions, as described in \S\ref{tool:rgs-files:demonstration:roi}.
                 
-                Prior to running the \texttt{plot\_spectrum()} method, one may also choose to display the wavelength values (in \AA) along with the ion label, using the boolean flag \texttt{show\_wavelen- gth} input argument, whose default value is \texttt{False}. One may also choose to normalize the fluxed spectrum to the range $[0, 1]$ in s$^{-1}$cm$^{-2}$\AA$^{-1}$ using the method \texttt{normalize()}, which takes a list of floats as input and returns another list of floats normalized appropriately. This is helpful in comparing the relative strengths of different lines.
+                Prior to running the \texttt{plot\_spectrum()} method, one may also choose to display the wavelength values (in \AA) along with the ion label, using the boolean flag \texttt{show\_wavelen- gth} input argument, whose default value is \texttt{False}.
+                
+                One may also choose to normalize the fluxed spectrum to the range $[0, 1]$ in s$^{-1}$cm$^{-2}$\AA$^{-1}$ using the method \texttt{normalize()}, which takes a list of floats as input and returns another list of floats normalized appropriately. This is helpful in comparing the relative strengths of different lines.
             
             \subsubsection{Inspecting regions of interest} \label{tool:rgs-files:demonstration:roi}
                 While the previous method described produces the entire spectrum with overlaid lines, it can be more helpful if one could precisely zoom into any specific region of interest, say between 16.5 \AA~and 18.4 \AA. This can be done with the \texttt{examine\_ROI()} method, which takes the lists of wavelengths, fluxes and errors, the line list, the chosen wavelength range and the lower and upper wavelengths (in \AA) of the region of interest (e.g. 16.5 and 18.4).
@@ -162,10 +164,9 @@
                 
                 A method named \texttt{waveshift\_to\_velocity()} is defined which returns $v_\text{rad}$ in km/s, given $\lambda_0$ and $\lambda$ in \AA~as input arguments.
                 
-                The method named \texttt{plot\_doppler\_lines()} can be used to plot the relative flux of different lines for a specific ion with respect to $v_\text{rad}$. At present, this method can handle the Lyman $\alpha$, $\beta$, and $\gamma$ lines for the H-like and He-like C, N and O ions, as well as some common lines of Fe XVII and Fe XVIII.
+                The method named \texttt{plot\_doppler\_lines()} can be used to plot the relative flux of different lines for a specific ion with respect to $v_\text{rad}$. At present, this method can handle the Lyman $\alpha$, $\beta$, and $\gamma$ lines for the H-like and He-like C, N and O ions, as well as some common lines of Fe XVII and Fe XVIII. The list of these lines is given in table \ref{tab:line-list}.
                 
-                The list of these lines is given in table \ref{tab:line-list}.
-                
+                \renewcommand{\arraystretch}{1.2}
                 \begin{table}[h!]
                     \centering
                     \caption{List of lines along with transitions, considered for inspection with respect to the radial velocity}
@@ -199,6 +200,7 @@
                                                   & {2s$^2$2p$^5$ $\longrightarrow$ 2s$^2$2p$^4$(3P)3s} & {16.0050*} \\ \hline
                     \end{tabular}
                 \end{table}
+                \renewcommand{\arraystretch}{2.2}
                 
                 Another method named \texttt{map\_spec\_to\_vel()} maps the $\lambda$ values to the  values in the vicinity of a particular line using the previously described methods. It takes as input arguments the central wavelength of the line $\lambda_0$, the lists containing the wavelengths, fluxes and errors, and an argument called \texttt{v\_lim} which defines the bounds of $v_\text{rad}$ values, the default value of which is $\pm$5000 km/s.
                 

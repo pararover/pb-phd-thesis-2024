@@ -26,11 +26,29 @@
 		\end{table}
 		\renewcommand{\arraystretch}{2.2}
 		
-		\subsection{Count rates}		
-			The count rates of the sources as observed by the respective observatories in table *** over the respective energy ranges are presented in the sub-figures in \ref{result:count-rate}.
+		\subsection{Supersoft X-ray count rates}
+			\begin{landscape}
+			\begin{table}[!htb]
+				\centering
+	    		\caption{SSS observation journal of dataset}
+	    		\label{tab:sss-obs-list}
+				\begin{tabular}{cccccccc}
+				\hline
+				\textbf{Source} & \textbf{Observatory} & \textbf{Instrument} & \textbf{\begin{tabular}[c]{@{}c@{}}Observation\\ (Obs. ID)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Date\\ (yyyy-mm-dd)\end{tabular}} & \textbf{MJD} & \textbf{\begin{tabular}[c]{@{}c@{}}Exposure\\ (ks)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Region\\ (keV)\end{tabular}} \\ \hline
+				{CAL 83} & {XMM-Newton} & {EPIC-pn} & {0506531501} & {2008-08-12} & {54690.62} & {6.9} & {0.2--1.0} \\
+				{RS Oph} & {XMM-Newton} & {EPIC-pn} & {0410180501} & {2006-10-09} & {54017.98} & {49.2} & {0.2--2.0} \\
+				{RX J0019.8+2156} & {XMM-Newton} & {EPIC-pn} & {0047940101} & {2001-12-31} & {52274.77} & {58.1} & {0.2--0.5} \\
+				{RX J0527.8-6954} & {XMM-Newton} & {EPIC-pn} & {0086770101} & {2000-12-19} & {51897.70} & {49.3} & {0.2--0.6} \\
+				{RX J0925.7-4758} & {XMM-Newton} & {EPIC-pn} & {0111150101} & {2000-12-16} & {51894.46} & {61.1} & {0.3--1.0} \\
+				{V3890 Sgr} & {XMM-Newton} & {EPIC-MOS1} & {0821560201} & {2019-09-14} & {58740.98} & {25.0} & {0.1--2.0} \\ \hline
+				\end{tabular}
+			\end{table}
+			\end{landscape}
+			
+			The count rates of the sources as observed by the respective observatories in table \ref{tab:sss-obs-list} over the respective energy ranges are presented in the sub-figures in \ref{result:count-rate}.
 			\begin{figure}[h!]
 				\centering
-				\caption{Count rates of individual sources in dataset}
+				\caption{Count rates of individual sources in dataset in SSS regime}
 				\label{result:count-rate}
 				\subfloat[CAL 83 \label{count-rate:cal83}]{\includegraphics[width=0.45\textwidth]{counts/cal-83-pn_counts}} %\hfill
 				\subfloat[RS Oph \label{count-rate:rsoph}]{\includegraphics[width=0.45\textwidth]{counts/rs-oph-pn_counts}} %\hfill
@@ -46,9 +64,9 @@
 				\centering
 				\caption{Count rates of all sources in dataset}
 				\label{result:count-rate}
-				\subfloat[Count rates of all sources \label{count-rate:cal83}]{\includegraphics[width=0.8\textwidth]{counts/all_counts}} %\hfill
+				\subfloat[Count rates of all sources \label{count-rate:cal83}]{\includegraphics[width=\textwidth]{counts/all_counts}} %\hfill
 				
-				\subfloat[Normalized count rates of all sources \label{count-rate:rsoph}]{\includegraphics[width=0.8\textwidth]{counts/all_norm-counts}} %\hfill
+				\subfloat[Normalized count rates of all sources \label{count-rate:rsoph}]{\includegraphics[width=\textwidth]{counts/all_norm-counts}} %\hfill
 			\end{figure}
     
 %    \section{Spectral Line Identification}

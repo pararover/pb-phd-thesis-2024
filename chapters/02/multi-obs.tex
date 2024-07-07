@@ -1,6 +1,8 @@
 \chapter{MULTI-OBSERVATORY SPECTRAL ANALYSIS OF SUPERSOFT X-RAY SOURCES} \label{chap:multi-obs}
     %\doublespacing
     \minitoc
+    
+    \newpage
     \begin{center}
     	\emph{Abstract of chapter \ref{chap:multi-obs}}
     \end{center}
@@ -39,7 +41,8 @@
     	
     	A summary of the observations used in this study, which included science data from Japan's ASCA \cite{ebisawaAsca2001ApJ}, NASA's Chandra \cite{beardaChandra2002AA}, ESA's XMM-Newton \cite{motchXmmNewton2002AA} and ISS' NICER \cite{orioNicer2022ApJ} observatories, is presented in table \ref{tab:obs-journal}.
     	
-    	\begin{landscape}    	
+    	\begin{landscape}
+    	\renewcommand{\arraystretch}{2.2}
     	\begin{table}[!htb]
 	    	\centering
 	    	\caption{Journal of observations}
@@ -64,6 +67,7 @@
 				\small $^\ddagger$From HEASARC archival query results
 			\end{minipage}
 		\end{table}
+		\renewcommand{\arraystretch}{1.6}
 		\end{landscape}
     
     \section{Data Reduction and Analysis} \label{multi-obs:red-analysis}
@@ -117,20 +121,22 @@
 	    	The XTI observation dataset and auxiliary files were downloaded from HEASARC. In order to prepare the data for processing, we set up the remote access of the HEASARC CALDB by following the recommended procedure\footnote{\url{https://heasarc.gsfc.nasa.gov/docs/heasarc/caldb/caldb_remote_access.html}}. The cleaned event files were extracted using the \texttt{nicerl2} command\footnote{\url{https://heasarc.gsfc.nasa.gov/lheasoft/ftools/headas/nicerl2.html}}. They were then loaded into XSELECT. This produces the source and background spectrum files in FITS format. The ARF and RMF were generated with the extracted source spectrum files using the \texttt{nicerarf}\footnote{\url{https://heasarc.gsfc.nasa.gov/lheasoft/ftools/headas/nicerarf.html}} and the \texttt{nicerrmf}\footnote{\url{https://heasarc.gsfc.nasa.gov/lheasoft/ftools/headas/nicerrmf.html}} commands respectively. The spectrum set was finally grouped and binned to a minimum of 10 counts/bin using \texttt{grphha} and made ready for analysis using XSPEC.
     	
     \section{Results} \label{multi-obs:results}
-    
+    	We present, in the following pages, a summary of the results of the analysis of the multi-observatory X-ray data for \source, including a comparison of the observed count rates, the stellar parameters calculated from the best-fit NLTE continuum models, the unfolded model spectra and the elemental absorption edges identified.
+    	
+    	
     	\subsection{Observed Count Rates} \label{multi-obs:results:count-rates}
     		In figures \ref{fig:all-counts:unnorm} and \ref{fig:all-counts:norm}, we present a comparison of count rates derived from the multi-observatory data listed in table \ref{tab:obs-journal}. Figure \ref{fig:all-counts:unnorm} serves to illustrate the variability of flux across different observation epochs, with count rates plotted on a logarithmic scale. This visualization provides insights into the temporal evolution of X-ray emission from \source.
     		
     		\begin{figure}[!htb]
 		        \centering
-		        \includegraphics[width=0.6\textwidth]{images/ldata/mr-vel-counts_all-obs.png}
+		        \includegraphics[width=0.8\textwidth]{images/ldata/mr-vel-counts_all-obs.png}
 		        \caption{Comparison of flux from all observations from their count rates plotted to scale}
 		        \label{fig:all-counts:unnorm}
     		\end{figure}
 			
 			\begin{figure}
 				\centering
-		        \includegraphics[width=0.6\textwidth]{images/ldata/mr-vel-normcounts_all-obs.png}
+		        \includegraphics[width=0.8\textwidth]{images/ldata/mr-vel-normcounts_all-obs.png}
 		        \caption{Normalized count rates from all observations show varying responses to supersoft X-rays}
 		        \label{fig:all-counts:norm}
 		    \end{figure}
@@ -142,7 +148,8 @@
     	\subsection{NLTE Continuum Model} \label{multi-obs:results:nlte}
     		In table \ref{tab:res-fitting}, we present the luminosity, effective temperature and column density for \source\ which are derived after performing the fitting to the NLTE continuum model described in \S \ref{multi-obs:red-analysis} We also present the model fit statistics, namely the reduced $\chi^2$ values for each fit. It can be noticed that the same continuum model has been able to provide a good fit to all of the observations in our chosen dataset.
     		
-    		\begin{landscape}    		
+    		\begin{landscape}
+    		\renewcommand{\arraystretch}{2.2}
     		\begin{table}[!htb]
 		    	\centering
 		    	\caption{Parameters of \source\ derived from continuum NLTE model from multi-observatory observations.}
@@ -160,6 +167,7 @@
 					\hline
 				\end{tabular}
 			\end{table}
+			\renewcommand{\arraystretch}{1.6}
 			\end{landscape}
     	
     	\subsection{Unfolded Spectra} \label{multi-obs:results:unfolded}
@@ -200,6 +208,7 @@
 		    \end{figure}
 		    
 		    \begin{landscape}
+		    \renewcommand{\arraystretch}{2.2}
 		    \begin{table}[!htb]
 		    	\centering
 		    	\caption{Absorption depth $D$ of \source\ derived from identified absorption edges of Ne, Fe, O and N.}
@@ -217,6 +226,7 @@
 					\hline
 				\end{tabular}
 			\end{table}
+			\renewcommand{\arraystretch}{1.6}
 		    \end{landscape}
 		    
 		    Because the best-fitted spectrum obtained from the EPIC-pn instrument of XMM-Newton spans the widest range of wavelengths, known absorption edges \cite{bearden1967reevaluation,juett2006high} were identified in the vicinity of the absorption edges in figure \ref{fig:all-uf:abs-edges}. These are reported in table \ref{tab:abs-depth}. Then they were overlaid on the unfolded spectrum obtained from the EPIC-pn observation. The four absorption edges that could be identified are the $K$ edges of N, O and Ne and the $L_3$ edge of Fe at 30.873 \AA, 23.305 \AA, 14.302 \AA\ and 17.509 \AA\ respectively, as displayed in the sub-plots of figure \ref{fig:pn-uf:abs-edges}. Three among these four edges, namely the $K$ edges of O and Ne and the $L_3$ edge of Fe, were reported to be present in the spectrum of \source\ using the CLOUDY photoionization code by Prodhani and Baruah (2018) \cite{prodhani2018galactic}.
@@ -405,7 +415,7 @@ derive fundamental parameters such as temperature, neutral hydrogen column densi
 		    
 		    \begin{figure}[!htb]
 		    	\centering
-		    	\includegraphics[width=0.9\textwidth]{images/fig-line_identification-rgs.png}
+		    	\includegraphics[width=\textwidth]{images/fig-line_identification-rgs.png}
 		    	\caption{Overlay of transition lines on the fluxed RGS spectrum of \source\ for Obs. ID 0111150101. The colour scheme is: N VI and N VII lines in light and dark green respectively, O VII and O VIII lines in light and dark blue respectively, Fe XVII and Fe XVIII lines in light and dark red respectively}
 		    	\label{fig:rgs-line-overlay}  
 		    \end{figure}

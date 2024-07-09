@@ -175,14 +175,14 @@
     		
     		\begin{figure}[!htb]
 		        \centering
-		        \includegraphics[width=0.8\textwidth]{images/eufspec/mr-vel-uf_all-obs_12-24.png}
+		        \includegraphics[width=0.9\textwidth]{images/eufspec/mr-vel-uf_all-obs_12-24.png}
 		        \caption{Unfolded spectra after model fitting in the range 12 \AA - 24 \AA}
 		        \label{fig:all-uf:12-24}
 		    \end{figure}
 
 		    \begin{figure}[!htb]
 		    	\centering
-		    	\includegraphics[width=0.8\textwidth]{images/eufspec/mr-vel-uf_all-obs_24-36.png}
+		    	\includegraphics[width=0.9\textwidth]{images/eufspec/mr-vel-uf_all-obs_24-36.png}
 		    	\caption{Unfolded spectra after model fitting in the range 24 \AA - 36 \AA}
 		    	\label{fig:all-uf:24-36}
 		    \end{figure}
@@ -207,7 +207,20 @@
 		        \label{fig:all-uf:abs-edges}
 		    \end{figure}
 		    
-		    \begin{landscape}
+		    Because the best-fitted spectrum obtained from the EPIC-pn instrument of XMM-Newton spans the widest range of wavelengths, known absorption edges \cite{bearden1967reevaluation,juett2006high} were identified in the vicinity of the absorption edges in figure \ref{fig:all-uf:abs-edges}. These are reported in table \ref{tab:abs-depth}. Then they were overlaid on the unfolded spectrum obtained from the EPIC-pn observation. The four absorption edges that could be identified are the $K$ edges of N, O and Ne and the $L_3$ edge of Fe at 30.873 \AA, 23.305 \AA, 14.302 \AA\ and 17.509 \AA\ respectively, as displayed in the sub-plots of figure \ref{fig:pn-uf:abs-edges}. Three among these four edges, namely the $K$ edges of O and Ne and the $L_3$ edge of Fe, were reported to be present in the spectrum of \source\ using the CLOUDY photoionization code by Prodhani and Baruah (2018) \cite{prodhani2018galactic}.
+		    
+		    \begin{figure}[h!]
+				\centering				
+				\subfloat[Ne K absorption edge at 14.302 \AA \label{fig:pn-uf:Ne-edges}]{\includegraphics[width=0.5\textwidth]{images/eufspec/mr-vel-XMM-EPIC-pn-uf-Ne-edges.png}} %\hfill				
+				\subfloat[Fe L$_3$ absorption edge at 17.509 \AA \label{fig:pn-uf:Fe-edges}]{\includegraphics[width=0.5\textwidth]{images/eufspec/mr-vel-XMM-EPIC-pn-uf-Fe-edges.png}} %\hfill
+				
+				\subfloat[O K absorption edge at 23.305 \AA \label{fig:pn-uf:O-edges}]{\includegraphics[width=0.5\textwidth]{images/eufspec/mr-vel-XMM-EPIC-pn-uf-O-edges.png}} %\hfill				
+				\subfloat[N K absorption edge at 30.873 \AA \label{fig:pn-uf:N-edges}]{\includegraphics[width=0.5\textwidth]{images/eufspec/mr-vel-XMM-EPIC-pn-uf-N-edges.png}} %\hfill				
+				\caption{Absorption edges for N, O, Ne and Fe overlaid on the unfolded spectrum for EPIC-pn observation}
+		        \label{fig:pn-uf:abs-edges}
+			\end{figure}
+			
+			\begin{landscape}
 		    \renewcommand{\arraystretch}{2.2}
 		    \begin{table}[!htb]
 		    	\centering
@@ -228,19 +241,6 @@
 			\end{table}
 			\renewcommand{\arraystretch}{1.6}
 		    \end{landscape}
-		    
-		    Because the best-fitted spectrum obtained from the EPIC-pn instrument of XMM-Newton spans the widest range of wavelengths, known absorption edges \cite{bearden1967reevaluation,juett2006high} were identified in the vicinity of the absorption edges in figure \ref{fig:all-uf:abs-edges}. These are reported in table \ref{tab:abs-depth}. Then they were overlaid on the unfolded spectrum obtained from the EPIC-pn observation. The four absorption edges that could be identified are the $K$ edges of N, O and Ne and the $L_3$ edge of Fe at 30.873 \AA, 23.305 \AA, 14.302 \AA\ and 17.509 \AA\ respectively, as displayed in the sub-plots of figure \ref{fig:pn-uf:abs-edges}. Three among these four edges, namely the $K$ edges of O and Ne and the $L_3$ edge of Fe, were reported to be present in the spectrum of \source\ using the CLOUDY photoionization code by Prodhani and Baruah (2018) \cite{prodhani2018galactic}.
-		    
-		    \begin{figure}[h!]
-				\centering				
-				\subfloat[Ne K absorption edge at 14.302 \AA \label{fig:pn-uf:Ne-edges}]{\includegraphics[width=0.5\textwidth]{images/eufspec/mr-vel-XMM-EPIC-pn-uf-Ne-edges.png}} %\hfill				
-				\subfloat[Fe L$_3$ absorption edge at 17.509 \AA \label{fig:pn-uf:Fe-edges}]{\includegraphics[width=0.5\textwidth]{images/eufspec/mr-vel-XMM-EPIC-pn-uf-Fe-edges.png}} %\hfill
-				
-				\subfloat[O K absorption edge at 23.305 \AA \label{fig:pn-uf:O-edges}]{\includegraphics[width=0.5\textwidth]{images/eufspec/mr-vel-XMM-EPIC-pn-uf-O-edges.png}} %\hfill				
-				\subfloat[N K absorption edge at 30.873 \AA \label{fig:pn-uf:N-edges}]{\includegraphics[width=0.5\textwidth]{images/eufspec/mr-vel-XMM-EPIC-pn-uf-N-edges.png}} %\hfill				
-				\caption{Absorption edges for N, O, Ne and Fe overlaid on the unfolded spectrum for EPIC-pn observation}
-		        \label{fig:pn-uf:abs-edges}
-			\end{figure}
 
     	
     \section{Discussion} \label{multi-obs:discussion}

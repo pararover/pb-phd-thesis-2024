@@ -10,9 +10,9 @@
 		
 		\begin{figure}[h!]
 			\centering
+			\includegraphics[width=0.9\textwidth]{xmm-rgs.png}
 			\caption{Schematic of the RGS instruments of XMM-Newton}
 			\label{xmm-rgs-instrument}
-			\includegraphics[width=0.9\textwidth]{xmm-rgs.png}
 		\end{figure}
 		
 		The XMM-Newton satellite has three telescopes, out of which two are equipped with RGS instruments; these are referred to as RGS1 and RGS2. Each of these RGS instruments comprise of Reflection Grating Assemblies (RGAs) and RGS Focal Cameras (RFCs). These are referred to as \emph{grating stack} and \emph{CCD strip} in figure \ref{xmm-rgs-instrument}.
@@ -23,35 +23,35 @@
 			\centering
 			\caption{In-orbit performance of RGS instruments}
 			\label{xmm-rgs-performance}
-			\begin{tabular}{|l|l|c|c|c|c|c|c|}
+			\begin{tabular}{l|l|ccc|ccc}
 				\hline
-				\multicolumn{2}{|l|}{\multirow{2}{*}{\textbf{Parameter}}} & \multicolumn{3}{c|}{\textbf{RGS1}} & \multicolumn{3}{c|}{\textbf{RGS2}} \\ \cline{3-8}
-				\multicolumn{2}{|l|}{} & {10 \AA} & {15 \AA} & {35 \AA} & {10 \AA} & {15 \AA} & {35 \AA} \\ \hline
-				\multirow{2}{*}{Effective area (cm$^2$)} & {1$^\text{st}$ order} & {51} & {61} & {21} & {53} & {68} & {25} \\ \cline{2-8}
+				\multicolumn{2}{l|}{\multirow{2}{*}{\textbf{Parameter}}} & \multicolumn{3}{c|}{\textbf{RGS1}} & \multicolumn{3}{c}{\textbf{RGS2}} \\ \cline{3-8}
+				\multicolumn{2}{l|}{} & {10 \AA} & {15 \AA} & {35 \AA} & {10 \AA} & {15 \AA} & {35 \AA} \\ \hline
+				\multirow{2}{*}{Effective area (cm$^2$)} & {1$^\text{st}$ order} & {51} & {61} & {21} & {53} & {68} & {25} \\ %\cline{2-8}
 														 & {2$^\text{nd}$ order} & {29} & {15} & {--} & {31} & {19} & {--} \\ \hline
-				\multirow{2}{*}{Resolution (km s$^{-1}$)}& {1$^\text{st}$ order} & {1700} & {1200} & {600} & {1900} & {1400} & {700} \\ \cline{2-8}
+				\multirow{2}{*}{Resolution (km s$^{-1}$)}& {1$^\text{st}$ order} & {1700} & {1200} & {600} & {1900} & {1400} & {700} \\ %\cline{2-8}
 														 & {2$^\text{nd}$ order} & {1000} & {700} & {--} & {1200} & {800} & {--} \\ \hline
-				\multirow{2}{*}{Wavelength range} & {1$^\text{st}$ order} & \multicolumn{6}{c|}{5 -- 38 \AA (0.35 -- 2.5 keV)} \\ \cline{2-8}
-												   & {2$^\text{nd}$ order} & \multicolumn{6}{c|}{5 -- 20 \AA (0.62 -- 2.5 keV)} \\ \hline
-				\multirow{2}{*}{Wavelength accuracy} & {1$^\text{st}$ order} & \multicolumn{3}{c|}{$\pm$5 m\AA} & \multicolumn{3}{c|}{$\pm$5 m\AA} \\ \cline{2-8}
-                                                  	  & {2$^\text{nd}$ order} & \multicolumn{3}{c|}{$\pm$4 m\AA} & \multicolumn{3}{c|}{$\pm$3 m\AA} \\ \hline
-				\multicolumn{2}{|l|}{\multirow{2}{*}{Bin size {[}$3\times 3$ (27 $\mu$)$^2$ pixels{]}}} & \multicolumn{6}{c|}{2.5 arcsec (cross dispersion direction)} \\ \cline{3-8}
-				\multicolumn{2}{|l|}{} & \multicolumn{6}{c|}{7 -- 14 m\AA (dispersion direction, first order)} \\ \hline
+				\multirow{2}{*}{Wavelength range} & {1$^\text{st}$ order} & \multicolumn{6}{c}{5 -- 38 \AA (0.35 -- 2.5 keV)} \\ %\cline{2-8}
+												   & {2$^\text{nd}$ order} & \multicolumn{6}{c}{5 -- 20 \AA (0.62 -- 2.5 keV)} \\ \hline
+				\multirow{2}{*}{Wavelength accuracy} & {1$^\text{st}$ order} & \multicolumn{3}{c}{$\pm$5 m\AA} & \multicolumn{3}{c}{$\pm$5 m\AA} \\ %\cline{2-8}
+                                                  	  & {2$^\text{nd}$ order} & \multicolumn{3}{c}{$\pm$4 m\AA} & \multicolumn{3}{c}{$\pm$3 m\AA} \\ \hline
+				\multicolumn{2}{l|}{\multirow{2}{*}{Bin size {[}$3\times 3$ (27 $\mu$)$^2$ pixels{]}}} & \multicolumn{6}{c}{2.5 arcsec (cross dispersion direction)} \\ %\cline{3-8}
+				\multicolumn{2}{l|}{} & \multicolumn{6}{c}{7 -- 14 m\AA (dispersion direction, first order)} \\ \hline
 			\end{tabular}
 		\end{table}
 		
 		The reflection grating used in the RGS instruments diffract into the first and second spectral orders with the highest efficiency -- therefore these two orders produce the most useful data. Even though the third order spectra are present, their count rates are $\sim 8$ times lower than that in the second order. Therefore, the science data provided by the XMM-Newton SOC consists of spectral data from first and second orders only. Table \ref{xmm-rgs-wavelength} summarises the wavelength range covered by the different spectral orders of the RGS instruments.
-		\begin{table}[h!]
+		\begin{table}[!htb]
 			\centering
-			\caption{Wavelength ranges covered by RGS}
+			\caption{Wavelength and photon energy ranges covered by RGS}
 			\label{xmm-rgs-wavelength}
-			\begin{tabular}{|c|c|}
+			\begin{tabular}{ccc}
 				\hline
-				{\textbf{Order}} & {\textbf{Wavelength range (\AA)}} \\
+				{\textbf{Order}} & {\textbf{Wavelength range (\AA)}} & {\textbf{Photon energy range (keV)}} \\
 				\hline
-				{1} & {6 -- 38} \\
-				\hline
-				{2} & {6 -- 20} \\
+				{1} & {6 -- 38} & {0.3 -- 2.0} \\
+				%\hline
+				{2} & {6 -- 20} & {0.6 -- 2.0} \\
 				\hline
 			\end{tabular}
 		\end{table}
@@ -62,22 +62,22 @@
 		For instance, the first model, i.e. M01 is a simple model which is composed of two model components -- an additive component (\texttt{bbody}) and a multiplicative component (\texttt{tbabs}). This particular model was mainly used to get started with the modelling of the continuum spectrum using a blackbody emission, subjected to absorption. Then, as one progresses downwards along table \ref{xmm-rgs-model-list}, one finds models which are improvements upon the previous model, in terms of the replacement of existing model components or the addition of newer ones.
 		\begin{table}[h!]
 			\centering
-			\caption{List of models used for data fitting}
+			\caption{List of models used for RGS data fitting for \source}
 			\label{xmm-rgs-model-list}
-			\begin{tabular}{|l|l|l|}
+			\begin{tabular}{lll}
 				\hline
 				\textbf{S. No.} & \textbf{Model ID} & \textbf{Xspec model} \\ \hline
-				{1} & {M01} & \texttt{tbabs*bbody} \\ \hline
-				{2} & {M02} & \texttt{ismabs*bbody} \\ \hline
-				{3} & {M03} & \texttt{ismabs*(gauss+bbody)} \\ \hline
-				{4} & {M04} & \texttt{ismabs*edge$^3$*(gauss+bbody)} \\ \hline
-				{5} & {M05} & \texttt{ismabs*edge$^3$*(mekal+bbody)} \\ \hline
-				{6} & {M06} & \texttt{ismabs*(apec+mekal)*swind1} \\ \hline
-				{7} & {M07} & \texttt{ismabs*(gauss+mekal+bbody)} \\ \hline
-				{8} & {M08} & \texttt{ismabs*(gauss+mekal+bbody)*swind1} \\ \hline
-				{9} & {M09} & \texttt{ismabs*(rauch+mekal)*swind1} \\ \hline
-				{10} & {M10} & \texttt{ismabs*(rauch+apec)*swind1} \\ \hline
-				{11} & {M11} & \texttt{ismabs*(rauch*tbabs+apec+mekal)*swind1} \\ \hline
+				{1} & {M01} & \texttt{tbabs*bbody} \\ %\hline
+				{2} & {M02} & \texttt{ismabs*bbody} \\ %\hline
+				{3} & {M03} & \texttt{ismabs*(gauss+bbody)} \\ %\hline
+				{4} & {M04} & \texttt{ismabs*edge$^3$*(gauss+bbody)} \\ %\hline
+				{5} & {M05} & \texttt{ismabs*edge$^3$*(mekal+bbody)} \\ %\hline
+				{6} & {M06} & \texttt{ismabs*(apec+mekal)*swind1} \\ %\hline
+				{7} & {M07} & \texttt{ismabs*(gauss+mekal+bbody)} \\ %\hline
+				{8} & {M08} & \texttt{ismabs*(gauss+mekal+bbody)*swind1} \\ %\hline
+				{9} & {M09} & \texttt{ismabs*(rauch+mekal)*swind1} \\ %\hline
+				{10} & {M10} & \texttt{ismabs*(rauch+apec)*swind1} \\ %\hline
+				{11} & {M11} & \texttt{ismabs*(rauch*tbabs+apec+mekal)*swind1} \\ %\hline
 				{12} & {M12} & \texttt{ismabs*(rauch+apec+mekal)*swind1} \\ \hline
 			\end{tabular}
 		\end{table}
@@ -107,40 +107,25 @@
 				\centering
 				\caption{Model parameters for \texttt{ismabs}}
 				\label{param:ismabs}
-				\begin{tabular}{|p{3cm}|p{10cm}|}
+				\begin{tabular}{p{0.13\textwidth}p{0.32\textwidth}|p{0.13\textwidth}p{0.32\textwidth}}
 					\hline
-					\textbf{Parameter} & \textbf{Quantity} \\ \hline
-					{\texttt{par1}} & {H column (in $10^{22}$ cm$^{-2}$)} \\ \hline
-					{\texttt{par2}} & {He II column (in $10^{22}$ cm$^{-2}$)} \\ \hline
-					{\texttt{par3}} & {C I column (in $10^{22}$ cm$^{-2}$)} \\ \hline
-					{\texttt{par4}} & {C II column (in $10^{22}$ cm$^{-2}$)} \\ \hline
-					{\texttt{par5}} & {C III column (in $10^{22}$ cm$^{-2}$)} \\ \hline
-					{\texttt{par6}} & {N I column (in $10^{22}$ cm$^{-2}$)} \\ \hline
-					{\texttt{par7}} & {N II column (in $10^{22}$ cm$^{-2}$)} \\ \hline
-					{\texttt{par8}} & {N III column (in $10^{22}$ cm$^{-2}$)} \\ \hline
-					{\texttt{par9}} & {O I column (in $10^{22}$ cm$^{-2}$)} \\ \hline
-					{\texttt{par10}} & {O II column (in $10^{22}$ cm$^{-2}$)} \\ \hline
-					{\texttt{par11}} & {O III column (in $10^{22}$ cm$^{-2}$)} \\ \hline
-					{\texttt{par12}} & {Ne I column (in $10^{22}$ cm$^{-2}$)} \\ \hline
-					{\texttt{par13}} & {Ne II column (in $10^{22}$ cm$^{-2}$)} \\ \hline
-					{\texttt{par14}} & {Ne III column (in $10^{22}$ cm$^{-2}$)} \\ \hline
-					{\texttt{par15}} & {Mg I column (in $10^{22}$ cm$^{-2}$)} \\ \hline
-					{\texttt{par16}} & {Mg II column (in $10^{22}$ cm$^{-2}$)} \\ \hline
-					{\texttt{par17}} & {Mg III column (in $10^{22}$ cm$^{-2}$)} \\ \hline
-					{\texttt{par18}} & {Si I column (in $10^{22}$ cm$^{-2}$)} \\ \hline
-					{\texttt{par19}} & {Si II column (in $10^{22}$ cm$^{-2}$)} \\ \hline
-					{\texttt{par20}} & {Si III column (in $10^{22}$ cm$^{-2}$)} \\ \hline
-					{\texttt{par21}} & {S I column (in $10^{22}$ cm$^{-2}$)} \\ \hline
-					{\texttt{par22}} & {S II column (in $10^{22}$ cm$^{-2}$)} \\ \hline
-					{\texttt{par23}} & {S III column (in $10^{22}$ cm$^{-2}$)} \\ \hline
-					{\texttt{par24}} & {Ar I column (in $10^{22}$ cm$^{-2}$)} \\ \hline
-					{\texttt{par25}} & {Ar II column (in $10^{22}$ cm$^{-2}$)} \\ \hline
-					{\texttt{par26}} & {Ar III column (in $10^{22}$ cm$^{-2}$)} \\ \hline
-					{\texttt{par27}} & {Ca I column (in $10^{22}$ cm$^{-2}$)} \\ \hline
-					{\texttt{par28}} & {Ca II column (in $10^{22}$ cm$^{-2}$)} \\ \hline
-					{\texttt{par29}} & {Ca III column (in $10^{22}$ cm$^{-2}$)} \\ \hline
-					{\texttt{par30}} & {Fe column (in $10^{22}$ cm$^{-2}$)} \\ \hline
-					{\texttt{par31}} & {Redshift $z$} \\ \hline
+					\textbf{Parameter} & \textbf{Quantity} & \textbf{Parameter} & \textbf{Quantity} \\ \hline
+					{\texttt{par1}} & {H col. (in $10^{22}$ cm$^{-2}$)} & {\texttt{par2}} & {He II col. (in $10^{22}$ cm$^{-2}$)} \\ %\hline
+					{\texttt{par3}} & {C I col. (in $10^{22}$ cm$^{-2}$)} & {\texttt{par4}} & {C II col. (in $10^{22}$ cm$^{-2}$)} \\ %\hline
+					{\texttt{par5}} & {C III col. (in $10^{22}$ cm$^{-2}$)} & {\texttt{par6}} & {N I col. (in $10^{22}$ cm$^{-2}$)} \\ %\hline
+					{\texttt{par7}} & {N II col. (in $10^{22}$ cm$^{-2}$)} & {\texttt{par8}} & {N III col. (in $10^{22}$ cm$^{-2}$)} \\ %\hline
+					{\texttt{par9}} & {O I col. (in $10^{22}$ cm$^{-2}$)} & {\texttt{par10}} & {O II col. (in $10^{22}$ cm$^{-2}$)} \\ %\hline
+					{\texttt{par11}} & {O III col. (in $10^{22}$ cm$^{-2}$)} & {\texttt{par12}} & {Ne I col. (in $10^{22}$ cm$^{-2}$)} \\ %\hline
+					{\texttt{par13}} & {Ne II col. (in $10^{22}$ cm$^{-2}$)} & {\texttt{par14}} & {Ne III col. (in $10^{22}$ cm$^{-2}$)} \\ %\hline
+					{\texttt{par15}} & {Mg I col. (in $10^{22}$ cm$^{-2}$)} & {\texttt{par16}} & {Mg II col. (in $10^{22}$ cm$^{-2}$)} \\ %\hline
+					{\texttt{par17}} & {Mg III col. (in $10^{22}$ cm$^{-2}$)} & {\texttt{par18}} & {Si I col. (in $10^{22}$ cm$^{-2}$)} \\ %\hline
+					{\texttt{par19}} & {Si II col. (in $10^{22}$ cm$^{-2}$)} & {\texttt{par20}} & {Si III col. (in $10^{22}$ cm$^{-2}$)} \\ %\hline
+					{\texttt{par21}} & {S I col. (in $10^{22}$ cm$^{-2}$)} & {\texttt{par22}} & {S II col. (in $10^{22}$ cm$^{-2}$)} \\ %\hline
+					{\texttt{par23}} & {S III col. (in $10^{22}$ cm$^{-2}$)} & {\texttt{par24}} & {Ar I col. (in $10^{22}$ cm$^{-2}$)} \\ %\hline
+					{\texttt{par25}} & {Ar II col. (in $10^{22}$ cm$^{-2}$)} & {\texttt{par26}} & {Ar III col. (in $10^{22}$ cm$^{-2}$)} \\ %\hline
+					{\texttt{par27}} & {Ca I col. (in $10^{22}$ cm$^{-2}$)} & {\texttt{par28}} & {Ca II col. (in $10^{22}$ cm$^{-2}$)} \\ %\hline
+					{\texttt{par29}} & {Ca III col. (in $10^{22}$ cm$^{-2}$)} & {\texttt{par30}} & {Fe col. (in $10^{22}$ cm$^{-2}$)} \\ %\hline
+					{\texttt{par31}} & {Redshift $z$} & {} & {} \\ \hline
 				\end{tabular}
 			\end{table}
 			
@@ -156,12 +141,12 @@
 					\centering
 					\caption{Model parameters for \texttt{apec}}
 					\label{param:apec}
-					\begin{tabular}{|p{3cm}|p{10cm}|}
+					\begin{tabular}{p{0.2\textwidth}p{0.7\textwidth}}
 						\hline
 						\textbf{Parameter} & \textbf{Quantity} \\ \hline
-						{\texttt{par1}} & {Plasma temperature (in keV)} \\ \hline
-						{\texttt{par2}} & {Abundances of the metals C, N, O, Ne, Mg, Al, Si, S, Ar, Ca, Fe, Ni} \\ \hline
-						{\texttt{par3}} & {Redshift $z$} \\ \hline
+						{\texttt{par1}} & {Plasma temperature (in keV)} \\ %\hline
+						{\texttt{par2}} & {Abundances of the metals C, N, O, Ne, Mg, Al, Si, S, Ar, Ca, Fe, Ni} \\ %\hline
+						{\texttt{par3}} & {Redshift $z$} \\ %\hline
 						{\texttt{norm}} & {Normalization of the component computed as $\displaystyle\dfrac{10^{-14}}{4\pi[D_A(1+z)]^2}\int{n_en_H\diff{V}}$, where $D_A$ is the angular diameter distance to the source (in cm), $n_e$ and $n_H$ are the electron densities (in cm$^{-3}$) respectively} \\ \hline
 					\end{tabular}
 				\end{table}
@@ -176,14 +161,14 @@
 					\centering
 					\caption{Model parameters for \texttt{mekal}}
 					\label{param:mekal}
-					\begin{tabular}{|p{3cm}|p{10cm}|}
+					\begin{tabular}{p{0.2\textwidth}p{0.7\textwidth}}
 						\hline
 						\textbf{Parameter} & \textbf{Quantity} \\ \hline
-						{\texttt{par1}} & {Plasma temperature (in keV)} \\ \hline
-						{\texttt{par2}} & {H density (in cm$^{-3}$)} \\ \hline
-						{\texttt{par3}} & {Metal abundances for the elements C, N, O, Ne, Na, Mg, Al, Si, S, Ar, Ca, Fe, Ni} \\ \hline
-						{\texttt{par4}} & {Redshift $z$} \\ \hline
-						{\texttt{par5}} & {Switch between \texttt{mekal} calculation (0), interpolation (1) and interpolation using AtomDB data (2)} \\ \hline
+						{\texttt{par1}} & {Plasma temperature (in keV)} \\ %\hline
+						{\texttt{par2}} & {H density (in cm$^{-3}$)} \\ %\hline
+						{\texttt{par3}} & {Metal abundances for the elements C, N, O, Ne, Na, Mg, Al, Si, S, Ar, Ca, Fe, Ni} \\ %\hline
+						{\texttt{par4}} & {Redshift $z$} \\ %\hline
+						{\texttt{par5}} & {Switch between \texttt{mekal} calculation (0), interpolation (1) and interpolation using AtomDB data (2)} \\ %\hline
 						{\texttt{norm}} & {Normalization of the component computed as $\displaystyle\dfrac{10^{-14}}{4\pi[D_A(1+z)]^2}\int{n_en_H\diff{V}}$, where $D_A$ is the angular diameter distance to the source (in cm), $n_e$ and $n_H$ are the electron densities (in cm$^{-3}$) respectively} \\ \hline
 					\end{tabular}
 				\end{table}
@@ -198,12 +183,12 @@
 					\centering
 					\caption{Model parameters for \texttt{swind1}}
 					\label{param:swind1}
-					\begin{tabular}{|p{3cm}|p{10cm}|}
+					\begin{tabular}{p{0.2\textwidth}p{0.7\textwidth}}
 						\hline
 						\textbf{Parameter} & \textbf{Quantity} \\ \hline
-						{\texttt{par1}} & {Column density (in $10^{22}$ cm$^{-2}$)} \\ \hline
-						{\texttt{par2}} & {$\log{\xi}$ where $\xi=L/nr^2$} \\ \hline
-						{\texttt{par3}} & {$\sigma$: Gaussian $\sigma$ for velocity smearing ($v/c$)} \\ \hline
+						{\texttt{par1}} & {Column density (in $10^{22}$ cm$^{-2}$)} \\ %\hline
+						{\texttt{par2}} & {$\log{\xi}$ where $\xi=L/nr^2$} \\ %\hline
+						{\texttt{par3}} & {$\sigma$: Gaussian $\sigma$ for velocity smearing ($v/c$)} \\ %\hline
 						{\texttt{par4}} & {Redshift $z$} \\ \hline
 					\end{tabular}
 				\end{table}
@@ -213,23 +198,43 @@
 				
 				The web-link to a set of theoretical spectral energy distributions (SEDs) of TMAP NLTE model atmospheres were provided by Rauch \cite{rauchFITS}, which contained a grid of 10 FITS files for varying temperatures. The abundances of various elements for this grid are given in table \ref{rauch:abundances}. The TMAP model series refer to the files corresponding to the model atmosphere grid, with each column named after the last three characters of the FITS filename. The grid is calculated for effective temperatures in the range $4.50\times 10^5\,\text{K}\leqslant T_\text{eff}\leqslant 1.05\times 10^6\,\text{K}$ in steps $\Delta T=10^4\,\text{K}$. The effective surface gravity is $\log_{10}{g}=9$. The fluxes in the SEDs are calculated using the TMAP code from models with different elemental abundance ratios $[X]$.
 				
+%				\begin{table}[h!]
+%					\centering
+%					\caption{Elemental abundances for TMAP grid}
+%					\label{rauch:abundances}
+%					\begin{tabular}{|c|cccccccccc|}
+%						\hline
+%						\multirow{2}{*}{\textbf{{[}X{]}}} & \multicolumn{10}{c|}{\textbf{TMAP model series}} \\ \cline{2-11} & \multicolumn{1}{c|}{\textbf{003}} & \multicolumn{1}{c|}{\textbf{004}} & \multicolumn{1}{c|}{\textbf{005}} & \multicolumn{1}{c|}{\textbf{006}} & \multicolumn{1}{c|}{\textbf{007}} & \multicolumn{1}{c|}{\textbf{008}} & \multicolumn{1}{c|}{\textbf{009}} & \multicolumn{1}{c|}{\textbf{010}} & \multicolumn{1}{c|}{\textbf{011}} & \textbf{201} \\ \hline
+%						{[}H{]} & \multicolumn{1}{c|}{-0.688} & \multicolumn{1}{c|}{-0.683} & \multicolumn{1}{c|}{-0.677} & \multicolumn{1}{c|}{-0.673} & \multicolumn{1}{c|}{-0.672} & \multicolumn{1}{c|}{-0.671} & \multicolumn{1}{c|}{-0.670} & \multicolumn{1}{c|}{-0.670} & \multicolumn{1}{c|}{-0.669} & -0.885 \\ \hline
+%						{[}He{]} & \multicolumn{1}{c|}{0.382} & \multicolumn{1}{c|}{0.387} & \multicolumn{1}{c|}{0.393} & \multicolumn{1}{c|}{0.397} & \multicolumn{1}{c|}{0.398} & \multicolumn{1}{c|}{0.399} & \multicolumn{1}{c|}{0.400} & \multicolumn{1}{c|}{0.401} & \multicolumn{1}{c|}{0.401} & 0.489 \\ \hline
+%						{[}C{]} & \multicolumn{1}{c|}{-1.513} & \multicolumn{1}{c|}{-1.073} & \multicolumn{1}{c|}{-0.772} & \multicolumn{1}{c|}{-0.675} & \multicolumn{1}{c|}{-0.596} & \multicolumn{1}{c|}{-0.529} & \multicolumn{1}{c|}{-0.471} & \multicolumn{1}{c|}{-0.420} & \multicolumn{1}{c|}{-0.374} & -0.057 \\ \hline
+%						{[}N{]} & \multicolumn{1}{c|}{1.803} & \multicolumn{1}{c|}{1.678} & \multicolumn{1}{c|}{1.460} & \multicolumn{1}{c|}{1.159} & \multicolumn{1}{c|}{1.062} & \multicolumn{1}{c|}{0.937} & \multicolumn{1}{c|}{0.761} & \multicolumn{1}{c|}{0.460} & \multicolumn{1}{c|}{0.159} & 1.668 \\ \hline
+%						{[}O{]} & \multicolumn{1}{c|}{1.528} & \multicolumn{1}{c|}{1.533} & \multicolumn{1}{c|}{1.538} & \multicolumn{1}{c|}{1.543} & \multicolumn{1}{c|}{1.544} & \multicolumn{1}{c|}{1.544} & \multicolumn{1}{c|}{1.545} & \multicolumn{1}{c|}{1.546} & \multicolumn{1}{c|}{1.547} & 1.206 \\ \hline
+%						{[}Ne{]} & \multicolumn{1}{c|}{-0.474} & \multicolumn{1}{c|}{-0.469} & \multicolumn{1}{c|}{-0.464} & \multicolumn{1}{c|}{-0.459} & \multicolumn{1}{c|}{-0.459} & \multicolumn{1}{c|}{-0.458} & \multicolumn{1}{c|}{-0.457} & \multicolumn{1}{c|}{-0.456} & \multicolumn{1}{c|}{-0.456} & -0.517 \\ \hline
+%						{[}Mg{]} & \multicolumn{1}{c|}{-0.454} & \multicolumn{1}{c|}{-0.450} & \multicolumn{1}{c|}{-0.444} & \multicolumn{1}{c|}{-0.439} & \multicolumn{1}{c|}{-0.439} & \multicolumn{1}{c|}{-0.438} & \multicolumn{1}{c|}{-0.437} & \multicolumn{1}{c|}{-0.436} & \multicolumn{1}{c|}{-0.436} & -0.497 \\ \hline
+%						{[}Si{]} & \multicolumn{1}{c|}{0.167} & \multicolumn{1}{c|}{0.172} & \multicolumn{1}{c|}{0.178} & \multicolumn{1}{c|}{0.182} & \multicolumn{1}{c|}{0.183} & \multicolumn{1}{c|}{0.184} & \multicolumn{1}{c|}{0.185} & \multicolumn{1}{c|}{0.186} & \multicolumn{1}{c|}{0.186} & 0.125 \\ \hline
+%						{[}S{]} & \multicolumn{1}{c|}{-1.583} & \multicolumn{1}{c|}{-1.578} & \multicolumn{1}{c|}{-1.573} & \multicolumn{1}{c|}{-1.568} & \multicolumn{1}{c|}{-1.567} & \multicolumn{1}{c|}{-1.567} & \multicolumn{1}{c|}{-1.566} & \multicolumn{1}{c|}{-1.565} & \multicolumn{1}{c|}{-1.565} & -1.625 \\ \hline
+%						{[}IG{]} & \multicolumn{1}{c|}{0.828} & \multicolumn{1}{c|}{0.833} & \multicolumn{1}{c|}{0.838} & \multicolumn{1}{c|}{0.843} & \multicolumn{1}{c|}{0.843} & \multicolumn{1}{c|}{0.844} & \multicolumn{1}{c|}{0.845} & \multicolumn{1}{c|}{0.846} & \multicolumn{1}{c|}{0.846} & 0.786 \\ \hline
+%					\end{tabular}
+%				\end{table}
+				
 				\begin{table}[h!]
 					\centering
 					\caption{Elemental abundances for TMAP grid}
 					\label{rauch:abundances}
-					\begin{tabular}{|c|cccccccccc|}
+					\begin{tabular}{ccccccccccc}
 						\hline
-						\multirow{2}{*}{\textbf{{[}X{]}}} & \multicolumn{10}{c|}{\textbf{TMAP model series}} \\ \cline{2-11} & \multicolumn{1}{c|}{\textbf{003}} & \multicolumn{1}{c|}{\textbf{004}} & \multicolumn{1}{c|}{\textbf{005}} & \multicolumn{1}{c|}{\textbf{006}} & \multicolumn{1}{c|}{\textbf{007}} & \multicolumn{1}{c|}{\textbf{008}} & \multicolumn{1}{c|}{\textbf{009}} & \multicolumn{1}{c|}{\textbf{010}} & \multicolumn{1}{c|}{\textbf{011}} & \textbf{201} \\ \hline
-						{[}H{]} & \multicolumn{1}{c|}{-0.688} & \multicolumn{1}{c|}{-0.683} & \multicolumn{1}{c|}{-0.677} & \multicolumn{1}{c|}{-0.673} & \multicolumn{1}{c|}{-0.672} & \multicolumn{1}{c|}{-0.671} & \multicolumn{1}{c|}{-0.670} & \multicolumn{1}{c|}{-0.670} & \multicolumn{1}{c|}{-0.669} & -0.885 \\ \hline
-						{[}He{]} & \multicolumn{1}{c|}{0.382} & \multicolumn{1}{c|}{0.387} & \multicolumn{1}{c|}{0.393} & \multicolumn{1}{c|}{0.397} & \multicolumn{1}{c|}{0.398} & \multicolumn{1}{c|}{0.399} & \multicolumn{1}{c|}{0.400} & \multicolumn{1}{c|}{0.401} & \multicolumn{1}{c|}{0.401} & 0.489 \\ \hline
-						{[}C{]} & \multicolumn{1}{c|}{-1.513} & \multicolumn{1}{c|}{-1.073} & \multicolumn{1}{c|}{-0.772} & \multicolumn{1}{c|}{-0.675} & \multicolumn{1}{c|}{-0.596} & \multicolumn{1}{c|}{-0.529} & \multicolumn{1}{c|}{-0.471} & \multicolumn{1}{c|}{-0.420} & \multicolumn{1}{c|}{-0.374} & -0.057 \\ \hline
-						{[}N{]} & \multicolumn{1}{c|}{1.803} & \multicolumn{1}{c|}{1.678} & \multicolumn{1}{c|}{1.460} & \multicolumn{1}{c|}{1.159} & \multicolumn{1}{c|}{1.062} & \multicolumn{1}{c|}{0.937} & \multicolumn{1}{c|}{0.761} & \multicolumn{1}{c|}{0.460} & \multicolumn{1}{c|}{0.159} & 1.668 \\ \hline
-						{[}O{]} & \multicolumn{1}{c|}{1.528} & \multicolumn{1}{c|}{1.533} & \multicolumn{1}{c|}{1.538} & \multicolumn{1}{c|}{1.543} & \multicolumn{1}{c|}{1.544} & \multicolumn{1}{c|}{1.544} & \multicolumn{1}{c|}{1.545} & \multicolumn{1}{c|}{1.546} & \multicolumn{1}{c|}{1.547} & 1.206 \\ \hline
-						{[}Ne{]} & \multicolumn{1}{c|}{-0.474} & \multicolumn{1}{c|}{-0.469} & \multicolumn{1}{c|}{-0.464} & \multicolumn{1}{c|}{-0.459} & \multicolumn{1}{c|}{-0.459} & \multicolumn{1}{c|}{-0.458} & \multicolumn{1}{c|}{-0.457} & \multicolumn{1}{c|}{-0.456} & \multicolumn{1}{c|}{-0.456} & -0.517 \\ \hline
-						{[}Mg{]} & \multicolumn{1}{c|}{-0.454} & \multicolumn{1}{c|}{-0.450} & \multicolumn{1}{c|}{-0.444} & \multicolumn{1}{c|}{-0.439} & \multicolumn{1}{c|}{-0.439} & \multicolumn{1}{c|}{-0.438} & \multicolumn{1}{c|}{-0.437} & \multicolumn{1}{c|}{-0.436} & \multicolumn{1}{c|}{-0.436} & -0.497 \\ \hline
-						{[}Si{]} & \multicolumn{1}{c|}{0.167} & \multicolumn{1}{c|}{0.172} & \multicolumn{1}{c|}{0.178} & \multicolumn{1}{c|}{0.182} & \multicolumn{1}{c|}{0.183} & \multicolumn{1}{c|}{0.184} & \multicolumn{1}{c|}{0.185} & \multicolumn{1}{c|}{0.186} & \multicolumn{1}{c|}{0.186} & 0.125 \\ \hline
-						{[}S{]} & \multicolumn{1}{c|}{-1.583} & \multicolumn{1}{c|}{-1.578} & \multicolumn{1}{c|}{-1.573} & \multicolumn{1}{c|}{-1.568} & \multicolumn{1}{c|}{-1.567} & \multicolumn{1}{c|}{-1.567} & \multicolumn{1}{c|}{-1.566} & \multicolumn{1}{c|}{-1.565} & \multicolumn{1}{c|}{-1.565} & -1.625 \\ \hline
-						{[}IG{]} & \multicolumn{1}{c|}{0.828} & \multicolumn{1}{c|}{0.833} & \multicolumn{1}{c|}{0.838} & \multicolumn{1}{c|}{0.843} & \multicolumn{1}{c|}{0.843} & \multicolumn{1}{c|}{0.844} & \multicolumn{1}{c|}{0.845} & \multicolumn{1}{c|}{0.846} & \multicolumn{1}{c|}{0.846} & 0.786 \\ \hline
+						\multirow{2}{*}{\textbf{{[}X{]}}} & \multicolumn{10}{c}{\textbf{TMAP model series}} \\ \cline{2-11} & \multicolumn{1}{c}{\textbf{003}} & \multicolumn{1}{c}{\textbf{004}} & \multicolumn{1}{c}{\textbf{005}} & \multicolumn{1}{c}{\textbf{006}} & \multicolumn{1}{c}{\textbf{007}} & \multicolumn{1}{c}{\textbf{008}} & \multicolumn{1}{c}{\textbf{009}} & \multicolumn{1}{c}{\textbf{010}} & \multicolumn{1}{c}{\textbf{011}} & \textbf{201} \\ \hline
+						{[}H{]} & \multicolumn{1}{c}{-0.688} & \multicolumn{1}{c}{-0.683} & \multicolumn{1}{c}{-0.677} & \multicolumn{1}{c}{-0.673} & \multicolumn{1}{c}{-0.672} & \multicolumn{1}{c}{-0.671} & \multicolumn{1}{c}{-0.670} & \multicolumn{1}{c}{-0.670} & \multicolumn{1}{c}{-0.669} & -0.885 \\ %\hline
+						{[}He{]} & \multicolumn{1}{c}{0.382} & \multicolumn{1}{c}{0.387} & \multicolumn{1}{c}{0.393} & \multicolumn{1}{c}{0.397} & \multicolumn{1}{c}{0.398} & \multicolumn{1}{c}{0.399} & \multicolumn{1}{c}{0.400} & \multicolumn{1}{c}{0.401} & \multicolumn{1}{c}{0.401} & 0.489 \\ %\hline
+						{[}C{]} & \multicolumn{1}{c}{-1.513} & \multicolumn{1}{c}{-1.073} & \multicolumn{1}{c}{-0.772} & \multicolumn{1}{c}{-0.675} & \multicolumn{1}{c}{-0.596} & \multicolumn{1}{c}{-0.529} & \multicolumn{1}{c}{-0.471} & \multicolumn{1}{c}{-0.420} & \multicolumn{1}{c}{-0.374} & -0.057 \\ %\hline
+						{[}N{]} & \multicolumn{1}{c}{1.803} & \multicolumn{1}{c}{1.678} & \multicolumn{1}{c}{1.460} & \multicolumn{1}{c}{1.159} & \multicolumn{1}{c}{1.062} & \multicolumn{1}{c}{0.937} & \multicolumn{1}{c}{0.761} & \multicolumn{1}{c}{0.460} & \multicolumn{1}{c}{0.159} & 1.668 \\ %\hline
+						{[}O{]} & \multicolumn{1}{c}{1.528} & \multicolumn{1}{c}{1.533} & \multicolumn{1}{c}{1.538} & \multicolumn{1}{c}{1.543} & \multicolumn{1}{c}{1.544} & \multicolumn{1}{c}{1.544} & \multicolumn{1}{c}{1.545} & \multicolumn{1}{c}{1.546} & \multicolumn{1}{c}{1.547} & 1.206 \\ %\hline
+						{[}Ne{]} & \multicolumn{1}{c}{-0.474} & \multicolumn{1}{c}{-0.469} & \multicolumn{1}{c}{-0.464} & \multicolumn{1}{c}{-0.459} & \multicolumn{1}{c}{-0.459} & \multicolumn{1}{c}{-0.458} & \multicolumn{1}{c}{-0.457} & \multicolumn{1}{c}{-0.456} & \multicolumn{1}{c}{-0.456} & -0.517 \\ %\hline
+						{[}Mg{]} & \multicolumn{1}{c}{-0.454} & \multicolumn{1}{c}{-0.450} & \multicolumn{1}{c}{-0.444} & \multicolumn{1}{c}{-0.439} & \multicolumn{1}{c}{-0.439} & \multicolumn{1}{c}{-0.438} & \multicolumn{1}{c}{-0.437} & \multicolumn{1}{c}{-0.436} & \multicolumn{1}{c}{-0.436} & -0.497 \\ %\hline
+						{[}Si{]} & \multicolumn{1}{c}{0.167} & \multicolumn{1}{c}{0.172} & \multicolumn{1}{c}{0.178} & \multicolumn{1}{c}{0.182} & \multicolumn{1}{c}{0.183} & \multicolumn{1}{c}{0.184} & \multicolumn{1}{c}{0.185} & \multicolumn{1}{c}{0.186} & \multicolumn{1}{c}{0.186} & 0.125 \\ %\hline
+						{[}S{]} & \multicolumn{1}{c}{-1.583} & \multicolumn{1}{c}{-1.578} & \multicolumn{1}{c}{-1.573} & \multicolumn{1}{c}{-1.568} & \multicolumn{1}{c}{-1.567} & \multicolumn{1}{c}{-1.567} & \multicolumn{1}{c}{-1.566} & \multicolumn{1}{c}{-1.565} & \multicolumn{1}{c}{-1.565} & -1.625 \\ %\hline
+						{[}IG{]} & \multicolumn{1}{c}{0.828} & \multicolumn{1}{c}{0.833} & \multicolumn{1}{c}{0.838} & \multicolumn{1}{c}{0.843} & \multicolumn{1}{c}{0.843} & \multicolumn{1}{c}{0.844} & \multicolumn{1}{c}{0.845} & \multicolumn{1}{c}{0.846} & \multicolumn{1}{c}{0.846} & 0.786 \\ \hline
 					\end{tabular}
 				\end{table}
 				
@@ -253,16 +258,16 @@
 					\centering
 					\caption{Model parameters for \texttt{rauch}}
 					\label{param:rauch}
-					\begin{tabular}{|p{3cm}|p{10cm}|}
+					\begin{tabular}{p{0.2\textwidth}p{0.7\textwidth}}
 						\hline
 						\textbf{Parameter} & \textbf{Quantity} \\ \hline
-						{\texttt{par1}} & {Effective temperature $T$ (in K)} \\ \hline
-						{\texttt{par2}} & {Redshift $z$} \\ \hline
+						{\texttt{par1}} & {Effective temperature $T$ (in K)} \\ %\hline
+						{\texttt{par2}} & {Redshift $z$} \\ %\hline
 						{\texttt{norm}} & {Normalization of the component computed as $\displaystyle\dfrac{10^{-14}}{4\pi[D_A(1+z)]^2}\int{n_en_H\diff{V}}$, where $D_A$ is the angular diameter distance to the source (in cm), $n_e$ and $n_H$ are the electron densities (in cm$^{-3}$) respectively} \\ \hline
 					\end{tabular}
 				\end{table}
 	
-	\section{Analysis of RGS Spectra} \label{hi-resolution:analysis}
+	\section{Analysis of High-resolution RGS Spectra} \label{hi-resolution:analysis}
 		Both the spectra of RX J0925.7-4758 obtained by the RGS instrument of XMM-Newton were analyzed using a subset of models from the list given in table \ref{xmm-rgs-model-list}. Models with IDs M07, M08, M09, M10, M11 and M12 were applied on the RGS data for both spectral orders.
 		
 		\subsection{Fitting of RGS1 Spectra} \label{hi-resolution:analysis:rgs1}
@@ -274,53 +279,58 @@
 			
 			\begin{figure}[h!]
 				\centering
+				\includegraphics[width=0.9\textwidth]{mrvel-rgs1-chisq}
 				\caption{$\chi^2_\text{red}$ trend for RX J0925.7-4758 spectra from RGS1 instrument}
 				\label{fig:mrvel-rgs1-chisq}
-				\includegraphics[width=0.85\textwidth]{mrvel-rgs1-chisq}
 			\end{figure}
 		
 			The fitted spectra, along with the residuals are displayed as follows:
 			\begin{figure}[h!]
 				\centering
+				\subfloat[Order 1 \label{xmm:rgs1-m07:o1}]{\includegraphics[width=0.5\textwidth]{mrvel-rgs1-o1-m07}} \hfill
+				\subfloat[Order 2 \label{xmm:rgs1-m07:o2}]{\includegraphics[width=0.5\textwidth]{mrvel-rgs1-o2-m07}} %\hfill
 				\caption{Spectral fits for RGS1 spectra using model M07}
 				\label{xmm:rgs1-m07}
-				\subfloat[Order 1 \label{xmm:rgs1-m07:o1}]{\includegraphics[width=0.45\textwidth]{mrvel-rgs1-o1-m07}} %\hfill
-				\subfloat[Order 2 \label{xmm:rgs1-m07:o2}]{\includegraphics[width=0.45\textwidth]{mrvel-rgs1-o2-m07}} %\hfill
 			\end{figure}
+			
 			\begin{figure}[h!]
 				\centering
+				\subfloat[Order 1 \label{xmm:rgs1-m08:o1}]{\includegraphics[width=0.5\textwidth]{mrvel-rgs1-o1-m08}} \hfill
+				\subfloat[Order 2 \label{xmm:rgs1-m08:o2}]{\includegraphics[width=0.5\textwidth]{mrvel-rgs1-o2-m08}} %\hfill
 				\caption{Spectral fits for RGS1 spectra using model M08}
 				\label{xmm:rgs1-m08}
-				\subfloat[Order 1 \label{xmm:rgs1-m08:o1}]{\includegraphics[width=0.45\textwidth]{mrvel-rgs1-o1-m08}} %\hfill
-				\subfloat[Order 2 \label{xmm:rgs1-m08:o2}]{\includegraphics[width=0.45\textwidth]{mrvel-rgs1-o2-m08}} %\hfill
 			\end{figure}
+			
 			\begin{figure}[h!]
 				\centering
+				\subfloat[Order 1 \label{xmm:rgs1-m09:o1}]{\includegraphics[width=0.5\textwidth]{mrvel-rgs1-o1-m09}} \hfill
+				\subfloat[Order 2 \label{xmm:rgs1-m09:o2}]{\includegraphics[width=0.5\textwidth]{mrvel-rgs1-o2-m09}} %\hfill
 				\caption{Spectral fits for RGS1 spectra using model M09}
 				\label{xmm:rgs1-m09}
-				\subfloat[Order 1 \label{xmm:rgs1-m09:o1}]{\includegraphics[width=0.45\textwidth]{mrvel-rgs1-o1-m09}} %\hfill
-				\subfloat[Order 2 \label{xmm:rgs1-m09:o2}]{\includegraphics[width=0.45\textwidth]{mrvel-rgs1-o2-m09}} %\hfill
 			\end{figure}
+			
 			\begin{figure}[h!]
 				\centering
+				\subfloat[Order 1 \label{xmm:rgs1-m10:o1}]{\includegraphics[width=0.5\textwidth]{mrvel-rgs1-o1-m10}} \hfill
+				\subfloat[Order 2 \label{xmm:rgs1-m10:o2}]{\includegraphics[width=0.5\textwidth]{mrvel-rgs1-o2-m10}} %\hfill
 				\caption{Spectral fits for RGS1 spectra using model M10}
 				\label{xmm:rgs1-m10}
-				\subfloat[Order 1 \label{xmm:rgs1-m10:o1}]{\includegraphics[width=0.45\textwidth]{mrvel-rgs1-o1-m10}} %\hfill
-				\subfloat[Order 2 \label{xmm:rgs1-m10:o2}]{\includegraphics[width=0.45\textwidth]{mrvel-rgs1-o2-m10}} %\hfill
 			\end{figure}
+			
 			\begin{figure}[h!]
 				\centering
+				\subfloat[Order 1 \label{xmm:rgs1-m11:o1}]{\includegraphics[width=0.5\textwidth]{mrvel-rgs1-o1-m11}} \hfill
+				\subfloat[Order 2 \label{xmm:rgs1-m11:o2}]{\includegraphics[width=0.5\textwidth]{mrvel-rgs1-o2-m11}} %\hfill
 				\caption{Spectral fits for RGS1 spectra using model M11}
 				\label{xmm:rgs1-m11}
-				\subfloat[Order 1 \label{xmm:rgs1-m11:o1}]{\includegraphics[width=0.45\textwidth]{mrvel-rgs1-o1-m11}} %\hfill
-				\subfloat[Order 2 \label{xmm:rgs1-m11:o2}]{\includegraphics[width=0.45\textwidth]{mrvel-rgs1-o2-m11}} %\hfill
 			\end{figure}
+			
 			\begin{figure}[h!]
 				\centering
+				\subfloat[Order 1 \label{xmm:rgs1-m12:o1}]{\includegraphics[width=0.5\textwidth]{mrvel-rgs1-o1-m12}} \hfill
+				\subfloat[Order 2 \label{xmm:rgs1-m12:o2}]{\includegraphics[width=0.5\textwidth]{mrvel-rgs1-o2-m12}} %\hfill
 				\caption{Spectral fits for RGS1 spectra using model M12}
 				\label{xmm:rgs1-m12}
-				\subfloat[Order 1 \label{xmm:rgs1-m12:o1}]{\includegraphics[width=0.45\textwidth]{mrvel-rgs1-o1-m12}} %\hfill
-				\subfloat[Order 2 \label{xmm:rgs1-m12:o2}]{\includegraphics[width=0.45\textwidth]{mrvel-rgs1-o2-m12}} %\hfill
 			\end{figure}
 		
 		\clearpage
@@ -329,52 +339,57 @@
 			
 			\begin{figure}[h!]
 				\centering
+				\includegraphics[width=0.9\textwidth]{mrvel-rgs2-chisq}
 				\caption{$\chi^2_\text{red}$ trend for RX J0925.7-4758 spectra from RGS2 instrument}
 				\label{fig:mrvel-rgs2-chisq}
-				\includegraphics[width=0.85\textwidth]{mrvel-rgs2-chisq}
 			\end{figure}
 			The fitted spectra, along with the residuals are displayed as follows:
 			\begin{figure}[h!]
 				\centering
+				\subfloat[Order 1 \label{xmm:rgs2-m07:o1}]{\includegraphics[width=0.5\textwidth]{mrvel-rgs2-o1-m07}} \hfill
+				\subfloat[Order 2 \label{xmm:rgs2-m07:o2}]{\includegraphics[width=0.5\textwidth]{mrvel-rgs2-o2-m07}} %\hfill
 				\caption{Spectral fits for RGS2 spectra using model M07}
 				\label{xmm:rgs2-m07}
-				\subfloat[Order 1 \label{xmm:rgs2-m07:o1}]{\includegraphics[width=0.45\textwidth]{mrvel-rgs2-o1-m07}} %\hfill
-				\subfloat[Order 2 \label{xmm:rgs2-m07:o2}]{\includegraphics[width=0.45\textwidth]{mrvel-rgs2-o2-m07}} %\hfill
 			\end{figure}
+			
 			\begin{figure}[h!]
 				\centering
+				\subfloat[Order 1 \label{xmm:rgs2-m08:o1}]{\includegraphics[width=0.5\textwidth]{mrvel-rgs2-o1-m08}} \hfill
+				\subfloat[Order 2 \label{xmm:rgs2-m08:o2}]{\includegraphics[width=0.5\textwidth]{mrvel-rgs2-o2-m08}} \hfill
 				\caption{Spectral fits for RGS2 spectra using model M08}
 				\label{xmm:rgs2-m08}
-				\subfloat[Order 1 \label{xmm:rgs2-m08:o1}]{\includegraphics[width=0.45\textwidth]{mrvel-rgs2-o1-m08}} %\hfill
-				\subfloat[Order 2 \label{xmm:rgs2-m08:o2}]{\includegraphics[width=0.45\textwidth]{mrvel-rgs2-o2-m08}} %\hfill
 			\end{figure}
+			
 			\begin{figure}[h!]
 				\centering
+				\subfloat[Order 1 \label{xmm:rgs2-m09:o1}]{\includegraphics[width=0.5\textwidth]{mrvel-rgs2-o1-m09}} \hfill
+				\subfloat[Order 2 \label{xmm:rgs2-m09:o2}]{\includegraphics[width=0.5\textwidth]{mrvel-rgs2-o2-m09}} %\hfill
 				\caption{Spectral fits for RGS2 spectra using model M09}
 				\label{xmm:rgs2-m09}
-				\subfloat[Order 1 \label{xmm:rgs2-m09:o1}]{\includegraphics[width=0.45\textwidth]{mrvel-rgs2-o1-m09}} %\hfill
-				\subfloat[Order 2 \label{xmm:rgs2-m09:o2}]{\includegraphics[width=0.45\textwidth]{mrvel-rgs2-o2-m09}} %\hfill
 			\end{figure}
+			
 			\begin{figure}[h!]
 				\centering
+				\subfloat[Order 1 \label{xmm:rgs2-m10:o1}]{\includegraphics[width=0.5\textwidth]{mrvel-rgs2-o1-m10}} \hfill
+				\subfloat[Order 2 \label{xmm:rgs2-m10:o2}]{\includegraphics[width=0.5\textwidth]{mrvel-rgs2-o2-m10}} %\hfill
 				\caption{Spectral fits for RGS2 spectra using model M10}
 				\label{xmm:rgs2-m10}
-				\subfloat[Order 1 \label{xmm:rgs2-m10:o1}]{\includegraphics[width=0.45\textwidth]{mrvel-rgs2-o1-m10}} %\hfill
-				\subfloat[Order 2 \label{xmm:rgs2-m10:o2}]{\includegraphics[width=0.45\textwidth]{mrvel-rgs2-o2-m10}} %\hfill
 			\end{figure}
+			
 			\begin{figure}[h!]
 				\centering
+				\subfloat[Order 1 \label{xmm:rgs2-m11:o1}]{\includegraphics[width=0.5\textwidth]{mrvel-rgs2-o1-m11}} \hfill
+				\subfloat[Order 2 \label{xmm:rgs2-m11:o2}]{\includegraphics[width=0.5\textwidth]{mrvel-rgs2-o2-m11}} %\hfill
 				\caption{Spectral fits for RGS2 spectra using model M11}
 				\label{xmm:rgs2-m11}
-				\subfloat[Order 1 \label{xmm:rgs2-m11:o1}]{\includegraphics[width=0.45\textwidth]{mrvel-rgs2-o1-m11}} %\hfill
-				\subfloat[Order 2 \label{xmm:rgs2-m11:o2}]{\includegraphics[width=0.45\textwidth]{mrvel-rgs2-o2-m11}} %\hfill
 			\end{figure}
+			
 			\begin{figure}[h!]
 				\centering
+				\subfloat[Order 1 \label{xmm:rgs2-m12:o1}]{\includegraphics[width=0.5\textwidth]{mrvel-rgs2-o1-m12}} \hfill
+				\subfloat[Order 2 \label{xmm:rgs2-m12:o2}]{\includegraphics[width=0.5\textwidth]{mrvel-rgs2-o2-m12}} %\hfill
 				\caption{Spectral fits for RGS2 spectra using model M12}
 				\label{xmm:rgs2-m12}
-				\subfloat[Order 1 \label{xmm:rgs2-m12:o1}]{\includegraphics[width=0.45\textwidth]{mrvel-rgs2-o1-m12}} %\hfill
-				\subfloat[Order 2 \label{xmm:rgs2-m12:o2}]{\includegraphics[width=0.45\textwidth]{mrvel-rgs2-o2-m12}} %\hfill
 			\end{figure}
 			
 		%\subsection{With Order 1 Spectrum} \label{hi-resolution:analysis:order-1}

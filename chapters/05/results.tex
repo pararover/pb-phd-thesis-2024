@@ -17,18 +17,19 @@
 			\begin{tabular}{cccccc}
 			\hline
 			\textbf{S. No.} & \textbf{Source} & \textbf{Type} & \textbf{Galaxy} & \textbf{\begin{tabular}[c]{@{}c@{}}R. A.\\ (degrees)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Dec.\\ (degrees)\end{tabular}} \\ \hline
-			{1} & {CAL 83} & {XRB} & {} & {85.89233} & {-68.37283} \\
-			{2} & {RS Oph} & {SS} & {} & {267.55483} & {-6.70791} \\
+			{1} & {CAL 83} & {XRB} & {LMC} & {85.89233} & {-68.37283} \\
+			{2} & {RS Oph} & {SS} & {MW} & {267.55483} & {-6.70791} \\
 			{3} & {RX J0019.8+2156} & {CV} & {MW} & {4.95802} & {21.94783} \\
-			{4} & {RX J0527.8-6954} & {CV} & {} & {81.95345} & {-69.90247} \\
+			{4} & {RX J0527.8-6954} & {CV} & {LMC} & {81.95345} & {-69.90247} \\
 			{5} & {RX J0925.7-4758} & {XRB} & {MW} & {141.44167} & {-47.97148} \\
-			{6} & {V3890 Sgr} & {CN} & {} & {277.68037} & {-24.01915} \\ \hline
+			{6} & {V3890 Sgr} & {CN} & {MW} & {277.68037} & {-24.01915} \\ \hline
 			\end{tabular}
 		\end{table}
 		\renewcommand{\arraystretch}{2.2}
 		
-		\subsection{Supersoft X-ray count rates}
-			\begin{landscape}
+		\begin{landscape}
+		\subsection{Journal of observations}
+			
 			\begin{table}[!htb]
 				\centering
 	    		\caption{SSS observation journal of dataset}
@@ -44,8 +45,9 @@
 				{V3890 Sgr} & {XMM-Newton} & {EPIC-MOS1} & {0821560201} & {2019-09-14} & {58740.98} & {25.0} & {0.1--2.0} \\ \hline
 				\end{tabular}
 			\end{table}
-			\end{landscape}
+		\end{landscape}
 			
+		\subsection{Supersoft X-ray count rates}
 			The count rates of the sources as observed by the respective observatories in table \ref{tab:sss-obs-list} over the respective energy ranges are presented in the sub-figures in \ref{result:count-rate:indiv}.
 			\begin{figure}[h!]
 				\centering
@@ -81,7 +83,7 @@
 				\hline
 				\textbf{Source} & {$\boldsymbol{\chi^2}$/\textbf{d.o.f}} & {$\boldsymbol{\chi^2_\text{reduced}}$} & \textbf{\begin{tabular}[c]{@{}c@{}}Null hyp.\\ prob.\end{tabular}} \\ \hline
 				{CAL 83} & {${108.0}/{83}$} & {1.30} & {$1.50\times 10^{-2}$} \\
-				{RS Oph} & {} & {} & {} \\
+				{RS Oph} & {${189.6}/{135}$} & {1.40} & {$1.36\times 10^{-3}$} \\
 				{RX J0019.8+2156} & {${68.3}/{54}$} & {1.26} & {$9.16\times 10^{-2}$} \\
 				{RX J0527.8-6954} & {${135.1}/{87}$} & {1.55} & {$7.28\times 10^{-4}$} \\
 				{RX J0925.7-4758} & {${183.4}/{131}$} & {1.40} & {$1.73\times 10^{-3}$} \\
@@ -102,7 +104,7 @@
 			{\textbf{Source}} & {$\boldsymbol{L_*}$ \textbf{(erg s$\boldsymbol{^{-1}}$)}} & {\textbf{$\boldsymbol{T_\text{eff}}$ (kK)}} & {\textbf{$\boldsymbol{n_H}$ ($\boldsymbol{\times 10^{22}}$ cm$\boldsymbol{^{-2}}$)}} \\
 			\hline
 			{CAL 83} & {$5.86_{4.54}^{7.20}\times 10^{38}$} & {$102.9_{100.8}^{110.0}$} & {$0.087_{0.079}^{0.093}$} \\
-			{RS Oph} & {} & {} & {} \\
+			{RS Oph} & {} & {$163.9_{139.5}^{200.9}$} & {$0.063_{0.018}^{0.168}$} \\
 			{RX J0019.8+2156} & {$1.23_{0.39}^{2.37}\times 10^{35}$} & {$60.5_{46.5}^{70.9}$} & {$0.046_{0.014}^{0.805}$} \\
 			{RX J0527.8-6954} & {$1.21_{0.60}^{2.13}\times 10^{40}$} & {$50.6_{43.7}^{54.1}$} & {$0.333_{0.246}^{0.338}$} \\
 			{RX J0925.7-4758} & {$1.69_{0.54}^{3.58}\times 10^{44}$} & {$91.6_{86.9}^{100.2}$} & {$1.175_{1.086}^{1.274}$} \\

@@ -83,7 +83,7 @@
 				\hline
 				\textbf{Source} & {$\boldsymbol{\chi^2}$/\textbf{d.o.f}} & {$\boldsymbol{\chi^2_\text{reduced}}$} & \textbf{\begin{tabular}[c]{@{}c@{}}Null hyp.\\ prob.\end{tabular}} \\ \hline
 				{CAL 83} & {${108.0}/{83}$} & {1.30} & {$1.50\times 10^{-2}$} \\
-				{RS Oph} & {${189.6}/{135}$} & {1.40} & {$1.36\times 10^{-3}$} \\
+				{RS Oph} & {${189.7}/{135}$} & {1.40} & {$1.35\times 10^{-3}$} \\
 				{RX J0019.8+2156} & {${68.3}/{54}$} & {1.26} & {$9.16\times 10^{-2}$} \\
 				{RX J0527.8-6954} & {${135.1}/{87}$} & {1.55} & {$7.28\times 10^{-4}$} \\
 				{RX J0925.7-4758} & {${183.4}/{131}$} & {1.40} & {$1.73\times 10^{-3}$} \\
@@ -104,7 +104,7 @@
 			{\textbf{Source}} & {$\boldsymbol{L_*}$ \textbf{(erg s$\boldsymbol{^{-1}}$)}} & {\textbf{$\boldsymbol{T_\text{eff}}$ (kK)}} & {\textbf{$\boldsymbol{n_H}$ ($\boldsymbol{\times 10^{22}}$ cm$\boldsymbol{^{-2}}$)}} \\
 			\hline
 			{CAL 83} & {$5.86_{4.54}^{7.20}\times 10^{38}$} & {$102.9_{100.8}^{110.0}$} & {$0.087_{0.079}^{0.093}$} \\
-			{RS Oph} & {} & {$163.9_{139.5}^{200.9}$} & {$0.063_{0.018}^{0.168}$} \\
+			{RS Oph} & {$2.67_{2.35}^{8.64}\times 10^{35}$} & {$181.6_{167.4}^{200.1}$} & {$0.067_{0.018}^{0.170}$} \\
 			{RX J0019.8+2156} & {$1.23_{0.39}^{2.37}\times 10^{35}$} & {$60.5_{46.5}^{70.9}$} & {$0.046_{0.014}^{0.805}$} \\
 			{RX J0527.8-6954} & {$1.21_{0.60}^{2.13}\times 10^{40}$} & {$50.6_{43.7}^{54.1}$} & {$0.333_{0.246}^{0.338}$} \\
 			{RX J0925.7-4758} & {$1.69_{0.54}^{3.58}\times 10^{44}$} & {$91.6_{86.9}^{100.2}$} & {$1.175_{1.086}^{1.274}$} \\
@@ -133,6 +133,12 @@
 			\end{figure}
 		
 		\subsection*{Unfolded spectrum of RS Oph}
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[width=\textwidth]{eufspec/rs-oph-pn_eufspec}
+				\caption{Unfolded spectrum after model fitting RS Oph}
+				\label{result:euf-rs-oph}
+			\end{figure}
 		
 		\subsection*{Unfolded spectrum of RX J0019.8+2156}
 			\begin{figure}[h!]
@@ -163,12 +169,39 @@
 	\newpage
 	\section{Presence of elemental absorption edges}
 	
-		\subsection*{Absorption lines in CAL 83 spectrum}
+		%\subsection*{Absorption lines in CAL 83 spectrum}
 		
-		\subsection*{Absorption lines in RS Oph spectrum}
+		\subsection*{Absorption edges in RS Oph spectrum}
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[width=\textwidth]{eufspec/rs-oph-pn_eufspec-keV-edges}
+				\caption{Identified absorption edges for RS Oph}
+				\label{result:absedge-rs-oph}
+			\end{figure}
+			
+			\renewcommand{\arraystretch}{1.5}
+			\begin{table}[!htb]
+				\centering
+				\caption{Absorption edges identified for RS Oph}
+				\label{tab:absedge-rs-oph}
+				\begin{tabular}{ccc}
+					\hline
+					\textbf{Source} & \multicolumn{2}{c}{RS Oph} \\
+					\textbf{Observatory} & \multicolumn{2}{c}{XMM-Newton} \\
+					\textbf{Obs. ID} & \multicolumn{2}{c}{0410180501} \\
+					\textbf{Instrument} & \multicolumn{2}{c}{EPIC-pn} \\
+					\textbf{No. of edges identified} & \multicolumn{2}{c}{2} \\
+					\textbf{Relative depth} & \multicolumn{2}{c}{0.52 : 1.0} \\
+					\hline
+					\textbf{Absorption edge} & {O $K$ Edge} & {Fe $L_3$ Edge} \\
+					\textbf{Edge energy} & {0.533 keV} & {0.708 keV} \\
+					\textbf{Edge depth} & {0.457} & {0.872} \\ \hline
+				\end{tabular}
+			\end{table}
+			\renewcommand{\arraystretch}{2.2}
 		
 		\newpage
-		\subsection*{Absorption lines in RX J0019.8+2156 spectrum}
+		\subsection*{Absorption edges in RX J0019.8+2156 spectrum}
 			\begin{figure}[h!]
 				\centering
 				\includegraphics[width=\textwidth]{eufspec/rx-j0019d8p2156-pn_eufspec-keV-edges}
@@ -195,11 +228,12 @@
 					\textbf{Edge depth} & {0.809} & {0.026} & {0.867} \\ \hline
 				\end{tabular}
 			\end{table}
+			\renewcommand{\arraystretch}{2.2}
 		
-		\subsection*{Absorption lines in RX J0527.8-6954 spectrum}
+		%\subsection*{Absorption lines in RX J0527.8-6954 spectrum}
 		
-		\newpage
-		\subsection*{Absorption lines in RX J0925.7-4758 spectrum}
+		%\newpage
+		\subsection*{Absorption edges in RX J0925.7-4758 spectrum}
 			\begin{figure}[h!]
 				\centering
 				\includegraphics[width=\textwidth]{eufspec/rx-j0925-4758-pn_eufspec-keV-edges}
@@ -228,7 +262,7 @@
 			\end{table}
 			\renewcommand{\arraystretch}{2.2}
 		
-		\subsection*{Absorption lines in V3890 Sgr spectrum}
+		\subsection*{Absorption edges in V3890 Sgr spectrum}
     
 %    \section{Spectral Line Identification}
 %    

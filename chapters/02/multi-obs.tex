@@ -36,12 +36,10 @@
 		
 		The amalgamation of observations from diverse space observatories offered unique insights into the spectral evolution of the supersoft X-ray source over time, shedding light on its dynamic behavior and emission properties. Through rigorous spectral modeling and comparative analysis, we made an attempt to establish a robust framework for characterizing the continuum spectrum of the supersoft source, thereby enhancing our understanding of its astrophysical nature and evolutionary trends. A comprehensive investigation into recurrent SSS like \source\ is paramount due to the emerging recognition of SSS as progenitors of type Ia supernovae, which serve as crucial standard candles in cosmology. By delving deeper into the astrophysical mechanisms governing SSS, we can potentially enhance our ability to make precise predictions regarding the occurrence of type Ia supernovae and subsequently refine cosmological distance measurements.
     
+    \begin{landscape}
     \section{Journal of Observations} \label{multi-obs:journal}
-    	During the course of our investigation of the continuum spectrum of \source, we leveraged a comprehensive dataset comprising six observations conducted by four distinct space observatories spanning the years 1994 to 2019. We extracted spectral data within the range 0.2 -- 1.0 keV from each observation in this dataset. This afforded us the opportunity to apply a consistent spectral analysis approach across a broad temporal range and disparate instrumentation platforms.
-    	
     	A summary of the observations used in this study, which included science data from Japan's ASCA \cite{ebisawaAsca2001ApJ}, NASA's Chandra \cite{beardaChandra2002AA}, ESA's XMM-Newton \cite{motchXmmNewton2002AA} and ISS' NICER \cite{orioNicer2022ApJ} observatories, is presented in table \ref{tab:obs-journal}.
     	
-    	\begin{landscape}
     	\renewcommand{\arraystretch}{2.2}
     	\begin{table}[!htb]
 	    	\centering
@@ -68,7 +66,9 @@
 			\end{minipage}
 		\end{table}
 		\renewcommand{\arraystretch}{1.6}
-		\end{landscape}
+	\end{landscape}
+		
+		During the course of our investigation of the continuum spectrum of \source, we leveraged a comprehensive dataset comprising six observations conducted by four distinct space observatories spanning the years 1994 to 2019. We extracted spectral data within the range 0.2 -- 1.0 keV from each observation in this dataset. This afforded us the opportunity to apply a consistent spectral analysis approach across a broad temporal range and disparate instrumentation platforms.
     
     \section{Data Reduction and Analysis} \label{multi-obs:red-analysis}
     	The raw data pertaining to all of the observations were downloaded using the online archival query interface at the \textit{High Energy Astrophysics Science Archive Research Center} (HEASARC)\footnote{\url{https://heasarc.gsfc.nasa.gov/db-perl/W3Browse/w3browse.pl}}. The data was reduced finally to \textit{Flexible Image Transport System} (FITS)\footnote{\url{https://fits.gsfc.nasa.gov/standard40/fits_standard40aa-le.pdf}} format using the software tools for the corresponding observatory with recommended settings in the relevant data analysis threads, wherever available. For the final analysis, a set of four files were generated for each of the observations. As a standard practice, these files were given the extensions as per a convention adopted by the authors as follows:
@@ -127,28 +127,38 @@
     	\subsection{Observed Count Rates} \label{multi-obs:results:count-rates}
     		In figures \ref{fig:all-counts:unnorm} and \ref{fig:all-counts:norm}, we present a comparison of count rates derived from the multi-observatory data listed in table \ref{tab:obs-journal}. Figure \ref{fig:all-counts:unnorm} serves to illustrate the variability of flux across different observation epochs, with count rates plotted on a logarithmic scale. This visualization provides insights into the temporal evolution of X-ray emission from \source.
     		
-    		\begin{figure}[!htb]
-		        \centering
-		        \includegraphics[width=0.8\textwidth]{images/ldata/mr-vel-counts_all-obs.png}
-		        \caption{Comparison of flux from all observations from their count rates plotted to scale}
-		        \label{fig:all-counts:unnorm}
-    		\end{figure}
+    		Concurrently, in figure \ref{fig:all-counts:norm}, the count rates are normalized to the range of 0 to 1 using \textit{min-max normalization}. This visualization accentuates the relative sensitivity of more recent observations to supersoft X-ray photons emitted by \source. The sub-plot shows that in recent observations the supersoft X-ray features are discernibly enhanced. This might be suggestive of improved observational capabilities or heightened sensitivity to the emitted X-ray flux.
+    		
+    		\newpage
+    		\begin{figure}[h!]
+				\centering				
+				\subfloat[Using count rates \label{fig:all-counts:unnorm}]{\includegraphics[width=0.9\textwidth]{images/ldata/mr-vel-counts_all-obs.png}}
+				
+				\subfloat[Using normalized count rates \label{fig:all-counts:norm}]{\includegraphics[width=0.9\textwidth]{images/ldata/mr-vel-normcounts_all-obs.png}}
+
+				\caption{Comparison of flux from all observations}
+		        \label{fig:all-counts}
+			\end{figure}
 			
-			\begin{figure}
-				\centering
-		        \includegraphics[width=0.8\textwidth]{images/ldata/mr-vel-normcounts_all-obs.png}
-		        \caption{Normalized count rates from all observations show varying responses to supersoft X-rays}
-		        \label{fig:all-counts:norm}
-		    \end{figure}
-		    
-		    Concurrently, in figure \ref{fig:all-counts:norm}, the count rates are normalized to the range of 0 to 1 using \textit{min-max normalization}. This visualization accentuates the relative sensitivity of more recent observations to supersoft X-ray photons emitted by \source. The sub-plot shows that in recent observations the supersoft X-ray features are discernibly enhanced. This might be suggestive of improved observational capabilities or heightened sensitivity to the emitted X-ray flux.
+%    		\begin{figure}[!htb]
+%		        \centering
+%		        \includegraphics[width=0.8\textwidth]{images/ldata/mr-vel-counts_all-obs.png}
+%		        \caption{Comparison of flux from all observations from their count rates plotted to scale}
+%		        \label{fig:all-counts:unnorm}
+%    		\end{figure}			
+%			\begin{figure}
+%				\centering
+%		        \includegraphics[width=0.8\textwidth]{images/ldata/mr-vel-normcounts_all-obs.png}
+%		        \caption{Normalized count rates from all observations show varying responses to supersoft X-rays}
+%		        \label{fig:all-counts:norm}
+%		    \end{figure}
 		    
 		    Together, these visualizations offer a nuanced understanding of the flux variability and observational sensitivity trends exhibited by \source\ across different observation epochs, contributing to the broader understanding of its X-ray emission characteristics.
     	
+    	\begin{landscape}
     	\subsection{NLTE Continuum Model} \label{multi-obs:results:nlte}
     		In table \ref{tab:res-fitting}, we present the luminosity, effective temperature and column density for \source\ which are derived after performing the fitting to the NLTE continuum model described in \S \ref{multi-obs:red-analysis} We also present the model fit statistics, namely the reduced $\chi^2$ values for each fit. It can be noticed that the same continuum model has been able to provide a good fit to all of the observations in our chosen dataset.
     		
-    		\begin{landscape}
     		\renewcommand{\arraystretch}{2.2}
     		\begin{table}[!htb]
 		    	\centering
@@ -170,22 +180,32 @@
 			\renewcommand{\arraystretch}{1.6}
 			\end{landscape}
     	
-    	\subsection{Unfolded Spectra} \label{multi-obs:results:unfolded}
+    	\subsection{Unfolded Spectra from Best-fit Model} \label{multi-obs:results:unfolded}
     		In figures \ref{fig:all-uf:12-24} and \ref{fig:all-uf:24-36}, the unfolded spectrum, which is obtained after fitting the data to the best-fit model, is displayed. The observations reveal features which are indicative of the presence of elemental absorption edges.
     		
-    		\begin{figure}[!htb]
-		        \centering
-		        \includegraphics[width=0.9\textwidth]{images/eufspec/mr-vel-uf_all-obs_12-24.png}
-		        \caption{Unfolded spectra after model fitting in the range 12 \AA - 24 \AA}
-		        \label{fig:all-uf:12-24}
-		    \end{figure}
+    		\begin{figure}[h!]
+				\centering				
+				\subfloat[Over the range 12 \AA - 24 \AA \label{fig:all-uf:12-24}]{\includegraphics[width=0.9\textwidth]{images/eufspec/mr-vel-uf_all-obs_12-24.png}}
+				
+				\subfloat[Over the range 24 \AA - 36 \AA \label{fig:all-uf:24-36}]{\includegraphics[width=0.9\textwidth]{images/eufspec/mr-vel-uf_all-obs_24-36.png}}
 
-		    \begin{figure}[!htb]
-		    	\centering
-		    	\includegraphics[width=0.9\textwidth]{images/eufspec/mr-vel-uf_all-obs_24-36.png}
-		    	\caption{Unfolded spectra after model fitting in the range 24 \AA - 36 \AA}
-		    	\label{fig:all-uf:24-36}
-		    \end{figure}
+				\caption{Unfolded spectra after model fitting}
+		        \label{fig:all-uf}
+			\end{figure}
+    		
+%    		\begin{figure}[!htb]
+%		        \centering
+%		        \includegraphics[width=0.9\textwidth]{images/eufspec/mr-vel-uf_all-obs_12-24.png}
+%		        \caption{Unfolded spectra after model fitting in the range 12 \AA - 24 \AA}
+%		        \label{fig:all-uf:12-24}
+%		    \end{figure}
+%
+%		    \begin{figure}[!htb]
+%		    	\centering
+%		    	\includegraphics[width=0.9\textwidth]{images/eufspec/mr-vel-uf_all-obs_24-36.png}
+%		    	\caption{Unfolded spectra after model fitting in the range 24 \AA - 36 \AA}
+%		    	\label{fig:all-uf:24-36}
+%		    \end{figure}
     	
     	\subsection{Luminosity versus Effective Temperature} \label{multi-obs:results:L-vs-Teff}
     		In figure \ref{fig:L-Teff}, we present a visualization of the calculated values of the luminosity $L_*$ and effective temperature $T_\text{eff}$ for \source\ using the best-fit model. One may note that the horizontal axis, containing the $T_\text{eff}$ data is plotted as increasing from right to left, \textit{\`{a} la} Hertzsprung-Russell diagram. This enables one to compare the overlap of the regions of uncertainty of these parameters as calculated using the data from multiple observatories.
@@ -416,11 +436,13 @@ derive fundamental parameters such as temperature, neutral hydrogen column densi
 		    \begin{figure}[!htb]
 		    	\centering
 		    	\includegraphics[width=\textwidth]{images/fig-line_identification-rgs.png}
-		    	\caption{Overlay of transition lines on the fluxed RGS spectrum of \source\ for Obs. ID 0111150101. The colour scheme is: N VI and N VII lines in light and dark green respectively, O VII and O VIII lines in light and dark blue respectively, Fe XVII and Fe XVIII lines in light and dark red respectively}
+		    	\caption{Overlay of transition lines on the fluxed RGS spectrum of \source\ for Obs. ID 0111150101}
 		    	\label{fig:rgs-line-overlay}  
 		    \end{figure}
 		    
-		    Absorption lines in the spectrum of \source\ arise due to the interaction of the emitted radiation with material along the line of sight. These lines exhibit diverse profiles, including shapes, widths, and shifts, which reflect the physical properties and dynamics of the absorbing material. Each absorption line corresponds to a specific transition of an atom or ion in the intervening material. Some of such lines are overlaid on the fluxed RGS spectrum of \source\ for the observation ID 0111150101, as presented in figure \ref{fig:rgs-line-overlay} \cite{bhattacharya2020python}. By identifying the atomic species and transitions associated with each absorption feature, one can gain insight into the composition and kinematics of the absorbing medium. While optical spectra have been extensively studied by categorizing them based on the presence or absence of certain spectral lines and identifying anomalies such as unusually strong or weak lines, similar approaches have been challenging to apply to X-ray spectra due to their limited spectral resolution. However, with nearly two decades of high-resolution grating spectra available from X-ray observations, it is now opportune to explore and develop methods that leverage these data to categorize and analyze X-ray spectra in more nuanced ways, such as that by Ness et al. (2013) \cite{ness2013obscuration}.
+		    Absorption lines in the spectrum of \source\ arise due to the interaction of the emitted radiation with material along the line of sight. These lines exhibit diverse profiles, including shapes, widths, and shifts, which reflect the physical properties and dynamics of the absorbing material. Each absorption line corresponds to a specific transition of an atom or ion in the intervening material. Some of such lines are overlaid on the fluxed RGS spectrum of \source\ for the observation ID 0111150101, as presented in figure \ref{fig:rgs-line-overlay} \cite{bhattacharya2020python}. Here, the colour scheme is: N VI and N VII lines in light and dark green respectively, O VII and O VIII lines in light and dark blue respectively, Fe XVII and Fe XVIII lines in light and dark red respectively.
+		    
+		    By identifying the atomic species and transitions associated with each absorption feature, one can gain insight into the composition and kinematics of the absorbing medium. While optical spectra have been extensively studied by categorizing them based on the presence or absence of certain spectral lines and identifying anomalies such as unusually strong or weak lines, similar approaches have been challenging to apply to X-ray spectra due to their limited spectral resolution. However, with nearly two decades of high-resolution grating spectra available from X-ray observations, it is now opportune to explore and develop methods that leverage these data to categorize and analyze X-ray spectra in more nuanced ways, such as that by Ness et al. (2013) \cite{ness2013obscuration}.
     	
     	\subsection{Relative Strengths of Absorption Edges} \label{multi-obs:discussion:abs-edge-strength}
     		Absorption edges are included in an XSPEC model using the multiplicative component named \texttt{edge}. On a continuum model, an absorption edge may be modelled as follows:

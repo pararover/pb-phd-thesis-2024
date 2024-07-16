@@ -1,18 +1,23 @@
 \chapter{INTRODUCTION} \label{chap:introduction}
     %\doublespacing
     \minitoc
+    
+    %\newpage
     \begin{center}
     	\emph{Abstract of chapter \ref{chap:introduction}}
     \end{center}
+    This chapter introduces the field of X-ray astronomy, highlighting its significance in studying high-energy celestial phenomena. It covers the advancements from early X-ray detectors to contemporary missions like Chandra and XMM-Newton, which have provided detailed spectral data of various X-ray sources. A special focus is on luminous supersoft X-ray sources (SSS), a distinct category identified by their exceptionally soft spectra and high luminosities. The chapter explores the prevailing models for SSS, primarily involving accreting white dwarfs in binary systems, and their potential as progenitors of Type Ia supernovae. It also delves into the classifications and companion star types within SSS systems, and the significance of understanding classical novae in the context of X-ray observations. Finally, it outlines the research problem, hypothesis, and objectives, aiming to develop robust models for SSS spectra and understand their underlying physical mechanisms.
     
     \section{Introduction} \label{introduction:introduction}
+    	The pursuit of cosmic knowledge has been propelled by advancements in observational techniques across the electromagnetic spectrum.
+ X-ray astronomy, in particular, offers a unique window into the high-energy universe, revealing phenomena inaccessible to other wavelengths. By probing celestial objects in the X-ray band, astronomers gain profound insights into extreme astrophysical environments dominated by processes such as accretion, stellar explosions, and the interplay of matter and radiation.
         
         \subsection{X-ray Astronomy} \label{introduction:introduction:x-ray-astro}
         	X-ray astronomy has emerged as a pivotal domain within the broader field of astronomy, providing invaluable insights into high-energy phenomena across the Milky Way and beyond. Observations made in the X-ray window enable us to understand many high-energy events in the Milky Way and other galaxies. By studying celestial objects in the X-ray spectrum, many significant strides have been made in unraveling the complexities of stellar and galactic evolution \cite{giacconi1962evidence}. Unlike visible light, however X-rays are entirely absorbed by Earth's atmosphere, necessitating observations from space-based platforms. Since the pioneering Uhuru mission in 1970, a succession of advanced X-ray telescopes has been deployed, leading to the discovery of a diverse array of exotic celestial X-ray sources, including black holes, neutron stars, white dwarfs and supernova remnants \cite{tanaka1996x}.
         	%Today X-ray astronomy is recognized as a mature and important branch of astronomy. Observations made in the X-ray window enable us to understand many high-energy events in the Milky Way and other galaxies. The physics of such events have improved our understanding of stellar and galactic evolution. Since our atmosphere is opaque to X-rays, observations in this band need to be carried out from outer space. Starting with the Uhuru in 1970, a series of satellites with X-ray telescopes have been launched, leading to the discovery of new and exotic classes of X-ray sources.
         	
         	%In X-ray astronomy, the principal mode of measurement is to detect individual photons so as to determine
-        	X-ray astronomy relies on the detection and analysis of individual X-ray photons to extract critical information, namely its \emph{arrival direction}, \emph{energy}, \emph{time of arrival} and the \emph{polarization angle} \cite{overviewXrays}. Advancements in space-based X-ray observatory instrumentation have significantly enhanced spectral resolution, providing deeper insights into celestial X-ray sources. While early X-ray detectors primarily employed proportional and scintillation counters, the later development of Wolter-type focusing optics and imaging detectors marked a pivotal turning point, enabling the creation of two-dimensional X-ray images \cite{giacconi1962evidence}. Contemporary missions like Chandra and XMM-Newton utilize actively cooled, pixelated solid-state detectors as their focal plane instruments, offering superior energy resolution and broader energy coverage compared to their predecessors \cite{jansen2001xmm,weisskopf2000chandra}. Complementing imaging capabilities, these observatories also incorporate high-resolution grating spectrometers, providing exceptional spectral resolution and high throughput for detailed spectral analysis \cite{paerels2003high}.
+        	X-ray astronomy relies on the detection and analysis of individual X-ray photons to extract critical information, namely its \emph{arrival direction}, \emph{energy}, \emph{time of arrival} and the \emph{polarization angle} \cite{overviewXrays}. Advancements in space-based X-ray observatory instrumentation have significantly enhanced spectral resolution, providing deeper insights into celestial X-ray sources. While early X-ray detectors primarily employed proportional and scintillation counters, the later development of Wolter-type focusing optics and imaging detectors marked a pivotal turning point, enabling the creation of two-dimensional X-ray images \cite{giacconi1962evidence}. Contemporary missions like Chandra and XMM-Newton utilize actively cooled, pixelated solid-state detectors as their focal plane instruments, offering superior energy resolution and broader energy coverage compared to their predecessors \cite{jansen2001xmm,weisskopf2000chandra}. Complementing imaging capabilities, these observatories also incorporate high-resolution grating spectrometers, providing exceptional spectral resolution and high throughput for detailed spectral analysis \cite{paragb2017rev}.
         	%The refinement of the instruments on board space-based X-ray observatories have led to greater spectral resolution of the observed X-ray objects.	Initially, X-ray detectors were proportional counters and scintillation counters. The introduction of focusing and imaging X-ray optics, the Wolter telescope, together with imaging detectors in the focal plane allowed the capture of 2D X-ray imagery. Today, the pioneering X-ray satellites, namely Chandra and XMM-Newton, have actively cooled pixelized solid-state detectors as their standard focal plane detector, providing higher energy resolution and wider energy range than proportional counters. In addition to imaging telescopes, high-resolution grating spectrometers, which have very high spectral resolution and large throughput, are also used in the Chandra and XMM-Newton missions \cite{paragb2017rev}.
         
         \subsection{Supersoft X-ray Sources} \label{introduction:introduction:sss}
@@ -22,7 +27,7 @@
         	The initial discovery of luminous SSS can be attributed to the pioneering observations conducted by the Einstein and ROSAT satellites, which employed low-resolution proportional counters. These early detections laid the groundwork for subsequent, more detailed investigations. Notably, the Chandra and XMM-Newton observatories have provided high-resolution X-ray spectra for a substantial number of SSS, enabling unprecedented insights into their physical properties. Among the most extensively studied SSS are RX J0925.7-4758 \cite{bearda2002,motch2002}, CAL 83 \cite{lanz2005}, CAL 87 \cite{orio2004}, and RX J0019.8+2156 \cite{schwarz2004}, which have yielded particularly remarkable spectral data.
         	%The first SSS were observed by the low-resolution proportional counters on board the Einstein and ROSAT satellites. Presently, high-resolution X-ray spectra have been obtained by Chandra and XMM-Newton for a number of SSS, some of the most remarkable ones include RX J0925.7-4758 \cite{bearda2002,motch2002}, CAL 83 \cite{lanz2005}, CAL 87 \cite{orio2004} and RX J0019.8+2156 \cite{schwarz2004}.
         	
-        	The prevailing model for luminous SSS posits that the majority of these objects are accreting white dwarfs (WDs) within binary systems. In these systems, hydrogen-rich material is transferred from a companion star onto the WD's surface, where it accumulates and undergoes thermonuclear burning \cite{vandenHeuvel92}. This sustained or intermittent hydrogen burning process is responsible for the observed intense, soft X-ray emission. While this model accounts for most SSS, its important to note that there are exceptions, such as isolated WDs undergoing final helium-shell flashes, which also exhibit supersoft X-ray characteristics.       	
+        	The prevailing model for luminous SSS posits that the majority of these objects are accreting white dwarfs (WDs) within binary systems. In these systems, hydrogen-rich material is transferred from a companion star onto the WD's surface, where it accumulates and undergoes thermonuclear burning \cite{vandenHeuvel92}. This sustained or intermittent hydrogen burning process is responsible for the observed intense, soft X-ray emission. While this model accounts for most SSS, its important to note that there are exceptions, such as isolated WDs undergoing final helium-shell flashes, which also exhibit supersoft X-ray characteristics.
         	%The currently accepted model for luminous SSS is that, with a few exceptions, these sources are accreting white dwarfs (WDs) within a binary system, \emph{which are burning hydrogen within their envelopes in a steady or intermittent manner} \cite{vandenHeuvel92}.
     
     \section{Background} \label{introduction:background}
@@ -30,7 +35,7 @@
         %From being a mere curio, today the study of SSS is regarded as being crucial to the understanding of the evolution of X-ray binaries. A large proportion of the SSS discovered so far are transient. Supersoft transients seem to be classical and symbiotic novae having a supersoft phase and also systems with no known nova outburst but exhibit supersoft X-ray ``on'' and ``off'' states. Although the evolution of type Ia supernovae (SN Ia) has not been fully solved as yet, keeping in mind their calculated numbers and birth rates, merging double degerate white dwarfs and CBSS are considered to be the two most promising progenitor candidates for SN Ia. The SSS spectra for several sources obtained with high-resolution grating spectrometers reveal the dominance of several spectral features, including P Cygni profiles. Obtaining a proper fit for such spectra has been challenging so far, but crucial in order to be able to derive the parameters of the SSS under study.
     
     \section{Current Status} \label{introduction:current_status}
-		This section provides an overview of the current state of knowledge regarding observational data obtained from SSS.  It explores the key findings and challenges associated with analysing these data, drawing upon the latest research in the field.        
+		This section provides an overview of the current state of knowledge regarding observational data obtained from SSS.  It explores the key findings and challenges associated with analysing these data, drawing upon the latest research in the field.
         %A brief summary of the current literature concerning the study of observational data from SSS is discussed in the current section.
         
         \subsection{Supersoft X-ray Sources as a New Class of Luminous X-ray Sources} \label{introduction:current_status:new-class}
@@ -51,19 +56,19 @@
         	\end{equation}
         	where $L_{37.5}$ is the X-ray luminosity in units of $10^{37.5}$ erg/s, and $T_e$ is the effective temperature in electron volts.
         	
-        	Applying in equation (\ref{SSS-model:star-radius}) the characteristic values of SSS, i.e. $L_{37.5}=1$ and $T_e=40$, results in a radius of approximately 9000 km, closely resembling the size of a white dwarf. This similarity in radius, analogous to the relationship between accretion onto neutron stars or black holes in classical X-ray binaries, strongly suggests that SSS are also powered by accretion onto a white dwarf primary.        	
+        	Applying in equation (\ref{SSS-model:star-radius}) the characteristic values of SSS, i.e. $L_{37.5}=1$ and $T_e=40$, results in a radius of approximately 9000 km, closely resembling the size of a white dwarf. This similarity in radius, analogous to the relationship between accretion onto neutron stars or black holes in classical X-ray binaries, strongly suggests that SSS are also powered by accretion onto a white dwarf primary.
         	%Using the characteristic values for SSS, namely $L_{37.5}=1$ and $T_e=40$ in equation (\ref{SSS-model:star-radius}), we obtain that the radius of the emitting object is around 9000 km, \emph{which is similar to that of a white dwarf}. Analogous to accreting neutron stars and black holes in classical X-ray binaries, this suggests that supersoft X-rays are generated by the accretion of matter onto a white dwarf.
         	
         	Van den Heuvel (1992) proposed a model in which white dwarfs with masses in the range $0.7-1.4\,M_{\odot}$, accreting matter at rates of approximately $\sim 1-5\times 10^{-7}\,M_{\odot}\,yr^{-1}$, produce the observed supersoft X-ray emission \cite{vandenHeuvel92}. These models are envisioned as binary systems where the accreting white dwarf is accompanied by either a main-sequence star with a mass in the range $1.4-1.5\,M_{\odot}$ or a post-main-sequence star with a mass $1.5-2\,M_{\odot}$. Theoretical calculations indicate that Roche lobe overflow in these systems would lead to mass transfer rates from the companion stars consistent with the observed values, being $\sim 10^{-7}\,M_{\odot}\,yr^{-1}$ and $\sim 4 \times 10^{-7}\,M_{\odot}\,yr^{-1}$ respectively. Furthermore, the estimated X-ray lifetimes for such systems are around $\sim 10^{7}$ years.
         	%Van den Heuvel argued that for white dwarf masses in the range $0.7-1.4\,M_{\odot}$ and with mass accretion rates in the range $\sim 1-5\times 10^{-7}\,M_{\odot}\,yr^{-1}$, supersoft X-rays are produced \cite{vandenHeuvel92} (here $M_{\odot}$ refers to solar mass). In such models, it is assumed that the mass-accretor is the white dwarf, and the companion star is a main-sequence star with a mass in the range $1.4-1.5\,M_{\odot}$ or a post-main-sequence star with a mass in the range $1.5-2\,M_{\odot}$. Theoretically, the mass-transfer rates by Roche-lobe overflow for these companion masses were derived to be $\sim 10^{-7}\,M_{\odot}\,yr^{-1}$ and $\sim 4 \times 10^{-7}\,M_{\odot}\,yr^{-1}$ respectively. The X-ray lifetimes were determined to be $\sim 10^{7}$ years.
         	
-        	Nomoto's (1982) seminal work elucidated the diverse nature of nuclear burning processes occurring on the surfaces of accreting white dwarfs. Based on the interplay between accretion rate and white dwarf mass, he identified three distinct burning regimes \cite{nomoto82}. These regimes, graphically illustrated in figure \ref{fig:regimes-wd}, encompass a spectrum of thermonuclear activity, ranging from stable hydrogen burning to explosive helium flashes and detonations.       	
+        	Nomoto's (1982) seminal work elucidated the diverse nature of nuclear burning processes occurring on the surfaces of accreting white dwarfs. Based on the interplay between accretion rate and white dwarf mass, he identified three distinct burning regimes \cite{nomoto82}. These regimes, graphically illustrated in figure \ref{fig:regimes-wd}, encompass a spectrum of thermonuclear activity, ranging from stable hydrogen burning to explosive helium flashes and detonations.
         	%Nomoto showed that there are 3 possible regimes of nuclear burning in the surface layers of a white dwarf (depicted in Figure \ref{fig:regimes-wd}), depending on the accretion rate and the white dwarf mass \cite{nomoto82}. These regimes are summarized as follows, for a white dwarf with solar mass:
         	
         	\begin{figure}[h!]
         		\begin{center}
         			\includegraphics[scale=1.2]{sss-regimes.eps}
-        			\caption{The regimes of nuclear burning in the surface layers of a white dwarf}
+        			\caption{Regimes of nuclear burning in surface layers of a white dwarf}
         			\label{fig:regimes-wd}
         		\end{center}
         	\end{figure}
@@ -154,30 +159,76 @@
 				%In the circumstellar material surrounding the nova system, the expanding nova shell and/or a nova wind interact with pre-existing material of with each other. In this mechanism, as per Balman \emph{et al.} \cite{balman98}, strong shocks giving rise to a thermal \emph{bremsstrahlung} SED with temperatures up to several keV may be expected.
 
     \section{Statement of the Research Problem} \label{introduction:problem_statement}
-    	To understand the nature of binary systems emitting supersoft X-rays by the analysis of their spectra and the study of their variabilities in X-ray and ultraviolet wavelengths.
+    	To understand the nature of binary systems emitting supersoft X-rays by the analysis of their spectra and the study of their variabilities in X-ray and visible/ultraviolet regimes.
         
     \section{Hypothesis} \label{introduction:hypothesis}
-    	The radiative processes are much complex than previously assumed and could include non-steady states, NLTE and stellar winds.
+    	The radiative processes governing supersoft X-ray sources are much complex than previously assumed and could include non-steady states, NLTE and stellar winds.
     
     \section{Objectives of the Study} \label{introduction:objectives}
     	\begin{enumerate}
-			\item To study different models for spectral fitting of the list of sources.
-			\item To study the temporal variability of the list of sources.
-			\item To propose and calculate novel stellar atmospheric models and generate the associated synthetic spectra.
-			\item To develop corresponding software models that can be used in XSPEC.
-			\item To compute stellar parameters for the list of sources using the best-fit models.
-			\item To propose models for the interstellar medium by studying the absorption edges in the observed spectra of the identified sources.
-		\end{enumerate}
+    		\item To develop a robust and consistent model that accurately fits the continuum spectra of supersoft X-ray sources (SSS) across different sources, and using multi-observatory science data.
+    		
+    		\item To demonstrate that the spectra of SSS within the 0.2--1.0 keV photon energy range can be satisfactorily modeled using Non-Local Thermodynamic Equilibrium (NLTE) components, and to validate this approach across multiple sources.
+    		
+    		\item To investigate and distinguish the absorption components due to the source atmosphere and the interstellar medium (ISM) in the spectra of SSS from both the Milky Way and the Large Magellanic Cloud (LMC).
+    		
+    		\item To compute stellar parameters for the selected SSS using the best-fit models, thereby constraining their luminosities, effective temperature and column densities.
+    		
+    		\item To investigate and distinguish the absorption components due to the source atmosphere and the interstellar medium (ISM) in the spectra of SSS from both the Milky Way and the Large Magellanic Cloud (LMC).
+    		
+    		\item To identify and analyze the differences in spectral characteristics, such as absorption edges, between SSS in the Milky Way and those in the LMC, and to understand the underlying reasons for these differences.
+    		
+    		\item To develop a software tool that accesses publicly available atomic data and overlays the relevant atomic lines on the grating spectra of SSS, thereby facilitating preliminary line identification for astronomers.
+    		
+    		\item To study a grid of models for fitting the grating spectra of SSS, comparing their fitting statistics.
+    	\end{enumerate}
+%    	\begin{enumerate}
+%			\item To study different models for spectral fitting of the list of sources.
+%			\item To study the temporal variability of the list of sources.
+%			\item To propose and calculate novel stellar atmospheric models and generate the associated synthetic spectra.
+%			\item To develop corresponding software models that can be used in XSPEC.
+%			\item To compute stellar parameters for the list of sources using the best-fit models.
+%			\item To propose models for the interstellar medium by studying the absorption edges in the observed spectra of the identified sources.
+%		\end{enumerate}
     
     \section{Significance of the Study} \label{introduction:significance}
-        Different observations of SSS, separated from each other by months, exhibit new SSS and, more importantly, only a few members which are common to previous observations. This clearly implies that such sources have ``on/off'' phases that take place over time intervals spanning months. It is indeed certain that, with continuous monitoring of SSS over time-frames in decades, the number of SSS discovered would increase dramatically.
-        
-        Study of the X-ray variability of SSS is expected to provide valuable clues to the dynamics of the SSS -- not only for those already well-studied, but also for newly-discovered sources for which satisfactory models are yet to be arrived at. Simultaneously, the study of the features present in their spectra, using robust models, promises to shed light on the physics behind the processes taking place in SSS. In addition, a careful study of the absorption edges, due to various metals, exhibited in their high-resolution spectra can provide clues to the structure and composition of the intervening interstellar medium.
-        
-        Our present understanding of nuclear-burning white dwarfs and progenitors of type Ia supernovae explosions can evolve significantly with further monitoring and study of SSS. The reason for this being the fact that these are observed to be accompanied by a phase of supersoft X-ray emission.
+    	The study of SSS is crucial for understanding the physics and evolution of compact binary systems, such as white dwarfs and their interactions with companion stars. This research addresses several key challenges in modeling the spectra of SSS, providing significant advancements in the field of high-energy astrophysics.
+    	
+    	Firstly, developing a robust and consistent model that accurately fits the continuum spectra of SSS across different sources and using multi-observatory data is fundamental to obtaining reliable measurements of their physical parameters. This helps in better understanding the nature of these sources, their life-cycle, and their role in the broader context of stellar evolution.
+    	
+    	Secondly, demonstrating that the spectra of SSS within the 0.2--1.0 keV photon energy range can be satisfactorily modelled using Non-Local Thermodynamic Equilibrium (NLTE) components fills a crucial gap in current astrophysical models. NLTE modeling provides a more accurate representation of the physical conditions in the atmospheres of SSS, leading to more precise determinations of their effective temperatures, luminosities, and column densities. Additionally, the spectra fitted within this range can be extrapolated to lower energies (or higher wavelengths) and compared with observations made in the UV/optical regime. This cross-validation enhances the reliability of the models and provides a comprehensive understanding of the sources across different wavelengths.
+    	
+    	Thirdly, investigating the absorption components due to the source atmosphere and the interstellar medium (ISM) in the spectra of SSS from both the Milky Way and the Large Magellanic Cloud (LMC) adds another layer of understanding regarding the interaction of X-ray photons with intervening matter. This not only enhances our comprehension of the local environments of these sources but also provides insights into the composition and distribution of the ISM in different galactic environments.
+    	
+    	Additionally, by computing stellar parameters using best-fit models, the study places constraints on the luminosities, effective temperatures, and column densities of SSS, contributing valuable data to the field of stellar astrophysics. Identifying and analyzing differences in spectral characteristics, such as absorption edges, between SSS in the Milky Way and those in the LMC, sheds light on the unique astrophysical processes at play in different galactic contexts.
+    	
+    	Furthermore, the development of a software tool for preliminary line identification using publicly available atomic data is a significant contribution to the astronomical community. This tool facilitates the identification of key atomic lines in grating spectra, enabling more detailed and accurate spectral analysis.
+    	
+    	Finally, by studying a grid of models for fitting the grating spectra of SSS and comparing their fitting statistics provides a comprehensive evaluation of different modeling approaches, ensuring the selection of the most appropriate models for accurate spectral fitting.
+%        Different observations of SSS, separated from each other by months, exhibit new SSS and, more importantly, only a few members which are common to previous observations. This clearly implies that such sources have ``on/off'' phases that take place over time intervals spanning months. It is indeed certain that, with continuous monitoring of SSS over time-frames in decades, the number of SSS discovered would increase dramatically.
+%        
+%        Study of the X-ray variability of SSS is expected to provide valuable clues to the dynamics of the SSS -- not only for those already well-studied, but also for newly-discovered sources for which satisfactory models are yet to be arrived at. Simultaneously, the study of the features present in their spectra, using robust models, promises to shed light on the physics behind the processes taking place in SSS. In addition, a careful study of the absorption edges, due to various metals, exhibited in their high-resolution spectra can provide clues to the structure and composition of the intervening interstellar medium.
+%        
+%        Our present understanding of nuclear-burning white dwarfs and progenitors of type Ia supernovae explosions can evolve significantly with further monitoring and study of SSS. The reason for this being the fact that these are observed to be accompanied by a phase of supersoft X-ray emission.
     
     \section{Contribution of the Thesis} \label{introduction:thesis_contribution}
-        The present study obtains an unprecedented model fit of the complex high-resolution spectrum of the source named \mrvel\ with the RGS instrument of the XMM-Newton observatory. In the process, we propose a hypothesis for the physical processes that govern the radiation from this particular X-ray binary. We also apply a similar spectral study on other supersoft X-ray sources with similar spectral characteristics.
+    	The current thesis makes several important contributions to the field of high-energy astrophysics, particularly in the study of supersoft X-ray sources:
+    	\begin{enumerate}[I.]
+    		\item \textbf{Development of a Robust Spectral Model:} The current thesis presents a robust and consistent model that accurately fits the continuum spectra of SSS across different sources using data from multiple observatories. This model provides a reliable framework for analyzing and interpreting SSS spectra.
+    		
+    		\item \textbf{Validation of NLTE Modeling:} By demonstrating that the spectra of SSS within the 0.2--1.0 keV photon energy range can be satisfactorily modeled using NLTE components, this research validates a crucial approach for studying the physical conditions in the atmospheres of these sources. This contributes to more accurate determinations of their temperatures and luminosities. Moreover, the extrapolation of these models to UV/optical observations strengthen the consistency and reliability of the models.
+    		
+    		\item \textbf{Analysis of Absorption Components:} The investigation into the absorption components due to the source atmosphere and the ISM in the spectra of SSS from both the Milky Way and the LMC provides a deeper understanding of the interactions between X-ray photons and intervening matter. This analysis enhances our knowledge of the local environments of SSS and the ISM's composition in different galaxies.
+    		
+    		\item \textbf{Computation of Stellar Parameters:} The thesis provides precise computations of stellar parameters for the selected SSS, including luminosities, effective temperatures, and column densities. These results are valuable for constraining models of these sources and understanding their physical properties.
+    		
+    		\item \textbf{Identification of Spectral Absorption Edges:} By identifying and analyzing differences in absorption edges, between SSS in the Milky Way and those in the LMC, the research offers insights into the unique astrophysical processes in different galactic environments. This helps explain the variations in the observed spectra of SSS.
+    		
+    		\item \textbf{Development of a Line Identification Tool:} The development of a Python-based software tool\footnote{\url{https://github.com/pararover/xmmrgs_lines}} that accesses atomic data and overlays relevant atomic lines on the grating spectra of SSS is a practical contribution. This tool aids astronomers in performing preliminary line identification, facilitating further spectral analysis and interpretation.
+    		
+    		\item \textbf{Evaluation of Spectral Models:} By studying a grid of models for fitting the grating spectra of SSS and comparing their fitting statistics, the thesis provides a comprehensive evaluation of different modeling approaches. This ensures the selection of the most suitable models for accurate spectral fitting, enhancing the reliability of spectral analysis.
+    	\end{enumerate}
+        %The present study obtains an unprecedented model fit of the complex high-resolution spectrum of the source named \mrvel\ with the RGS instrument of the XMM-Newton observatory. In the process, we propose a hypothesis for the physical processes that govern the radiation from this particular X-ray binary. We also apply a similar spectral study on other supersoft X-ray sources with similar spectral characteristics.
     
     %\section{Organization of the Thesis} \label{introduction:thesis_organization}
     %    \lipsum[10]

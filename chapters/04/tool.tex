@@ -8,7 +8,7 @@
     The identification of absorption and emission lines due to atomic species in the spectra of a X-ray binaries can reveal a wealth of information regarding the composition and physics of the stellar atmosphere. With the availability of high-resolution X-ray spectra from the RGS equipment on-board the XMM-Newton satellite, the study of such lines offers valuable diagnostics into the behaviour and evolution of the source object. Currently, data related to various atomic transitions, which lead to line formation, are made publicly available in the form of credible databases, one of them being the Atomic Spectra Database (ASD) at the National Institute of Standards and Technology (NIST). In this chapter, we present the development of a Python-based tool that accesses the relevant atomic data at NIST ASD for a given set of atomic species in a specific wavelength range and then overlays these lines on top of an X-ray spectrum obtained by the RGS spectrum of the XMM-Newton. With this tool, the astronomer can perform the important preliminary task of rudimentary line identification, before proceeding to advanced analysis of the X-ray data.
     
     \section{Introduction} \label{tool:intro}
-    	XMM-Newton is an X-ray space observatory which was launched by the European Space Agency on December 10, 1999. It is designed to be a high throughput X-ray spectroscopy mission with spectral resolution of up to 0.025 \AA\ at 1 keV from the Reflection Grating Spectrometer (RGS) detectors and an angular resolution of up to 1.1 arcsec from the European Photon Imaging Cameras (EPIC) \cite{ehle2003xmm,jansen2001xmm}. With a bandpass of 5--38 \AA, corresponding to the energy range 0.33--2.5 keV, the spectra detected by RGS spans a substantial number of X-ray emission lines, which include the K-shell transitions and He-like triplets of light elements, such as C, N, O, Ne, Mg and Si, as well as the L-shell transitions of heavier elements like Fe and Ni. These factors enable the RGS spectra to be useful as diagnostic tools that can be used to investigate the physical conditions as well as the composition of the source of the spectra.
+    	XMM-Newton is an X-ray space observatory which was launched by the European Space Agency on December 10, 1999. It is designed to be a high throughput X-ray spectroscopy mission with spectral resolution of up to 0.025 \AA\ at 1 keV from the \textit{Reflection Grating Spectrometer} (RGS) detectors and an angular resolution of up to 1.1 arcsec from the \textit{European Photon Imaging Cameras} (EPIC) \cite{ehle2003xmm,jansen2001xmm}. With a bandpass of 5--38 \AA, corresponding to the energy range 0.33--2.5 keV, the spectra detected by RGS spans a substantial number of X-ray emission lines, which include the K-shell transitions and He-like triplets of light elements, such as C, N, O, Ne, Mg and Si, as well as the L-shell transitions of heavier elements like Fe and Ni. These factors enable the RGS spectra to be useful as diagnostic tools that can be used to investigate the physical conditions as well as the composition of the source of the spectra.
     
     \section{Working with RGS Data Files} \label{tool:rgs-files}
         The RGS spectra are available in the public domain in the \textit{Flexible Image Transport System} (FITS) file format \cite{chiappetti2018definition}, which is an open standard describing the digital file format for the storage, transmission and processing of data – formatted as multi-dimensional columns of tables. In spite of having the word `image' in its acronym, FITS files are most often used to store non-image data as well. This standard was designed, keeping in mind specifically astronomical data, namely images, spectra, lightcurves, photon lists, event lists, and source lists. In order to download the raw science data collected by XMM-Newton for any given source, there are two options:
@@ -26,7 +26,7 @@
             \item To estimate the elemental abundances (from the presence of specific lines) and the radial velocity of the emitting material (from the Doppler shifts).
             \item To allow the user to develop models for the individual lines and thereby engineer composite theoretical models which are more phenomenological as opposed to traditional approaches \cite{ness2020complications}.
         \end{enumerate}
-        As present, while there are available codes that enable the parsing of atomic line data from NIST ASD (such as the \texttt{nist-asd} Python package on PyPI) or object-oriented interface for Xspec (i.e. PyXspec), there is a lack of tools or codes that allow \textit{a priori} identification of spectral lines identification.
+        As present, while there are available codes that enable the parsing of atomic line data from NIST ASD (such as the \texttt{nist-asd} Python package on PyPI) or object-oriented interface for XSPEC (i.e. PyXspec), there is a lack of tools or codes that allow \textit{a priori} identification of spectral lines identification.
         
         In order get started, one first needs to obtain data of the atomic lines from credible databases, such as the \textit{Atomic Spectra Database} (ASD)\footnote{\url{https://www.nist.gov/pml/atomic-spectra-database}} at the \textit{National Institute of Standards and Technology} (NIST)\footnote{\url{https://www.nist.gov/}} \cite{ralchenko2008nist} and \textit{The Opacity Project online atomic database} (TOPbase)\footnote{\url{https://cds.unistra.fr/topbase/topbase.html}} \cite{cunto1993topbase}. To obtain this data, one may either use the web service provided to send queries to these databases, or one may use the relevant methods in various Python modules.
         
@@ -35,7 +35,7 @@
         \subsection{Extraction of RGS Spectra} \label{tool:rgs-files:extraction}
         
             \subsubsection{Obtaining source-specific science data} \label{tool:rgs-files:extraction:data}
-                XMM-Newton data is publicly available at the online multi-mission science data archive known as HEASARC (\url{https://heasarc.gsfc.nasa.gov/}). The easiest way to access relevant data for any specific source is by using its browse service at \url{https://heasarc.gsfc.nasa.gov/db-perl/W3Browse/w3browse.pl} where one can enter the name of the source (or its right ascension and declination, if these are known) and the mission name (such as XMM-Newton or Chandra). One can supply additional information about the source as well, such as the observation dates. The more specific the query, the lesser would be the time taken to access and download the data.
+                XMM-Newton data is publicly available at the online multi-mission science data archive known as HEASARC\footnote{\url{https://heasarc.gsfc.nasa.gov/}}. The easiest way to access relevant data for any specific source is by using its browse service\footnote{\url{https://heasarc.gsfc.nasa.gov/db-perl/W3Browse/w3browse.pl}} where one can enter the name of the source (or its right ascension and declination, if these are known) and the mission name (such as XMM-Newton or Chandra). One can supply additional information about the source as well, such as the observation dates. The more specific the query, the lesser would be the time taken to access and download the data.
                 
                 HEASARC provides the relevant data products in the form of a \texttt{.tar} file, which may then be extracted to obtain the \textit{Observation Data Files} (ODF), in case of XMM-Newton.
             
@@ -48,7 +48,7 @@
             One of the outputs of the \texttt{rgsproc} task are two fluxed spectra -- one for each spectral order. Each of these files contain the spectra fluxed from both the RGS instruments. One must bear in mind that these fluxed spectra are inherently just a qualitative summary of the data, and should not be used for quantitative analysis. However, in the current work, because the objective is to merely aid the user in the identification of atomic lines -- which could be a preliminary step before serious spectral modeling, these fluxed spectra are more than sufficient as input files.
             
             \subsubsection{The \texttt{astropy} Python module} \label{tool:rgs-files:access:astropy}
-                The fluxed spectrum file is saved in the FITS format. So the appropriate way to read its contents and extract the data is by using \texttt{astropy} \cite{robitaille2013astropy}, which is an open-source and community-developed Python package providing various functionalities that are important to astronomical applications.
+                The fluxed spectrum file is saved in the FITS format. So the appropriate way to read its contents and extract the data is by using \texttt{astropy}\footnote{\url{https://www.astropy.org/}} \cite{robitaille2013astropy}, which is an open-source and community-developed Python package providing various functionalities that are important to astronomical applications.
                 
                 The \texttt{astropy.io.fits} package provides the user with access to FITS files. One first reads the list of \textit{header data units} (HDU), which is the highest level component of a FITS file -- consisting of a header and a table (or data array). This can be done using the \texttt{astropy.io.fits.open()} function which takes the FITS filename as input and returns an object of the \texttt{HDUList} class -- a list-like collection of HDUs.
             
@@ -63,15 +63,15 @@
             So a code for qualitative atomic line identification in a spectrum becomes more reliable if it is able to access the current atomic data available online. This work achieves this objective by retrieving data for atomic transitions directly from ASD at NIST during runtime. So it is important to have an internet connection available while running the code for the first time or when one modifies the list of ions considered. As long as one keeps running the code subsequently on the same terminal session, using an unaltered ion list, the code would proceed to use the atomic data which is cached locally and one may work offline in that case.
             
             \subsubsection{The astroquery Python module} \label{tool:rgs-files:line-collection:astroquery}
-                Atomic data from NIST can be accessed using the \texttt{astroquery} module \cite{ginsburg2019astroquery}, which uses the Python requests package for making HTTP requests and utilizes the data parsing functionality of the \texttt{astropy} package. The NIST ASD can be sent query requests and data retrieved therefrom using the \texttt{astroquery.nist} module.
+                Atomic data from NIST can be accessed using the \texttt{astroquery} module\footnote{\url{https://astroquery.readthedocs.io/en/latest/}} \cite{ginsburg2019astroquery}, which uses the Python requests package for making HTTP requests and utilizes the data parsing functionality of the \texttt{astropy} package. The NIST ASD can be sent query requests and data retrieved therefrom using the \texttt{astroquery.nist} module.
             
             \subsubsection{Reading atomic line data from NIST} \label{tool:rgs-files:line-collection:NIST}
-                The \texttt{astroquery.nist.Nist.query()} function provides an easy way to send HTML requests to NIST ASD. This function takes, as inputs, the lower and upper wavelength values and the name of the ion to be considered. One can also make use of the \texttt{astropy.units.AA} attribute to convert the wavelength value to \AA units.
+                The \texttt{astroquery.nist.Nist.query()} function provides an easy way to send HTML requests to NIST ASD. This function takes, as inputs, the lower and upper wavelength values and the name of the ion to be considered. One can also make use of the \texttt{astropy.units.AA} attribute to convert the wavelength value to \AA\ units.
                 
                 This function returns an object of the \texttt{astropy.table.Table} class. Then individual table rows can be accessed by the indexing syntax. The elements of a row can be subsequently accessed using the corresponding column header as a dictionary key. For instance, if the object named \texttt{ion\_table} stores the output of the \texttt{query()} function, then one can access the Ritz wavelength on the 17$^\text{th}$ row as \texttt{ion\_table[16]['Ritz']}.
         
         \subsection{Demonstration} \label{tool:rgs-files:demonstration}
-            What follows is a demonstration of the developed tool using the flux spectrum of the galactic luminous supersoft X-ray source RX J0925.7-4758, which was discovered in the Galactic Plane Survey of the ROSAT All-Sky Survey \cite{motch1994}. The specific observations were made during 16-17 December 2000 with the RGS exposures being carried out for a duration of 61.2 ks \cite{motch02} under the observation ID 0111150101. The ODF files were downloaded from HEASARC and RGS data were processed using the SAS task \texttt{rgsproc} under default settings.
+            What follows is a demonstration of the developed tool using the flux spectrum of the galactic luminous supersoft X-ray source RX J0925.7-4758, which was discovered in the Galactic Plane Survey of the ROSAT All-Sky Survey \cite{motch1994}. The specific observations were made during 16--17 December 2000 with the RGS exposures being carried out for a duration of 61.2 ks \cite{motch02} under the observation ID 0111150101. The ODF files were downloaded from HEASARC and RGS data were processed using the SAS task \texttt{rgsproc} under default settings.
             
             For the identification of atomic lines for specfic ion stages present in the spectrum, the fluxed spectrum file named \texttt{P0111150101OBX000fluxed1000.FIT} (produced by \texttt{rgsproc}) is sufficient for the code to work. This specific file fluxes together the first-order spectra from both the RGS instruments. A copy of this file is provided with the distribution of the code for the user to reproduce the demonstrations that follow, as well as to try out variations of the run.
             
@@ -93,12 +93,12 @@
                 
                 \begin{figure}[h!]
     				\centering
+    				\includegraphics[width=0.9\textwidth]{images/mrvel_preview}
     				\caption{Preview of fluxed spectrum}
     				\label{fig:spec-preview}
-    				\includegraphics[width=0.8\textwidth]{images/mrvel_preview}
 			    \end{figure}
 			    
-			    As it can be seen from the preview in figure \ref{fig:spec-preview}, there seems to be plenty of information in the vicinity of 6 \AA. But this is not usable because it is just noise arising from the low effective area of the RGS instrument in the low wavelength region which severely limits the resolving power of the RGS instrument, as described in the XMM-Newton User Handbook \cite{xmmUserHandbook}. Also, the region above 26 \AA~has a very low SNR. Looking at the wavelength region between 10 \AA~and 26 \AA~one can clearly visualise a typical spectrum as expected from a luminous X-ray binary source with a good SNR. These wavelength limits are subsequently taken as inputs from the user by the method \texttt{get\_wave\_limits}.
+			    As it can be seen from the preview in figure \ref{fig:spec-preview}, there seems to be plenty of information in the vicinity of 6 \AA. But this is not usable because it is just noise arising from the low effective area of the RGS instrument in the low wavelength region which severely limits the resolving power of the RGS instrument, as described in the XMM-Newton Users Handbook\footnote{\url{https://xmm-tools.cosmos.esa.int/external/xmm_user_support/documentation/uhb/node1.html}} \cite{xmmUserHandbook}. Also, the region above 26 \AA~has a very low SNR. Looking at the wavelength region between 10 \AA~and 26 \AA~one can clearly visualise a typical spectrum as expected from a luminous X-ray binary source with a good SNR. These wavelength limits are subsequently taken as inputs from the user by the method \texttt{get\_wave\_limits()}.
 			 
             \subsubsection{Line list within chosen wavelength range} \label{tool:rgs-files:demonstration:linelist}
                 One needs the line list from the NIST database for the given list of ions within a chosen wavelength range. To achieve this, a method called \texttt{get\_lines()} is provided. This takes, as input arguments, the lower and upper wavelength values (in \AA). It uses the list of ions provided in the file \texttt{ion.list}, which is accessed by the script using the \texttt{ASTRODAT} environment variable. Then it queries the NIST database using the \texttt{astroquery.nist.Nist.query()} method.
@@ -122,9 +122,9 @@
                 
                 \begin{figure}[h!]
     				\centering
-    				\caption{Line-overlaid spectrum -- output of \texttt{plot\_spectrum()} method}
-    				\label{fig:line-overlay}
     				\includegraphics[width=\textwidth]{images/mrvel_line-overlay}
+    				\caption{Line-overlaid spectrum using the \texttt{plot\_spectrum()} method}
+    				\label{fig:line-overlay}
 			    \end{figure}
                 
                 This method produces a set of three subplots: a plot of the spectrum only, a map of the lines within the wavelength region and a plot of the spectrum with the pertinent lines overlaid. The output of this code for the fluxed spectrum of RX J0925.7-4758 is shown in figure \ref{fig:line-overlay}. As expected, one can observe a profusion of spectral lines due to K-shell transitions of N and O, and due to L-shell transitions of the heavier element Fe. Such an overlay of spectral lines provides a grid of markers of prominent lines. But the actual presence of any line in the spectrum may be latched on to after a closer inspection of sub-regions, as described in \S\ref{tool:rgs-files:demonstration:roi}.
@@ -138,9 +138,9 @@
                 
                 \begin{figure}[h!]
     				\centering
+    				\includegraphics[width=\textwidth]{images/mrvel_rois}
     				\caption{Partitioning of the fluxed spectrum within specific regions of interest}
     				\label{fig:roi}
-    				\includegraphics[width=\textwidth]{images/mrvel_rois}
 			    \end{figure}
                 
                 Such an inspection of specific regions of interest was carried out for RX J0925.7-4758 and the resulting plots are shown in figure \ref{fig:roi}. One can observe here, for instance, two lines (one due to Fe XVII and the other due to O VIII) nearly overlapping with an emission line in the spectrum around 16.03  \AA. Further analysis of the flux of other lines due to both atomic species would resolve this ambiguity.
@@ -199,14 +199,51 @@
                                                   & {2s$^2$2p$^5$ $\longrightarrow$ 2s$^2$2p$^4$(3P)3d} & {14.3730*} \\ %\cline{2-3} 
                                                   & {2s$^2$2p$^5$ $\longrightarrow$ 2s$^2$2p$^4$(3P)3s} & {16.0050*} \\ \hline
                     \end{tabular}
+                    \begin{minipage}{16cm}
+						\vspace{0.1cm}
+						\small $^*$ Obtained from the Chianti database \cite{dere1997chianti}
+					\end{minipage}
                 \end{table}
                 \renewcommand{\arraystretch}{2.2}
                 
+                \begin{figure}[!htb]
+    				\centering
+    				\includegraphics[width=0.8\textwidth]{images/mrvel_N-lines}
+    				\caption{Velocity profiles of the Lyman $\alpha$, $\beta$, and $\gamma$ lines for N VI (left) and N VII (right)}
+    				\label{fig:vel-prof-N}
+			    \end{figure}
+			    
+			    \begin{figure}[!htb]
+    				\centering
+    				\includegraphics[width=0.8\textwidth]{images/mrvel_O-lines}
+    				\caption{Velocity profiles of the Lyman $\alpha$, $\beta$, and $\gamma$ lines for O VII (left) and O VIII (right)}
+    				\label{fig:vel-prof-O}
+			    \end{figure}
+			    
+			    \begin{figure}[!htb]
+    				\centering
+    				\includegraphics[width=0.8\textwidth]{images/mrvel_Fe-lines}
+    				\caption{Velocity profiles of three Fe XVII (left) and Fe XVIII (right) lines}
+    				\label{fig:vel-prof-Fe}
+			    \end{figure}
+                
                 Another method named \texttt{map\_spec\_to\_vel()} maps the $\lambda$ values to the  values in the vicinity of a particular line using the previously described methods. It takes as input arguments the central wavelength of the line $\lambda_0$, the lists containing the wavelengths, fluxes and errors, and an argument called \texttt{v\_lim} which defines the bounds of $v_\text{rad}$ values, the default value of which is $\pm$5000 km/s.
                 
-                Finally, the method named \texttt{plot\_doppler\_lines()} wraps all of these and plots the line profiles for all the lines given in table \ref{tab:line-list}. In case of RX J0925.7-4758, no lines of C V and C VI and also for N VI were detected within the chosen wavelength range. Shown in the following figures are the line profiles obtained for the N VII, O and Fe ions. The \texttt{plot\_doppler\_lines()} method takes, as input arguments, the symbol of the element (`C', `N', `O' or `Fe'), the list of wavelengths, fluxes and errors and the symmetric bound of the radial velocity about 0 (which corresponds to the line centre).
+                Finally, the method named \texttt{plot\_doppler\_lines()} wraps all of these and plots the line profiles for all the lines given in table \ref{tab:line-list}. In case of RX J0925.7-4758, no lines of C V and C VI and also for N VI were detected within the chosen wavelength range. Shown in the figures \ref{fig:vel-prof-N}, \ref{fig:vel-prof-O} and \ref{fig:vel-prof-Fe} are the line profiles obtained for the N VII, O and Fe ions. The \texttt{plot\_doppler\_lines()} method takes, as input arguments, the symbol of the element (`\texttt{C}', `\texttt{N}', `\texttt{O}' or `\texttt{Fe}'), the list of wavelengths, fluxes and errors and the symmetric bound of the radial velocity about 0 (which corresponds to the line centre).
                 
                 It also takes another argument named mode which serves to draw a dotted vertical line marker either through the lowest flux or the highest flux or both (within the range of radial velocities considered). Either of these options may be chosen by setting \texttt{mode=`abs'} (default value) or \texttt{mode=`ems'} respectively. One can also set \texttt{mode=`Pcyg'} to display both the markers simultaneously. However, one must be cautious while drawing any conclusions about the true position of the line centre from these markers because its position is merely ascertained from the flux values and are meant only to aid the user to get started with an approximate indication about the nature of the shift. For a more accurate evaluation, one needs to rely on a detailed quantitative analysis of the spectrum by using theoretical models.
+                
+    \subsection{Distribution} \label{tool:rgs-files:distribution}
+    	The current version of the entire Python tool is publicly available for download and free use on Github at
+    	\begin{center}
+    		\url{https://github.com/pararover/xmmrgs_lines}
+    	\end{center}
+    	By making the code publicly available, critical evaluation and suggestions are desired, which would enable further improvement to the code. Future versions of the code would evolve on the basis of such feedback from an open community.
+    	
+    \subsection{Future scope} \label{tool:rgs-files:scope}
+    	At present, the code is designed to work only with the RGS fluxed spectra from XMM-Newton. While there is no plan to extend its application to binned spectra, it is however planned that future versions of the code would be extended to work on the X-ray spectra from the EPIC MOS and PN instruments of XMM-Newton.
+    	
+    	Currently, the range of velocity profiles produced by the code is highly restrictive -- it provides the same only for the first three Lyman lines for the H-like and He-like ion stages of C, N, O and Fe only. In future versions, the authors intend to introduce further generalization by allowing the same for any ground transition of any ion, provided any line for the same exists within the chosen wavelength range. The filtering of lines, however, is planned to remain on ground transitions only. The reason for this being that transitions between excited states are much less likely. Also, it is planned that lines could be additionally filtered out on the basis of transition probability -- this would help reduce the cluttering of Fe lines in the lower wavelengths (see the 10 \AA\ -- 16 \AA\ range in figure \ref{fig:line-overlay}).
     
     \section{Stellar Winds from Hot Luminous Massive Stars} \label{tool:stellar-winds}
         Hot luminous massive stars are those with effective temperatures $\sim 10000-50000$ K (i.e. spectral type A0 - O2), luminosities $\sim 10^{37}-10^{39}$ erg/s and masses $\sim 10-50$ M$_\odot$. At the end of their lifetime, such star could collapse as supernovae. If $F$ is the energy flux received at the telescope and $E$ is the energy radiated by the star, knowing the luminosity of such a star one can then use the ratio $\dfrac{F}{E}$ to determine their distances. This enables us to estimate the distances of the galaxies which the stars belong to.
@@ -236,18 +273,18 @@
 		The physical mechanism which initiates and drives the outflow of matter from hot stars is known as radiative line driving. Given below is a qualitative description of the physical mechanism behind this process.
 		\begin{figure}[h!]
 			\centering
-			\caption{Principle of radiative line driving}
-			\label{rad-line-drive-principle}
 			\subfloat[Absorption of photon \label{rad-line-drive:absorption}]{\includegraphics[scale=0.7]{rad-line-drive-01}} \hfill
 			\subfloat[Excitation of atom \label{rad-line-drive:excitation}] {\includegraphics[scale=0.7]{rad-line-drive-02}} \hfill
 			\subfloat[Re-emission of photon \label{rad-line-drive:reemission}] {\includegraphics[scale=0.8]{rad-line-drive-03}}\\ %\hfill
+			\caption{Principle of radiative line driving}
+			\label{rad-line-drive-principle}
 		\end{figure}
 		
 		\begin{figure}[h!]
 			\centering
+			\includegraphics[scale=1.0]{rad-line-drive-04}
 			\caption{Momentum transfer during radiative line driving}
 			\label{rad-line-drive-momentum}
-			\includegraphics[scale=1.0]{rad-line-drive-04}
 		\end{figure}
 		Figure \ref{rad-line-drive-principle} depicts the interaction between the wind material (comprising of ions) and the photons emitted from the deeper layers of the stellar atmosphere, known as the photosphere. The transfer of momentum from the photons to the ions takes place in three steps:
 		\begin{enumerate}[i.]

@@ -6,60 +6,112 @@
     \end{center}
 
 	\section{RGS Spectra from XMM-Newton} \label{hi-resolution:rgs-spec}
-		X-ray data with high spectral resolution in the range 100 to 500 FWHM in the energy range 0.33-2.5 keV can be obtained using the RGS instruments on board the XMM-Newton satellite. In this energy range, there is a multitude of X-ray emission lines, which include the K-shell transitions and He-line triplets of light elements, such as C, N, O, Ne, Mg and Si. This energy range also includes the L-shell transitions of heavier elements such as Fe and Ni. Consequently, the RGS spectra have immense use as diagnostic tools which can be used to further investigate the high-energy physics in the emitting material \cite{xmmUserHandbook}.
+		X-ray astronomy provides a powerful tool for studying the universe's most energetic phenomena. However, a complete understanding often requires detailed information about the elemental composition and physical conditions within the emitting region. This is where high-resolution X-ray spectroscopy shines, allowing us to dissect the X-ray emission line by line.
 		
-		\begin{figure}[h!]
-			\centering
-			\includegraphics[width=0.9\textwidth]{xmm-rgs.png}
-			\caption{Schematic of the RGS instruments of XMM-Newton}
-			\label{xmm-rgs-instrument}
-		\end{figure}
+		The Reflection Grating Spectrometers (RGS) onboard the XMM-Newton satellite offer exceptional capabilities in this domain\footnote{\url{https://www.cosmos.esa.int/web/xmm-newton/technical-details-rgs}}. These instruments achieve resolving powers (ability to distinguish close-lying spectral lines) in the range of 100 to 500 FWHM (Full Width at Half Maximum) within the energy band of 0.33-2.5 keV. This specific energy range is particularly rich in diagnostic information due to the presence of numerous emission lines:
+		\begin{itemize}
+			\item \textbf{K-shell transitions and He-like triplets:} These lines originate from the innermost electron shells (K-shell) of lighter elements like such as C, N, O, Ne, Mg and Si.
+			
+			\item \textbf{L-shell transitions:} Heavier elements like Iron (Fe) and Nickel (Ni) also contribute to the X-ray spectrum through their L-shell transitions within this energy range.
+		\end{itemize}
 		
-		The XMM-Newton satellite has three telescopes, out of which two are equipped with RGS instruments; these are referred to as RGS1 and RGS2. Each of these RGS instruments comprise of Reflection Grating Assemblies (RGAs) and RGS Focal Cameras (RFCs). These are referred to as \emph{grating stack} and \emph{CCD strip} in figure \ref{xmm-rgs-instrument}.
+		The wealth of emission lines within the RGS spectra may be considered to be like a ``fingerprint'',  revealing the elemental composition and physical conditions within the emitting plasma. By analyzing the line strengths, profiles, and shifts, one can:
+		\begin{enumerate}
+			\item \textit{Determine abundances}: The relative intensity of specific lines reflects the abundance of the emitting element within the source.
+			
+			\item \textit{Measure temperatures}:The broadening of emission lines can be attributed to the thermal Doppler effect,
+where hotter plasmas exhibit broader lines.
+			
+			\item \textit{Investigate densities}: Certain lines are sensitive to the density of the emitting gas.
+			
+			\item \textit{Identify redshift}: The systematic shift of all emission lines towards lower energies (redshift) indicates the object's distance from the observatory.
+		\end{enumerate}
 		
-		The light path of the two X-ray telescopes are focussed onto the EPIC MOS cameras at the primary focus. The RGAs intercept $\sim 58\%$ of the light on the light path and diffracts it to the RFCs at the secondary focus. In order to diffract the light, the RGAs have grating plates with groove densities of $\sim 645.6$ lines mm$^{-1}$. This produces the two prominent first and second order spectra with dispersion of 8.3 and 12.7 mm \AA$^{-1}$ at 15 \AA. The performance of various parameters of the RGS instruments, while in orbit, are summarised in the table \ref{xmm-rgs-performance}.
+		Therefore, XMM-Newton RGS observations provide a powerful diagnostic tool for studying a wide range of astrophysical phenomena, which include stellar coronae and winds, accretion disks and supernova remnants.
+		%X-ray data with high spectral resolution in the range 100 to 500 FWHM in the energy range 0.33-2.5 keV can be obtained using the RGS instruments on board the XMM-Newton satellite. In this energy range, there is a multitude of X-ray emission lines, which include the K-shell transitions and He-line triplets of light elements, such as C, N, O, Ne, Mg and Si. This energy range also includes the L-shell transitions of heavier elements such as Fe and Ni. Consequently, the RGS spectra have immense use as diagnostic tools which can be used to further investigate the high-energy physics in the emitting material \cite{xmmUserHandbook}.
 		
-		\begin{table}[h!]
-			\centering
-			\caption{In-orbit performance of RGS instruments}
-			\label{xmm-rgs-performance}
-			\begin{tabular}{l|l|ccc|ccc}
-				\hline
-				\multicolumn{2}{l|}{\multirow{2}{*}{\textbf{Parameter}}} & \multicolumn{3}{c|}{\textbf{RGS1}} & \multicolumn{3}{c}{\textbf{RGS2}} \\ \cline{3-8}
-				\multicolumn{2}{l|}{} & {10 \AA} & {15 \AA} & {35 \AA} & {10 \AA} & {15 \AA} & {35 \AA} \\ \hline
-				\multirow{2}{*}{Effective area (cm$^2$)} & {1$^\text{st}$ order} & {51} & {61} & {21} & {53} & {68} & {25} \\ %\cline{2-8}
-														 & {2$^\text{nd}$ order} & {29} & {15} & {--} & {31} & {19} & {--} \\ \hline
-				\multirow{2}{*}{Resolution (km s$^{-1}$)}& {1$^\text{st}$ order} & {1700} & {1200} & {600} & {1900} & {1400} & {700} \\ %\cline{2-8}
-														 & {2$^\text{nd}$ order} & {1000} & {700} & {--} & {1200} & {800} & {--} \\ \hline
-				\multirow{2}{*}{Wavelength range} & {1$^\text{st}$ order} & \multicolumn{6}{c}{5 -- 38 \AA (0.35 -- 2.5 keV)} \\ %\cline{2-8}
-												   & {2$^\text{nd}$ order} & \multicolumn{6}{c}{5 -- 20 \AA (0.62 -- 2.5 keV)} \\ \hline
-				\multirow{2}{*}{Wavelength accuracy} & {1$^\text{st}$ order} & \multicolumn{3}{c}{$\pm$5 m\AA} & \multicolumn{3}{c}{$\pm$5 m\AA} \\ %\cline{2-8}
-                                                  	  & {2$^\text{nd}$ order} & \multicolumn{3}{c}{$\pm$4 m\AA} & \multicolumn{3}{c}{$\pm$3 m\AA} \\ \hline
-				\multicolumn{2}{l|}{\multirow{2}{*}{Bin size {[}$3\times 3$ (27 $\mu$)$^2$ pixels{]}}} & \multicolumn{6}{c}{2.5 arcsec (cross dispersion direction)} \\ %\cline{3-8}
-				\multicolumn{2}{l|}{} & \multicolumn{6}{c}{7 -- 14 m\AA (dispersion direction, first order)} \\ \hline
-			\end{tabular}
-		\end{table}
+		\subsection{Technical specifications of the RGS instrument}		
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[width=0.9\textwidth]{xmm-rgs.png}
+				\caption{Schematic of the RGS instruments of XMM-Newton}
+				\label{xmm-rgs-instrument}
+			\end{figure}
+			
+			\subsubsection{RGS design and functionality}			
+				Each of the two XMM-Newton telescopes feeds light to a dedicated RGS instrument, referred to as RGS1 and RGS2. These instruments consist of two main parts:
+				\begin{enumerate}
+					\item \textbf{Reflection Grating Assemblies (RGAs):} These assemblies act as the heart of the RGS instruments. They comprise arrays of precisely manufactured grating plates with microscopic grooves etched onto their surfaces, which play a crucial role in diffracting incoming X-ray photons. In figure \ref{xmm-rgs-instrument}, these are referred to as \emph{grating stack}.
+					
+					\item \textbf{RGS Focal Cameras (RFCs):} Downstream from the RGAs lie the RFCs. These consist of long, linear Charge-Coupled Device (CCD) detectors. The diffracted X-rays from the gratings fall onto these CCDs, where they are converted into electronic signals and ultimately into a digital spectrum. They are referred to as \emph{CCD strip} in figure \ref{xmm-rgs-instrument}.
+				\end{enumerate}
+			
+				%The XMM-Newton satellite has three telescopes, out of which two are equipped with RGS instruments; these are referred to as RGS1 and RGS2. Each of these RGS instruments comprise of Reflection Grating Assemblies (RGAs) and RGS Focal Cameras (RFCs). These are referred to as \emph{grating stack} and \emph{CCD strip} in figure \ref{xmm-rgs-instrument}.
+				
+			\begin{table}[h!]
+				\centering
+				\caption{In-orbit performance of RGS instruments}
+				\label{xmm-rgs-performance}
+				\begin{tabular}{l|l|ccc|ccc}
+					\hline
+					\multicolumn{2}{l|}{\multirow{2}{*}{\textbf{Parameter}}} & \multicolumn{3}{c|}{\textbf{RGS1}} & \multicolumn{3}{c}{\textbf{RGS2}} \\ \cline{3-8}
+					\multicolumn{2}{l|}{} & {10 \AA} & {15 \AA} & {35 \AA} & {10 \AA} & {15 \AA} & {35 \AA} \\ \hline
+					\multirow{2}{*}{Effective area (cm$^2$)} & {1$^\text{st}$ order} & {51} & {61} & {21} & {53} & {68} & {25} \\ %\cline{2-8}
+															 & {2$^\text{nd}$ order} & {29} & {15} & {--} & {31} & {19} & {--} \\ \hline
+					\multirow{2}{*}{Resolution (km s$^{-1}$)}& {1$^\text{st}$ order} & {1700} & {1200} & {600} & {1900} & {1400} & {700} \\ %\cline{2-8}
+															 & {2$^\text{nd}$ order} & {1000} & {700} & {--} & {1200} & {800} & {--} \\ \hline
+					\multirow{2}{*}{Wavelength range} & {1$^\text{st}$ order} & \multicolumn{6}{c}{5 -- 38 \AA (0.35 -- 2.5 keV)} \\ %\cline{2-8}
+													   & {2$^\text{nd}$ order} & \multicolumn{6}{c}{5 -- 20 \AA (0.62 -- 2.5 keV)} \\ \hline
+					\multirow{2}{*}{Wavelength accuracy} & {1$^\text{st}$ order} & \multicolumn{3}{c}{$\pm$5 m\AA} & \multicolumn{3}{c}{$\pm$5 m\AA} \\ %\cline{2-8}
+	                                                  	  & {2$^\text{nd}$ order} & \multicolumn{3}{c}{$\pm$4 m\AA} & \multicolumn{3}{c}{$\pm$3 m\AA} \\ \hline
+					\multicolumn{2}{l|}{\multirow{2}{*}{Bin size {[}$3\times 3$ (27 $\mu$)$^2$ pixels{]}}} & \multicolumn{6}{c}{2.5 arcsec (cross dispersion direction)} \\ %\cline{3-8}
+					\multicolumn{2}{l|}{} & \multicolumn{6}{c}{7 -- 14 m\AA (dispersion direction, first order)} \\ \hline
+				\end{tabular}
+			\end{table}
+			
+			\subsubsection{Light path and spectral orders}
+				%The light path of the two X-ray telescopes are focussed onto the EPIC MOS cameras at the primary focus. The RGAs intercept $\sim 58\%$ of the light on the light path and diffracts it to the RFCs at the secondary focus. In order to diffract the light, the RGAs have grating plates with groove densities of $\sim 645.6$ lines mm$^{-1}$. This produces the two prominent first and second order spectra with dispersion of 8.3 and 12.7 mm \AA$^{-1}$ at 15 \AA. The performance of various parameters of the RGS instruments, while in orbit, are summarised in the table \ref{xmm-rgs-performance}.
+				While the primary focus of the XMM-Newton telescopes is occupied by the European Photon Imaging Camera (EPIC) MOS detectors, designed for high-resolution X-ray imaging, the RGAs ingeniously intercept about 58\% of the incoming light before it reaches the EPIC cameras. This light then interacts with the grating plates in the RGAs. The gratings cause the X-ray photons to diffract, separating them according to their energy (wavelength). This phenomenon produces the two prominent first and second order spectra with dispersion of 8.3 and 12.7 mm \AA$^{-1}$ at 15 \AA.
+				
+				These spectral orders are dispersed across the length of the CCD strips, with higher energy (shorter wavelength) photons landing closer to the beginning of the CCD and lower energy (longer wavelength) photons landing towards the end. This creates a one-to-one mapping between position on the CCD and the energy (or wavelength) of the detected X-ray photon.
+				
+				The performance characteristics of the RGS instruments, as measured in orbit, are summarized in table \ref{xmm-rgs-performance}, which highlights key parameters namely the \textit{effective area}, \textit{resolution}, \textit{wavelength range}, \textit{wavelength accuracy} and \textit{bin size}.
 		
-		The reflection grating used in the RGS instruments diffract into the first and second spectral orders with the highest efficiency -- therefore these two orders produce the most useful data. Even though the third order spectra are present, their count rates are $\sim 8$ times lower than that in the second order. Therefore, the science data provided by the XMM-Newton SOC consists of spectral data from first and second orders only. Table \ref{xmm-rgs-wavelength} summarises the wavelength range covered by the different spectral orders of the RGS instruments.
-		\begin{table}[!htb]
-			\centering
-			\caption{Wavelength and photon energy ranges covered by RGS}
-			\label{xmm-rgs-wavelength}
-			\begin{tabular}{ccc}
-				\hline
-				{\textbf{Order}} & {\textbf{Wavelength range (\AA)}} & {\textbf{Photon energy range (keV)}} \\
-				\hline
-				{1} & {6 -- 38} & {0.3 -- 2.0} \\
-				%\hline
-				{2} & {6 -- 20} & {0.6 -- 2.0} \\
-				\hline
-			\end{tabular}
-		\end{table}
+				The effective area represents the collecting power of the instrument at a specific wavelength. As expected, the effective area is higher for the first order compared to the second. Resolution refers to the instrument's ability to distinguish between closely spaced spectral lines. Evidently, the resolution degrades at longer wavelengths (lower energies) within each order. The wavelength range covered by the RGS instruments allows them to probe a vast array of emission lines crucial for understanding the elemental composition and physical conditions within the X-ray emitting source.
+				
+				While higher-order spectra (beyond the first and second) are technically present, their count rates are significantly lower ($\sim 8$ times lower than that in the second order), rendering them less useful for scientific analysis. Consequently, processed scientific data products from the XMM-Newton Science Operations Centre (SOC) typically only include spectra from the first and second orders. Table \ref{xmm-rgs-wavelength} provides a concise overview of the wavelength and corresponding photon energy ranges covered by these two primary spectral orders.
+				%The reflection grating used in the RGS instruments diffract into the first and second spectral orders with the highest efficiency -- therefore these two orders produce the most useful data. Even though the third order spectra are present, their count rates are $\sim 8$ times lower than that in the second order. Therefore, the science data provided by the XMM-Newton SOC consists of spectral data from first and second orders only. Table \ref{xmm-rgs-wavelength} summarises the wavelength range covered by the different spectral orders of the RGS instruments.
+				\begin{table}[!htb]
+					\centering
+					\caption{Wavelength and photon energy ranges covered by RGS}
+					\label{xmm-rgs-wavelength}
+					\begin{tabular}{ccc}
+						\hline
+						{\textbf{Order}} & {\textbf{Wavelength range (\AA)}} & {\textbf{Photon energy range (keV)}} \\
+						\hline
+						{1} & {6 -- 38} & {0.3 -- 2.0} \\
+						%\hline
+						{2} & {6 -- 20} & {0.6 -- 2.0} \\
+						\hline
+					\end{tabular}
+				\end{table}
 	
 	\section{Models for Data Fitting} \label{hi-resolution:models}
-		Given below in table \ref{xmm-rgs-model-list} is the progression of Xspec models used in the analysis of the RGS spectrum of RX J0925.7-4758. Every model is given a model ID and hereinafter it will be referred to by the same. The progression of the models is evolutionary and follows the same sequence as each was built from the preceding model.
+		The analysis of high-resolution X-ray spectra, such as those obtained with XMM-Newton RGS, involves a meticulous process of spectral fitting. This process aims to construct a mathematical model that accurately represents the observed spectrum, allowing us to extract meaningful physical information about the source. Table \ref{xmm-rgs-model-list} presents a sequence of XSPEC models progressively employed to fit the RGS spectrum of the source RX J0925.7-4758. Each model builds upon the previous one, incorporating additional complexity or refining existing components.
+		%Given below in table \ref{xmm-rgs-model-list} is the progression of Xspec models used in the analysis of the RGS spectrum of RX J0925.7-4758. Every model is given a model ID and hereinafter it will be referred to by the same. The progression of the models is evolutionary and follows the same sequence as each was built from the preceding model.
 		
-		For instance, the first model, i.e. M01 is a simple model which is composed of two model components -- an additive component (\texttt{bbody}) and a multiplicative component (\texttt{tbabs}). This particular model was mainly used to get started with the modelling of the continuum spectrum using a blackbody emission, subjected to absorption. Then, as one progresses downwards along table \ref{xmm-rgs-model-list}, one finds models which are improvements upon the previous model, in terms of the replacement of existing model components or the addition of newer ones.
+		For instance, consider the initial model, i.e. M01. This model incorporates two components:
+		\begin{enumerate}[i.]
+			\item \texttt{tbabs}\footnote{\url{https://heasarc.gsfc.nasa.gov/xanadu/xspec/manual/node273.html}}: This is a multiplicative model component that accounts for the absorption of X-ray photons by the interstellar medium (ISM) along the line of sight to the source, by calculating the cross section for X-ray absorption as the sum of the cross sections for X-ray absorption due to the gas-phase ISM, the grain-phase ISM, and the molecules in the ISM.
+			
+			\item \texttt{bbody}\footnote{\url{https://heasarc.gsfc.nasa.gov/xanadu/xspec/manual/node136.html}} This is an additive model component which represents the intrinsic continuum emission from the source, modeled as a blackbody. Blackbody radiation describes the emission spectrum of a perfect thermal radiator, characterized by a single effective temperature.
+		\end{enumerate}
+		
+		The subsequent models become progressively more complex, incorporating additional components to capture the intricate features of the RGS spectrum. The final models (M11 and M12) exhibit the most intricate structure, potentially accounting for multiple sources of absorption (represented by the combination of rauch and tbabs within M11) and a complex interplay of thermal emission processes (involving both mekal and apec components).
+		
+		By systematically refining the model through this iterative process of adding and adjusting components, we have tried to achieve the best possible fit to the observed spectrum. The quality of the fit is typically evaluated using statistical tests, and the resulting model parameters provide crucial insights into the physical properties of the X-ray emitting source and its environment.
+  
+		% is a simple model which is composed of two model components -- an additive component (\texttt{bbody}) and a multiplicative component (\texttt{tbabs}). This particular model was mainly used to get started with the modelling of the continuum spectrum using a blackbody emission, subjected to absorption. Then, as one progresses downwards along table \ref{xmm-rgs-model-list}, one finds models which are improvements upon the previous model, in terms of the replacement of existing model components or the addition of newer ones.
 		\begin{table}[h!]
 			\centering
 			\caption{List of models used for RGS data fitting for \source}
@@ -392,14 +444,14 @@
 				\label{xmm:rgs2-m12}
 			\end{figure}
 			
-		%\subsection{With Order 1 Spectrum} \label{hi-resolution:analysis:order-1}
-			%The 1$^{\mathrm{st}}$ order diffraction spectrum was fitted using the six models mentioned in \S\ref{hi-resolution:analysis} in the same order. The progression of the models increased the number of parameters, in spite of which there seems to be an improvement in the fit, as compared to those in available in literature. The best fit also seems to show significant abundances for NeI, MgI and ArI, at $2.87\times 10^{18}$, $1.10\times 10^{18}$ and $5.35\times 10^{18}$ respectively, as compared to the other metals included in the model.
+		\subsection{With Order 1 Spectrum} \label{hi-resolution:analysis:order-1}
+			The 1$^{\mathrm{st}}$ order diffraction spectrum was fitted using the six models mentioned in \S\ref{hi-resolution:analysis} in the same order. The progression of the models increased the number of parameters, in spite of which there seems to be an improvement in the fit, as compared to those in available in literature. The best fit also seems to show significant abundances for NeI, MgI and ArI, at $2.87\times 10^{18}$, $1.10\times 10^{18}$ and $5.35\times 10^{18}$ respectively, as compared to the other metals included in the model.
 			
-			%\begin{figure}[h!]
-			%	\centering
-			%	\caption{Fitted spectrum using composite model}
-			%	\subfloat[\texttt{ismabs*edge*edge*edge*(gaussian+bbody)} \label{xmm-rgs:01}]{\includegraphics[scale=0.45]{mr-vel-xmm-rgs-01.pdf}}
-			%\end{figure}
+			\begin{figure}[h!]
+				\centering
+				\caption{Fitted spectrum using composite model}
+				\subfloat[\texttt{ismabs*edge*edge*edge*(gaussian+bbody)} \label{xmm-rgs:01}]{\includegraphics[scale=0.45]{mr-vel-xmm-rgs-01.pdf}}
+			\end{figure}
 			
 			%But there are large deviations, especially for the softer X-ray photons. This is mainly because of the fact that the current model only incorporates continuum components. To fit the large number of observed lines in the spectrum, one needs to also include model components that account for emission lines. The additive model \texttt{mekal} computes an emission spectrum from hot diffuse optical plasma (perhaps a hot corona) based on the model calculations of Mewe, Kaastra and Liedahl. The \texttt{gaussian} component is replaced with \texttt{mekal} and an attempt was made to fit the same spectrum again.
 			%\begin{figure}[h!]

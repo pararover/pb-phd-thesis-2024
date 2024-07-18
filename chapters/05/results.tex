@@ -4,10 +4,12 @@
     \begin{center}
     	\emph{Abstract of chapter \ref{chap:results}}
     \end{center}
+    This chapter explores a dataset of Supersoft X-ray Sources (SSS), analyzing their properties and spectral features. We begin by identifying the SSS and plotting their sky positions. An observation journal details the telescopes, instruments, and exposures used to collect data for each source. We then examine the observed count rates of the SSS, both individually and collectively, including a normalized view for better comparison. The best-fit model using the continuum NLTE approach is applied to all SSS, and the resulting fit statistics are presented. Stellar parameters like luminosity, effective temperature, and hydrogen column density are derived for each SSS using this model. We further explore the unfolded spectra obtained after applying the best-fit model, which reveal the intrinsic properties of the SSS after accounting for instrumental effects and absorption. Finally, the presence of elemental absorption edges within the unfolded spectra is investigated, providing insights into the composition of the material surrounding these SSS objects. Notably, such edges were only found in SSS located in the Milky Way, not the Large Magellanic Cloud.
     
     \newpage
     \section{Source list}
-    	The list of sources which were studied are listed in table \ref{tab:source-list} below.
+    	The following table \ref{tab:source-list} lists all the SSS included in the dataset studied in the present work. It provides information on the source name, SSS type, the host galaxy -- either Milky Way (MW) or Large Magellanic Cloud (LMC), right ascension $\alpha$, and declination $\delta$ in degrees.
+    	%The list of sources which were studied are listed in table \ref{tab:source-list} below.
     	
     	\renewcommand{\arraystretch}{1.5}
     	\begin{table}[!htb]
@@ -16,7 +18,7 @@
     		\label{tab:source-list}
 			\begin{tabular}{cccccc}
 			\hline
-			\textbf{S. No.} & \textbf{Source} & \textbf{Type} & \textbf{Galaxy} & \textbf{\begin{tabular}[c]{@{}c@{}}R. A.\\ (degrees)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Dec.\\ (degrees)\end{tabular}} \\ \hline
+			\textbf{S. No.} & \textbf{Source} & \textbf{Type} & \textbf{Galaxy} & {$\boldsymbol{\alpha}$ \textbf{(degrees)}} & {$\boldsymbol{\delta}$ \textbf{(degrees)}} \\ \hline
 			{1} & {CAL 83} & {XRB} & {LMC} & {85.89233} & {-68.37283} \\
 			{2} & {RS Oph} & {SS} & {MW} & {267.55483} & {-6.70791} \\
 			{3} & {RX J0019.8+2156} & {CV} & {MW} & {4.95802} & {21.94783} \\
@@ -27,8 +29,17 @@
 		\end{table}
 		\renewcommand{\arraystretch}{2.2}
 		
+		The SSS mentioned in table \ref{tab:source-list} are plotted at their respective sky positions using Aladin Sky Atlas\footnote{\url{https://aladin.cds.unistra.fr/}} and presented using figure \ref{fig:sss-sky-position}.
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[width=0.8\textwidth]{sss-dataset-positions}
+			\caption{Sky positions of SSS chosen for the dataset}
+			\label{fig:sss-sky-position}
+		\end{figure}
+		
 		\begin{landscape}
 		\subsection{Journal of observations}
+			The table \ref{tab:sss-obs-list} presents a journal of the SSS observations for each source in the dataset. It includes the source name, the name of the observatory, the instrument used for the observation, the observation ID, the date of observation, the Modified Julian Day (in MJD), exposure time (in kiloseconds), and the observed photon energy range (in keV).
 			
 			\begin{table}[!htb]
 				\centering
@@ -48,7 +59,8 @@
 		\end{landscape}
 			
 		\subsection{Supersoft X-ray count rates}
-			The count rates of the sources as observed by the respective observatories in table \ref{tab:sss-obs-list} over the respective energy ranges are presented in the sub-figures in \ref{result:count-rate:indiv}.
+			The observed count rates of the sources listed in table \ref{tab:sss-obs-list} are presented in separate sub-figures within figure \ref{result:count-rate:indiv}. Each sub-figure shows the count rate for a specific source across the corresponding energy range specified in table \ref{tab:sss-obs-list}.
+			%The count rates of the sources as observed by the respective observatories in table \ref{tab:sss-obs-list} over the respective energy ranges are presented in the sub-figures in \ref{result:count-rate:indiv}.
 			\begin{figure}[h!]
 				\centering
 				\subfloat[CAL 83 \label{count-rate:cal83}]{\includegraphics[width=0.45\textwidth]{counts/cal-83-pn_counts}} %\hfill
@@ -63,17 +75,28 @@
 				\label{result:count-rate:indiv}
 			\end{figure}
 			
+			Figure \ref{result:count-rate:all} presents the observed count rates of all sources in the dataset.
+			\begin{itemize}
+				\item The sub-figure \ref{count-rate:all} presents the raw count rates for each source across the observed energy range, highlighting potential differences in their intrinsic luminosities and/or absorption properties.
+				
+				\item For a more direct comparison between the source spectra that may have intrinsically different luminosities, the sub-figure \ref{count-rate:all} presents the count rates scaled to a range of 0 to 1 using min-max normalization.%, thereby allowing for a clearer visualization of the spectral shapes across the sources, potentially revealing similarities or differences in their emission profiles.
+			\end{itemize}
+
+%    Sub-figure \ref{count-rate:all}: This sub-figure shows the raw count rates for each source across the observed energy range. The varying count rates between the sources highlight potential differences in their intrinsic luminosities and/or absorption properties.
+%
+%    Sub-figure \ref{count-rate:all-norm}: To facilitate a more direct comparison between the source spectra that may have intrinsically different luminosities, this sub-figure presents the normalized count rates for all sources. The normalization scales the observed counts to a common range of 0 to 1. This allows for a clearer visualization of the spectral shapes across the sources, potentially revealing similarities or differences in their emission line profiles.
 			\begin{figure}[h!]
 				\centering
-				\subfloat[Count rates of all sources \label{count-rate:all}]{\includegraphics[width=\textwidth]{counts/all_counts}} %\hfill
+				\subfloat[Count rates of all sources \label{count-rate:all}]{\includegraphics[width=0.9\textwidth]{counts/all_counts}} %\hfill
 				
-				\subfloat[Normalized count rates of all sources \label{count-rate:all-norm}]{\includegraphics[width=\textwidth]{counts/all_norm-counts}} %\hfill
+				\subfloat[Normalized count rates of all sources \label{count-rate:all-norm}]{\includegraphics[width=0.9\textwidth]{counts/all_norm-counts}} %\hfill
 				\caption{Count rates of all sources in dataset}
 				\label{result:count-rate:all}
 			\end{figure}
 			
 	\section{Best-fit statistics}
-		The fit statistics of the best-fit model for all the sources in the dataset using continuum NLTE model is presented in table \ref{tab:sss-fit-stats}.
+		Table \ref{tab:sss-fit-stats} presents the fit statistics for the best-fit model applied to all sources in the dataset using the continuum NLTE model. The table includes the chi-squared value ($\chi^2$), degrees of freedom (d.o.f.), reduced chi-squared value ($\chi^2_\text{reduced}$), and the null hypothesis probability.
+		%The fit statistics of the best-fit model for all the sources in the dataset using continuum NLTE model is presented in table \ref{tab:sss-fit-stats}.
 		\renewcommand{\arraystretch}{1.8}
 		\begin{table}[!htb]
 			\centering
@@ -93,7 +116,8 @@
 		\renewcommand{\arraystretch}{2.2}
 		
 	\section{Stellar parameters}
-		The stellar parameters of all the sources in the dataset, computed using continuum NLTE model, is presented in table \ref{tab:sss-stellar-params}.
+		The stellar parameters for all sources in the dataset, derived using the continuum NLTE model, are presented in table \ref{tab:sss-stellar-params}. The table provides the values of the luminosity ($L_*$), effective temperature ($T_\text{eff}$), and hydrogen column density ($n_H$) for each source, calculated after obtaining the best-fit.
+		%The stellar parameters of all the sources in the dataset, computed using continuum NLTE model, is presented in table \ref{tab:sss-stellar-params}.
 		\renewcommand{\arraystretch}{1.8}
 		\begin{table}[!htb]
 			\centering
@@ -122,9 +146,14 @@
 			\label{result:L-Teff-SSS}
 		\end{figure}
 	
+	\newpage
 	\section{Unfolded spectra from best-fit models}
+		Unfolded spectra represent the intrinsic spectral energy distribution (SED) of an astronomical object after removing the effects of instrumental response and absorption along the line of sight. The best-fit model accounts for these factors, allowing us to recover the underlying source spectrum. By analyzing the unfolded spectrum, we can identify prominent features such as emission lines and absorption edges. Also, the overall shape of the unfolded spectrum in the continuum region can provide insights into the physical processes responsible for the emission mechanism within the source.
+		
+		In this section, we present the unfolded spectra obtained after applying the best-fit model derived using the continuum NLTE approach.
 	
 		\subsection*{Unfolded spectrum of CAL 83}
+			%Figure \ref{result:euf-cal-83} presents the unfolded spectrum of the SSS CAL 83 in the LMC.
 			\begin{figure}[h!]
 				\centering
 				\includegraphics[width=\textwidth]{eufspec/cal-83-pn_eufspec}
@@ -133,6 +162,7 @@
 			\end{figure}
 		
 		\subsection*{Unfolded spectrum of RS Oph}
+			%Figure \ref{result:euf-rs-oph} presents the unfolded spectrum of the SSS RS Oph in the MW.
 			\begin{figure}[h!]
 				\centering
 				\includegraphics[width=\textwidth]{eufspec/rs-oph-pn_eufspec}
@@ -141,6 +171,7 @@
 			\end{figure}
 		
 		\subsection*{Unfolded spectrum of RX J0019.8+2156}
+			%Figure \ref{result:euf-rx-j0019} presents the unfolded spectrum of the SSS RX J0019.8+2156 in the MW.
 			\begin{figure}[h!]
 				\centering
 				\includegraphics[width=\textwidth]{eufspec/rx-j0019d8p2156-pn_eufspec}
@@ -149,6 +180,7 @@
 			\end{figure}
 		
 		\subsection*{Unfolded spectrum of RX J0527.8-6954}
+			%Figure \ref{result:euf-rx-j0527} presents the unfolded spectrum of the SSS RX J0527.8-6954 in the LMC.
 			\begin{figure}[h!]
 				\centering
 				\includegraphics[width=\textwidth]{eufspec/rx-j0527d8-6954-pn_eufspec}
@@ -156,7 +188,9 @@
 				\label{result:euf-rx-j0527}
 			\end{figure}
 		
+		\newpage
 		\subsection*{Unfolded spectrum of RX J0925.7-4758}
+			%Figure \ref{result:euf-rx-j0925} presents the unfolded spectrum of the SSS RX J0925.7-4758 in the MW.
 			\begin{figure}[h!]
 				\centering
 				\includegraphics[width=\textwidth]{eufspec/rx-j0925-4758-pn_eufspec}
@@ -164,13 +198,17 @@
 				\label{result:euf-rx-j0925}
 			\end{figure}
 		
-		\subsection*{Unfolded spectrum of V3890 Sgr}
+		%\subsection*{Unfolded spectrum of V3890 Sgr}
 	
-	\newpage
+	%\newpage
 	\section{Presence of elemental absorption edges}
+		An absorption edge is a spectral feature which appears as a sharp decrease in intensity at a specific energy in the spectrum. It resembles a step function, with a sudden drop followed by a plateau at a lower intensity level. This occurs when the energy of a photon exactly matches the ionization potential required to remove an electron from a specific energy level (shell) in an atom. The sudden drop happens because a majority of photons at this energy are absorbed. So, while an absorption line represents a \textit{bound-bound transition}, an absorption edge represents a \textit{bound-free transition}.
+		
+		The presence of various absorption edges provides information about the elemental composition of the absorbing material. The energy at which the edge appears is characteristic of the element responsible for the absorption. In this section, we present the elemental absorption edges identified within the unfolded spectra of specific sources in the dataset. It is noteworthy that identifiable absorption edges were only found within the unfolded spectra of SSS objects located in the Milky Way (MW). No such edges were discernible in the spectra of SSS objects residing in the Large Magellanic Cloud (LMC).
 	
 		%\subsection*{Absorption lines in CAL 83 spectrum}
 		
+		\newpage
 		\subsection*{Absorption edges in RS Oph spectrum}
 			\begin{figure}[h!]
 				\centering
@@ -232,7 +270,7 @@
 		
 		%\subsection*{Absorption lines in RX J0527.8-6954 spectrum}
 		
-		%\newpage
+		\newpage
 		\subsection*{Absorption edges in RX J0925.7-4758 spectrum}
 			\begin{figure}[h!]
 				\centering
@@ -262,7 +300,7 @@
 			\end{table}
 			\renewcommand{\arraystretch}{2.2}
 		
-		\subsection*{Absorption edges in V3890 Sgr spectrum}
+		%\subsection*{Absorption edges in V3890 Sgr spectrum}
     
 %    \section{Spectral Line Identification}
 %    

@@ -1,5 +1,5 @@
 \def\baselinestretch{1}
-\chapter{RESULTS} \label{chap:results}
+\chapter{RESULTS OF SPECTRAL FITTING AND VARIABILITY STUDIES} \label{chap:results}
     \minitoc
     \begin{center}
     	\emph{Abstract of chapter \ref{chap:results}}
@@ -7,7 +7,7 @@
     This chapter explores a dataset of Supersoft X-ray Sources (SSS), analyzing their properties and spectral features. We begin by identifying the SSS and plotting their sky positions. An observation journal details the telescopes, instruments, and exposures used to collect data for each source. We then examine the observed count rates of the SSS, both individually and collectively, including a normalized view for better comparison. The best-fit model using the continuum NLTE approach is applied to all SSS, and the resulting fit statistics are presented. Stellar parameters like luminosity, effective temperature, and hydrogen column density are derived for each SSS using this model. We further explore the unfolded spectra obtained after applying the best-fit model, which reveal the intrinsic properties of the SSS after accounting for instrumental effects and absorption. Finally, the presence of elemental absorption edges within the unfolded spectra is investigated, providing insights into the composition of the material surrounding these SSS objects. Notably, such edges were only found in SSS located in the Milky Way, not the Large Magellanic Cloud.
     
     \newpage
-    \section{Source list}
+    \section{Source list} \label{results:source-list}
     	The following table \ref{tab:source-list} lists all the SSS included in the dataset studied in the present work. It provides information on the source name, SSS type, the host galaxy -- either Milky Way (MW) or Large Magellanic Cloud (LMC), right ascension $\alpha$, and declination $\delta$ in degrees.
     	%The list of sources which were studied are listed in table \ref{tab:source-list} below.
     	
@@ -94,217 +94,221 @@
 				\label{result:count-rate:all}
 			\end{figure}
 			
-	\section{Best-fit statistics}
-		Table \ref{tab:sss-fit-stats} presents the fit statistics for the best-fit model applied to all sources in the dataset using the continuum NLTE model. The table includes the chi-squared value ($\chi^2$), degrees of freedom (d.o.f.), reduced chi-squared value ($\chi^2_\text{reduced}$), and the null hypothesis probability.
-		%The fit statistics of the best-fit model for all the sources in the dataset using continuum NLTE model is presented in table \ref{tab:sss-fit-stats}.
-		\renewcommand{\arraystretch}{1.8}
-		\begin{table}[!htb]
-			\centering
-			\caption{Fitting statistics for all sources in dataset}
-			\label{tab:sss-fit-stats}
-			\begin{tabular}{cccc}
-				\hline
-				\textbf{Source} & {$\boldsymbol{\chi^2}$/\textbf{d.o.f}} & {$\boldsymbol{\chi^2_\text{reduced}}$} & \textbf{\begin{tabular}[c]{@{}c@{}}Null hyp.\\ prob.\end{tabular}} \\ \hline
-				{CAL 83} & {${108.0}/{83}$} & {1.30} & {$1.50\times 10^{-2}$} \\
-				{RS Oph} & {${189.7}/{135}$} & {1.40} & {$1.35\times 10^{-3}$} \\
-				{RX J0019.8+2156} & {${68.3}/{54}$} & {1.26} & {$9.16\times 10^{-2}$} \\
-				{RX J0527.8-6954} & {${135.1}/{87}$} & {1.55} & {$7.28\times 10^{-4}$} \\
-				{RX J0925.7-4758} & {${183.4}/{131}$} & {1.40} & {$1.73\times 10^{-3}$} \\
-				{V3890 Sgr} & {} & {} & {} \\ \hline
-			\end{tabular}
-		\end{table}
-		\renewcommand{\arraystretch}{2.2}
-		
-	\section{Stellar parameters}
-		The stellar parameters for all sources in the dataset, derived using the continuum NLTE model, are presented in table \ref{tab:sss-stellar-params}. The table provides the values of the luminosity ($L_*$), effective temperature ($T_\text{eff}$), and hydrogen column density ($n_H$) for each source, calculated after obtaining the best-fit.
-		%The stellar parameters of all the sources in the dataset, computed using continuum NLTE model, is presented in table \ref{tab:sss-stellar-params}.
-		\renewcommand{\arraystretch}{1.8}
-		\begin{table}[!htb]
-			\centering
-			\caption{Stellar parameters of all sources from continuum NLTE model}
-			\label{tab:sss-stellar-params}
-			\begin{tabular}{cccc}
-			\hline
-			{\textbf{Source}} & {$\boldsymbol{L_*}$ \textbf{(erg s$\boldsymbol{^{-1}}$)}} & {\textbf{$\boldsymbol{T_\text{eff}}$ (kK)}} & {\textbf{$\boldsymbol{n_H}$ ($\boldsymbol{\times 10^{22}}$ cm$\boldsymbol{^{-2}}$)}} \\
-			\hline
-			{CAL 83} & {$5.86_{4.54}^{7.20}\times 10^{38}$} & {$102.9_{100.8}^{110.0}$} & {$0.087_{0.079}^{0.093}$} \\
-			{RS Oph} & {$2.67_{2.35}^{8.64}\times 10^{35}$} & {$181.6_{167.4}^{200.1}$} & {$0.067_{0.018}^{0.170}$} \\
-			{RX J0019.8+2156} & {$1.23_{0.39}^{2.37}\times 10^{35}$} & {$60.5_{46.5}^{70.9}$} & {$0.046_{0.014}^{0.805}$} \\
-			{RX J0527.8-6954} & {$1.21_{0.60}^{2.13}\times 10^{40}$} & {$50.6_{43.7}^{54.1}$} & {$0.333_{0.246}^{0.338}$} \\
-			{RX J0925.7-4758} & {$1.69_{0.54}^{3.58}\times 10^{44}$} & {$91.6_{86.9}^{100.2}$} & {$1.175_{1.086}^{1.274}$} \\
-			{V3890 Sgr} & {} & {} & {} \\
-			\hline
-			\end{tabular}
-		\end{table}
-		\renewcommand{\arraystretch}{2.2}
-		
-		In figure \ref{result:L-Teff-SSS}, the calculated values of the luminosities $L_*$ and effective temperature $T_\text{eff}$ for the SSS in our dataset using their respective best-fit models, as presented in table \ref{tab:sss-stellar-params}.
-		\begin{figure}[h!]
-			\centering
-			\includegraphics[width=0.8\textwidth]{L-Teff_all-SSS}
-			\caption{$L_*$ and $T_\text{eff}$ computed for all SSS in dataset}
-			\label{result:L-Teff-SSS}
-		\end{figure}
-	
-	\newpage
-	\section{Unfolded spectra from best-fit models}
-		Unfolded spectra represent the intrinsic spectral energy distribution (SED) of an astronomical object after removing the effects of instrumental response and absorption along the line of sight. The best-fit model accounts for these factors, allowing us to recover the underlying source spectrum. By analyzing the unfolded spectrum, we can identify prominent features such as emission lines and absorption edges. Also, the overall shape of the unfolded spectrum in the continuum region can provide insights into the physical processes responsible for the emission mechanism within the source.
-		
-		In this section, we present the unfolded spectra obtained after applying the best-fit model derived using the continuum NLTE approach.
-	
-		\subsection*{Unfolded spectrum of CAL 83}
-			%Figure \ref{result:euf-cal-83} presents the unfolded spectrum of the SSS CAL 83 in the LMC.
-			\begin{figure}[h!]
-				\centering
-				\includegraphics[width=\textwidth]{eufspec/cal-83-pn_eufspec}
-				\caption{Unfolded spectrum after model fitting for CAL 83}
-				\label{result:euf-cal-83}
-			\end{figure}
-		
-		\subsection*{Unfolded spectrum of RS Oph}
-			%Figure \ref{result:euf-rs-oph} presents the unfolded spectrum of the SSS RS Oph in the MW.
-			\begin{figure}[h!]
-				\centering
-				\includegraphics[width=\textwidth]{eufspec/rs-oph-pn_eufspec}
-				\caption{Unfolded spectrum after model fitting RS Oph}
-				\label{result:euf-rs-oph}
-			\end{figure}
-		
-		\subsection*{Unfolded spectrum of RX J0019.8+2156}
-			%Figure \ref{result:euf-rx-j0019} presents the unfolded spectrum of the SSS RX J0019.8+2156 in the MW.
-			\begin{figure}[h!]
-				\centering
-				\includegraphics[width=\textwidth]{eufspec/rx-j0019d8p2156-pn_eufspec}
-				\caption{Unfolded spectrum after model fitting for RX J0019.8+2156}
-				\label{result:euf-rx-j0019}
-			\end{figure}
-		
-		\subsection*{Unfolded spectrum of RX J0527.8-6954}
-			%Figure \ref{result:euf-rx-j0527} presents the unfolded spectrum of the SSS RX J0527.8-6954 in the LMC.
-			\begin{figure}[h!]
-				\centering
-				\includegraphics[width=\textwidth]{eufspec/rx-j0527d8-6954-pn_eufspec}
-				\caption{Unfolded spectrum after model fitting for RX J0527.8-6954}
-				\label{result:euf-rx-j0527}
-			\end{figure}
-		
-		\newpage
-		\subsection*{Unfolded spectrum of RX J0925.7-4758}
-			%Figure \ref{result:euf-rx-j0925} presents the unfolded spectrum of the SSS RX J0925.7-4758 in the MW.
-			\begin{figure}[h!]
-				\centering
-				\includegraphics[width=\textwidth]{eufspec/rx-j0925-4758-pn_eufspec}
-				\caption{Unfolded spectrum after model fitting for RX J0925.7-4758}
-				\label{result:euf-rx-j0925}
-			\end{figure}
-		
-		%\subsection*{Unfolded spectrum of V3890 Sgr}
-	
-	%\newpage
-	\section{Presence of elemental absorption edges}
-		An absorption edge is a spectral feature which appears as a sharp decrease in intensity at a specific energy in the spectrum. It resembles a step function, with a sudden drop followed by a plateau at a lower intensity level. This occurs when the energy of a photon exactly matches the ionization potential required to remove an electron from a specific energy level (shell) in an atom. The sudden drop happens because a majority of photons at this energy are absorbed. So, while an absorption line represents a \textit{bound-bound transition}, an absorption edge represents a \textit{bound-free transition}.
-		
-		The presence of various absorption edges provides information about the elemental composition of the absorbing material. The energy at which the edge appears is characteristic of the element responsible for the absorption. In this section, we present the elemental absorption edges identified within the unfolded spectra of specific sources in the dataset. It is noteworthy that identifiable absorption edges were only found within the unfolded spectra of SSS objects located in the Milky Way (MW). No such edges were discernible in the spectra of SSS objects residing in the Large Magellanic Cloud (LMC).
-	
-		%\subsection*{Absorption lines in CAL 83 spectrum}
-		
-		\newpage
-		\subsection*{Absorption edges in RS Oph spectrum}
-			\begin{figure}[h!]
-				\centering
-				\includegraphics[width=\textwidth]{eufspec/rs-oph-pn_eufspec-keV-edges}
-				\caption{Identified absorption edges for RS Oph}
-				\label{result:absedge-rs-oph}
-			\end{figure}
+	\section{Spectral fitting} \label{results:spectral}
 			
-			\renewcommand{\arraystretch}{1.5}
+		\subsection{Best-fit statistics}
+			Table \ref{tab:sss-fit-stats} presents the fit statistics for the best-fit model applied to all sources in the dataset using the continuum NLTE model. The table includes the chi-squared value ($\chi^2$), degrees of freedom (d.o.f.), reduced chi-squared value ($\chi^2_\text{reduced}$), and the null hypothesis probability.
+			%The fit statistics of the best-fit model for all the sources in the dataset using continuum NLTE model is presented in table \ref{tab:sss-fit-stats}.
+			\renewcommand{\arraystretch}{1.8}
 			\begin{table}[!htb]
 				\centering
-				\caption{Absorption edges identified for RS Oph}
-				\label{tab:absedge-rs-oph}
-				\begin{tabular}{ccc}
-					\hline
-					\textbf{Source} & \multicolumn{2}{c}{RS Oph} \\
-					\textbf{Observatory} & \multicolumn{2}{c}{XMM-Newton} \\
-					\textbf{Obs. ID} & \multicolumn{2}{c}{0410180501} \\
-					\textbf{Instrument} & \multicolumn{2}{c}{EPIC-pn} \\
-					\textbf{No. of edges identified} & \multicolumn{2}{c}{2} \\
-					\textbf{Relative depth} & \multicolumn{2}{c}{0.52 : 1.0} \\
-					\hline
-					\textbf{Absorption edge} & {O $K$ Edge} & {Fe $L_3$ Edge} \\
-					\textbf{Edge energy} & {0.533 keV} & {0.708 keV} \\
-					\textbf{Edge depth} & {0.457} & {0.872} \\ \hline
-				\end{tabular}
-			\end{table}
-			\renewcommand{\arraystretch}{2.2}
-		
-		\newpage
-		\subsection*{Absorption edges in RX J0019.8+2156 spectrum}
-			\begin{figure}[h!]
-				\centering
-				\includegraphics[width=\textwidth]{eufspec/rx-j0019d8p2156-pn_eufspec-keV-edges}
-				\caption{Identified absorption edges for RX J0019.8+2156}
-				\label{result:absedge-rx-j0019}
-			\end{figure}
-			
-			\renewcommand{\arraystretch}{1.5}
-			\begin{table}[!htb]
-				\centering
-				\caption{Absorption edges identified for RX J0019.8+2156}
-				\label{tab:absedge-rx-j0019}
+				\caption{Fitting statistics for all sources in dataset}
+				\label{tab:sss-fit-stats}
 				\begin{tabular}{cccc}
-					%\cline{1-3}
 					\hline
-					\textbf{Source} & \multicolumn{2}{c}{RX J0019.8+2156} & {} \\
-					\textbf{Observatory} & \multicolumn{2}{c}{XMM-Newton}& {} \\
-					\textbf{Obs. ID} & \multicolumn{2}{c}{0047940101}& {} \\
-					\textbf{Instrument} & \multicolumn{2}{c}{EPIC-pn}& {} \\
-					\textbf{No. of edges identified} & \multicolumn{2}{c}{3}& {} \\
-					\textbf{Relative depth} & \multicolumn{2}{c}{0.93 : 0.03 : 1.0} & {} \\ \hline
-					\textbf{Absorption edge} & {C $K$ Edge} & {Ca $L_2$ Edge} & {Ca $L_1$ Edge} \\
-					\textbf{Edge energy} & {0.282 keV} & {0.346 keV} & {0.403 keV} \\
-					\textbf{Edge depth} & {0.809} & {0.026} & {0.867} \\ \hline
+					\textbf{Source} & {$\boldsymbol{\chi^2}$/\textbf{d.o.f}} & {$\boldsymbol{\chi^2_\text{reduced}}$} & \textbf{\begin{tabular}[c]{@{}c@{}}Null hyp.\\ prob.\end{tabular}} \\ \hline
+					{CAL 83} & {${108.0}/{83}$} & {1.30} & {$1.50\times 10^{-2}$} \\
+					{RS Oph} & {${189.7}/{135}$} & {1.40} & {$1.35\times 10^{-3}$} \\
+					{RX J0019.8+2156} & {${68.3}/{54}$} & {1.26} & {$9.16\times 10^{-2}$} \\
+					{RX J0527.8-6954} & {${135.1}/{87}$} & {1.55} & {$7.28\times 10^{-4}$} \\
+					{RX J0925.7-4758} & {${183.4}/{131}$} & {1.40} & {$1.73\times 10^{-3}$} \\
+					{V3890 Sgr} & {} & {} & {} \\ \hline
 				\end{tabular}
 			\end{table}
 			\renewcommand{\arraystretch}{2.2}
-		
-		%\subsection*{Absorption lines in RX J0527.8-6954 spectrum}
-		
-		\newpage
-		\subsection*{Absorption edges in RX J0925.7-4758 spectrum}
-			\begin{figure}[h!]
-				\centering
-				\includegraphics[width=\textwidth]{eufspec/rx-j0925-4758-pn_eufspec-keV-edges}
-				\caption{Identified absorption edges from RX J0925.7-4758 spectrum}
-				\label{result:absedge-rx-j0925}
-			\end{figure}
 			
-			\renewcommand{\arraystretch}{1.5}
+		\subsection{Stellar parameters}
+			The stellar parameters for all sources in the dataset, derived using the continuum NLTE model, are presented in table \ref{tab:sss-stellar-params}. The table provides the values of the luminosity ($L_*$), effective temperature ($T_\text{eff}$), and hydrogen column density ($n_H$) for each source, calculated after obtaining the best-fit.
+			%The stellar parameters of all the sources in the dataset, computed using continuum NLTE model, is presented in table \ref{tab:sss-stellar-params}.
+			\renewcommand{\arraystretch}{1.8}
 			\begin{table}[!htb]
 				\centering
-				\caption{Absorption edges identified for RX J0925.7-4758}
-				\label{tab:absedge-rx-j0925}
-				\begin{tabular}{ccccc}
-					%\cline{1-3}
-					\hline
-					\textbf{Source} & \multicolumn{2}{c}{RX J0925.7-4758} & {} & {} \\
-					\textbf{Observatory} & \multicolumn{2}{c}{XMM-Newton} & {} & {} \\
-					\textbf{Obs. ID} & \multicolumn{2}{c}{0111150101} & {} & {} \\
-					\textbf{Instrument} & \multicolumn{2}{c}{EPIC-pn} & {} & {} \\
-					\textbf{No. of edges identified} & \multicolumn{2}{c}{4} & {} & {} \\
-					\textbf{Relative depth} & \multicolumn{2}{c}{1.0 : 0.03 : 0.01 : 0.04} & {} & {} \\ \hline
-					\textbf{Absorption edge} & {N $K$ Edge} & {O $K$ Edge} & {Fe $L_3$ Edge} & {Ne $K$ Edge} \\
-					\textbf{Edge energy} & {0.397 keV} & {0.533 keV} & {0.708 keV} & {0.874 keV} \\
-					\textbf{Edge depth} & {5.215} & {0.132} & {0.033} & {0.211} \\ \hline
+				\caption{Stellar parameters of all sources from continuum NLTE model}
+				\label{tab:sss-stellar-params}
+				\begin{tabular}{cccc}
+				\hline
+				{\textbf{Source}} & {$\boldsymbol{L_*}$ \textbf{(erg s$\boldsymbol{^{-1}}$)}} & {\textbf{$\boldsymbol{T_\text{eff}}$ (kK)}} & {\textbf{$\boldsymbol{n_H}$ ($\boldsymbol{\times 10^{22}}$ cm$\boldsymbol{^{-2}}$)}} \\
+				\hline
+				{CAL 83} & {$5.86_{4.54}^{7.20}\times 10^{38}$} & {$102.9_{100.8}^{110.0}$} & {$0.087_{0.079}^{0.093}$} \\
+				{RS Oph} & {$2.67_{2.35}^{8.64}\times 10^{35}$} & {$181.6_{167.4}^{200.1}$} & {$0.067_{0.018}^{0.170}$} \\
+				{RX J0019.8+2156} & {$1.23_{0.39}^{2.37}\times 10^{35}$} & {$60.5_{46.5}^{70.9}$} & {$0.046_{0.014}^{0.805}$} \\
+				{RX J0527.8-6954} & {$1.21_{0.60}^{2.13}\times 10^{40}$} & {$50.6_{43.7}^{54.1}$} & {$0.333_{0.246}^{0.338}$} \\
+				{RX J0925.7-4758} & {$1.69_{0.54}^{3.58}\times 10^{44}$} & {$91.6_{86.9}^{100.2}$} & {$1.175_{1.086}^{1.274}$} \\
+				{V3890 Sgr} & {} & {} & {} \\
+				\hline
 				\end{tabular}
 			\end{table}
 			\renewcommand{\arraystretch}{2.2}
+			
+			In figure \ref{result:L-Teff-SSS}, the calculated values of the luminosities $L_*$ and effective temperature $T_\text{eff}$ for the SSS in our dataset using their respective best-fit models, as presented in table \ref{tab:sss-stellar-params}.
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[width=0.8\textwidth]{L-Teff_all-SSS}
+				\caption{$L_*$ and $T_\text{eff}$ computed for all SSS in dataset}
+				\label{result:L-Teff-SSS}
+			\end{figure}
 		
-		%\subsection*{Absorption edges in V3890 Sgr spectrum}
-    
-%    \section{Spectral Line Identification}
-%    
-%    \section{XMM-Newton RGS Spectral Fit}
-%    The best fit model, i.e. M11, contains two different additive components that simulate optically thin plasma. One of them, i.e. \texttt{apec} uses line lists from the AtomDB database, while the other, i.e. \texttt{mekal} which is based on calculations by Mewe, Kaastra and Liedahl \cite{meka,liedahl}. The latter could indicate the presence of a hot corona. The presence of the \texttt{rauch} model component in the best fit model suggests a substantial contribution due to an NLTE stellar atmosphere. The model also consists of the \texttt{swind1} component, which simulates the presence of a stellar wind component along the line-of-sight. The presence of all the above model components vindicates our hypothesis of the inclusion of non-steady states, NLTE and stellar winds in the radiative processes in X-ray binary systems such as those of RX J0925.7-4758.
-%    
-%    \section{P Cygni Profiling}
+		\newpage
+		\subsection{Unfolded spectra from best-fit models}
+			Unfolded spectra represent the intrinsic spectral energy distribution (SED) of an astronomical object after removing the effects of instrumental response and absorption along the line of sight. The best-fit model accounts for these factors, allowing us to recover the underlying source spectrum. By analyzing the unfolded spectrum, we can identify prominent features such as emission lines and absorption edges. Also, the overall shape of the unfolded spectrum in the continuum region can provide insights into the physical processes responsible for the emission mechanism within the source.
+			
+			In this section, we present the unfolded spectra obtained after applying the best-fit model derived using the continuum NLTE approach.
+		
+			\subsubsection*{Unfolded spectrum of CAL 83}
+				%Figure \ref{result:euf-cal-83} presents the unfolded spectrum of the SSS CAL 83 in the LMC.
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[width=\textwidth]{eufspec/cal-83-pn_eufspec}
+					\caption{Unfolded spectrum after model fitting for CAL 83}
+					\label{result:euf-cal-83}
+				\end{figure}
+			
+			\subsubsection*{Unfolded spectrum of RS Oph}
+				%Figure \ref{result:euf-rs-oph} presents the unfolded spectrum of the SSS RS Oph in the MW.
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[width=\textwidth]{eufspec/rs-oph-pn_eufspec}
+					\caption{Unfolded spectrum after model fitting RS Oph}
+					\label{result:euf-rs-oph}
+				\end{figure}
+			
+			\subsubsection*{Unfolded spectrum of RX J0019.8+2156}
+				%Figure \ref{result:euf-rx-j0019} presents the unfolded spectrum of the SSS RX J0019.8+2156 in the MW.
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[width=\textwidth]{eufspec/rx-j0019d8p2156-pn_eufspec}
+					\caption{Unfolded spectrum after model fitting for RX J0019.8+2156}
+					\label{result:euf-rx-j0019}
+				\end{figure}
+			
+			\subsubsection*{Unfolded spectrum of RX J0527.8-6954}
+				%Figure \ref{result:euf-rx-j0527} presents the unfolded spectrum of the SSS RX J0527.8-6954 in the LMC.
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[width=\textwidth]{eufspec/rx-j0527d8-6954-pn_eufspec}
+					\caption{Unfolded spectrum after model fitting for RX J0527.8-6954}
+					\label{result:euf-rx-j0527}
+				\end{figure}
+			
+			\newpage
+			\subsubsection*{Unfolded spectrum of RX J0925.7-4758}
+				%Figure \ref{result:euf-rx-j0925} presents the unfolded spectrum of the SSS RX J0925.7-4758 in the MW.
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[width=\textwidth]{eufspec/rx-j0925-4758-pn_eufspec}
+					\caption{Unfolded spectrum after model fitting for RX J0925.7-4758}
+					\label{result:euf-rx-j0925}
+				\end{figure}
+			
+			%\subsection*{Unfolded spectrum of V3890 Sgr}
+		
+		%\newpage
+		\subsection{Presence of elemental absorption edges}
+			An absorption edge is a spectral feature which appears as a sharp decrease in intensity at a specific energy in the spectrum. It resembles a step function, with a sudden drop followed by a plateau at a lower intensity level. This occurs when the energy of a photon exactly matches the ionization potential required to remove an electron from a specific energy level (shell) in an atom. The sudden drop happens because a majority of photons at this energy are absorbed. So, while an absorption line represents a \textit{bound-bound transition}, an absorption edge represents a \textit{bound-free transition}.
+			
+			The presence of various absorption edges provides information about the elemental composition of the absorbing material. The energy at which the edge appears is characteristic of the element responsible for the absorption. In this section, we present the elemental absorption edges identified within the unfolded spectra of specific sources in the dataset. It is noteworthy that identifiable absorption edges were only found within the unfolded spectra of SSS objects located in the Milky Way (MW). No such edges were discernible in the spectra of SSS objects residing in the Large Magellanic Cloud (LMC).
+		
+			%\subsection*{Absorption lines in CAL 83 spectrum}
+			
+			\newpage
+			\subsubsection*{Absorption edges in RS Oph spectrum}
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[width=\textwidth]{eufspec/rs-oph-pn_eufspec-keV-edges}
+					\caption{Identified absorption edges for RS Oph}
+					\label{result:absedge-rs-oph}
+				\end{figure}
+				
+				\renewcommand{\arraystretch}{1.5}
+				\begin{table}[!htb]
+					\centering
+					\caption{Absorption edges identified for RS Oph}
+					\label{tab:absedge-rs-oph}
+					\begin{tabular}{ccc}
+						\hline
+						\textbf{Source} & \multicolumn{2}{c}{RS Oph} \\
+						\textbf{Observatory} & \multicolumn{2}{c}{XMM-Newton} \\
+						\textbf{Obs. ID} & \multicolumn{2}{c}{0410180501} \\
+						\textbf{Instrument} & \multicolumn{2}{c}{EPIC-pn} \\
+						\textbf{No. of edges identified} & \multicolumn{2}{c}{2} \\
+						\textbf{Relative depth} & \multicolumn{2}{c}{0.52 : 1.0} \\
+						\hline
+						\textbf{Absorption edge} & {O $K$ Edge} & {Fe $L_3$ Edge} \\
+						\textbf{Edge energy} & {0.533 keV} & {0.708 keV} \\
+						\textbf{Edge depth} & {0.457} & {0.872} \\ \hline
+					\end{tabular}
+				\end{table}
+				\renewcommand{\arraystretch}{2.2}
+			
+			\newpage
+			\subsubsection*{Absorption edges in RX J0019.8+2156 spectrum}
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[width=\textwidth]{eufspec/rx-j0019d8p2156-pn_eufspec-keV-edges}
+					\caption{Identified absorption edges for RX J0019.8+2156}
+					\label{result:absedge-rx-j0019}
+				\end{figure}
+				
+				\renewcommand{\arraystretch}{1.5}
+				\begin{table}[!htb]
+					\centering
+					\caption{Absorption edges identified for RX J0019.8+2156}
+					\label{tab:absedge-rx-j0019}
+					\begin{tabular}{cccc}
+						%\cline{1-3}
+						\hline
+						\textbf{Source} & \multicolumn{2}{c}{RX J0019.8+2156} & {} \\
+						\textbf{Observatory} & \multicolumn{2}{c}{XMM-Newton}& {} \\
+						\textbf{Obs. ID} & \multicolumn{2}{c}{0047940101}& {} \\
+						\textbf{Instrument} & \multicolumn{2}{c}{EPIC-pn}& {} \\
+						\textbf{No. of edges identified} & \multicolumn{2}{c}{3}& {} \\
+						\textbf{Relative depth} & \multicolumn{2}{c}{0.93 : 0.03 : 1.0} & {} \\ \hline
+						\textbf{Absorption edge} & {C $K$ Edge} & {Ca $L_2$ Edge} & {Ca $L_1$ Edge} \\
+						\textbf{Edge energy} & {0.282 keV} & {0.346 keV} & {0.403 keV} \\
+						\textbf{Edge depth} & {0.809} & {0.026} & {0.867} \\ \hline
+					\end{tabular}
+				\end{table}
+				\renewcommand{\arraystretch}{2.2}
+			
+			%\subsection*{Absorption lines in RX J0527.8-6954 spectrum}
+			
+			\newpage
+			\subsubsection*{Absorption edges in RX J0925.7-4758 spectrum}
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[width=\textwidth]{eufspec/rx-j0925-4758-pn_eufspec-keV-edges}
+					\caption{Identified absorption edges from RX J0925.7-4758 spectrum}
+					\label{result:absedge-rx-j0925}
+				\end{figure}
+				
+				\renewcommand{\arraystretch}{1.5}
+				\begin{table}[!htb]
+					\centering
+					\caption{Absorption edges identified for RX J0925.7-4758}
+					\label{tab:absedge-rx-j0925}
+					\begin{tabular}{ccccc}
+						%\cline{1-3}
+						\hline
+						\textbf{Source} & \multicolumn{2}{c}{RX J0925.7-4758} & {} & {} \\
+						\textbf{Observatory} & \multicolumn{2}{c}{XMM-Newton} & {} & {} \\
+						\textbf{Obs. ID} & \multicolumn{2}{c}{0111150101} & {} & {} \\
+						\textbf{Instrument} & \multicolumn{2}{c}{EPIC-pn} & {} & {} \\
+						\textbf{No. of edges identified} & \multicolumn{2}{c}{4} & {} & {} \\
+						\textbf{Relative depth} & \multicolumn{2}{c}{1.0 : 0.03 : 0.01 : 0.04} & {} & {} \\ \hline
+						\textbf{Absorption edge} & {N $K$ Edge} & {O $K$ Edge} & {Fe $L_3$ Edge} & {Ne $K$ Edge} \\
+						\textbf{Edge energy} & {0.397 keV} & {0.533 keV} & {0.708 keV} & {0.874 keV} \\
+						\textbf{Edge depth} & {5.215} & {0.132} & {0.033} & {0.211} \\ \hline
+					\end{tabular}
+				\end{table}
+				\renewcommand{\arraystretch}{2.2}
+			
+			%\subsection*{Absorption edges in V3890 Sgr spectrum}
+	    
+	%    \section{Spectral Line Identification}
+	%    
+	%    \section{XMM-Newton RGS Spectral Fit}
+	%    The best fit model, i.e. M11, contains two different additive components that simulate optically thin plasma. One of them, i.e. \texttt{apec} uses line lists from the AtomDB database, while the other, i.e. \texttt{mekal} which is based on calculations by Mewe, Kaastra and Liedahl \cite{meka,liedahl}. The latter could indicate the presence of a hot corona. The presence of the \texttt{rauch} model component in the best fit model suggests a substantial contribution due to an NLTE stellar atmosphere. The model also consists of the \texttt{swind1} component, which simulates the presence of a stellar wind component along the line-of-sight. The presence of all the above model components vindicates our hypothesis of the inclusion of non-steady states, NLTE and stellar winds in the radiative processes in X-ray binary systems such as those of RX J0925.7-4758.
+	%    
+	%    \section{P Cygni Profiling}
+	
+	\section{Variability studies} \label{results:variability}

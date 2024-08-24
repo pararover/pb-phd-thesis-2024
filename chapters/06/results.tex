@@ -317,7 +317,7 @@
 		\subsection{Observed NICER and XMM-Newton lightcurves}
 			The lightcurves of the SSS \source\ as observed by the observatories NICER and XMM-Newton are presented here. For the NICER observations, the lightcurves are extracted by combining timing data from all three observations mentioned in table \ref{tab:obs-journal}, and for XMM-Newton observations, the lightcurves are extracted from the timing data in observation ID 0111150101. Figures \ref{result:lc-mrvel-nicer} and \ref{result:lc-mrvel-xmm} respectively display the lightcurves extracted from NICER and XMM-Newton data over 0.2--1.0 keV and 0.2--12.0 keV photon energy ranges (the former is the range analysed in the multi-observatory spectral analysis of \source\ described in chapter \ref{chap:multi-obs}, whereas the latter is the full range for SSS).
 			
-			As expected, the count rates for the lightcurve extracted over the full SSS photon energy range is higher than that for the 0.2--1.0 keV range. This can be seen in the insets in both figures \ref{result:lc-mrvel-nicer} and \ref{result:lc-mrvel-xmm} for a chosen sub-interval of observations. In figure \ref{result:lc-mrvel-xmm}, we can also see that the count rates of the RGS observations are much smaller than the corresponding EPIC-pn observations.
+			As expected, the count rates for the lightcurve extracted over the full SSS photon energy range is higher than that for the 0.2--1.0 keV range. This can be seen in the insets in both figures \ref{result:lc-mrvel-nicer} and \ref{result:lc-mrvel-xmm} for the chosen sub-intervals of observations. In figure \ref{result:lc-mrvel-xmm}, we can also see that the count rates of the RGS observations are much smaller than the corresponding EPIC-pn observations.
 			
 			\begin{figure}[h!]
 				\centering
@@ -326,13 +326,6 @@
 				\label{result:lc-mrvel-nicer}
 			\end{figure}
 			
-%			\begin{figure}[h!]
-%				\centering
-%				\includegraphics[width=\textwidth]{timing/rx-j0925_lc-bothbands_11-13ks}
-%				\caption{Variation in count rates of \source\ for both photon energy ranges observed in NICER lightcurves}
-%				\label{result:lc-mrvel-nicer-countdiff}
-%			\end{figure}
-			
 			\begin{figure}[h!]
 				\centering
 				\includegraphics[width=\textwidth]{timing/rx-j0925_0111150101_lc-allbands-inset}
@@ -340,66 +333,105 @@
 				\label{result:lc-mrvel-xmm}
 			\end{figure}
 			
-%			\begin{figure}[h!]
-%				\centering
-%				\includegraphics[width=\textwidth]{timing/rx-j0925_0111150101_lc-allbands_93360-70ks}
-%				\caption{Variation in count rates of \source\ for both photon energy ranges observed in XMM-Newton lightcurves}
-%				\label{result:lc-mrvel-xmm-countdiff}
-%			\end{figure}
-			
-		\subsection{Timing analysis of NICER lightcurve}
+		\subsection{Timing analysis of NICER lightcurves}
 		
-			We present here the results of the timing analysis by applying the Lomb-Scargle periodogram on the NICER and XMM-Newton lightcurves.
+			We present here the results of the timing analysis by applying the Lomb-Scargle periodogram on the NICER lightcurves.
 			
-			\subsubsection*{Lomb-Scargle periodogram over 0.2--1.0 keV}
-			\begin{figure}[h!]
-				\centering
-				\includegraphics[width=\textwidth]{timing/rx-j0925_ls-nicer-signalpeak}
-				\caption{Lomb-Scargle periodogram of NICER lightcurve over 0.2--1.0 keV}
-				\label{result:ls-mrvel-nicer}
-			\end{figure}
+			\subsubsection{Lomb-Scargle periodograms}
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[width=\textwidth]{timing/rx-j0925_nicer-ls_bothbands-inset}
+					\caption{Lomb-Scargle periodogram of NICER lightcurves}
+					\label{result:ls-mrvel-nicer}
+				\end{figure}
 			
-			\begin{figure}[h!]
-				\centering
-				\includegraphics[width=\textwidth]{timing/rx-j0925_lc-nicer-phasefold-bestfit_58810s}
-				\caption{Phase-folded NICER lightcurve over 0.2--1.0 keV with $P=58.8$ ks}
-				\label{result:lc-phasefold-mrvel-nicer}
-			\end{figure}
+			\subsubsection{Best-fit sinusoids for 0.2--1.0 keV lightcurve}
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[width=\textwidth]{timing/rx-j0925_nicer-lc_200-1000_phasefold-bestfit}
+					\caption{Phase-folded NICER lightcurve over 0.2--1.0 keV with best-fit sinusoids}
+					\label{result:lc-phase-fold-mrvel-nicer:200-1000-bestfit}
+				\end{figure}
+				
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[width=\textwidth]{timing/rx-j0925_nicer-lc_200-1000_bestfit}
+					\caption{NICER lightcurve over 0.2--1.0 keV with best-fit sinusoids}
+					\label{result:lc-mrvel-nicer:200-1000-bestfit}
+				\end{figure}
+				
+			\subsubsection{Best-fit sinusoids for 0.2--12.0 keV lightcurve}
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[width=\textwidth]{timing/rx-j0925_nicer-lc_200-12000_phasefold-bestfit}
+					\caption{Phase-folded NICER lightcurve over 0.2--12.0 keV with best-fit sinusoids}
+					\label{result:lc-phase-fold-mrvel-nicer:200-12000-bestfit}
+				\end{figure}
+				
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[width=\textwidth]{timing/rx-j0925_nicer-lc_200-12000_bestfit}
+					\caption{NICER lightcurve over 0.2--12.0 keV with best-fit sinusoids}
+					\label{result:lc-mrvel-nicer:200-12000-bestfit}
+				\end{figure}
+				
+				
+		\subsection{Timing analysis of XMM-Newton lightcurves}
+		
+			We present here the results of the timing analysis by applying the Lomb-Scargle periodogram on the XMM-Newton lightcurves.
 			
-			\begin{figure}[h!]
-				\centering
-				\includegraphics[width=\textwidth]{timing/rx-j0925_lc-nicer-bestfit_58810s}
-				\caption{Best-fit sinusoid with $P=58.8$ ks for NICER lightcurve over 0.2--1.0 keV}
-				\label{result:lc-bestfit-mrvel-nicer}
-			\end{figure}
+			\subsubsection{Lomb-Scargle periodograms}
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[width=\textwidth]{timing/rx-j0925_0111150101_xmm-ls_allbands-inset}
+					\caption{Lomb-Scargle periodogram of XMM-Newton lightcurves}
+					\label{result:ls-mrvel-xmm}
+				\end{figure}
 			
-%			\begin{figure}[h!]
-%				\centering
-%				\includegraphics[width=\textwidth]{timing/rx-j0925_lc-culled}
-%				\caption{NICER lightcurve of \source\ over 0.2--1.0 keV photon energies}
-%				\label{result:lc-mrvel-nicer}
-%			\end{figure}
-			
-%			\begin{figure}[h!]
-%				\centering
-%				\includegraphics[width=\textwidth]{timing/rx-j0925_full-SSS_lc-culled}
-%				\caption{NICER lightcurve of \source\ over 0.2--12.0 keV photon energies}
-%				\label{result:lc-fullSSS-mrvel-nicer}
-%			\end{figure}
-			
-%			\begin{figure}[h!]
-%				\centering
-%				\includegraphics[width=\textwidth]{timing/rx-j0925_EPN_0111150101_lc}
-%				\caption{XMM-Newton lightcurve of \source\ over 0.2--1.0 keV photon energies}
-%				\label{result:lc-mrvel-xmm}
-%			\end{figure}
-%			
-%			\begin{figure}[h!]
-%				\centering
-%				\includegraphics[width=\textwidth]{timing/rx-j0925_EPN_full-SSS_0111150101_lc}
-%				\caption{XMM-Newton lightcurve of \source\ over 0.2--12.0 keV photon energies}
-%				\label{result:lc-fullSSS-mrvel-xmm}
-%			\end{figure}
+			\subsubsection{Best-fit sinusoids for 0.2--1.0 keV EPIC-pn lightcurve}
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[width=\textwidth]{timing/rx-j0925_0111150101_xmm-lc_200-1000_phasefold-bestfit}
+					\caption{Phase-folded XMM-Newton EPIC-pn lightcurve over 0.2--1.0 keV with best-fit sinusoids}
+					\label{result:lc-phase-fold-mrvel-xmm:200-1000-bestfit}
+				\end{figure}
+				
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[width=\textwidth]{timing/rx-j0925_0111150101_xmm-lc_200-1000_bestfit}
+					\caption{XMM-Newton EPIC-pn lightcurve over 0.2--1.0 keV with best-fit sinusoids}
+					\label{result:lc-mrvel-xmm:200-1000-bestfit}
+				\end{figure}
+				
+			\subsubsection{Best-fit sinusoids for 0.2--12.0 keV EPIC-pn lightcurve}
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[width=\textwidth]{timing/rx-j0925_0111150101_xmm-lc_200-12000_phasefold-bestfit}
+					\caption{Phase-folded XMM-Newton EPIC-pn lightcurve over 0.2--12.0 keV with best-fit sinusoids}
+					\label{result:lc-phase-fold-mrvel-xmm:200-12000-bestfit}
+				\end{figure}
+				
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[width=\textwidth]{timing/rx-j0925_0111150101_xmm-lc_200-12000_bestfit}
+					\caption{XMM-Newton EPIC-pn lightcurve over 0.2--12.0 keV with best-fit sinusoids}
+					\label{result:lc-mrvel-xmm:200-12000-bestfit}
+				\end{figure}
+				
+			\subsubsection{Best-fit sinusoid for 0.2--12.0 keV RGS lightcurve}
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[width=\textwidth]{timing/rx-j0925_0111150101_xmm-rgs-lc_200-12000_phasefold-bestfit}
+					\caption{Phase-folded XMM-Newton RGS lightcurve over 0.2--12.0 keV with best-fit sinusoid}
+					\label{result:lc-phase-fold-mrvel-xmm-rgs:200-12000-bestfit}
+				\end{figure}
+				
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[width=\textwidth]{timing/rx-j0925_0111150101_xmm-rgs-lc_200-12000_bestfit}
+					\caption{XMM-Newton RGS lightcurve over 0.2--12.0 keV with best-fit sinusoid}
+					\label{result:lc-mrvel-xmm-rgs:200-12000-bestfit}
+				\end{figure}
 		
 	
 		\begin{landscape}

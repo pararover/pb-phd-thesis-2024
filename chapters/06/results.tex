@@ -313,12 +313,9 @@
 	
 	\newpage
 	\section{Variability study of \source} \label{results:variability}
+		In this section, we present the results obtained from a detailed timing analysis of the NICER lightcurves for the source RX J0925.7-4758. The analysis was conducted using the \textit{Lomb-Scargle periodogram}, a well-established method for identifying periodic signals in unevenly sampled time-series data.
 	
 		\subsection{Observed NICER and XMM-Newton lightcurves}
-			The lightcurves of the SSS \source\ as observed by the observatories NICER and XMM-Newton are presented here. For the NICER observations, the lightcurves are extracted by combining timing data from all three observations mentioned in table \ref{tab:obs-journal}, and for XMM-Newton observations, the lightcurves are extracted from the timing data in observation ID 0111150101. Figures \ref{result:lc-mrvel-nicer} and \ref{result:lc-mrvel-xmm} respectively display the lightcurves extracted from NICER and XMM-Newton data over 0.2--1.0 keV and 0.2--12.0 keV photon energy ranges (the former is the range analysed in the multi-observatory spectral analysis of \source\ described in chapter \ref{chap:multi-obs}, whereas the latter is the full range for SSS).
-			
-			As expected, the count rates for the lightcurve extracted over the full SSS photon energy range is higher than that for the 0.2--1.0 keV range. This can be seen in the insets in both figures \ref{result:lc-mrvel-nicer} and \ref{result:lc-mrvel-xmm} for the chosen sub-intervals of observations. In figure \ref{result:lc-mrvel-xmm}, we can also see that the count rates of the RGS observations are much smaller than the corresponding EPIC-pn observations.
-			
 			\begin{figure}[h!]
 				\centering
 				\includegraphics[width=\textwidth]{timing/rx-j0925_lc-bothbands-inset}
@@ -333,9 +330,15 @@
 				\label{result:lc-mrvel-xmm}
 			\end{figure}
 			
+			The lightcurves of the SSS \source\ as observed by the observatories NICER and XMM-Newton are presented here. For the NICER observations, the lightcurves are extracted by combining timing data from all three observations mentioned in table \ref{tab:obs-journal}, and for XMM-Newton observations, the lightcurves are extracted from the timing data in observation ID 0111150101. Figures \ref{result:lc-mrvel-nicer} and \ref{result:lc-mrvel-xmm} respectively display the lightcurves extracted from NICER and XMM-Newton data over 0.2--1.0 keV and 0.2--12.0 keV photon energy ranges (the former is the range analysed in the multi-observatory spectral analysis of \source\ described in chapter \ref{chap:multi-obs}, whereas the latter is the full range for SSS).
+			
+			As expected, the count rates for the lightcurve extracted over the full SSS photon energy range is higher than that for the 0.2--1.0 keV range. This can be seen in the insets in both figures \ref{result:lc-mrvel-nicer} and \ref{result:lc-mrvel-xmm} for the chosen sub-intervals of observations. In figure \ref{result:lc-mrvel-xmm}, we can also see that the count rates of the RGS observations are much smaller than the corresponding EPIC-pn observations.
+			
 		\subsection{Timing analysis of NICER lightcurves}
 		
-			We present here the results of the timing analysis by applying the Lomb-Scargle periodogram on the NICER lightcurves.
+			We present here the results of the timing analysis by applying the Lomb-Scargle periodogram on the NICER lightcurves of \source. The use of this technique allows us to extract reliable periodic information from the NICER observations, overcoming potential issues related to gaps in data acquisition or variable observational cadence.
+			
+			The lightcurves were examined in two distinct photon energy ranges: 0.2--1.0 keV and 0.2--12.0 keV. The former range aligns with the energy band used in the earlier spectral analysis of the source, providing a direct comparison of the timing characteristics within the same spectral window. The latter range encompasses the full energy band for SSS, thereby offering a comprehensive view of the timing behaviour across the entire spectrum accessible to NICER.
 			
 			\subsubsection{Lomb-Scargle periodograms}
 				\begin{figure}[h!]
@@ -344,6 +347,9 @@
 					\caption{Lomb-Scargle periodogram of NICER lightcurves}
 					\label{result:ls-mrvel-nicer}
 				\end{figure}
+				The Lomb-Scargle periodograms were calculated for the lightcurves across both photon energy ranges. The resulting periodograms are depicted in figure \ref{result:ls-mrvel-nicer}. Upon examination of the inset, we observe closely spaced peaks at frequencies of 0.009 mHz and 0.017 mHz, which appear consistently in both energy ranges. These frequencies correspond to periods of 112.3 ks and 58.8 ks respectively, with the latter possibly being a harmonic. So we may consider 0.009 mHz to be an intrinsic variation in the source signal.
+				
+				Additionally, peaks are identified at higher frequencies, specifically at 0.163 mHz, 0.341 mHz, and 0.521 mHz. However, it is important to note that these higher frequency peaks are attributed to the observational cadence of the NICER XTI, i.e. they correspond to the NICER observation windows, which are separated by approximately 6144 seconds, and represent harmonics of this fundamental period. These peaks do not necessarily indicate intrinsic periodicity in the source but rather reflect the instrumental observational pattern.
 			
 			\subsubsection{Best-fit sinusoids for 0.2--1.0 keV lightcurve}
 				\begin{figure}[h!]
@@ -352,6 +358,7 @@
 					\caption{Phase-folded NICER lightcurve over 0.2--1.0 keV with best-fit sinusoids}
 					\label{result:lc-phase-fold-mrvel-nicer:200-1000-bestfit}
 				\end{figure}
+				Utilising the frequencies corresponding to the peak power densities at 0.009 mHz and 0.017 mHz, we performed sinusoidal fits to the NICER lightcurve data. The resulting phase-folded lightcurve, spanning a single cycle from 0 to $2\pi$ radians, is presented in figure \ref{result:lc-phase-fold-mrvel-nicer:200-1000-bestfit} for the photon energy range of 0.2--1.0 keV. This phase-folded representation provides a clearer view of the periodic variations in the lightcurve and highlights the sinusoidal nature of the observed modulation within this specific energy band.
 				
 				\begin{figure}[h!]
 					\centering
@@ -432,44 +439,33 @@
 					\caption{XMM-Newton RGS lightcurve over 0.2--12.0 keV with best-fit sinusoid}
 					\label{result:lc-mrvel-xmm-rgs:200-12000-bestfit}
 				\end{figure}
-		
-	
-		\begin{landscape}
-		\renewcommand{\arraystretch}{1.5}
-		\begin{table}[!htb]
-			\caption{Results of variability studies on \source}
-			\label{tab:timing-mrvel-old}
-			\begin{tabular}{ccccc|cccc}
-				\hline
-				\multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Photon\\ energy\\ range\end{tabular}}} & \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Observatory\\ \& Instrument\end{tabular}}} & \multicolumn{3}{c|}{\textbf{Lomb-Scargle periodogram}}                                                                                                                                                              & \multicolumn{4}{c}{\textbf{Best-fit sinusoid}}                                                                                                                                                                                       \\ \cline{3-9} & {} & \textbf{\begin{tabular}[c]{@{}c@{}}Frequency\\ (mHz)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Period\\ (ks)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Power\\ per unit\\ frequency\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}A\\ (counts/s)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}phi\\ (rad)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}C0\\ (counts/s)\end{tabular}} & \multicolumn{1}{l}{\textbf{AMR}} \\ \hline
-				\multirow{2}{*}{0.2 - 1.0 keV} & \begin{tabular}[c]{@{}c@{}}NICER\\ XTI\end{tabular} & {0.02} & {58.8} & {0.49} & {1.25} & {1.57} & {10.39} & {12.0\%} \\ \cline{2-9}
-				{} & \begin{tabular}[c]{@{}c@{}}XMM-Newton\\ EPIC-pn\end{tabular} & {0.06} & {18.1} & {0.16} & {0.31} & {-0.20} & {4.62} & {6.7\%}\\ \hline
-				\multirow{3}{*}{0.2 - 12.0 keV} & \begin{tabular}[c]{@{}c@{}}NICER\\ XTI\end{tabular} & {0.01} & {112.4} & {0.32} & {1.75} & {0.49} & {11.63} & {15.1\%} \\ \cline{2-9}
-				{} & \begin{tabular}[c]{@{}c@{}}XMM-Newton\\ EPIC-pn\end{tabular} & {0.06} & {18.1} & {0.16} & {0.33} & {-0.20} & {4.89} & {6.8\%} \\
-				{} & \begin{tabular}[c]{@{}c@{}}XMM-Newton\\ RGS\end{tabular} & {0.05} & {18.5} & {0.07} & {0.06} & {1.31} & {0.73} & {7.5\%} \\ \hline
-			\end{tabular}
-		\end{table}
-		\renewcommand{\arraystretch}{2.2}
-		\end{landscape}
+
 		
 		\begin{landscape}
 		\renewcommand{\arraystretch}{1.5}
 		\begin{table}[!htb]
+			\centering
 			\caption{Results of variability studies on \source}
 			\label{tab:timing-mrvel}
-			\begin{tabular}{p{2.5cm}p{2.0cm}p{2.0cm}ccc|ccc}
+			\begin{tabular}{C{2.2cm}C{2.2cm}|C{2cm}C{2cm}C{2cm}|C{1.8cm}C{1.8cm}C{1.8cm}C{1.8cm}}
 				\hline
-				\multirow{2}{*}{\textbf{Observatory}} & \multirow{2}{*}{\textbf{Instrument}} & \multirow{2}{*}{\textbf{Photon energy range}} & \multicolumn{3}{c|}{\textbf{Lomb-Scargle periodogram}} & \multicolumn{3}{c}{\textbf{Best-fit sinusoid}} \\ \cline{4-9}
-				{} & {} & {} & \textbf{Frequency (mHz)} & \textbf{Period (ks)} & \textbf{Power/frequency} & \textbf{$\boldsymbol{A}$ (counts/s)} & \textbf{$\phi$ (rad)} & \textbf{$C_0$ (counts/s)} \\ \hline
-				\multirow{4}{*}{NICER} & \multirow{4}{*}{XTI} & \multirow{2}{*}{0.2 -- 1.0 keV} & {0.009} & {112.3} & {0.480} & {1.56} & {0.50} & {10.32} \\
-				{} & {} & {} & {0.017} & {58.8} & {0.490} & {1.25} & {1.57} & {10.39} \\ \cline{3-9}
-				{} & {} & \multirow{2}{*}{0.2 -- 12.0 keV} & {0.009} & {112.3} & {0.322} & {1.76} & {0.48} & {11.63} \\
-				{} & {} & {} & {0.017} & {58.8} & {0.293} & {1.29} & {1.44} & {11.75} \\ \hline
-				\multirow{5}{*}{XMM-Newton} & \multirow{4}{*}{EPIC-pn} & \multirow{2}{*}{0.2 -- 1.0 keV} & {0.055} & {18.1} & {0.157} & {0.31} & {-0.20} & {4.62} \\
-				{} & {} & {} & {0.077} & {13.1} & {0.095} & {0.25} & {1.12} & {4.61} \\ \cline{3-9}
-				{} & {} & \multirow{2}{*}{0.2 -- 12.0 keV} {} & {0.055} & {18.1} & {0.160} & {0.33} & {-0.20} & {4.89} \\
-				{} & {} & {} & {0.077} & {13.1} & {0.106} & {0.28} & {1.16} & {4.88} \\ \cline{2-9}
-				{} & {RGS} & {0.2 -- 12.0 keV} & {0.055} & {18.1} & {0.057} & {0.05} & {-0.09} & {0.73} \\ \hline
+				\multirow{2}{*}{\shortstack{\textbf{Observatory}\\ \textbf{and}\\ \textbf{Instrument}}} & \multirow{2}{*}{\shortstack{\textbf{Photon}\\ \textbf{energy}\\ \textbf{range}}} & \multicolumn{3}{c|}{\textbf{Lomb-Scargle periodogram}} & \multicolumn{4}{c}{\textbf{Best-fit sinusoid}} \\ \cline{3-9}
+				{} & {} & {\textbf{Freq. (mHz)}} & {\shortstack{\textbf{Period}\\ \textbf{(ks)}}} & {\textbf{Power per freq.}} & {\shortstack{$\boldsymbol{A}$\\ \textbf{(counts/s)}}} & {\shortstack{ $\boldsymbol{\phi}$\\ \textbf{(rad)}}} & {\shortstack{$\boldsymbol{C_0}$\\ \textbf{(counts/s)}}} & {\textbf{AMR}} \\
+				\hline
+				\multirow{4}{*}{\shortstack{NICER\\ \\ XTI}} & \multirow{2}{*}{\shortstack{0.2 -- 1.0\\ keV}} & {0.009} & {112.3} & {0.480} & {1.56} & {0.50} & {10.32} & {15.1\%} \\
+				{} & {} & {0.017} & {58.8} & {0.490} & {1.25} & {1.57} & {10.39} & {12.0\%} \\
+				\cline{2-9}
+				{} & \multirow{2}{*}{\shortstack{0.2 -- 12.0\\ keV}} & {0.009} & {112.3} & {0.322} & {1.76} & {0.48} & {11.63} & {15.1\%} \\
+				{} & {} & {0.017} & {58.8} & {0.293} & {1.29} & {1.44} & {11.75} & {11.0\%} \\
+				\hline
+				\multirow{4}{*}{\shortstack{XMM-\\Newton \\ \\ EPIC-pn}} & \multirow{2}{*}{\shortstack{0.2 -- 1.0\\ keV}} & {0.055} & {18.1} & {0.157} & {0.31} & {-0.20} & {4.62} & {6.7\%} \\
+				{} & {} & {0.077} & {13.1} & {0.095} & {0.25} & {1.12} & {4.61} & {5.4\%} \\
+				\cline{2-9}
+				{} & \multirow{2}{*}{\shortstack{0.2 -- 12.0\\ keV}} & {0.055} & {18.1} & {0.160} & {0.33} & {-0.20} & {4.89} & {6.8\%} \\
+				{} & {} & {0.077} & {13.1} & {0.106} & {0.28} & {1.16} & {4.88} & {5.8\%} \\
+				\hline
+				{XMM-Newton RGS} & {0.2 -- 12.0 keV} & {0.055} & {18.1} & {0.057} & {0.05} & {-0.09} & {0.73} & {7.4\%} \\
+				\hline
 			\end{tabular}
 		\end{table}
 		\renewcommand{\arraystretch}{2.2}

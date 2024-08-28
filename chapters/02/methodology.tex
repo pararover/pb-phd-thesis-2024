@@ -64,6 +64,11 @@
     				\implies \hat{g}_k&=\sum_{n=0}^{N}{g_ne^{-2\pi ikn/N}} \label{eqn:dft-03}
     			\end{align}
     			Here, equation (\ref{eqn:dft-03}) gives the expression for the implementation of the discrete Fourier transform.
+    			
+    			From the DFT in equation (\ref{eqn:dft-03}), we can compute the \textit{classical periodogram} or \textit{Schuster periodogram} \cite{schuster1898investigation} as $\dfrac{1}{N}$ times the Fourier power spectrum for a continuous signal observed with uniform sampling using a Dirac comb:
+    			\begin{align}
+    				P_s(f)=\dfrac{1}{N}\left| \sum_{n=1}^{N}{g_ne^{-2\pi i ft_n}} \right|^2 \label{eqn:schuster-periodogram}
+    			\end{align}
     		
     		\subsubsection{Mathematical Formulation of Lomb-Scargle Periodogram}
     		

@@ -9,8 +9,69 @@
     
     Insert abstract here.
     
-    \section{Fundamentals of Spectral Analysis} \label{methodology:spectral}
+    \section{Spectral Study of Supersoft X-ray Sources} \label{methodology:spectral}
     	
     	
-    \section{Variability Study using Lomb-Scargle Periodogram} \label{methodology:variability}
+    \section{Variability Study of Supersoft X-ray Sources} \label{methodology:variability}
+    
+    	\subsection{Introduction to Lomb-Scargle Periodogram}
+    		Introduce the concept of periodograms, emphasizing their role in time series analysis for detecting periodic signals.
+    		
+    		\subsubsection{Historical Background}
+    		
+    		\subsubsection{Importance in Astrophysics}
+    	
+    	\subsection{Theory of Lomb-Scargle Periodogram}
+    	
+    		\subsubsection{Limitation of Discrete Fourier Transform}
+    			Suppose that $g(t)$ is a \textit{signal function} and $W(t)$ represents the observation \textit{window function}, then the observed signal is represented by the following function:
+    			\begin{align}
+    				g_\text{obs}(t)=g(t)W(t) \label{eqn:obs-func}
+    			\end{align}
+    			Then, by the Fourier convolution theorem, we have,
+    			\begin{align}
+    				\mathscr{F}\left\lbrace g_\text{obs} \right\rbrace = \mathscr{F}\left\lbrace g(t) \right\rbrace * \mathscr{F}\left\lbrace W(t) \right\rbrace
+    			\end{align}
+    			In the case of the discrete Fourier transform, where the continuous signal is sampled at regular intervals, the window function becomes a Dirac comb, which is a regular grid of Dirac delta functions with spacing of $\Delta t$, i.e.
+    			\begin{align}
+    				W(t)=\text{III}_{\Delta t}(t)=\sum_{n=-\infty}^{\infty}{\delta(t-n\Delta t)} \label{eqn:dirac-comb}
+    			\end{align}
+    			
+    			Hence, equation \ref{eqn:obs-func} becomes
+    			\begin{align}
+    				g_\text{obs}(t)=g(t)\text{III}_{\Delta t}(t) \label{eqn:obs-func:dft}
+    			\end{align}
+    			Taking the Fourier transform of equation (\ref{eqn:obs-func:dft}), we can have
+    			\begin{align}
+    				\hat{g}_\text{obs}(f)&=\FT{g_\text{obs}(t)}{f} \nonumber \\
+    					&=\FT{g(t)\text{III}_{\Delta t}(t)}{f} \nonumber \\
+    					&=\FT{g(t)\left\lbrace \sum_{n=-\infty}^{\infty}{\delta(t-n\Delta t)} \right\rbrace}{f} \nonumber \\
+    					&=\sum_{n=-\infty}^{\infty}{\int_{-\infty}^{\infty}{\delta(t-n\Delta t)g(t)e^{-2\pi ift}\diff{t}}} \nonumber \\
+    				\implies\hat{g}_\text{obs}(f)&=\sum_{n=-\infty}^{\infty}{g(n\Delta t)e^{-2\pi ift}} \label{eqn:dft-01}
+    			\end{align}
+    			In case of a finite number $N$ of samples, we can express $g(n\Delta t)=g_n$ and so equation (\ref{eqn:dft-01}) becomes
+    			\begin{align}
+    				\hat{g}_\text{obs}(f)&=\sum_{n=0}^{N}{g_ne^{-2\pi ifn\Delta t}} \label{eqn:dft-02}
+    			\end{align}
+    			As per the Nyquist limit, the frequency range of relevance is $0\leqslant f\leqslant\dfrac{1}{\Delta t}$. This range can be evenly spaced into $N$ intervals with
+    			\begin{align*}
+    				\Delta f&=\dfrac{1/{\Delta t}}{N}=\dfrac{1}{N\Delta t} \\
+    				\implies\Delta f\Delta t&=\dfrac{1}{N}
+    			\end{align*}
+    			Let the frequency range be spaced by $\Delta f$, i.e. $f=k\Delta f$, where $k$ is an integer. Then from equation (\ref{eqn:dft-02}), we obtain
+    			\begin{align}
+    				\hat{g}_\text{obs}(k\Delta f)&=\sum_{n=0}^{N}{g_ne^{-2\pi ik\Delta fn\Delta t}} \nonumber \\
+    				\implies \hat{g}_k&=\sum_{n=0}^{N}{g_ne^{-2\pi ikn/N}} \label{eqn:dft-03}
+    			\end{align}
+    			Here, equation (\ref{eqn:dft-03}) gives the expression for the implementation of the discrete Fourier transform.
+    		
+    		\subsubsection{Mathematical Formulation of Lomb-Scargle Periodogram}
+    		
+    		\subsubsection{Statistical Properties}
+    	
+    	\subsection{Implementation of Lomb-Scargle Periodogram}
+    	
+    		\subsubsection{Computational Techniques}
+    		
+    		\subsubsection{Software Tools and Libraries}
     	

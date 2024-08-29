@@ -15,7 +15,12 @@
     \section{Variability Study of Supersoft X-ray Sources} \label{methodology:variability}
     
     	\subsection{Introduction to Lomb-Scargle Periodogram}
-    		Introduce the concept of periodograms, emphasizing their role in time series analysis for detecting periodic signals.
+    		%Introduce the concept of periodograms, emphasizing their role in time series analysis for detecting periodic signals.
+    		Periodograms are a versatile tool for identifying and quantifying periodic patterns within data. By transforming a time series into the frequency domain, periodograms reveal the frequencies at which the signal exhibits significant power. This spectral analysis is invaluable for detecting periodic components that might be obscured in the original time domain representation.
+    		
+    		The height of peaks in a periodogram provides an estimate of the amplitude of the corresponding periodic component. This allows for a quantitative assessment of the strength of periodic signals. Additionally, the frequency of these peaks directly indicates the periodicity of the underlying patterns.
+    		
+    		While traditional periodograms are well-suited for uniformly sampled data, their applicability can be limited when dealing with irregularly spaced time series. In such scenario, the Lomb-Scargle periodogram emerges as a viable alternative \cite{lomb1976least,scargle1982studies}. Specifically designed to handle unevenly spaced data, the Lomb-Scargle periodogram accounts for gaps in the time series, providing a robust and reliable method for detecting periodic signals.
     		
     		\subsubsection{Historical Background}
     		
@@ -31,7 +36,7 @@
     			\end{align}
     			Then, by the Fourier convolution theorem, we have,
     			\begin{align}
-    				\mathscr{F}\left\lbrace g_\text{obs} \right\rbrace = \mathscr{F}\left\lbrace g(t) \right\rbrace * \mathscr{F}\left\lbrace W(t) \right\rbrace
+    				\mathscr{F}\left\lbrace g_\text{obs} \right\rbrace = \mathscr{F}\left\lbrace g(t) \right\rbrace * \mathscr{F}\left\lbrace W(t) \right\rbrace \label{eqn:FT-obs-func}
     			\end{align}
     			In the case of the discrete Fourier transform, where the continuous signal is sampled at regular intervals, the window function becomes a Dirac comb, which is a regular grid of Dirac delta functions with spacing of $\Delta t$, i.e.
     			\begin{align}
@@ -87,11 +92,51 @@
     			\begin{align}
     				W_{\{t_n\}}(t)=\sum_{n=1}^{N}{\delta(t-t_n)} \label{eqn:nonunif-dirac-comb}
     			\end{align}
-    			
-    		
+    			In this scenario, upon applying the window function to the underlying continuous signal, the observed signal is obtained to be of the form:
+    			\begin{align}
+    				g_\text{obs}(t)&=g(t)W_{\{t_n\}}(t) \nonumber \\
+    				\implies g_\text{obs}(t)&=\sum_{n=1}^{N}{g(t)\delta(t-t_n)} \label{eqn:obs-func-nonunif}
+    			\end{align}
+    			The Fourier transform of the observed signal is obtained using the convolution theorem to be as follows
+    			\begin{align}
+    				\mathscr{F}\{g_\text{obs}\}=\mathscr{F}\{g(t)\}*\mathscr{F}\{W_{\{t_n\}}(t)\} \label{eqn:FT-obs-func-nonunif}
+    			\end{align}
+    			However, in this case, the Fourier transform of the window function $W_{\{t_n\}}(t)$ would not be a Dirac comb. Rather, it would be noisier because the observation times have undergone randomization. Even though this noise may be reduced to a certain degree by increasing the number of observations, it would still persist. Also, increasing the number of observations might not be practically feasible in situation, such as in astronomy.
+    				
     		\subsubsection{Mathematical Formulation of Lomb-Scargle Periodogram}
+    			Using Euler's formula, the classical periodogram given in equation (\ref{eqn:schuster-periodogram}) can be re-cast in the following manner:
+    			\begin{align}
+    				P(f)&=\dfrac{1}{N}\left| \sum_{n=1}^{N}{g_ne^{-2\pi i ft_n}} \right|^2 \nonumber \\
+    				\implies P(f)&=\dfrac{1}{N}\left[ \left\lbrace \sum_{n=1}^{N}{g_n\cos{(2\pi ft_n)}} \right\rbrace^2 + \left\lbrace \sum_{n=1}^{N}{g_n\sin{(2\pi ft_n)}} \right\rbrace^2 \right] \label{eqn:lomb-scargle-01}
+    			\end{align}
+    			%When the classical periodogram is applied to uniformly-sampled Gaussian noise, the resulting periodogram becomes a $\chi^2$ distribution. However, this does not hold good when the sampling becomes nonuniform, with the end result being that the periodogram distribution cannot, in general, be analytically expressed.
+    			When the classical periodogram is applied to uniformly-sampled Gaussian noise, its distribution converges asymptotically to a $\chi^2$ distribution with known degrees of freedom, this property being contingent upon the assumption of uniform sampling. For non-uniformly sampled data, the distribution of the periodogram becomes considerably more complex, and a closed-form analytical expression is generally intractable.
+    			
+    			To address this issue, Scargle generalized the periodogram in equation (\ref{eqn:lomb-scargle-01}) as follows \cite{scargle1982studies}:
+    			\begin{align}
+    				P(f)&=\dfrac{A^2}{2}\left\lbrace \sum_{n=1}^{N}{g_n\cos{[2\pi f(t_n-\tau)]}} \right\rbrace^2 + \dfrac{B^2}{2}\left\lbrace \sum_{n=1}^{N}{g_n\sin{[2\pi f(t_n-\tau)]}} \right\rbrace^2 \label{eqn:lomb-scargle-02}
+    			\end{align}
+    			where $A$, $B$ and $\tau$ are arbitrary functions of the frequencies $f$ and the observing times $\{t_i\}$. Scargle also showed that one can choose unique forms of $A$, $B$ and $\tau$ in a manner such that we have the periodogram in equation (\ref{eqn:lomb-scargle-02})
+    			\begin{enumerate}[a)]
+    				\item reducing to the classical form in equation (\ref{eqn:schuster-periodogram}) in case the observations are uniformly sampled.
+    				\item having statistics which are analytically computable.
+    				\item becoming insensitive to global time-shifts in data.
+    			\end{enumerate}
+    			The functions of $A$, $B$ and $\tau$ that provide the above properties are
+    			\begin{align*}
+    				A&=\dfrac{1}{\sqrt{\sum_{n}{\cos^2{[2\pi f(t_n-\tau)]}}}} \\
+    				B&=\dfrac{1}{\sqrt{\sum_{n}{\sin^2{[2\pi f(t_n-\tau)]}}}} \\
+    				\tau&=\dfrac{1}{4\pi f}\tan^{-1}{\left\lbrace \dfrac{\sum_{n}{\sin{[4\pi ft_n)]}}}{\sum_{n}{\cos{[4\pi ft_n)]}}} \right\rbrace}
+    			\end{align*}
+    			In the above, the function $\tau$ ensures the time-shift invariance of the Lomb-Scargle periodogram. A notable feature of the Lomb-Scargle periodogram is its equivalence to the result obtained from fitting a simple sinusoidal model to the data at each frequency $f$ and constructing a periodogram from the $\chi^2$ goodness-of-fit statistic at each frequency. This approach allows the periodogram to be viewed as a measure of how well a sine wave of a given frequency fits the observational data. In this context, the introduction of the $\tau$ shift is crucial, as it serves to orthogonalize the normal equations used in the least squares fitting process. This orthogonalization ensures that the fitting procedure is unbiased and more computationally stable. This deep connection between traditional Fourier analysis and least-squares analysis has led to the widespread adoption of the term \textit{Lomb-Scargle periodogram} to describe this methodology, even though variants of this approach were utilized prior to Lomb and Scargle's formalization.
+    			
+    			%The similarity between the classical Fourier-based periodograms and the Lomb-Scargle periodograms implies that much of the theoretical reasoning developed for the former is also qualitatively applicable to the latter. For instance, the influence of window functions, which modify the observed power spectrum due to finite observation times, is still relevant when interpreting the results of the Lomb-Scargle periodogram, although quantitative predictions may differ. However, a key limitation of the standard Lomb-Scargle formulation is its reliance on the assumption that observational noise is uncorrelated white noise. In cases where the data contain more complex noise characteristics, such as coloured noise or correlated observational errors, the statistical guarantees provided by the Lomb-Scargle method may no longer hold, necessitating more advanced modifications or alternative approaches to accurately interpret the variability signals present in the data.
     		
-    		\subsubsection{Statistical Properties}
+    		\subsubsection{Uncertainties in Periodogram Results}
+    			A critical aspect of reporting results derived from the Lomb-Scargle periodogram is the quantification of uncertainty associated with the estimated period. While traditional approaches often rely on error bars to express uncertainty, such a metric may be less meaningful in the context of Lomb-Scargle periodograms. The primary concern with periodograms is often the presence of false peaks or aliases, rather than a continuous distribution of potential period values around a true estimate. This disjointed nature of uncertainty necessitates a more nuanced approach to quantifying the reliability of the estimated period.
+    			
+    			\paragraph{Peak Width and Frequency Precision:}
+    			
     	
     	\subsection{Implementation of Lomb-Scargle Periodogram}
     	

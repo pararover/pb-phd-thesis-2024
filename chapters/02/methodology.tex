@@ -23,7 +23,8 @@
     	
     	\subsection{Theory of Lomb-Scargle Periodogram}
     	
-    		\subsubsection{Limitation of Discrete Fourier Transform}
+    		\subsubsection{Uniform and non-uniform sampling of data}
+    			\paragraph{Uniform sampling of data:}
     			Suppose that $g(t)$ is a \textit{signal function} and $W(t)$ represents the observation \textit{window function}, then the observed signal is represented by the following function:
     			\begin{align}
     				g_\text{obs}(t)=g(t)W(t) \label{eqn:obs-func}
@@ -69,6 +70,24 @@
     			\begin{align}
     				P_s(f)=\dfrac{1}{N}\left| \sum_{n=1}^{N}{g_ne^{-2\pi i ft_n}} \right|^2 \label{eqn:schuster-periodogram}
     			\end{align}
+    			It must be clarified here that the periodogram is a statistic which is computed from the data and it is used to estimate the power spectrum of the underlying continuous signal of interest.
+    			
+    			In real-world observational fields such as astronomy, data collection is often subjected to a range of constraints and variability, leading to non-uniform sampling. Unlike controlled experiments where conditions can be held constant, astronomical observations by space-based observatories are influenced by a variety of factors:
+    			\begin{enumerate}[i.]
+    				\item \textit{Orbital constraints}: Space-based telescopes are often in specific orbits around the Earth, the Moon, or even the Sun. These orbits dictate observation windows and create periods when the telescope cannot point at certain objects due to the Sun, Earth, or other celestial bodies obstructing the line of sight.
+    				\item \textit{Sun avoidance regions}: To prevent damage to sensitive instruments, space-based telescopes typically have sun avoidance zones where they cannot observe. This limits the ability to track certain objects continuously, leading to gaps in data collection.
+    				\item \textit{Limited data storage and downlink bandwidth}: Space telescopes have finite onboard data storage and are dependent on ground stations for data downlink. Periods when the telescope is out of communication range or when storage reaches capacity can result in interruptions in data collection.
+    				\item \textit{Thermal constraints and cooling periods}: Space-based telescopes equipped with infrared sensors or other heat-sensitive instruments may require cooling periods or specific thermal management strategies. This can restrict observation times and introduce non-uniform sampling in the data.
+    				\item \textit{Instrument maintenance and calibration}: Routine instrument calibration and maintenance activities can lead to temporary suspension of scientific observations, causing gaps in data collection.
+    			\end{enumerate}
+    			These factors create unevenly spaced data points that pose significant challenges for the discrete Fourier transform, which is built on the assumption of uniform sampling intervals.
+    			
+    			\paragraph{Non-uniform sampling of data:}
+    			In case the observed data is a signal that is sampled over a set of $N$ times, i.e. $\{t_n\}$, and so the window function my be expressed as
+    			\begin{align}
+    				W_{\{t_n\}}(t)=\sum_{n=1}^{N}{\delta(t-t_n)} \label{eqn:nonunif-dirac-comb}
+    			\end{align}
+    			
     		
     		\subsubsection{Mathematical Formulation of Lomb-Scargle Periodogram}
     		

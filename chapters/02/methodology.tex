@@ -140,9 +140,9 @@
     			
     			A more rigorous framework for assessing uncertainty can be established within the context of least squares analysis. In this interpretation, the inverse of the peak's curvature is directly related to the uncertainty in the estimated frequency. This perspective aligns with the Bayesian approach, which involves fitting a Gaussian curve to the exponentiated peak. The Bayesian uncertainty in the frequency estimate is influenced by both the number of samples $N$, and the average signal-to-noise ratio $\Sigma$. The scaling of this uncertainty can be approximated by the standard deviation of the estimated frequency:
     			\begin{align}
-    				\sigma_f \approx f_{1/2}\sqrt{2}{N\Sigma^2}} \label{eqn:stddev-est-freq}
+    				\sigma_f\approx\sqrt{\dfrac{2}{N\Sigma^2}} \label{eqn:stddev-est-freq}
     			\end{align}
-    			This dependence arises from the fact that the Bayesian uncertainty is linked to the width of the exponentiated periodogram, which in turn is influenced by the peak's height $P_\text{max}$​.
+    			This dependence arise from the fact that the Bayesian uncertainty is linked to the width of the exponentiated periodogram, which in turn is influenced by the %peak's height ​.
     	
     	\subsection{Implementation of Lomb-Scargle Periodogram}
     	

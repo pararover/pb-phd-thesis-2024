@@ -477,24 +477,24 @@
 			\centering
 			\caption{Results of variability studies on \source}
 			\label{tab:timing-mrvel}
-			\begin{tabular}{C{2.2cm}C{2.2cm}|C{2cm}C{2cm}C{2cm}|C{1.8cm}C{1.8cm}C{1.8cm}C{1.8cm}}
+			\begin{tabular}{C{2.2cm}C{1.8cm}|C{2cm}C{2cm}C{2cm}C{2cm}|C{1.8cm}C{1.4cm}C{1.8cm}C{1.4cm}}
 				\hline
-				\multirow{2}{*}{\shortstack{\textbf{Observatory}\\ \textbf{and}\\ \textbf{Instrument}}} & \multirow{2}{*}{\shortstack{\textbf{Photon}\\ \textbf{energy}\\ \textbf{range}}} & \multicolumn{3}{c|}{\textbf{Lomb-Scargle periodogram}} & \multicolumn{4}{c}{\textbf{Best-fit sinusoid}} \\ \cline{3-9}
-				{} & {} & {\textbf{Freq. (mHz)}} & {\shortstack{\textbf{Period}\\ \textbf{(ks)}}} & {\textbf{Power per freq.}} & {\shortstack{$\boldsymbol{A}$\\ \textbf{(counts/s)}}} & {\shortstack{ $\boldsymbol{\phi}$\\ \textbf{(rad)}}} & {\shortstack{$\boldsymbol{C_0}$\\ \textbf{(counts/s)}}} & {\textbf{AMR}} \\
+				\multirow{2}{*}{\shortstack{\textbf{Observatory}\\ \textbf{and}\\ \textbf{Instrument}}} & \multirow{2}{*}{\shortstack{\textbf{Photon}\\ \textbf{energy}\\ \textbf{range}}} & \multicolumn{4}{c|}{\textbf{Lomb-Scargle periodogram}} & \multicolumn{4}{c}{\textbf{Best-fit sinusoid}} \\ \cline{3-10}
+				{} & {} & {\textbf{Freq. (mHz)}} & {\shortstack{\textbf{Period}\\ \textbf{(ks)}}} & {\textbf{Power per freq.}} & {\textbf{FAP}} & {\shortstack{$\boldsymbol{A}$\\ \textbf{(counts/s)}}} & {\shortstack{ $\boldsymbol{\phi}$\\ \textbf{(rad)}}} & {\shortstack{$\boldsymbol{C_0}$\\ \textbf{(counts/s)}}} & {\textbf{AMR}} \\
 				\hline
-				\multirow{4}{*}{\shortstack{NICER\\ \\ XTI}} & \multirow{2}{*}{\shortstack{0.2 -- 1.0\\ keV}} & {0.009} & {112.3} & {0.480} & {1.56} & {0.50} & {10.32} & {15.1\%} \\
-				{} & {} & {0.017} & {58.8} & {0.490} & {1.25} & {1.57} & {10.39} & {12.0\%} \\
-				\cline{2-9}
-				{} & \multirow{2}{*}{\shortstack{0.2 -- 12.0\\ keV}} & {0.009} & {112.3} & {0.322} & {1.76} & {0.48} & {11.63} & {15.1\%} \\
-				{} & {} & {0.017} & {58.8} & {0.293} & {1.29} & {1.44} & {11.75} & {11.0\%} \\
+				\multirow{4}{*}{\shortstack{NICER\\ \\ XTI}} & \multirow{2}{*}{\shortstack{0.2 -- 1.0\\ keV}} & {0.009} & {112.3} & {0.480} & {} & {1.56} & {0.50} & {10.32} & {15.1\%} \\
+				{} & {} & {0.017} & {58.8} & {0.490} & {} & {1.25} & {1.57} & {10.39} & {12.0\%} \\
+				\cline{2-10}
+				{} & \multirow{2}{*}{\shortstack{0.2 -- 12.0\\ keV}} & {0.009} & {112.3} & {0.322} & {} & {1.76} & {0.48} & {11.63} & {15.1\%} \\
+				{} & {} & {0.017} & {58.8} & {0.293} & {} & {1.29} & {1.44} & {11.75} & {11.0\%} \\
 				\hline
-				\multirow{4}{*}{\shortstack{XMM-\\Newton \\ \\ EPIC-pn}} & \multirow{2}{*}{\shortstack{0.2 -- 1.0\\ keV}} & {0.055} & {18.1} & {0.157} & {0.31} & {-0.20} & {4.62} & {6.7\%} \\
-				{} & {} & {0.077} & {13.1} & {0.095} & {0.25} & {1.12} & {4.61} & {5.4\%} \\
-				\cline{2-9}
-				{} & \multirow{2}{*}{\shortstack{0.2 -- 12.0\\ keV}} & {0.055} & {18.1} & {0.160} & {0.33} & {-0.20} & {4.89} & {6.8\%} \\
-				{} & {} & {0.077} & {13.1} & {0.106} & {0.28} & {1.16} & {4.88} & {5.8\%} \\
+				\multirow{4}{*}{\shortstack{XMM-\\Newton \\ \\ EPIC-pn}} & \multirow{2}{*}{\shortstack{0.2 -- 1.0\\ keV}} & {0.055} & {18.1} & {0.157} & {} & {0.31} & {-0.20} & {4.62} & {6.7\%} \\
+				{} & {} & {0.077} & {13.1} & {0.095} & {} & {0.25} & {1.12} & {4.61} & {5.4\%} \\
+				\cline{2-10}
+				{} & \multirow{2}{*}{\shortstack{0.2 -- 12.0\\ keV}} & {0.055} & {18.1} & {0.160} & {} & {0.33} & {-0.20} & {4.89} & {6.8\%} \\
+				{} & {} & {0.077} & {13.1} & {0.106} & {} & {0.28} & {1.16} & {4.88} & {5.8\%} \\
 				\hline
-				{XMM-Newton RGS} & {0.2 -- 12.0 keV} & {0.055} & {18.1} & {0.057} & {0.05} & {-0.09} & {0.73} & {7.4\%} \\
+				{XMM-Newton RGS} & {0.2 -- 12.0 keV} & {0.055} & {18.1} & {0.057} & {} & {0.05} & {-0.09} & {0.73} & {7.4\%} \\
 				\hline
 			\end{tabular}
 		\end{table}

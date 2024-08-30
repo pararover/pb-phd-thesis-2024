@@ -135,8 +135,14 @@
     		\subsubsection{Uncertainties in Periodogram Results}
     			A critical aspect of reporting results derived from the Lomb-Scargle periodogram is the quantification of uncertainty associated with the estimated period. While traditional approaches often rely on error bars to express uncertainty, such a metric may be less meaningful in the context of Lomb-Scargle periodograms. The primary concern with periodograms is often the presence of false peaks or aliases, rather than a continuous distribution of potential period values around a true estimate. This disjointed nature of uncertainty necessitates a more nuanced approach to quantifying the reliability of the estimated period.
     			
-    			\paragraph{Peak Width and Frequency Precision:}
+    			\paragraph{Peak width and frequency precision:}
+    			The presence of a peak within the Lomb-Scargle periodogram, characterized by its width and height, signifies the existence of a periodic signal. In the Fourier domain, the precision with which a peak's frequency can be identified is directly correlated with its width. A common metric for quantifying this width is the half-width at half-maximum, denoted by $f_{1/2}\approx T$.
     			
+    			A more rigorous framework for assessing uncertainty can be established within the context of least squares analysis. In this interpretation, the inverse of the peak's curvature is directly related to the uncertainty in the estimated frequency. This perspective aligns with the Bayesian approach, which involves fitting a Gaussian curve to the exponentiated peak. The Bayesian uncertainty in the frequency estimate is influenced by both the number of samples $N$, and the average signal-to-noise ratio $\Sigma$. The scaling of this uncertainty can be approximated by the standard deviation of the estimated frequency:
+    			\begin{align}
+    				\sigma_f \approx f_{1/2}\sqrt{2}{N\Sigma^2}} \label{eqn:stddev-est-freq}
+    			\end{align}
+    			This dependence arises from the fact that the Bayesian uncertainty is linked to the width of the exponentiated periodogram, which in turn is influenced by the peak's height $P_\text{max}$​.
     	
     	\subsection{Implementation of Lomb-Scargle Periodogram}
     	

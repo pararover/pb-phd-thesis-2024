@@ -7,8 +7,9 @@
     	\emph{Abstract of chapter \ref{chap:methodology}}
     \end{center}
     
-    Insert abstract here.
+    This chapter presents a comprehensive methodology for analyzing the spectral and variability characteristics of Supersoft X-ray Sources (SSS). The spectral analysis section delves into the fundamentals of spectral curve fitting, including model-based fitting, the $\chi^2$ statistic, and parameter estimation. The essential components and data preprocessing steps involved in spectral analysis are also outlined. The variability study section focuses on the application of the Lomb-Scargle periodogram for identifying and characterizing periodic signals within SSS lightcurves. The methodology includes data acquisition, preprocessing, periodogram calculation, statistical significance assessment, phase-folding, and sinusoidal fitting. By combining these techniques, this chapter provides a robust framework for extracting valuable insights into the spectral and variability properties of SSS.
     
+    \newpage
     \section{Spectral Study of Supersoft X-ray Sources} \label{methodology:spectral}
     	
     	\subsection{Basics of Spectral Curve Fitting}
@@ -38,142 +39,153 @@ To assess the agreement between the predicted count spectrum and the observed da
 				The goal of spectral curve fitting is to find the set of model parameters that minimizes the $\chi^2$ value. This indicates a better agreement between the predicted and observed spectra, suggesting that the chosen model and its parameters accurately describe the underlying physical processes. To achieve this, the parameters are systematically varied and the corresponding $\chi^2$ values are calculated. The set of parameters that yields the lowest $\chi^2$ value is considered the best fit. This iterative process continues until a satisfactory minimum $\chi^2$ value is reached.
 			
 			\subsubsection{Assessing the Goodness of Fit}
+				The reduced $\chi^2$ statistic, defined as:
+				\begin{align}
+					\chi^2_\text{red}=\dfrac{\chi^2}{\nu} \label{eqn:chisq-reduced}
+				\end{align}
+				provides a valuable metric for evaluating the quality of the fit between a model and the observed data. Here, $\nu$ is the degrees of freedom, which is calculated as the difference between the number of channels and the number of model parameters. This effectively accounts for the constraints imposed by the model on the data.
+				
+				The $\chi^2_\text{red}$, as a fit statistic, may be used to assess the goodness of the fit as follows:
+				\begin{itemize}
+					\item \textit{Good Fit}: When the $\chi^2_\text{red}$ value is close to 1, it indicates a satisfactory agreement between the model and the data. This suggests that the model captures the underlying physical processes effectively and that the estimated errors are reasonable.
+					\item \textit{Poor Fit}: A $\chi^2_\text{red}$ value significantly greater than 1 suggests a poor fit. This could be due to several factors, such as an inadequate model, underestimated errors, or systematic biases in the data. A poor fit may necessitate revisiting the model choice or refining the error estimation.
+					\item \textit{Overestimated Errors}: A $\chi^2_\text{red}$ value significantly less than 1 indicates that the errors on the data have been overestimated. This could be attributed to various factors, including underestimation of systematic uncertainties or the presence of correlations between data points.
+				\end{itemize}
+				
+				The $\chi^2_\text{red}$ statistic provides a quantitative measure of the goodness-of-fit. It allows for a systematic comparison of different models and helps identify potential shortcomings or inconsistencies in the data or the chosen model. By analyzing the deviation of the $\chi^2_\text{red}$ value from 1, one can gain insights into the quality of the fit and make informed decisions regarding the suitability of the model and the reliability of the extracted information.
 			
 			\subsubsection{Error Estimation}
-%    		\begin{itemize}
-%				\item Spectrometer does not really obtain the spectrum from a source
-%				\item Actually obtains the photon counts $C$ in specific instrument channels $I$
-%				\item Suppose
-%			
-%				\quad\quad$f(E)$: actual energy spectrum
-%			
-%				\quad\quad$R(I,E)$: instrument response
-%				\item Observed spectrum $C(I)$ is related to the actual spectrum $f(E)$ as:
-%				\begin{equation} \label{c-e}
-%				C(I)=\int_0^\infty{f(E)R(I,E)\mathrm{d}E}
-%				\end{equation}
-%				\item Inversion of equation (\ref{c-e}) tends to be non-unique and unstable
-%			\end{itemize}
-%			
-%			The alternative:
-%			\begin{itemize}
-%				\item Choose a model spectrum described in terms of a few parameters
-%				$$f(E,p_1,p_2,p_3,\dots)$$
-%				\item Then adjust the parameters $p_1,p_2,p_3,\dots$ to fit the model to the data\\[0.8cm]
-%			
-%				\quad\quad\quad A game of trial and error!
-%			\end{itemize}
-%			
-%			\begin{itemize}
-%				\item For each $f(E)$, a predicted count spectrum $C_P(I)$ is calculated
-%				\item A fit statistic is computed to judge whether the model spectrum fits the data obtained
-%				\item Parameters are varied to obtain the best fit model $f_B(E)$
-%				\item Most common fit statistic: $\chi^2$
-%				$$\chi^2\equiv\sum{\dfrac{[C(I)-C_P(I)]^2}{(\sigma(I))^2}}$$
-%				\quad\quad\quad where $\sigma(I)$: error in channel $I$; usually estimated by $\sqrt{C(I)}$
-%			\end{itemize}
-%			
-%			$$\chi^2=\sum{\dfrac{[C(I)-C_P(I)]^2}{(\sigma(I))^2}}$$
-%			What values of $\chi^2$ correspond to the \emph{best fit}?
-%			\begin{itemize}
-%				\item Degrees of freedom
-%			
-%				$\nu\equiv$ (number of channels) $-$ (number of model parameters)
-%				\item Reduced $\chi^2$: $\dfrac{\chi^2}{\nu}$
-%				\item Goodness-of-fit criterion: when $\chi^2$ value is close to $\nu$, i.e.,
-%			
-%				\quad\quad\quad\quad\quad$\chi^2\sim\nu$\quad or\quad $\dfrac{\chi^2}{\nu}\sim 1$
-%			\end{itemize}
-%			
-%			\begin{itemize}
-%				\item $\dfrac{\chi^2}{\nu}\sim 1$\quad$\Rightarrow$\quad A good fit
-%				\item $\dfrac{\chi^2}{\nu}\gg 1$\quad$\Rightarrow$\quad A poor fit
-%				\item $\dfrac{\chi^2}{\nu}\ll 1$\quad$\Rightarrow$\quad Errors on data overestimated\\[0.5cm]
-%				\item Error width: range of values within which one can be confident of the true value of a parameter
-%			\end{itemize}
+				The error width, which quantifies the uncertainty associated with the estimated parameters in spectral curve fitting, can be derived from the covariance matrix obtained during the fitting process. The covariance matrix is a square matrix that provides information about the relationships between the parameters and their associated uncertainties.
+				
+				The diagonal elements of the covariance matrix represent the variances of the individual parameters. The square root of the diagonal elements gives the standard deviations, which can be interpreted as the error widths. These standard deviations indicate the range of values within which the true parameter value is likely to lie with a certain level of confidence.
+				
+				The off-diagonal elements of the covariance matrix represent the covariances between pairs of parameters. These values indicate the degree of correlation between the uncertainties in the parameters. A high covariance between two parameters suggests that their uncertainties are interrelated, meaning that changes in one parameter may affect the uncertainty in the other. By examining the covariance matrix, it is possible to identify potential correlations between parameters and assess their impact on the overall uncertainty in the fitted model.
 			
     	\subsection{Software Implementation}
-    		Main components for spectral fitting:\\[0.1cm]
-			\begin{itemize}
-				\item $D(I)$: Observed spectra\\[0.1cm]
-				\item $B(I)$: Background measurements\\[0.1cm]
-				\item $R(I,E)$: Corresponding instrument response\\[0.1cm]
-				\item $M(E)$: Set of model spectra\\[0.1cm]
-			\end{itemize}
-			
-			\begin{itemize}
-				\item $C(I)$ is obtained from $D(I)$ and $B(I)$ as:
-				\begin{equation} \label{C-I}
-				C(I)=\dfrac{D(I)}{a_Dt_D}-\dfrac{b_D}{b_B}\dfrac{B(I)}{a_B t_B}
+    		
+    		\subsubsection{Essential Components}
+    			Any generic software implementation of spectral curve fitting necessitates the presence of the following essential components for modeling and interpreting observed spectral data:
+    			\begin{enumerate}
+    				\item \textit{Observed Spectra} $D(I)$: The core component of spectral curve fitting is the observed spectral data, denoted as $D(I)$. This dataset represents the measured intensity of radiation as a function of detector channels $I$. The detector channels correspond to specific energy ranges or wavelengths, capturing the spectral information of the observed phenomenon.
+    				\item \textit{Background Measurements} $B(I)$: In most practical scenarios, the observed spectra are contaminated by background radiation or noise. To accurately isolate the signal of interest, background measurements, denoted as $B(I)$, are typically acquired. These measurements represent the instrumental background signal in the absence of the target source. By subtracting the background measurements from the observed spectra, it is possible to remove the unwanted noise and isolate the signal of interest.
+    				\item \textit{Instrument Response} $R(I,E)$: The instrument response function $R(I,E)$ maps the detector channels to the corresponding energy bins, providing a relationship between the observed spectral data and the underlying physical phenomenon. The instrument response function accounts for the instrument's sensitivity, resolution, and other characteristics, enabling the accurate interpretation of the measured spectral data.
+    				\item \textit{Model Spectra} $M(E)$: A set of model spectra $M(E)$ represent a variety of potential spectral shapes based on different physical scenarios or theoretical models. By comparing the observed spectra to these model spectra, one can identify the most suitable model and extract valuable information about the underlying physical processes. The choice of model spectra depends on the specific application and the expected characteristics of the observed phenomenon.
+    			\end{enumerate}
+    		
+    		\subsubsection{Data Processing and Model Construction}
+    			\paragraph{Background subtraction:}
+    			The observed spectrum $C(I)$ is typically contaminated by background radiation or noise. To isolate the signal of interest, the background spectrum $B(I)$ is subtracted from the raw data. This process is represented by equation (\ref{eqn:spec-backsub}) as given below:
+    			\begin{equation}
+					C(I)=\dfrac{D(I)}{a_Dt_D}-\dfrac{b_D}{b_B}\dfrac{B(I)}{a_B t_B} \label{eqn:spec-backsub}
 				\end{equation}
-				\quad\quad\quad$a_D,a_B$: area scaling factors
-			
-				\quad\quad\quad$b_D,b_B$: background scaling factors
-			
-				\quad\quad\quad$t_D,t_B$: exposure times
-			\end{itemize}
-			
-			\begin{itemize}
-				\item $R(I,E)$ is a continuous function
-				\item Made discrete by defining energy ranges $E_j$ as:
-				\begin{equation} \label{R_D-Ij}
-				R_D(I,j)=\dfrac{1}{E_j-E_{j-1}}{\int_{E_{j-1}}^{E_j}{R(I,E)\mathrm{d}E}}
+				where the following scaling factors and exposure times are used to normalize the spectra and ensure accurate background subtraction:
+				\begin{itemize}
+					\item $a_D,a_B$: Area scaling factors to account for differences in the area of the detector or source regions
+					\item $b_D,b_B$: Background scaling factors to adjust the relative contribution of the background
+					\item $t_D,t_B$: Exposure times for the observed data and background measurements, respectively
+				\end{itemize}
+				
+				\paragraph{Instrument response function:}
+				The instrument response function $R(I,E)$ maps the detector channels to the corresponding energy bins. It characterizes how the instrument responds to different energies. The instrument response function is typically a continuous function that can be discretized for computational efficiency. In order to do so, the energy range is divided into bins $E_j$. The corresponding response matrix elements $R_D(I,j)$ are calculated by integrating the continuous function $R(I,E)$ over each energy bin as given in equation (\ref{eqn:spec-response}):
+				\begin{equation}
+					R_D(I,j)=\dfrac{1}{E_j-E_{j-1}}{\int_{E_{j-1}}^{E_j}{R(I,E)\diff{E}}} \label{eqn:spec-response}
 				\end{equation}
-				\item Optional: Multiplication of an auxiliary response array $A_D(j)$ into $R_D(I,j)$
+				This discretization process transforms the continuous function into a matrix, which is suited for numerical calculations.
+				
+				\paragraph{Auxiliary response function:}
+				In some cases, additional effects such as energy redistribution within the detector can be accounted for by introducing an auxiliary response function $A_D(j)$. This function modifies the instrument response matrix elements as follows:
 				\begin{equation*}
-				R_D(I,j)\quad\rightarrow\quad R_D(I,j)\cdot A_D(j)
+					R_D(I,j)\quad\rightarrow\quad R_D(I,j)\cdot A_D(j)
 				\end{equation*}
-				\item This represents the \emph{redistribution matrix function} (RMF)
-			\end{itemize}
-			
-			\begin{itemize}
-				\item The model spectrum array is calculated as
-				\begin{equation} \label{M_D-j}
-				M_D(j)=\int_{E_{j-1}}^{E_j}{M(E)\mathrm{d}E}
+				The auxiliary response function effectively redistributes the counts between energy bins, capturing the effects of energy-dependent phenomena within the detector. This represents the \textit{redistribution matrix function} (RMF).
+				
+				\paragraph{Model spectra discretization:}
+				Similar to the instrument response function, the model spectra $M(E)$ are also discretized to match the energy bins used for the analysis. This discretization is performed by integrating the model spectra over the corresponding energy bins:
+				\begin{equation}
+					M_D(j)=\int_{E_{j-1}}^{E_j}{M(E)\diff{E}} \label{eqn:spec-model}
 				\end{equation}
-			\end{itemize}
-			
-			\begin{itemize}
-				\item $C(I)$\quad$\leftarrow$\quad$D(I)$ \& $B(I)$
-				\item $R_D(I,j)$\quad$\leftarrow$\quad$R(I,E)$
-				\item $M_D(j)$\quad$\leftarrow$\quad$M(E)$\\[0.5cm]
-			
-				\item The predicted count spectrum $C_P(I)$ is now obtained as
-				\begin{equation} \label{C_P-I}
-				C_P(I)=R_D(I,j)\cdot M_D(j)
-				\end{equation}\\[0.5cm]
-				\item The $\chi^2$ for this particular fit is obtained as
-				\begin{equation} \label{chi-2}
-				\chi^2=\sum_I{[C(I)-C_P(I)]^2}
+				The discretized model spectra $M_D(j)$ can then be used in conjunction with the instrument response matrix and observed data to calculate the predicted count spectrum.
+
+    		
+    		\subsubsection{Predicted Spectrum and Fit Statistic}
+    			The predicted count spectrum $C_P(I)$ represents the expected counts in each detector channel based on the chosen model and the instrument response. It is calculated by multiplying the instrument response matrix $R_D(I,j)$ with the model spectrum $M_D(j)$ as per equation (eqn:spec-predcounts):
+    			\begin{equation}
+					C_P(I)=R_D(I,j)\cdot M_D(j) \label{eqn:spec-predcounts}
 				\end{equation}
-			\end{itemize}
+				This matrix multiplication effectively applies the instrument response to the model spectrum, accounting for the detector's sensitivity and energy resolution. The resulting predicted count spectrum provides a theoretical expectation of the observed counts, assuming the model accurately describes the underlying physical processes.
+				
+				To quantify the agreement between the predicted count spectrum and the observed data, the fit statistic $\chi^2$ is computed in a discretized form as given in equation ():
+				\begin{equation}
+					\chi^2=\sum_I{[C(I)-C_P(I)]^2} \label{eqn:spec-chisq-software}
+				\end{equation}
+
+    		
+    		\subsubsection{General Fitting Framework}
+    			Spectral curve fitting can be formulated as an optimization problem, where the goal is to find the optimal parameters that minimize an objective function $S$. Such an optimization problem may be stated in general as follows:
+    			
+    			\begin{quotation}
+    				Given a set of spectra $\mathbb{C}(I)$, each supplied as a function of detector channels, a set of theoretical models {$\mathbb{M}(E)_j$}, each expressed in terms of a vector of energies together with a set of functions {$\mathbb{R}(I,E)_j$} that map the channels to the energies, minimize an objective function $S$ of $\mathbb{C}$, {$\mathbb{R}(I,E)_j$}, {$\mathbb{M}(E)_j$} using a fitting algorithm. The objective function $S$ may be expressed as per equation ():
+    				\begin{align}
+						S=S(\mathbb{C},\sum_k{\mathbb{M}_j^k\cdot\mathbb{R}_j^k}) \label{eqn:spec-gen-framework}
+					\end{align}
+    			\end{quotation}
+    			
+    			In the context of the spectral fitting of SSS, the objective function which is to be optimized is the $\chi^2$ statistic. The \textit{Levenberg-Marquardt algorithm} is a widely used optimization technique for minimizing the $\chi^2$ statistic. It combines the features of the steepest descent and Gauss-Newton methods, providing a robust and efficient approach to finding the optimal parameter values.
+    			
+    			The Levenberg-Marquardt algorithm iteratively updates the parameter values based on the gradient of the $\chi^2$ function and a damping parameter $\lambda$. The damping parameter controls the balance between the steepest descent and Gauss-Newton methods, allowing the algorithm to adapt to different optimization landscapes. By iteratively adjusting the parameters and evaluating the $\chi^2$ statistic, the Levenberg-Marquardt algorithm effectively finds the parameter values that minimize the objective function and yield the best fit between the model and the observed data.
+
+		\subsection{Implementation of Spectral Fitting Procedure using XSPEC}
+			Here we outline the methodology employed for the spectral analysis of SSS using the XSPEC software. The analysis involves fitting spectral models to data extracted from various X-ray observatories to determine the physical properties of these sources. By following these steps, the spectral analysis of SSS can provide valuable insights into their physical properties, including effective temperatures, column densities, and the presence of elemental absorption features.
 			
-			\begin{itemize}
-				\item More generally...\\[0.5cm]
+			\subsubsection{Data Reduction and Model Selection}
+				\begin{enumerate}[I.]
+					\item A grid of viable spectral models is established to explore different physical scenarios and potential fits to the data.
+					\item The raw event files are processed to extract four (or three) FITS files:
+					\begin{enumerate}[i.]
+						\item the source spectrum
+						\item the background spectrum
+						\item the response matrix file
+						\item the auxiliary response file (if available).
+					\end{enumerate}
+					\item The extracted FITS files are combined into a spectral group using the \texttt{grppha} command, specifying the minimum bin size for the spectral data.
+				\end{enumerate}
 			
-				Given a set of spectra $\mathbb{C}(I)$, each supplied as a function of detector channels, a set of theoretical models {$\mathbb{M}(E)_j$}, each expressed in terms of a vector of energies together with a set of functions {$\mathbb{R}(I,E)_j$} that map the channels to the energies, minimize an objective function $S$ of $\mathbb{C}$, {$\mathbb{R}(I,E)_j$}, {$\mathbb{M}(E)_j$} using a fitting algorithm, i.e.
+			\subsubsection{Spectral Analysis in XSPEC}
+				\begin{enumerate}[I.]
+					\item The grouped data is loaded into XSPEC using the \texttt{data} command. The \texttt{cpd} command opens the plotting window, and the \texttt{plot} command displays the spectrum, allowing for visual inspection and identification of potential issues.
+					\item Bad channels and energy bins outside the region of interest are excluded using the \texttt{ignore} command.
+					\item A multi-component model is defined in XSPEC using the \texttt{model} command. This model can include additive and multiplicative components to represent various physical processes.
+					\item For non-local thermodynamic equilibrium (NLTE) components, the \texttt{atable} command is used to incorporate appropriate table models.
+					\item Elemental abundances and initial values for model parameters are set based on prior knowledge or literature values.
+					\item The \texttt{renorm} command is used to renormalize the model, and the \texttt{fit} command is employed to fit the model to the grouped spectral data.
+				\end{enumerate}
 			
-				$$S=S(\mathbb{C},\sum_k{\mathbb{M}_j^k\cdot\mathbb{R}_j^k})$$\\[0.5cm]
+			\subsubsection{Model Evaluation and Parameter Estimation}
+				\begin{enumerate}[I.]
+					\item The $\chi^2$ statistic and degrees of freedom are examined to calculate the reduced $\chi^2$ value. Visual inspection of the data, model, residuals, and delchi values helps assess the suitability of the model fit.
+					\item If necessary, the model parameters are iteratively modified using manual adjustments or the \texttt{steppar} command to achieve the best possible fit. Different models from the grid may be explored if the initial fit is unsatisfactory.
+				\end{enumerate}
 			
-				\item Specifically, using the \emph{Levenberg-Marquardt algorithm}, $S$ reduces to $\chi^2$
+			\subsubsection{Result Reporting and Analysis}
+				\begin{enumerate}[I.]
+					\item The fitting statistic of the best-fit model is reported in tabular format.
+					\item The error \texttt{command} is used to calculate the uncertainties in the parameter values. The \texttt{parallel} command can be employed to simultaneously compute error ranges for multiple parameters.
+					\item The best-fit values of parameters such as effective temperature and column density, along with their error ranges, are reported.
+					\item The absorbed and unabsorbed fluxes are computed using the \texttt{cflux} model component.
+					\item The source luminosity is calculated using the unabsorbed flux and the constrained distance to the source, as per the Stefan-Boltzmann law.
+					\item The unfolded spectrum is visually inspected to identify the presence of elemental absorption edges. Literature searches are conducted to identify the corresponding elements and their spectral states.
+				\end{enumerate}
 			
-				$$S=\chi^2=\sum_i{(C_i-M_iR_i)^2}$$
-			\end{itemize}
-			
+
     \section{Variability Study of Supersoft X-ray Sources} \label{methodology:variability}
     
     	\subsection{Introduction to Lomb-Scargle Periodogram}
-    		%Introduce the concept of periodograms, emphasizing their role in time series analysis for detecting periodic signals.
     		Periodograms are a versatile tool for identifying and quantifying periodic patterns within data. By transforming a time series into the frequency domain, periodograms reveal the frequencies at which the signal exhibits significant power. This spectral analysis is invaluable for detecting periodic components that might be obscured in the original time domain representation.
     		
     		The height of peaks in a periodogram provides an estimate of the amplitude of the corresponding periodic component. This allows for a quantitative assessment of the strength of periodic signals. Additionally, the frequency of these peaks directly indicates the periodicity of the underlying patterns.
     		
     		While traditional periodograms are well-suited for uniformly sampled data, their applicability can be limited when dealing with irregularly spaced time series. In such scenario, the Lomb-Scargle periodogram emerges as a viable alternative \cite{lomb1976least,scargle1982studies}. Specifically designed to handle unevenly spaced data, the Lomb-Scargle periodogram accounts for gaps in the time series, providing a robust and reliable method for detecting periodic signals.
     		
-    		%\subsubsection{Historical Background}
-    		
-    		%\subsubsection{Importance in Astrophysics}
-    	
     	\subsection{Theory of Lomb-Scargle Periodogram}
     	
     		\subsubsection{Uniform and non-uniform sampling of data}
@@ -257,7 +269,7 @@ To assess the agreement between the predicted count spectrum and the observed da
     				P(f)&=\dfrac{1}{N}\left| \sum_{n=1}^{N}{g_ne^{-2\pi i ft_n}} \right|^2 \nonumber \\
     				\implies P(f)&=\dfrac{1}{N}\left[ \left\lbrace \sum_{n=1}^{N}{g_n\cos{(2\pi ft_n)}} \right\rbrace^2 + \left\lbrace \sum_{n=1}^{N}{g_n\sin{(2\pi ft_n)}} \right\rbrace^2 \right] \label{eqn:lomb-scargle-01}
     			\end{align}
-    			%When the classical periodogram is applied to uniformly-sampled Gaussian noise, the resulting periodogram becomes a $\chi^2$ distribution. However, this does not hold good when the sampling becomes nonuniform, with the end result being that the periodogram distribution cannot, in general, be analytically expressed.
+
     			When the classical periodogram is applied to uniformly-sampled Gaussian noise, its distribution converges asymptotically to a $\chi^2$ distribution with known degrees of freedom, this property being contingent upon the assumption of uniform sampling. For non-uniformly sampled data, the distribution of the periodogram becomes considerably more complex, and a closed-form analytical expression is generally intractable.
     			
     			To address this issue, Scargle generalized the periodogram in equation (\ref{eqn:lomb-scargle-01}) as follows \cite{scargle1982studies}:
@@ -278,8 +290,6 @@ To assess the agreement between the predicted count spectrum and the observed da
     			\end{align*}
     			In the above, the function $\tau$ ensures the time-shift invariance of the Lomb-Scargle periodogram. A notable feature of the Lomb-Scargle periodogram is its equivalence to the result obtained from fitting a simple sinusoidal model to the data at each frequency $f$ and constructing a periodogram from the $\chi^2$ goodness-of-fit statistic at each frequency. This approach allows the periodogram to be viewed as a measure of how well a sine wave of a given frequency fits the observational data. In this context, the introduction of the $\tau$ shift is crucial, as it serves to orthogonalize the normal equations used in the least squares fitting process. This orthogonalization ensures that the fitting procedure is unbiased and more computationally stable. This deep connection between traditional Fourier analysis and least-squares analysis has led to the widespread adoption of the term \textit{Lomb-Scargle periodogram} to describe this methodology, even though variants of this approach were utilized prior to Lomb and Scargle's formalization.
     			
-    			%The similarity between the classical Fourier-based periodograms and the Lomb-Scargle periodograms implies that much of the theoretical reasoning developed for the former is also qualitatively applicable to the latter. For instance, the influence of window functions, which modify the observed power spectrum due to finite observation times, is still relevant when interpreting the results of the Lomb-Scargle periodogram, although quantitative predictions may differ. However, a key limitation of the standard Lomb-Scargle formulation is its reliance on the assumption that observational noise is uncorrelated white noise. In cases where the data contain more complex noise characteristics, such as coloured noise or correlated observational errors, the statistical guarantees provided by the Lomb-Scargle method may no longer hold, necessitating more advanced modifications or alternative approaches to accurately interpret the variability signals present in the data.
-    		
     		\subsubsection{Uncertainties in Periodogram Results}
     			A critical aspect of reporting results derived from the Lomb-Scargle periodogram is the quantification of uncertainty associated with the estimated period. While traditional approaches often rely on error bars to express uncertainty, such a metric may be less meaningful in the context of Lomb-Scargle periodograms. The primary concern with periodograms is often the presence of false peaks or aliases, rather than a continuous distribution of potential period values around a true estimate. This disjointed nature of uncertainty necessitates a more nuanced approach to quantifying the reliability of the estimated period.
     			

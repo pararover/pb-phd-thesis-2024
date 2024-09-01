@@ -1,12 +1,14 @@
 \def\baselinestretch{1}
 \chapter{RESULTS OF SPECTRAL FITTING AND VARIABILITY STUDIES} \label{chap:results}
     \minitoc
+    
+    \newpage
     \begin{center}
     	\emph{Abstract of chapter \ref{chap:results}}
     \end{center}
     This chapter explores a dataset of Supersoft X-ray Sources (SSS), analyzing their properties and spectral features. We begin by identifying the SSS and plotting their sky positions. An observation journal details the telescopes, instruments, and exposures used to collect data for each source. We then examine the observed count rates of the SSS, both individually and collectively, including a normalized view for better comparison. The best-fit model using the continuum NLTE approach is applied to all SSS, and the resulting fit statistics are presented. Stellar parameters like luminosity, effective temperature, and hydrogen column density are derived for each SSS using this model. We further explore the unfolded spectra obtained after applying the best-fit model, which reveal the intrinsic properties of the SSS after accounting for instrumental effects and absorption. Additionally, the presence of elemental absorption edges within the unfolded spectra is investigated, providing insights into the composition of the material surrounding these SSS objects. Notably, such edges were only found in SSS located in the Milky Way, not the Large Magellanic Cloud. Finally, we perform a detailed timing analysis of the SSS \source\ using lightcurves from the NICER and XMM-Newton observatories. The Lomb-Scargle periodograms are used to identify periodic signals, with notable peaks observed at 0.055 mHz and 0.077 mHz, and their significance is discussed. Sinusoidal fits to the phase-folded lightcurves confirm the presence of periodic modulations, with variability characteristics reported across different energy ranges.
     
-    %\newpage
+    \newpage
     \section{Source list} \label{results:source-list}
     	The following table \ref{tab:source-list} lists all the SSS included in the dataset studied in the present work. It provides information on the source name, SSS type, the host galaxy -- either Milky Way (MW) or Large Magellanic Cloud (LMC), right ascension $\alpha$, and declination $\delta$ in degrees.
     	%The list of sources which were studied are listed in table \ref{tab:source-list} below.
@@ -30,14 +32,22 @@
 		\renewcommand{\arraystretch}{2.2}
 		
 		The SSS mentioned in table \ref{tab:source-list} are plotted at their respective sky positions using Aladin Sky Atlas\footnote{\url{https://aladin.cds.unistra.fr/}} and presented using figure \ref{fig:sss-sky-position}.
-		\begin{landscape}
+
 		\begin{figure}[!htb]
 			\centering
-			\includegraphics[width=22.0cm]{sss-dataset-positions}
+			\includegraphics[width=0.8\textwidth]{sss-dataset-positions}
 			\caption{Sky positions of SSS chosen for the dataset}
 			\label{fig:sss-sky-position}
 		\end{figure}
-		\end{landscape}
+
+%		\begin{landscape}
+%		\begin{figure}[!htb]
+%			\centering
+%			\includegraphics[width=22.0cm]{sss-dataset-positions}
+%			\caption{Sky positions of SSS chosen for the dataset}
+%			\label{fig:sss-sky-position}
+%		\end{figure}
+%		\end{landscape}
 		
 		\begin{landscape}
 		\subsection{Journal of observations}

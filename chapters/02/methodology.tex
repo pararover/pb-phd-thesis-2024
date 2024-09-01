@@ -4,7 +4,8 @@
     
     \newpage
     \begin{center}
-    	\emph{Abstract of chapter \ref{chap:methodology}}
+    	%\emph{Abstract of chapter \ref{chap:methodology}}
+    	\emph{Abstract}
     \end{center}
     
     This chapter presents a comprehensive methodology for analyzing the spectral and variability characteristics of Supersoft X-ray Sources (SSS). The spectral analysis section delves into the fundamentals of spectral curve fitting, including model-based fitting, the $\chi^2$ statistic, and parameter estimation. The essential components and data preprocessing steps involved in spectral analysis are also outlined. The variability study section focuses on the application of the Lomb-Scargle periodogram for identifying and characterizing periodic signals within SSS lightcurves. The methodology includes data acquisition, preprocessing, periodogram calculation, statistical significance assessment, phase-folding, and sinusoidal fitting. By combining these techniques, this chapter provides a robust framework for extracting valuable insights into the spectral and variability properties of SSS.
@@ -134,7 +135,7 @@ To assess the agreement between the predicted count spectrum and the observed da
     			
     			The Levenberg-Marquardt algorithm iteratively updates the parameter values based on the gradient of the $\chi^2$ function and a damping parameter $\lambda$. The damping parameter controls the balance between the steepest descent and Gauss-Newton methods, allowing the algorithm to adapt to different optimization landscapes. By iteratively adjusting the parameters and evaluating the $\chi^2$ statistic, the Levenberg-Marquardt algorithm effectively finds the parameter values that minimize the objective function and yield the best fit between the model and the observed data.
 
-		\subsection{Implementation of Spectral Fitting Procedure using XSPEC}
+		\subsection{Implementation of Spectral Fitting using XSPEC}
 			Here we outline the methodology employed for the spectral analysis of SSS using the XSPEC software. The analysis involves fitting spectral models to data extracted from various X-ray observatories to determine the physical properties of these sources. By following these steps, the spectral analysis of SSS can provide valuable insights into their physical properties, including effective temperatures, column densities, and the presence of elemental absorption features.
 			
 			\subsubsection{Data Reduction and Model Selection}
@@ -164,6 +165,7 @@ To assess the agreement between the predicted count spectrum and the observed da
 				\begin{enumerate}[I.]
 					\item The $\chi^2$ statistic and degrees of freedom are examined to calculate the reduced $\chi^2$ value. Visual inspection of the data, model, residuals, and delchi values helps assess the suitability of the model fit.
 					\item If necessary, the model parameters are iteratively modified using manual adjustments or the \texttt{steppar} command to achieve the best possible fit. Different models from the grid may be explored if the initial fit is unsatisfactory.
+					\item The plot data is saved to ASCII files using the \texttt{WData} command of QDP-PLT by extracting directly from the plot window.
 				\end{enumerate}
 			
 			\subsubsection{Result Reporting and Analysis}
@@ -174,6 +176,8 @@ To assess the agreement between the predicted count spectrum and the observed da
 					\item The absorbed and unabsorbed fluxes are computed using the \texttt{cflux} model component.
 					\item The source luminosity is calculated using the unabsorbed flux and the constrained distance to the source, as per the Stefan-Boltzmann law.
 					\item The unfolded spectrum is visually inspected to identify the presence of elemental absorption edges. Literature searches are conducted to identify the corresponding elements and their spectral states.
+					\item The plot data is saved to ASCII files using the \texttt{WData} command of QDP-PLT by extracting directly from the plot window.
+					\item The ASCII files containing the plot data are loaded into Python using NumPy and Matplotlib. Relevant plots are created and analyzed to extract additional insights from the spectral data.
 				\end{enumerate}
 			
 

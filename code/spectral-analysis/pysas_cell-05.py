@@ -1,0 +1,1 @@
+os.environ['SAS_CCF'] = f'{odf_dir}/ccf.cif'

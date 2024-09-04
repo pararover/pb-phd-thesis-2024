@@ -1,0 +1,5 @@
+os.mkdir(work_dir)
+os.mkdir(epic_dir)
+os.mkdir(mos_dir)
+os.mkdir(pn_dir)
+os.mkdir(rgs_dir)

@@ -1,0 +1,11 @@
+print(f'Number of data points: {len(energies)}')
+matplotlib.rcParams['text.usetex'] = True
+fig, ax = plt.subplots(figsize=(6,4), dpi=150)
+ax.errorbar(energies, rates, xerr=edeltas, yerr=errors, fmt='.', ms=6, elinewidth=1.0)
+ax.set_xlabel(labels[0])
+ax.set_ylabel(labels[1])
+ax.set_xscale('linear')
+ax.set_yscale('log')
+ax.grid()
+ax.set_title(f'{source_name.upper()} $|$ {obs_id} $|$ Observed count rate')
+ax.ticklabel_format(axis='x', style='plain')

@@ -1,0 +1,2 @@
+flux_loss = float(input(f'Using obs. counts per frame of {"%.3f"%observed_cpf},\nrefer to the above plot to estimate an upper limit of flux loss (in %): '))
+spectral_distortion = float(input(f'Using obs. counts per frame of {"%.3f"%observed_cpf},\nrefer to the above plot to estimate an upper limit of spectral distortion (in %): '))

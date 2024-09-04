@@ -1,0 +1,2 @@
+eufspec_files = sorted(glob(data_path+'*eufspec-edges.qdp')) # To be modified while on Google Colab
+eufspec_keV_files = sorted(glob(data_path+'*eufspec-keV.qdp')) # To be modified while on Google Colab

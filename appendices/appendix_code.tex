@@ -1,13 +1,41 @@
 \chapter{Python Code Listings} \label{appendix:code-listings}
-
-	Here we present the Python code listings as developed during the course of the current work.
+	%Here we present the Python code listings as developed during the course of the current work.
+	In this section, we provide detailed Python code listings that were developed throughout the course of the current work. These scripts were integral to the analysis and processing of the observational data, particularly for line identification, spectral fitting, lightcurve extraction, and timing analysis. The code has been meticulously documented to ensure reproducibility of the results and to facilitate further research in this area.
 
     \section{Line Identification Tool for XMM-Newton RGS Spectra}
-    	To be inserted.
-    	%\lstinputlisting[language=Python]{appendices/code-listings/dtree-classifier_dr18.py}
+		\subsection*{Filename: \texttt{setup.py}}
+    	\lstinputlisting[language=Python]{code/xmmrgs_lines/setup.py}
+    	    	
+    	\subsection*{Filename: \texttt{electrodynamics.py}}
+    	\lstinputlisting[language=Python]{code/xmmrgs_lines/electrodynamics.py}
+    	
+    	\subsection*{Filename: \texttt{flux-inspect.py}}
+    	\lstinputlisting[language=Python]{code/xmmrgs_lines/flux-inspect.py}
+    	
+    	\subsection*{Filename: \texttt{line-overlaid-flux.py}}
+    	\lstinputlisting[language=Python]{code/xmmrgs_lines/line-overlaid-flux.py}
+    	
+    	\subsection*{Filename: \texttt{line-shift.py}}
+    	\lstinputlisting[language=Python]{code/xmmrgs_lines/line-shift.py}
+    	
+    	\subsection*{Filename: \texttt{xmmrgs\_lines.py}}
+    	\lstinputlisting[language=Python]{code/xmmrgs_lines/xmmrgs_lines.py}
     	
     \section{Multi-Observatory Spectral Analysis}
-    	To be inserted.
+    	\subsection{Observed Count Rates}
+    		\lstinputlisting[language=Python]{code/multisat-rxj0925.74758/plot-ldata_cell-01.py}
+    		\lstinputlisting[language=Python]{code/multisat-rxj0925.74758/plot-ldata_cell-02.py}
+    		\lstinputlisting[language=Python]{code/multisat-rxj0925.74758/plot-ldata_cell-03.py}
+    		\lstinputlisting[language=Python]{code/multisat-rxj0925.74758/plot-ldata_cell-04.py}
+    		\lstinputlisting[language=Python]{code/multisat-rxj0925.74758/plot-ldata_cell-05.py}
+    		\lstinputlisting[language=Python]{code/multisat-rxj0925.74758/plot-ldata_cell-06.py}
+    		\lstinputlisting[language=Python]{code/multisat-rxj0925.74758/plot-ldata_cell-07.py}
+    		
+    		\subsubsection*{Count rates from all observatories}
+    			\lstinputlisting[language=Python]{code/multisat-rxj0925.74758/plot-ldata_cell-08.py}
+    		
+    		\subsubsection*{Normalized count rates from all observatories}
+    			\lstinputlisting[language=Python]{code/multisat-rxj0925.74758/plot-ldata_cell-09.py}
     	
     \section{High-Resolution RGS Spectral Fitting}
     	To be inserted.

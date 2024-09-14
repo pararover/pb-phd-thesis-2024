@@ -1,4 +1,5 @@
-\chapter{FITTING THE HIGH RESOLUTION SPECTRUM OF RX J0925.7-4758 USING COMPOSITE XSPEC MODEL} \label{chap:hi-resolution}
+%\chapter{FITTING THE HIGH RESOLUTION SPECTRUM OF RX J0925.7-4758 USING COMPOSITE XSPEC MODEL} \label{chap:hi-resolution}
+\chapter{\MakeUppercase{\ChapterTitleFour}} \label{chap:hi-resolution}
     %\doublespacing
     \minitoc
     
@@ -333,6 +334,14 @@ where hotter plasmas exhibit broader lines.
 		The spectra of RX J0925.7-4758 obtained by both of the RGS instrument of XMM-Newton were analyzed using a subset of models from the list given in table \ref{xmm-rgs-model-list}. Models with IDs M07, M08, M09, M10, M11 and M12 were applied on the RGS data for both spectral orders.
 		
 		\subsection{Fitting of RGS1 Spectra} \label{hi-resolution:analysis:rgs1}
+		
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[width=\textwidth]{mrvel-rgs1-chisq_new}
+				\caption{$\chi^2_\text{red}$ trend of RGS1 spectra from RX J0925.7-4758}
+				\label{fig:mrvel-rgs1-chisq}
+			\end{figure}
+			
 			We present here the results of fitting a selection of spectral models to the RGS1 data from RX J0925.7-4758. We assess the quality of each fit using the values of the reduced chi-squared statistic ($\chi^2_\text{reduced}$). Acceptable models typically have $\chi^2_\text{reduced}$ values in the range of 1 to 2. The fitting statistics are summarized in table \ref{tab:fit-stat:rgs1}.  These values are also plotted in figure \ref{fig:mrvel-rgs1-chisq} to visually identify models with acceptable $\chi^2_\text{reduced}$ values.
 			%The fitting statistics obtained by fitting the selected subset of the model grid are summarized in table \ref{tab:fit-stat:rgs1}. The values of fitting statistics are plotted in figure \ref{fig:mrvel-rgs1-chisq} so as to graphically indicate the models whose $\chi^2_\text{reduced}$ values lie within the acceptable range of $(1,2)$.
 			\begin{table}[!htb]
@@ -351,14 +360,6 @@ where hotter plasmas exhibit broader lines.
 				\end{tabular}
 			\end{table}
 			
-			\begin{figure}[h!]
-				\centering
-				\includegraphics[width=0.9\textwidth]{mrvel-rgs1-chisq_new}
-				\caption{$\chi^2_\text{red}$ trend of RGS1 spectra from RX J0925.7-4758}
-				\label{fig:mrvel-rgs1-chisq}
-			\end{figure}
-		
-		
 			As evident from table \ref{tab:fit-stat:rgs1} or figure \ref{fig:mrvel-rgs1-chisq}, the model M11 provides the best fit for both spectral orders.
 			%This model can be written mathematically as: \\ \texttt{ismabs*(rauch*tbabs+apec+mekal)*swind1}
 %			\begin{center}
@@ -367,59 +368,74 @@ where hotter plasmas exhibit broader lines.
 			While other models do not yield the best fit according to the $\chi^2_\text{reduced}$ statistic, they still provide a reasonable fit that surpasses those found in previous literature. This trend of $\chi^2_\text{reduced}$ across all the models is illustrated in figure \ref{fig:mrvel-rgs1-chisq}.
 			%All the other models, though with $\chi^2_\text{red}$ outside the acceptable range, seemingly yield fits which are better than those in current literature. The trend shown by the $\chi^2_\text{red}$ across all the models considered here are shown in figure \ref{fig:mrvel-rgs1-chisq}.
 			
-			\subsubsection*{Detailed spectral fits}		
-				The following set of figures present the fitted spectra along with their residuals for each model applied to RGS1 data. These figures allow for a visual inspection of the quality of the fit for each model.
+			%\newpage
+			\subsubsection*{Detailed spectral fits}
+				The following figures depict the fitted spectra and their corresponding residuals for each model applied to RGS1 data. These visual representations provide a critical tool for assessing the quality of the spectral fits. By overlaying the fitted spectra onto the observed data, we can visually evaluate how well each model reproduces the overall spectral shape and intensity. Deviations between the model and the observed data may indicate the presence of additional spectral components or systematic errors. Furthermore, the residuals, calculated as the difference between the observed and fitted spectra, offer valuable insights into the model's accuracy. A well-fitting model should produce residuals that are randomly distributed around zero, with no systematic trends or patterns. Systematic deviations in the residuals suggest that the model is incomplete or that there are underlying systematic errors in the data. By carefully examining these figures, we can identify potential shortcomings in our models and refine our understanding of the physical processes governing the observed celestial object.
+				%The following set of figures present the fitted spectra along with their residuals for each model applied to RGS1 data. These figures allow for a visual inspection of the quality of the fit for each model.
 				%The fitted spectra, along with the residuals are compiled in the following set of figures:
 			\begin{figure}[h!]
 				\centering
-				\subfloat[Order 1 \label{xmm:rgs1-m07:o1}]{\includegraphics[width=0.5\textwidth]{mrvel-rgs1-o1-m07}} \hfill
-				\subfloat[Order 2 \label{xmm:rgs1-m07:o2}]{\includegraphics[width=0.5\textwidth]{mrvel-rgs1-o2-m07}} %\hfill
+				\subfloat[Order 1 \label{xmm:rgs1-m07:o1}]{\includegraphics[width=0.9\textwidth]{mrvel-rgs1-o1-m07}} \hfill
+				\subfloat[Order 2 \label{xmm:rgs1-m07:o2}]{\includegraphics[width=0.9\textwidth]{mrvel-rgs1-o2-m07}} %\hfill
 				\caption{Model M07 fit to RGS1 spectra}
 				\label{xmm:rgs1-m07}
 			\end{figure}
 			
+			\newpage
 			\begin{figure}[h!]
 				\centering
-				\subfloat[Order 1 \label{xmm:rgs1-m08:o1}]{\includegraphics[width=0.5\textwidth]{mrvel-rgs1-o1-m08}} \hfill
-				\subfloat[Order 2 \label{xmm:rgs1-m08:o2}]{\includegraphics[width=0.5\textwidth]{mrvel-rgs1-o2-m08}} %\hfill
+				\subfloat[Order 1 \label{xmm:rgs1-m08:o1}]{\includegraphics[width=0.9\textwidth]{mrvel-rgs1-o1-m08}} \hfill
+				\subfloat[Order 2 \label{xmm:rgs1-m08:o2}]{\includegraphics[width=0.9\textwidth]{mrvel-rgs1-o2-m08}} %\hfill
 				\caption{Model M08 fit to RGS1 spectra}
 				\label{xmm:rgs1-m08}
 			\end{figure}
 			
+			\newpage
 			\begin{figure}[h!]
 				\centering
-				\subfloat[Order 1 \label{xmm:rgs1-m09:o1}]{\includegraphics[width=0.5\textwidth]{mrvel-rgs1-o1-m09}} \hfill
-				\subfloat[Order 2 \label{xmm:rgs1-m09:o2}]{\includegraphics[width=0.5\textwidth]{mrvel-rgs1-o2-m09}} %\hfill
+				\subfloat[Order 1 \label{xmm:rgs1-m09:o1}]{\includegraphics[width=0.9\textwidth]{mrvel-rgs1-o1-m09}} \hfill
+				\subfloat[Order 2 \label{xmm:rgs1-m09:o2}]{\includegraphics[width=0.9\textwidth]{mrvel-rgs1-o2-m09}} %\hfill
 				\caption{Model M09 fit to RGS1 spectra}
 				\label{xmm:rgs1-m09}
 			\end{figure}
 			
+			\newpage
 			\begin{figure}[h!]
 				\centering
-				\subfloat[Order 1 \label{xmm:rgs1-m10:o1}]{\includegraphics[width=0.5\textwidth]{mrvel-rgs1-o1-m10}} \hfill
-				\subfloat[Order 2 \label{xmm:rgs1-m10:o2}]{\includegraphics[width=0.5\textwidth]{mrvel-rgs1-o2-m10}} %\hfill
+				\subfloat[Order 1 \label{xmm:rgs1-m10:o1}]{\includegraphics[width=0.9\textwidth]{mrvel-rgs1-o1-m10}} \hfill
+				\subfloat[Order 2 \label{xmm:rgs1-m10:o2}]{\includegraphics[width=0.9\textwidth]{mrvel-rgs1-o2-m10}} %\hfill
 				\caption{Model M10 fit to RGS1 spectra}
 				\label{xmm:rgs1-m10}
 			\end{figure}
 			
+			\newpage
 			\begin{figure}[h!]
 				\centering
-				\subfloat[Order 1 \label{xmm:rgs1-m11:o1}]{\includegraphics[width=0.5\textwidth]{mrvel-rgs1-o1-m11}} \hfill
-				\subfloat[Order 2 \label{xmm:rgs1-m11:o2}]{\includegraphics[width=0.5\textwidth]{mrvel-rgs1-o2-m11}} %\hfill
+				\subfloat[Order 1 \label{xmm:rgs1-m11:o1}]{\includegraphics[width=0.9\textwidth]{mrvel-rgs1-o1-m11}} \hfill
+				\subfloat[Order 2 \label{xmm:rgs1-m11:o2}]{\includegraphics[width=0.9\textwidth]{mrvel-rgs1-o2-m11}} %\hfill
 				\caption{Model M11 fit to RGS1 spectra}
 				\label{xmm:rgs1-m11}
 			\end{figure}
 			
+			\newpage
 			\begin{figure}[h!]
 				\centering
-				\subfloat[Order 1 \label{xmm:rgs1-m12:o1}]{\includegraphics[width=0.5\textwidth]{mrvel-rgs1-o1-m12}} \hfill
-				\subfloat[Order 2 \label{xmm:rgs1-m12:o2}]{\includegraphics[width=0.5\textwidth]{mrvel-rgs1-o2-m12}} %\hfill
+				\subfloat[Order 1 \label{xmm:rgs1-m12:o1}]{\includegraphics[width=0.9\textwidth]{mrvel-rgs1-o1-m12}} \hfill
+				\subfloat[Order 2 \label{xmm:rgs1-m12:o2}]{\includegraphics[width=0.9\textwidth]{mrvel-rgs1-o2-m12}} %\hfill
 				\caption{Model M12 fit to RGS1 spectra}
 				\label{xmm:rgs1-m12}
 			\end{figure}
 		
-		\clearpage
+		%\newpage
 		\subsection{Fitting of RGS2 Spectra} \label{hi-resolution:analysis:rgs2}
+		
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[width=\textwidth]{mrvel-rgs2-chisq_new}
+				\caption{$\chi^2_\text{red}$ trend of RGS2 spectra from RX J0925.7-4758}
+				\label{fig:mrvel-rgs2-chisq}
+			\end{figure}
+			
 			We present here the results of fitting a selection of spectral models to the RGS2 data from RX J0925.7-4758. We assess the quality of each fit using the values of the reduced chi-squared statistic ($\chi^2_\text{reduced}$). Acceptable models typically have $\chi^2_\text{reduced}$ values in the range of 1 to 2. The fitting statistics are summarized in table \ref{tab:fit-stat:rgs1}.  These values are also plotted in figure \ref{fig:mrvel-rgs1-chisq} to visually identify models with acceptable $\chi^2_\text{reduced}$ values.
 			%Here as well the best fits for both diffraction orders were obtained using the model M11. This seems to suggest that model M11 might be the best candidate model for RX J0925.7-4758. All the other models yield $\chi^2_\text{red}$ to be outside the acceptable range, with the exception of the model M08, which lies almost on the borderline. The trend shown by the $\chi^2_\text{red}$ across all the models considered here are shown in figure \ref{fig:mrvel-rgs2-chisq}.
 			\begin{table}[!htb]
@@ -438,62 +454,62 @@ where hotter plasmas exhibit broader lines.
 				\end{tabular}
 			\end{table}
 			
-			\begin{figure}[h!]
-				\centering
-				\includegraphics[width=0.9\textwidth]{mrvel-rgs2-chisq_new}
-				\caption{$\chi^2_\text{red}$ trend of RGS2 spectra from RX J0925.7-4758}
-				\label{fig:mrvel-rgs2-chisq}
-			\end{figure}
-			
 			As evident from table \ref{tab:fit-stat:rgs2} or figure \ref{fig:mrvel-rgs2-chisq}, the model M11 again provides the best fit for both spectral orders. While other models do not yield the best fit according to the $\chi^2_\text{reduced}$ statistic, with the exception of the models M09 and M10, which lies almost on the borderline for order 2 spectra. They still provide a reasonable fit that surpasses those found in previous literature. This trend of $\chi^2_\text{reduced}$ across all the models is illustrated in figure \ref{fig:mrvel-rgs2-chisq}.
 			
-			\subsubsection*{Detailed spectral fits}		
-				The following set of figures present the fitted spectra along with their residuals for each model applied to RGS2 data. These figures allow for a visual inspection of the quality of the fit for each model.
+			\subsubsection*{Detailed spectral fits}
+				The accompanying figures illustrate the fitted spectra and their corresponding residuals for each model applied to RGS2 data. These visual representations provide a valuable tool for evaluating the quality of our spectral fits. By comparing the fitted spectra to the observed data, we can assess how well each model captures the underlying spectral features and intensity variations. Furthermore, the residuals, which represent the difference between the observed and fitted spectra, offer insights into the model's accuracy. A well-fitting model should produce residuals that are randomly distributed around zero, indicating a minimal discrepancy between the model predictions and the observed data. Conversely, systematic deviations in the residuals may suggest that the model is incomplete or that there are underlying systematic errors in the data. By carefully analyzing these figures, we can identify potential shortcomings in our models and refine our understanding of the physical processes governing the observed celestial object.
+				%The following set of figures present the fitted spectra along with their residuals for each model applied to RGS2 data. These figures allow for a visual inspection of the quality of the fit for each model.
 			%The fitted spectra, along with the residuals are displayed as follows:
+			\newpage
 			\begin{figure}[h!]
 				\centering
-				\subfloat[Order 1 \label{xmm:rgs2-m07:o1}]{\includegraphics[width=0.5\textwidth]{mrvel-rgs2-o1-m07}} \hfill
-				\subfloat[Order 2 \label{xmm:rgs2-m07:o2}]{\includegraphics[width=0.5\textwidth]{mrvel-rgs2-o2-m07}} %\hfill
+				\subfloat[Order 1 \label{xmm:rgs2-m07:o1}]{\includegraphics[width=0.9\textwidth]{mrvel-rgs2-o1-m07}} \hfill
+				\subfloat[Order 2 \label{xmm:rgs2-m07:o2}]{\includegraphics[width=0.9\textwidth]{mrvel-rgs2-o2-m07}} %\hfill
 				\caption{Model M07 fit to RGS2 spectra}
 				\label{xmm:rgs2-m07}
 			\end{figure}
 			
+			\newpage
 			\begin{figure}[h!]
 				\centering
-				\subfloat[Order 1 \label{xmm:rgs2-m08:o1}]{\includegraphics[width=0.5\textwidth]{mrvel-rgs2-o1-m08}} \hfill
-				\subfloat[Order 2 \label{xmm:rgs2-m08:o2}]{\includegraphics[width=0.5\textwidth]{mrvel-rgs2-o2-m08}} \hfill
+				\subfloat[Order 1 \label{xmm:rgs2-m08:o1}]{\includegraphics[width=0.9\textwidth]{mrvel-rgs2-o1-m08}} \hfill
+				\subfloat[Order 2 \label{xmm:rgs2-m08:o2}]{\includegraphics[width=0.9\textwidth]{mrvel-rgs2-o2-m08}} \hfill
 				\caption{Model M08 fit to RGS2 spectra}
 				\label{xmm:rgs2-m08}
 			\end{figure}
 			
+			\newpage
 			\begin{figure}[h!]
 				\centering
-				\subfloat[Order 1 \label{xmm:rgs2-m09:o1}]{\includegraphics[width=0.5\textwidth]{mrvel-rgs2-o1-m09}} \hfill
-				\subfloat[Order 2 \label{xmm:rgs2-m09:o2}]{\includegraphics[width=0.5\textwidth]{mrvel-rgs2-o2-m09}} %\hfill
+				\subfloat[Order 1 \label{xmm:rgs2-m09:o1}]{\includegraphics[width=0.9\textwidth]{mrvel-rgs2-o1-m09}} \hfill
+				\subfloat[Order 2 \label{xmm:rgs2-m09:o2}]{\includegraphics[width=0.9\textwidth]{mrvel-rgs2-o2-m09}} %\hfill
 				\caption{Model M09 fit to RGS2 spectra}
 				\label{xmm:rgs2-m09}
 			\end{figure}
 			
+			\newpage
 			\begin{figure}[h!]
 				\centering
-				\subfloat[Order 1 \label{xmm:rgs2-m10:o1}]{\includegraphics[width=0.5\textwidth]{mrvel-rgs2-o1-m10}} \hfill
-				\subfloat[Order 2 \label{xmm:rgs2-m10:o2}]{\includegraphics[width=0.5\textwidth]{mrvel-rgs2-o2-m10}} %\hfill
+				\subfloat[Order 1 \label{xmm:rgs2-m10:o1}]{\includegraphics[width=0.9\textwidth]{mrvel-rgs2-o1-m10}} \hfill
+				\subfloat[Order 2 \label{xmm:rgs2-m10:o2}]{\includegraphics[width=0.9\textwidth]{mrvel-rgs2-o2-m10}} %\hfill
 				\caption{Model M10 fit to RGS2 spectra}
 				\label{xmm:rgs2-m10}
 			\end{figure}
 			
+			\newpage
 			\begin{figure}[h!]
 				\centering
-				\subfloat[Order 1 \label{xmm:rgs2-m11:o1}]{\includegraphics[width=0.5\textwidth]{mrvel-rgs2-o1-m11}} \hfill
-				\subfloat[Order 2 \label{xmm:rgs2-m11:o2}]{\includegraphics[width=0.5\textwidth]{mrvel-rgs2-o2-m11}} %\hfill
+				\subfloat[Order 1 \label{xmm:rgs2-m11:o1}]{\includegraphics[width=0.9\textwidth]{mrvel-rgs2-o1-m11}} \hfill
+				\subfloat[Order 2 \label{xmm:rgs2-m11:o2}]{\includegraphics[width=0.9\textwidth]{mrvel-rgs2-o2-m11}} %\hfill
 				\caption{Model M11 fit to RGS2 spectra}
 				\label{xmm:rgs2-m11}
 			\end{figure}
 			
+			\newpage
 			\begin{figure}[h!]
 				\centering
-				\subfloat[Order 1 \label{xmm:rgs2-m12:o1}]{\includegraphics[width=0.5\textwidth]{mrvel-rgs2-o1-m12}} \hfill
-				\subfloat[Order 2 \label{xmm:rgs2-m12:o2}]{\includegraphics[width=0.5\textwidth]{mrvel-rgs2-o2-m12}} %\hfill
+				\subfloat[Order 1 \label{xmm:rgs2-m12:o1}]{\includegraphics[width=0.9\textwidth]{mrvel-rgs2-o1-m12}} \hfill
+				\subfloat[Order 2 \label{xmm:rgs2-m12:o2}]{\includegraphics[width=0.9\textwidth]{mrvel-rgs2-o2-m12}} %\hfill
 				\caption{Model M12 fit to RGS2 spectra}
 				\label{xmm:rgs2-m12}
 			\end{figure}
@@ -534,7 +550,7 @@ where hotter plasmas exhibit broader lines.
 			
 			The narrative of X-ray emission from RX J0925.7-4758 takes a significant turn with the inclusion of both \texttt{apec} and \texttt{mekal} terms. These terms represent distinct thermal plasma emission models. \texttt{Apec} is indicative of optically thin plasma, where the surrounding gas is relatively sparse. In such an environment, X-rays have a higher probability of traveling freely with minimal interactions before inducing radiative emission. \texttt{Mekal}, on the other hand, is suited for modeling thicker plasma regions. Here, X-rays are more likely to collide with particles within the gas, leading to a different emission mechanism. The presence of both models in the model M11 suggests that the hot gas surrounding RX J0925.7-4758 might exhibit variations in density. Consequently, the X-ray emission from this hot gas could potentially originate from two distinct processes depending on the local plasma conditions.
 			
-			The final component, i.e. \texttt{swind1}, adds a layer of complexity by incorporating the possibility of deviations from a uniform velocity field within the emitting gas. This term suggests the presence of internal motions within the hot gas surrounding RX J0925.7-4758. These motions could be due to various factors, such as turbulence, bulk flows, or outflows. The inclusion of \texttt{swind1} acknowledges the dynamic nature of the emitting region and highlights the potential need for more sophisticated modeling approaches to fully characterize the physical processes at play.
+			The final component, i.e. \texttt{swind1}, adds a layer of complexity by incorporating the possibility of deviations from a uniform velocity field within the emitting gas. This term suggests the presence of internal motions within the hot gas surrounding RX J0925.7-4758. These motions could be due to various factors, such as turbulence, bulk flows, or outflows. Including \texttt{swind1} recognizes the dynamic nature of the emitting region and suggests the need for more complex models. %The inclusion of \texttt{swind1} acknowledges the dynamic nature of the emitting region and highlights the potential need for more sophisticated modeling approaches to fully characterize the physical processes at play.
 			
 %		\subsection{With Order 1 Spectrum} \label{hi-resolution:analysis:order-1}
 %			The 1$^{\mathrm{st}}$ order diffraction spectrum was fitted using the six models mentioned in \S\ref{hi-resolution:analysis} in the same order. The progression of the models increased the number of parameters, in spite of which there seems to be an improvement in the fit, as compared to those in available in literature. The best fit also seems to show significant abundances for NeI, MgI and ArI, at $2.87\times 10^{18}$, $1.10\times 10^{18}$ and $5.35\times 10^{18}$ respectively, as compared to the other metals included in the model.

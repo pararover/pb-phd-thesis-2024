@@ -109,7 +109,7 @@ where hotter plasmas exhibit broader lines.
 			%Given below in table \ref{xmm-rgs-model-list} is the progression of Xspec models used in the analysis of the RGS spectrum of RX J0925.7-4758. Every model is given a model ID and hereinafter it will be referred to by the same. The progression of the models is evolutionary and follows the same sequence as each was built from the preceding model.
 			Table \ref{xmm-rgs-model-list} presents a sequence of XSPEC models progressively employed to fit the RGS spectrum of the source RX J0925.7-4758. Each model builds upon the previous one, incorporating additional complexity or refining existing components. For instance, consider the initial model, i.e. M01. This model incorporates two components:
 			\begin{enumerate}[i.]
-				\item \texttt{tbabs}\footnote{\url{https://heasarc.gsfc.nasa.gov/xanadu/xspec/manual/node273.html}}: This is a multiplicative model component that accounts for the absorption of X-ray photons by the interstellar medium (ISM) along the line of sight to the source, by calculating the cross section for X-ray absorption as the sum of the cross sections for X-ray absorption due to the gas-phase ISM, the grain-phase ISM, and the molecules in the ISM.
+				\item \texttt{tbabs}\footnote{\url{https://heasarc.gsfc.nasa.gov/xanadu/xspec/manual/node273.html}}: This is a multiplicative model component that accounts for the absorption of X-ray photons by the interstellar medium (ISM) along the line of sight to the source, by calculating the cross section for X-ray absorption as the sum of the cross sections for X-ray absorption due to the gas-phase ISM, the grain-phase ISM, and the molecules in the ISM \cite{wilms2000tbabs}.
 				
 				\item \texttt{bbody}\footnote{\url{https://heasarc.gsfc.nasa.gov/xanadu/xspec/manual/node136.html}} This is an additive model component which represents the intrinsic continuum emission from the source, modeled as a blackbody. Blackbody radiation describes the emission spectrum of a perfect thermal radiator, characterized by a single effective temperature.
 			\end{enumerate}
@@ -148,7 +148,7 @@ where hotter plasmas exhibit broader lines.
 			XSPEC allows one to construct complex models of astronomical spectra by combining simpler ones. These simpler models represent various physical processes that contribute to the overall observed spectrum. This section describes some the model components utilised to construct the model grid, as described in \S\ \ref{hi-resolution:models:grid}.
 		
 			\subsubsection{X-ray photoabsorption model: \texttt{ismabs}}
-			The \texttt{ismabs} multiplicative model in Xspec provides a way to simulate X-ray photoabsorption \cite{ismabs_gatuzz}. This model incorporates variable columns for both neutral and ionized species from H, He, N, O, Ne, Mg, Si, S, Ar, Ca, Fe, Ni and Zn.
+			The \texttt{ismabs} multiplicative model in Xspec provides a way to simulate X-ray photoabsorption \cite{gatuzz2015ismabs}. This model incorporates variable columns for both neutral and ionized species from H, He, N, O, Ne, Mg, Si, S, Ar, Ca, Fe, Ni and Zn.
 			
 			Because of an inherent degeneracy between the relative columns of H, He I, He II, the column density of He I is not included as a free parameter in the model.
 			

@@ -154,15 +154,15 @@ where hotter plasmas exhibit broader lines.
 			
 			In this model, the absorption cross-sections for various species are sourced as follows:
 			\begin{itemize}
-				\item Neutral states of Si, S, Ar and Ca from Verner et al. \cite{vernerXS}
-				\item Singly and doubly ionized states of Si, S, Ar and Ca from Witthoeft et al. \cite{witthoeftXS1,witthoeftXS2}
-				\item Neutral, singly and doubly ionized states of N from Garcia et al. \cite{garciaXS1}
-				\item Neutral states of O from Gorczyca et al. \cite{gorczycaXS1}
-				\item Singly and doubly ionized states of O from Garcia et al. \cite{garciaXS2}, including corrections applied by Gatuzz et al. \cite{gatuzzXS}
-				\item Neutral state of Ne from Gorczyca et al. \cite{gorczycaXS2}
-				\item Singly and doubly ionized states of Ne from Gorczyca et al. \cite{gorczycaXS3}
+				\item Neutral states of Si, S, Ar and Ca from Verner \etal\ \cite{vernerXS}
+				\item Singly and doubly ionized states of Si, S, Ar and Ca from Witthoeft \etal\ \cite{witthoeftXS1,witthoeftXS2}
+				\item Neutral, singly and doubly ionized states of N from Garcia \etal\ \cite{garciaXS1}
+				\item Neutral states of O from Gorczyca \etal\ \cite{gorczycaXS1}
+				\item Singly and doubly ionized states of O from Garcia \etal\ \cite{garciaXS2}, including corrections applied by Gatuzz \etal\ \cite{gatuzzXS}
+				\item Neutral state of Ne from Gorczyca \etal\ \cite{gorczycaXS2}
+				\item Singly and doubly ionized states of Ne from Gorczyca \etal\ \cite{gorczycaXS3}
 				\item For the Fe-L edge region we use the measurement of metallic iron by Kortright \& Kim \cite{kortrightXS}
-				\item Neutral, singly and doubly ionized states of Mg from Hasoglu et al. (2014).
+				\item Neutral, singly and doubly ionized states of Mg from Hasoglu \etal\ (2014).
 			\end{itemize}
 			
 			The parameters for the \texttt{ismabs} model are given in table \ref{param:ismabs}.
@@ -215,7 +215,7 @@ where hotter plasmas exhibit broader lines.
 				\end{table}
 
 			\subsubsection{Model for emission due to optically-thin plasma: \texttt{mekal}}
-				The additive model \texttt{mekal} in Xspec allows the simulation of an emission spectrum due to a diffuse plasma, whose electrons have a Maxwellian energy distribution. This model uses the spectral line list as calculated by Mewe and Kaastra \cite{meka}, additional calculations for L-shell of Fe ions by Liedahl et al. \cite{liedahl}. The model provides the option to either calculate the spectrum by running the \texttt{mekal} code, or by interpolation on a pre-calculated \texttt{mekal} table, or simply by using the AtomDB data.
+				The additive model \texttt{mekal} in Xspec allows the simulation of an emission spectrum due to a diffuse plasma, whose electrons have a Maxwellian energy distribution. This model uses the spectral line list as calculated by Mewe and Kaastra \cite{meka}, additional calculations for L-shell of Fe ions by Liedahl \etal\ \cite{liedahl}. The model provides the option to either calculate the spectrum by running the \texttt{mekal} code, or by interpolation on a pre-calculated \texttt{mekal} table, or simply by using the AtomDB data.
 				
 				The models \texttt{mekal} and \texttt{apec} both simulate emission due to optically-thin plasma, the difference being in the methodology of calculation of the line lists.
 				
@@ -524,9 +524,9 @@ where hotter plasmas exhibit broader lines.
 				\begin{tabular}{llc}
 					\hline
 					\multicolumn{2}{l}{\textbf{Title of work}} & $\boldsymbol{\chi^2_\text{reduced}}$ \\ \hline
-					\multicolumn{2}{l}{Ebisawa et al. (1996)} & 10.0 \\ %\hline
-					\multicolumn{2}{l}{Bearda et al. (2002)} & Not quoted \\ %\hline
-					\multicolumn{2}{l}{Motch et al. (2002)} & Not quoted \\ \hline
+					\multicolumn{2}{l}{Ebisawa \etal\ (1996)} & 10.0 \\ %\hline
+					\multicolumn{2}{l}{Bearda \etal\ (2002)} & Not quoted \\ %\hline
+					\multicolumn{2}{l}{Motch \etal\ (2002)} & Not quoted \\ \hline
 					\multicolumn{1}{l|}{\multirow{4}{*}{\begin{tabular}[c]{@{}l@{}}M11\\
 						(current work)\end{tabular}}} & RGS1 (order 1) & {2.36} \\ %\cline{2-3}
 						\multicolumn{1}{l|}{} & RGS1 (order 2) & {1.66} \\ %\cline{2-3}
@@ -535,7 +535,7 @@ where hotter plasmas exhibit broader lines.
 				\end{tabular}
 			\end{table}			
 					
-			As table \ref{tab:mrvel-fit:comparison} illustrates, the $\chi^2_\text{reduced}$ values obtained for model M11 in this work (ranging from 1.66 to 2.36) are significantly lower than the value reported by Ebisawa et al. (1996) \cite{ebisawa1996}.  Bearda et al. (2002) and Motch et al. (2002) do not provide $\chi^2_\text{reduced}$ values in their studies, merely reporting the near impossibility of modelling the RGS spectrum of RX J0925.7-4758 using an NLTE model atmosphere \cite{beardaChandra2002AA,motchXmmNewton2002AA}.  The substantial improvement in fit quality achieved here suggests that model M11 seems to offer a more accurate representation of the physical processes governing the X-ray emission from RX J0925.7-4758.
+			As table \ref{tab:mrvel-fit:comparison} illustrates, the $\chi^2_\text{reduced}$ values obtained for model M11 in this work (ranging from 1.66 to 2.36) are significantly lower than the value reported by Ebisawa \etal\ (1996) \cite{ebisawa1996}.  Bearda \etal\ (2002) and Motch \etal\ (2002) do not provide $\chi^2_\text{reduced}$ values in their studies, merely reporting the near impossibility of modelling the RGS spectrum of RX J0925.7-4758 using an NLTE model atmosphere \cite{beardaChandra2002AA,motchXmmNewton2002AA}.  The substantial improvement in fit quality achieved here suggests that model M11 seems to offer a more accurate representation of the physical processes governing the X-ray emission from RX J0925.7-4758.
 			%As it is evident, the model M11 seems to provide a far better fit to the RGS spectra, as compared to existing literature. This model can be written mathematically as:
 			
 			Mathematically, the expression for model M11 can be written as,

@@ -1,4 +1,12 @@
-\pagenumbering{roman}
+\pagestyle{headings}
+\pagestyle{fancy}
+\fancyhead[R]{\bfseries}
+\fancyfoot[C]{\thepage}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+%\pagenumbering{roman}
 \captionsetup{labelfont=bf,textfont=bf}
 \onehalfspacing
 \setlength{\parskip}{10pt}
@@ -43,3 +51,18 @@
 
 \titleformat{\chapter}[display]{\bfseries\centering}{\LARGE CHAPTER \thechapter}{1em}{\LARGE #1} %This is to make Chapter name in center aligment
 \titlespacing*{\chapter}{0pt}{-50pt}{40pt}
+
+%\pagestyle{headings}
+%\pagestyle{fancy}                       % Sets fancy header and footer
+%\renewcommand{\sectionmark}[1]{         % Lower case Section marker style
+%\markright{\thesection.\ #1}}         %
+%\fancyhead[R]{\bfseries}    
+\fancyfoot[C]{\thepage}
+
+\backgroundsetup{
+    scale=1.0,
+    color=black,
+    opacity=1.0,
+    angle=0,
+    contents={\includegraphics[width=\paperwidth,height=\paperheight]{images/adbu-letterhead.pdf}}
+}

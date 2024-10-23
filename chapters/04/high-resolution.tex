@@ -11,7 +11,7 @@
     This chapter presents a new analysis of high-resolution X-ray spectra of the astronomical object RX J0925.7-4758, obtained using the XMM-Newton observatory's RGS instrument. We employ spectral fitting using a model grid to ascertain the one that accurately represents the observed data. Our analysis focuses on a subset of pre-defined models, evaluating their fit quality using the reduced chi-squared statistic $\chi^2_\text{reduced}$). We find that model M11 provides the best fit ($1<\chi^2_\text{reduced}<2$) for spectra from both RGS1 and RGS2 instruments, across all observed spectral orders. This signifies a significant improvement compared to previous studies on RX J0925.7-4758, which faced challenges in modeling the object's X-ray emission using a non-local thermodynamic equilibrium (NLTE) atmosphere model. The model M11 incorporates several components, including interstellar medium (ISM) absorption, intrinsic X-ray emission with separate contributions from cold gas absorption and an NLTE atmosphere, thermal plasma emission from potentially two different mechanisms, and a wind or outflow component. This comprehensive model suggests a more accurate capture of the physical processes governing the X-ray emission from RX J0925.7-4758.
 
 	\newpage
-	\section{RGS Spectra from XMM-Newton} \label{hi-resolution:rgs-spec}
+	\section{\MakeUppercase{RGS Spectra from XMM-Newton}} \label{hi-resolution:rgs-spec}
 		X-ray astronomy provides a powerful tool for studying the universe's most energetic phenomena. However, a complete understanding often requires detailed information about the elemental composition and physical conditions within the emitting region. This is where high-resolution X-ray spectroscopy shines, allowing us to dissect the X-ray emission line by line.
 		
 		The Reflection Grating Spectrometers (RGS) onboard the XMM-Newton satellite offer exceptional capabilities in this domain\footnote{\url{https://www.cosmos.esa.int/web/xmm-newton/technical-details-rgs}}. These instruments achieve resolving powers (ability to distinguish close-lying spectral lines) in the range of 100 to 500 FWHM (Full Width at Half Maximum) within the energy band of 0.33-2.5 keV. This specific energy range is particularly rich in diagnostic information due to the presence of numerous emission lines:
@@ -102,7 +102,7 @@ where hotter plasmas exhibit broader lines.
 				\end{tabular}
 			\end{table}
 	
-	\section{Models for Data Fitting} \label{hi-resolution:models}
+	\section{\MakeUppercase{Models for Data Fitting}} \label{hi-resolution:models}
 		The analysis of high-resolution X-ray spectra, such as those obtained with XMM-Newton RGS, involves a meticulous process of spectral fitting. This process aims to construct a mathematical model that accurately represents the observed spectrum, allowing us to extract meaningful physical information about the source.
 		
 		\subsection{Model Grid} \label{hi-resolution:models:grid}
@@ -330,7 +330,7 @@ where hotter plasmas exhibit broader lines.
 					\end{tabular}
 				\end{table}
 	
-	\section{Analysis of High-resolution RGS Spectra} \label{hi-resolution:analysis}
+	\section{\MakeUppercase{Analysis of High-resolution RGS Spectra}} \label{hi-resolution:analysis}
 		The spectra of RX J0925.7-4758 obtained by both of the RGS instrument of XMM-Newton were analyzed using a subset of models from the list given in table \ref{xmm-rgs-model-list}. Models with IDs M07, M08, M09, M10, M11 and M12 were applied on the RGS data for both spectral orders.
 		
 		\subsection{Fitting of RGS1 Spectra} \label{hi-resolution:analysis:rgs1}
@@ -543,7 +543,7 @@ where hotter plasmas exhibit broader lines.
 				\texttt{ismabs*(rauch*tbabs+apec+mekal)*swind1}
 			\end{center}
 			
-		\subsection{Supersoft X-ray Physics using Best-fit RGS Model}
+		\subsection{Supersoft X-ray Physics Using Best-fit RGS Model}
 			The model M11, by virtue of its individual components, sheds light on the physical mechanisms responsible for the X-ray emission observed from RX J0925.7-4758. The \texttt{ismabs} term specifically accounts for the partial absorption of X-rays along the line of sight due to the interstellar medium (ISM). The ISM, comprising primarily gas and dust, attenuates the incoming X-ray photons before they reach the object, effectively weakening the observed X-ray flux.
 			
 			Delving deeper into RX J0925.7-4758, the \texttt{rauch*tbabs} component sheds light on the intrinsic X-ray emission. The \texttt{tbabs} element maintains its role as a standard model for photoelectric absorption by cold, denser gas within the object. However, the \texttt{rauch} term introduces a new layer of complexity. It represents an emission component arising from a non-local thermodynamic equilibrium (NLTE) atmosphere, which captures the effects of this specific atmospheric model on the X-ray emission. This suggests that the intrinsic X-ray emission from RX J0925.7-4758 might not be uniform but influenced by the properties of this NLTE atmosphere, potentially caused by deviations from thermal equilibrium within the emitting gas.

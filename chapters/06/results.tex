@@ -10,7 +10,7 @@
     This chapter explores a dataset of Supersoft X-ray Sources (SSS), analyzing their properties and spectral features. We begin by identifying the SSS and plotting their sky positions. An observation journal details the telescopes, instruments, and exposures used to collect data for each source. We then examine the observed count rates of the SSS, both individually and collectively, including a normalized view for better comparison. The best-fit model using the continuum NLTE approach is applied to all SSS, and the resulting fit statistics are presented. Stellar parameters like luminosity, effective temperature, and hydrogen column density are derived for each SSS using this model. We further explore the unfolded spectra obtained after applying the best-fit model, which reveal the intrinsic properties of the SSS after accounting for instrumental effects and absorption. Additionally, the presence of elemental absorption edges within the unfolded spectra is investigated, providing insights into the composition of the material surrounding these SSS objects. Notably, such edges were only found in SSS located in the Milky Way, not the Large Magellanic Cloud. Finally, we perform a detailed timing analysis of the SSS \source\ using lightcurves from the NICER and XMM-Newton observatories. The Lomb-Scargle periodograms are used to identify periodic signals, with notable peaks observed at 0.055 mHz and 0.077 mHz, and their significance is discussed. Sinusoidal fits to the phase-folded lightcurves confirm the presence of periodic modulations, with variability characteristics reported across different energy ranges.
     
     \newpage
-    \section{Source list} \label{results:source-list}
+    \section{\MakeUppercase{Source list}} \label{results:source-list}
     	The following table \ref{tab:source-list} lists all the SSS included in the dataset studied in the present work. It provides information on the source name, SSS type, the host galaxy -- either Milky Way (MW) or Large Magellanic Cloud (LMC), right ascension $\alpha$, and declination $\delta$ in degrees.
     	%The list of sources which were studied are listed in table \ref{tab:source-list} below.
     	
@@ -51,7 +51,7 @@
 %		\end{landscape}
 		
 		\begin{landscape}
-		\subsection{Journal of observations}
+		\subsection{Journal of Observations}
 			The table \ref{tab:sss-obs-list} presents a journal of the SSS observations for each source in the dataset. It includes the source name, the name of the observatory, the instrument used for the observation, the observation ID, the date of observation, the Modified Julian Day (in MJD), exposure time (in kiloseconds), and the observed photon energy range (in keV).
 			
 			\begin{table}[!htb]
@@ -71,7 +71,7 @@
 			\end{table}
 		\end{landscape}
 			
-		\subsection{Supersoft X-ray count rates}
+		\subsection{Supersoft X-ray Count Rates}
 			The observed count rates of the sources listed in table \ref{tab:sss-obs-list} are presented in separate sub-figures within figure \ref{result:count-rate:indiv}. Each sub-figure shows the count rate for a specific source across the corresponding energy range specified in table \ref{tab:sss-obs-list}.
 			%The count rates of the sources as observed by the respective observatories in table \ref{tab:sss-obs-list} over the respective energy ranges are presented in the sub-figures in \ref{result:count-rate:indiv}.
 			\begin{figure}[h!]
@@ -107,9 +107,9 @@
 				\label{result:count-rate:all}
 			\end{figure}
 			
-	\section{Spectral fitting} \label{results:spectral}
+	\section{\MakeUppercase{Spectral fitting}} \label{results:spectral}
 			
-		\subsection{Best-fit statistics}
+		\subsection{Best-fit Statistics}
 			Table \ref{tab:sss-fit-stats} presents the fit statistics for the best-fit model applied to all sources in the dataset using the continuum NLTE model. The table includes the chi-squared value ($\chi^2$), degrees of freedom (d.o.f.), reduced chi-squared value ($\chi^2_\text{reduced}$), and the null hypothesis probability.
 			%The fit statistics of the best-fit model for all the sources in the dataset using continuum NLTE model is presented in table \ref{tab:sss-fit-stats}.
 			\renewcommand{\arraystretch}{1.8}
@@ -130,7 +130,7 @@
 			\end{table}
 			\renewcommand{\arraystretch}{2.2}
 			
-		\subsection{Stellar parameters}
+		\subsection{Stellar Parameters}
 			The stellar parameters for all sources in the dataset, derived using the continuum NLTE model, are presented in table \ref{tab:sss-stellar-params}. The table provides the values of the luminosity ($L_*$), effective temperature ($T_\text{eff}$), and hydrogen column density ($n_H$) for each source, calculated after obtaining the best-fit.
 			%The stellar parameters of all the sources in the dataset, computed using continuum NLTE model, is presented in table \ref{tab:sss-stellar-params}.
 			\renewcommand{\arraystretch}{1.8}
@@ -162,7 +162,7 @@
 			\end{figure}
 		
 		\newpage
-		\subsection{Unfolded spectra from best-fit models}
+		\subsection{Unfolded Spectra from Best-fit Models}
 			Unfolded spectra represent the intrinsic spectral energy distribution (SED) of an astronomical object after removing the effects of instrumental response and absorption along the line of sight. The best-fit model accounts for these factors, allowing us to recover the underlying source spectrum. By analyzing the unfolded spectrum, we can identify prominent features such as emission lines and absorption edges. Also, the overall shape of the unfolded spectrum in the continuum region can provide insights into the physical processes responsible for the emission mechanism within the source.
 			
 			In this section, we present the unfolded spectra obtained after applying the best-fit model derived using the continuum NLTE approach.
@@ -217,7 +217,7 @@
 			%\subsection*{Unfolded spectrum of V3890 Sgr}
 		
 		%\newpage
-		\subsection{Presence of elemental absorption edges}
+		\subsection{Presence of Elemental Absorption Edges}
 			An absorption edge is a spectral feature which appears as a sharp decrease in intensity at a specific energy in the spectrum. It resembles a step function, with a sudden drop followed by a plateau at a lower intensity level. This occurs when the energy of a photon exactly matches the ionization potential required to remove an electron from a specific energy level (shell) in an atom. The sudden drop happens because a majority of photons at this energy are absorbed. So, while an absorption line represents a \textit{bound-bound transition}, an absorption edge represents a \textit{bound-free transition}.
 			
 			The presence of various absorption edges provides information about the elemental composition of the absorbing material. The energy at which the edge appears is characteristic of the element responsible for the absorption. In this section, we present the elemental absorption edges identified within the unfolded spectra of specific sources in the dataset. It is noteworthy that identifiable absorption edges were only found within the unfolded spectra of SSS objects located in the Milky Way (MW). No such edges were discernible in the spectra of SSS objects residing in the Large Magellanic Cloud (LMC).
@@ -318,18 +318,18 @@
 			
 			%\subsection*{Absorption edges in V3890 Sgr spectrum}
 	    
-	%    \section{Spectral Line Identification}
+	%    \section{\MakeUppercase{Spectral Line Identification}}
 	%    
-	%    \section{XMM-Newton RGS Spectral Fit}
+	%    \section{\MakeUppercase{XMM-Newton RGS Spectral Fit}}
 	%    The best fit model, i.e. M11, contains two different additive components that simulate optically thin plasma. One of them, i.e. \texttt{apec} uses line lists from the AtomDB database, while the other, i.e. \texttt{mekal} which is based on calculations by Mewe, Kaastra and Liedahl \cite{meka,liedahl}. The latter could indicate the presence of a hot corona. The presence of the \texttt{rauch} model component in the best fit model suggests a substantial contribution due to an NLTE stellar atmosphere. The model also consists of the \texttt{swind1} component, which simulates the presence of a stellar wind component along the line-of-sight. The presence of all the above model components vindicates our hypothesis of the inclusion of non-steady states, NLTE and stellar winds in the radiative processes in X-ray binary systems such as those of RX J0925.7-4758.
 	%    
-	%    \section{P Cygni Profiling}
+	%    \section{\MakeUppercase{P Cygni Profiling}}
 	
 	\newpage
-	\section{Variability study of \source} \label{results:variability}
+	\section{\MakeUppercase{Variability study of \source}} \label{results:variability}
 		In this section, we present the results obtained from a detailed timing analysis of the NICER lightcurves for the source RX J0925.7-4758. The analysis was conducted using the \textit{Lomb-Scargle periodogram}, a well-established method for identifying periodic signals in unevenly sampled time-series data.
 	
-		\subsection{Observed NICER and XMM-Newton lightcurves}
+		\subsection{Observed NICER and XMM-Newton Lightcurves}
 			\begin{figure}[h!]
 				\centering
 				\includegraphics[width=\textwidth]{timing/rx-j0925_lc-bothbands-inset}
@@ -348,7 +348,7 @@
 			
 			As expected, the count rates for the lightcurve extracted over the full SSS photon energy range is higher than that for the 0.2--1.0 keV range. This can be seen in the insets in both figures \ref{result:lc-mrvel-nicer} and \ref{result:lc-mrvel-xmm} for the chosen sub-intervals of observations. In figure \ref{result:lc-mrvel-xmm}, we can also see that the count rates of the RGS observations are much smaller than the corresponding EPIC-pn observations.
 			
-		\subsection{Timing analysis of NICER lightcurves}		
+		\subsection{Timing Analysis of NICER Lightcurves}		
 			We present here the results of the timing analysis by applying the Lomb-Scargle periodogram on the NICER lightcurves of \source. The use of this technique allows us to extract reliable periodic information from the NICER observations, overcoming potential issues related to gaps in data acquisition or variable observational cadence.
 			
 			The lightcurves were examined in two distinct photon energy ranges: 0.2--1.0 keV and 0.2--12.0 keV. The former range aligns with the energy band used in the earlier spectral analysis of the source, providing a direct comparison of the timing characteristics within the same spectral window. The latter range encompasses the full energy band for SSS, thereby offering a comprehensive view of the timing behaviour across the entire spectrum accessible to NICER.
@@ -405,7 +405,7 @@
 				For the 0.2--12.0 keV photon energy range, the best-fit sinusoids were similarly overlaid on the complete NICER lightcurve, as depicted in figure \ref{result:lc-mrvel-nicer:200-12000-bestfit}. This visualisation provides an overall view of the model's fit across the entire dataset, enabling a direct comparison of the modelled periodic variations with the observed lightcurve over extended periods. The alignment between the best-fit sinusoids and the actual data points consistently supports the presence of low-frequency modulations in this broader energy band.
 				
 				
-		\subsection{Timing analysis of XMM-Newton lightcurves}
+		\subsection{Timing Analysis of XMM-Newton Lightcurves}
 			In addition to the NICER observations, we conducted a timing analysis using lightcurves obtained from the EPIC-pn and RGS instruments onboard the XMM-Newton observatory. Similar to the NICER data, we applied the Lomb-Scargle periodogram to these lightcurves to detect and characterise periodic signals. The analysis was performed for the same photon energy ranges: 0.2--1.0 keV and 0.2--12.0 keV. Notably, the XMM-Newton observations were conducted over a continuous observation window of approximately 55 ks, reducing the impact of gaps in data acquisition and improving the reliability of the periodicity detection.
 			
 			\subsubsection{Lomb-Scargle periodograms}
@@ -478,7 +478,7 @@
 				\end{figure}
 				The best-fit sinusoid for the 0.2--12.0 keV photon energy range from the RGS instrument of XMM-Newton is overlaid on the complete lightcurve, as shown in figure \ref{result:lc-mrvel-xmm-rgs:200-12000-bestfit}. This visualisation enables a direct assessment of how well the sinusoidal model aligns with the observed data across the entire energy range.
 
-		\subsection{Summary of timing analysis of \source}
+		\subsection{Summary of Timing Analysis of \source}
 		Table \ref{tab:timing-mrvel} summarizes the timing analysis results for \source\ based on NICER and XMM-Newton light curves. Lomb-Scargle periodograms were employed to identify significant periodicities, with corresponding peak frequencies, periods, and power densities tabulated.
 		
 		In order to characterize the sinusoidal modulation, phase-folded light curves were fitted with a simple sinusoid model. The derived parameters include amplitude ($A$), average signal level ($C_0$), and initial phase ($\phi$). Additionally, an \textit{amplitude-to-mean ratio} (AMR) was calculated as a percentage, quantifying the variability strength relative to the mean signal level. AMR provides a valuable metric for assessing the significance of the observed periodic behavior.

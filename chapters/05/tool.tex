@@ -12,10 +12,10 @@
     The identification of absorption and emission lines due to atomic species in the spectra of a X-ray binaries can reveal a wealth of information regarding the composition and physics of the stellar atmosphere. With the availability of high-resolution X-ray spectra from the RGS equipment on-board the XMM-Newton satellite, the study of such lines offers valuable diagnostics into the behaviour and evolution of the source object. Currently, data related to various atomic transitions, which lead to line formation, are made publicly available in the form of credible databases, one of them being the Atomic Spectra Database (ASD) at the National Institute of Standards and Technology (NIST). In this chapter, we present the development of a Python-based tool that accesses the relevant atomic data at NIST ASD for a given set of atomic species in a specific wavelength range and then overlays these lines on top of an X-ray spectrum obtained by the RGS spectrum of the XMM-Newton. With this tool, the astronomer can perform the important preliminary task of rudimentary line identification, before proceeding to advanced analysis of the X-ray data.
     
     \newpage
-    \section{Introduction} \label{tool:intro}
+    \section{\MakeUppercase{Introduction}} \label{tool:intro}
     	XMM-Newton is an X-ray space observatory which was launched by the European Space Agency on December 10, 1999. It is designed to be a high throughput X-ray spectroscopy mission with spectral resolution of up to 0.025 \AA\ at 1 keV from the \textit{Reflection Grating Spectrometer} (RGS) detectors and an angular resolution of up to 1.1 arcsec from the \textit{European Photon Imaging Cameras} (EPIC) \cite{ehle2003xmm,jansen2001xmm}. With a bandpass of 5--38 \AA, corresponding to the energy range 0.33--2.5 keV, the spectra detected by RGS spans a substantial number of X-ray emission lines, which include the K-shell transitions and He-like triplets of light elements, such as C, N, O, Ne, Mg and Si, as well as the L-shell transitions of heavier elements like Fe and Ni. These factors enable the RGS spectra to be useful as diagnostic tools that can be used to investigate the physical conditions as well as the composition of the source of the spectra.
     
-    \section{Working with RGS Data Files} \label{tool:rgs-files}
+    \section{\MakeUppercase{Working with RGS Data Files}} \label{tool:rgs-files}
         The RGS spectra are available in the public domain in the \textit{Flexible Image Transport System} (FITS) file format \cite{chiappetti2018definition}, which is an open standard describing the digital file format for the storage, transmission and processing of data – formatted as multi-dimensional columns of tables. In spite of having the word `image' in its acronym, FITS files are most often used to store non-image data as well. This standard was designed, keeping in mind specifically astronomical data, namely images, spectra, lightcurves, photon lists, event lists, and source lists. In order to download the raw science data collected by XMM-Newton for any given source, there are two options:
         \begin{enumerate}[a)]
             \item By accessing the \textit{XMM-Newton Science Archive} (XSA) at the European Space Agency (ESA), using a web service (via a search form or a URL command access or methods from the \texttt{astroquery.esa.xmm\_newton} Python module) or by  \textit{table access protocol} (TAP) queries to the XSA database \cite{arviset2002xmm}.
@@ -245,12 +245,12 @@
     	\end{center}
     	By making the code publicly available, critical evaluation and suggestions are desired, which would enable further improvement to the code. Future versions of the code would evolve on the basis of such feedback from an open community.
     	
-    \subsection{Future scope} \label{tool:rgs-files:scope}
+    \subsection{Future Scope} \label{tool:rgs-files:scope}
     	At present, the code is designed to work only with the RGS fluxed spectra from XMM-Newton. While there is no plan to extend its application to binned spectra, it is however planned that future versions of the code would be extended to work on the X-ray spectra from the EPIC MOS and PN instruments of XMM-Newton.
     	
     	Currently, the range of velocity profiles produced by the code is highly restrictive -- it provides the same only for the first three Lyman lines for the H-like and He-like ion stages of C, N, O and Fe only. In future versions, the authors intend to introduce further generalization by allowing the same for any ground transition of any ion, provided any line for the same exists within the chosen wavelength range. The filtering of lines, however, is planned to remain on ground transitions only. The reason for this being that transitions between excited states are much less likely. Also, it is planned that lines could be additionally filtered out on the basis of transition probability -- this would help reduce the cluttering of Fe lines in the lower wavelengths (see the 10 \AA\ -- 16 \AA\ range in figure \ref{fig:line-overlay}).
     
-    \section{Stellar Winds from Hot Luminous Massive Stars} \label{tool:stellar-winds}
+    \section{\MakeUppercase{Stellar Winds from Hot Luminous Massive Stars}} \label{tool:stellar-winds}
         Hot luminous massive stars are those with effective temperatures $\sim 10000-50000$ K (i.e. spectral type A0 - O2), luminosities $\sim 10^{37}-10^{39}$ erg/s and masses $\sim 10-50$ M$_\odot$. At the end of their lifetime, such star could collapse as supernovae. If $F$ is the energy flux received at the telescope and $E$ is the energy radiated by the star, knowing the luminosity of such a star one can then use the ratio $\dfrac{F}{E}$ to determine their distances. This enables us to estimate the distances of the galaxies which the stars belong to.
         
         All hot stars with mass $\gtrsim 15$ M$_\odot$ show a high velocity outflow\cite{kudritzki2000winds}. Such an outflow is known as a stellar wind. Consequently, this leads to a mass loss from the star and the winds attaining a terminal velocity owing to Newton's first law of motion. Before proceeding further in the understanding of the driving mechanisms for stellar winds, one needs to be clear of these two important aspects.
@@ -266,7 +266,7 @@
         		V(R)=v_\infty\left(1-b\dfrac{R_*}{R}\right)^\beta
         	\end{align*}
 	
-	\section{Relevance of Stellar Winds} \label{tool:relevance}
+	\section{\MakeUppercase{Relevance of Stellar Winds}} \label{tool:relevance}
 		The analysis of stellar winds gains importance due to the reasons outlined below:
 		\begin{itemize}
 			\item The lifetime of hot stars is approximately $10^{-3}$ that of the sun, i.e. $\sim 10^7$ yr. Assuming $\dot{M}\sim 10^{-6}$ M$_\odot$/yr, the mass loss due to stellar winds is $\sim 10^7$ yr $\times 10^{-6}$ M$_\odot$/yr $\approx 10$ M$_\odot$ during its entire lifetime. This is a significant mass loss, e.g. for a star with an initial mass of $20$ M$_\odot$, half of its mass is lost due to stellar winds. Therefore, in order to have an accurate picture of the \emph{evolution of hot stars}, it is essential to know its mass loss rate, and hence the stellar wind.
@@ -274,7 +274,7 @@
 			\item Far away from hot stars, where the stellar wind attains supersonic terminal velocities, it may collide with the surrounding material, leading to the development of shocks, which may lead to local compressions in the surrounding material. This may trigger the formation of proto-stars, leading to the birth of new stars. Therefore, the \emph{formation of new stars} could be affected by the presence of stellar winds due to hot stars.
 		\end{itemize}
 	
-	\section{Radiative Line-Driving: Mechanism of Stellar Winds} \label{tool:radiative-line-driving}
+	\section{\MakeUppercase{Radiative Line-Driving: Mechanism of Stellar Winds}} \label{tool:radiative-line-driving}
 		The physical mechanism which initiates and drives the outflow of matter from hot stars is known as radiative line driving. Given below is a qualitative description of the physical mechanism behind this process.
 		\begin{figure}[h!]
 			\centering

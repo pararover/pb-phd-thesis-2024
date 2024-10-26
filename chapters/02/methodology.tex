@@ -196,7 +196,7 @@ To assess the agreement between the predicted count spectrum and the observed da
     		
     		By leveraging the Lomb-Scargle algorithm, one can effectively determine the dominant oscillation period of a given time series. The method's ability to handle gaps and variations in sampling intervals makes it indispensable for analyzing astronomical observations, where data collection is often subject to constraints such as weather conditions, instrument limitations, or observational scheduling.
     	
-    		\subsubsection{Uniform and non-uniform sampling of data}
+    		\subsubsection{Uniform and Non-uniform Sampling of Data}
     			\paragraph{Uniform sampling of data:}
     			Suppose that $g(t)$ is a \textit{signal function} and $W(t)$ represents the observation \textit{window function}, then the observed signal is represented by the following function:
     			\begin{align}
@@ -346,7 +346,7 @@ To assess the agreement between the predicted count spectrum and the observed da
     				\item Visual inspection of the lightcurve is performed to identify potential outliers. These outliers, if present, are removed using \texttt{NumPy} masks to ensure they don't influence the subsequent analysis. The cleaned lightcurve is then visualized.
     			\end{enumerate}
     		
-    		\subsubsection{Timing Analysis using Lomb-Scargle Periodogram}
+    		\subsubsection{Timing Analysis Using Lomb-Scargle Periodogram}
     			\begin{enumerate}[I.]
     				\item A \texttt{LombScargle} object is created using the \texttt{astropy.timeseries} module. This object encapsulates the time and rate arrays extracted from the lightcurve to compute the Lomb-Scargle periodogram.
     				\item The calculated Lomb-Scargle periodogram is utilized to retrieve the corresponding frequency and power arrays using the \texttt{autopower()} method of the \texttt{LombScargle} object.

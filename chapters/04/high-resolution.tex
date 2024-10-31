@@ -9,6 +9,8 @@
     	\emph{Abstract}
     \end{center}
     This chapter presents a new analysis of high-resolution X-ray spectra of the astronomical object RX J0925.7-4758, obtained using the XMM-Newton observatory's RGS instrument. We employ spectral fitting using a model grid to ascertain the one that accurately represents the observed data. Our analysis focuses on a subset of pre-defined models, evaluating their fit quality using the reduced chi-squared statistic $\chi^2_\text{reduced}$). We find that model M11 provides the best fit ($1<\chi^2_\text{reduced}<2$) for spectra from both RGS1 and RGS2 instruments, across all observed spectral orders. This signifies a significant improvement compared to previous studies on RX J0925.7-4758, which faced challenges in modeling the object's X-ray emission using a non-local thermodynamic equilibrium (NLTE) atmosphere model. The model M11 incorporates several components, including interstellar medium (ISM) absorption, intrinsic X-ray emission with separate contributions from cold gas absorption and an NLTE atmosphere, thermal plasma emission from potentially two different mechanisms, and a wind or outflow component. This comprehensive model suggests a more accurate capture of the physical processes governing the X-ray emission from RX J0925.7-4758.
+    
+    \setcounter{footnote}{\value{footnotecount}}
 
 	\newpage
 	\section{\MakeUppercase{RGS Spectra from XMM-Newton}} \label{hi-resolution:rgs-spec}
@@ -76,8 +78,8 @@ where hotter plasmas exhibit broader lines.
 		\end{table}
 		
 		\subsection{Light Path and Spectral Orders}
-			%The light path of the two X-ray telescopes are focussed onto the EPIC MOS cameras at the primary focus. The RGAs intercept $\sim 58\%$ of the light on the light path and diffracts it to the RFCs at the secondary focus. In order to diffract the light, the RGAs have grating plates with groove densities of $\sim 645.6$ lines mm$^{-1}$. This produces the two prominent first and second order spectra with dispersion of 8.3 and 12.7 mm \AA$^{-1}$ at 15 \AA. The performance of various parameters of the RGS instruments, while in orbit, are summarised in the table \ref{xmm-rgs-performance}.
-			While the primary focus of the XMM-Newton telescopes is occupied by the European Photon Imaging Camera (EPIC) MOS detectors, designed for high-resolution X-ray imaging, the RGAs ingeniously intercept about 58\% of the incoming light before it reaches the EPIC cameras. This light then interacts with the grating plates in the RGAs. The gratings cause the X-ray photons to diffract, separating them according to their energy (wavelength). This phenomenon produces the two prominent first and second order spectra with dispersion of 8.3 and 12.7 mm \AA$^{-1}$ at 15 \AA.
+			%The light path of the two X-ray telescopes are focussed onto the EPIC MOS cameras at the primary focus. The RGAs intercept $\sim 58$ per cent of the light on the light path and diffracts it to the RFCs at the secondary focus. In order to diffract the light, the RGAs have grating plates with groove densities of $\sim 645.6$ lines mm$^{-1}$. This produces the two prominent first and second order spectra with dispersion of 8.3 and 12.7 mm \AA$^{-1}$ at 15 \AA. The performance of various parameters of the RGS instruments, while in orbit, are summarised in the table \ref{xmm-rgs-performance}.
+			While the primary focus of the XMM-Newton telescopes is occupied by the European Photon Imaging Camera (EPIC) MOS detectors, designed for high-resolution X-ray imaging, the RGAs ingeniously intercept about 58 per cent of the incoming light before it reaches the EPIC cameras. This light then interacts with the grating plates in the RGAs. The gratings cause the X-ray photons to diffract, separating them according to their energy (wavelength). This phenomenon produces the two prominent first and second order spectra with dispersion of 8.3 and 12.7 mm \AA$^{-1}$ at 15 \AA.
 			
 			These spectral orders are dispersed across the length of the CCD strips, with higher energy (shorter wavelength) photons landing closer to the beginning of the CCD and lower energy (longer wavelength) photons landing towards the end. This creates a one-to-one mapping between position on the CCD and the energy (or wavelength) of the detected X-ray photon.
 			
@@ -147,7 +149,7 @@ where hotter plasmas exhibit broader lines.
 		\subsection{Model Components} \label{hi-resolution:models:components}
 			XSPEC allows one to construct complex models of astronomical spectra by combining simpler ones. These simpler models represent various physical processes that contribute to the overall observed spectrum. This section describes some the model components utilised to construct the model grid, as described in \S\ \ref{hi-resolution:models:grid}.
 		
-			\subsubsection{X-ray photoabsorption model: \texttt{ismabs}}
+			\subsubsection{X-ray Photoabsorption Model: \texttt{ismabs}}
 			The \texttt{ismabs} multiplicative model in Xspec provides a way to simulate X-ray photoabsorption \cite{gatuzz2015ismabs}. This model incorporates variable columns for both neutral and ionized species from H, He, N, O, Ne, Mg, Si, S, Ar, Ca, Fe, Ni and Zn.
 			
 			Because of an inherent degeneracy between the relative columns of H, He I, He II, the column density of He I is not included as a free parameter in the model.
@@ -161,7 +163,7 @@ where hotter plasmas exhibit broader lines.
 				\item Singly and doubly ionized states of O from Garcia \etal\ \cite{garciaXS2}, including corrections applied by Gatuzz \etal\ \cite{gatuzzXS}
 				\item Neutral state of Ne from Gorczyca \etal\ \cite{gorczycaXS2}
 				\item Singly and doubly ionized states of Ne from Gorczyca \etal\ \cite{gorczycaXS3}
-				\item For the Fe-L edge region we use the measurement of metallic iron by Kortright \& Kim \cite{kortrightXS}
+				\item For the Fe-L edge region we use the measurement of metallic iron by Kortright and Kim \cite{kortrightXS}
 				\item Neutral, singly and doubly ionized states of Mg from Hasoglu \etal\ (2014).
 			\end{itemize}
 			
@@ -192,7 +194,7 @@ where hotter plasmas exhibit broader lines.
 				\end{tabular}
 			\end{table}
 			
-			\subsubsection{Astrophysical plasma emission code: \texttt{apec}}
+			\subsubsection{Astrophysical Plasma Emission Code: \texttt{apec}}
 				The \texttt{apec} additive model in Xspec simulates an emission spectrum that is obtained from a collisionally-ionized diffuse gas \cite{smithAPEC}. The atomic data for collisional and radiative rates, recombination cross sections, dielectronic recombination rates, and satellite line wavelengths are taken from the Astrophysical Plasma Emission Database (APED).
 			
 				The \texttt{apec} model provides a way to create emission models for plasma, which can be used to analyse spectral data from high-resolution X-ray spectrometers, as in the case of XMM-Newton or Chandra. The current version of the code stores the atomic data in FITS files, thereby separating it from the code. This optimizes limitations on the speed and memory across different computers.
@@ -214,7 +216,7 @@ where hotter plasmas exhibit broader lines.
 					\end{tabular}
 				\end{table}
 
-			\subsubsection{Model for emission due to optically-thin plasma: \texttt{mekal}}
+			\subsubsection{Model for Emission Due to Optically-Thin Plasma: \texttt{mekal}}
 				The additive model \texttt{mekal} in Xspec allows the simulation of an emission spectrum due to a diffuse plasma, whose electrons have a Maxwellian energy distribution. This model uses the spectral line list as calculated by Mewe and Kaastra \cite{meka}, additional calculations for L-shell of Fe ions by Liedahl \etal\ \cite{liedahl}. The model provides the option to either calculate the spectrum by running the \texttt{mekal} code, or by interpolation on a pre-calculated \texttt{mekal} table, or simply by using the AtomDB data.
 				
 				The models \texttt{mekal} and \texttt{apec} both simulate emission due to optically-thin plasma, the difference being in the methodology of calculation of the line lists.
@@ -236,7 +238,7 @@ where hotter plasmas exhibit broader lines.
 					\end{tabular}
 				\end{table}
 			
-			\subsubsection{Velocity shear absorption: \texttt{swind1}}
+			\subsubsection{Velocity Shear Absorption: \texttt{swind1}}
 				Originally meant for AGN spectra, the \texttt{swind1} multiplicative model fits the soft excess in partially ionized absorbing material with a large velocity shear. This is approximated by the model component by using XSTAR kn5 photoionization absorption model grids, which were calculated assuming a micro-turbulence of 100 km/s, and subsequently convolving with Gaussian smearing \cite{swind1}.
 				
 				In this work, the \texttt{swind1} component is used as a proxy model for possible stellar wind from the source RX J0925.7-4758, which may be indicated by the presence of P Cygni profiles in its spectrum.
@@ -314,7 +316,7 @@ where hotter plasmas exhibit broader lines.
 					\implies \dfrac{X_*}{X_\odot}&=10^{-0.675} \\
 					\implies X_*&=0.211X_\odot
 				\end{align*}
-				That is, $[X]$ indicates that the stellar mass fraction $X_*$ for that element is about 21\% that of solar mass fraction $X_\odot$.
+				That is, $[X]$ indicates that the stellar mass fraction $X_*$ for that element is about 21 per cent that of solar mass fraction $X_\odot$.
 				
 				The parameters for the \texttt{rauch} model are given in table \ref{param:rauch}.
 				\begin{table}[h!]
@@ -582,3 +584,5 @@ where hotter plasmas exhibit broader lines.
 %			This spectrum showed another improvement in the fit, which is reflected in the reduced $\chi^2$ value of 2.56. This fit shows the abundances for many species. NI, OI, NeI, MgI, SiI, ArI and Fe showing abundances of $1.06\times 10^{18}$, $4.61\times 10^{18}$, $1.67\times 10^{18}$, $3.61\times 10^{19}$, $5.54\times 10^{18}$, $5.20\times 10^{16}$ and $1.31\times 10^{17}$ respectively.
 %			
 %			However, the soft X-ray photons seen in the 1$^{\mathrm{st}}$ order spectrum seems to be missing in the  2$^{\mathrm{nd}}$ order spectrum. A fluxed spectrum comprising of data from both diffraction orders could be constructed and subsequently analysed.
+
+	\setcounter{footnotecount}{\value{footnote}}

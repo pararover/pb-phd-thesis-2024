@@ -9,6 +9,8 @@
     \end{center}
     This chapter explores a dataset of Supersoft X-ray Sources (SSS), analyzing their properties and spectral features. We begin by identifying the SSS and plotting their sky positions. An observation journal details the telescopes, instruments, and exposures used to collect data for each source. We then examine the observed count rates of the SSS, both individually and collectively, including a normalized view for better comparison. The best-fit model using the continuum NLTE approach is applied to all SSS, and the resulting fit statistics are presented. Stellar parameters like luminosity, effective temperature, and hydrogen column density are derived for each SSS using this model. We further explore the unfolded spectra obtained after applying the best-fit model, which reveal the intrinsic properties of the SSS after accounting for instrumental effects and absorption. Additionally, the presence of elemental absorption edges within the unfolded spectra is investigated, providing insights into the composition of the material surrounding these SSS objects. Notably, such edges were only found in SSS located in the Milky Way, not the Large Magellanic Cloud. Finally, we perform a detailed timing analysis of the SSS \source\ using lightcurves from the NICER and XMM-Newton observatories. The Lomb-Scargle periodograms are used to identify periodic signals, with notable peaks observed at 0.055 mHz and 0.077 mHz, and their significance is discussed. Sinusoidal fits to the phase-folded lightcurves confirm the presence of periodic modulations, with variability characteristics reported across different energy ranges.
     
+    \setcounter{footnote}{\value{footnotecount}}
+    
     \newpage
     \section{\MakeUppercase{Source list}} \label{results:source-list}
     	The following table \ref{tab:source-list} lists all the SSS included in the dataset studied in the present work. It provides information on the source name, SSS type, the host galaxy -- either Milky Way (MW) or Large Magellanic Cloud (LMC), right ascension $\alpha$, and declination $\delta$ in degrees.
@@ -353,7 +355,7 @@
 			
 			The lightcurves were examined in two distinct photon energy ranges: 0.2--1.0 keV and 0.2--12.0 keV. The former range aligns with the energy band used in the earlier spectral analysis of the source, providing a direct comparison of the timing characteristics within the same spectral window. The latter range encompasses the full energy band for SSS, thereby offering a comprehensive view of the timing behaviour across the entire spectrum accessible to NICER.
 			
-			\subsubsection{Lomb-Scargle periodograms}
+			\subsubsection{Lomb-Scargle Periodograms}
 				\begin{figure}[h!]
 					\centering
 					\includegraphics[width=\textwidth]{timing/rx-j0925_nicer-ls_bothbands-inset}
@@ -364,7 +366,7 @@
 				
 				Additionally, peaks are identified at higher frequencies, specifically at 0.163 mHz, 0.341 mHz, and 0.521 mHz. However, it is important to note that these higher frequency peaks are attributed to the observational cadence of the NICER XTI, i.e. they correspond to the NICER observation windows, which are separated by approximately 6144 seconds, and represent harmonics of this fundamental period. These peaks do not necessarily indicate intrinsic periodicity in the source but rather reflect the instrumental observational pattern.
 			
-			\subsubsection{Best-fit sinusoids for 0.2--1.0 keV lightcurve}
+			\subsubsection{Best-Fit Sinusoids for 0.2--1.0 keV Lightcurve}
 				\paragraph{Fitting with phase-folded lightcurve:}
 				\begin{figure}[h!]
 					\centering
@@ -385,7 +387,7 @@
 				
 				The strong correspondence between the sinusoidal fits and the actual lightcurve further corroborates the presence of these low-frequency modulations and supports the reliability of the Lomb-Scargle periodogram results in characterising the periodic variability of \source.
 				
-			\subsubsection{Best-fit sinusoids for 0.2--12.0 keV lightcurve}
+			\subsubsection{Best-Fit Sinusoids for 0.2--12.0 keV Lightcurve}
 				\paragraph{Fitting with phase-folded lightcurve:}				
 				\begin{figure}[h!]
 					\centering
@@ -408,7 +410,7 @@
 		\subsection{Timing Analysis of XMM-Newton Lightcurves}
 			In addition to the NICER observations, we conducted a timing analysis using lightcurves obtained from the EPIC-pn and RGS instruments onboard the XMM-Newton observatory. Similar to the NICER data, we applied the Lomb-Scargle periodogram to these lightcurves to detect and characterise periodic signals. The analysis was performed for the same photon energy ranges: 0.2--1.0 keV and 0.2--12.0 keV. Notably, the XMM-Newton observations were conducted over a continuous observation window of approximately 55 ks, reducing the impact of gaps in data acquisition and improving the reliability of the periodicity detection.
 			
-			\subsubsection{Lomb-Scargle periodograms}
+			\subsubsection{Lomb-Scargle Periodograms}
 				\begin{figure}[h!]
 					\centering
 					\includegraphics[width=\textwidth]{timing/rx-j0925_0111150101_xmm-ls_allbands-inset}
@@ -419,7 +421,7 @@
 				
 				In addition, higher frequency peaks are observed at 20 mHz and 40 mHz. However, these are attributed to harmonics introduced by the binning of the lightcurve data, with the 20 mHz peak corresponding to a time period of 50 seconds, which matches our chosen bin size. Therefore, these high-frequency peaks are artefacts of the temporal resolution rather than indicative of intrinsic variability in the source.
 			
-			\subsubsection{Best-fit sinusoids for 0.2--1.0 keV EPIC-pn lightcurve}
+			\subsubsection{Best-Fit Sinusoids for 0.2--1.0 keV EPIC-pn Lightcurve}
 				\paragraph{Fitting with phase-folded lightcurve:}
 				For the 0.2--1.0 keV photon energy range obtained from the EPIC-pn instrument of the XMM-Newton observatory, sinusoidal fits were performed using the frequencies with peak power densities observed at 0.055 mHz and 0.077 mHz. The resulting phase-folded lightcurve, covering a single cycle from 0 to $2\pi$ radians, is shown in figure \ref{result:lc-phase-fold-mrvel-xmm:200-1000-bestfit}. The best-fit sinusoids are overlaid on the phase-folded data, demonstrating a strong correspondence between the model and the observed lightcurve.
 				\newpage
@@ -439,7 +441,7 @@
 				\end{figure}
 				The best-fit sinusoids have also been overlaid on the complete lightcurve for the 0.2--1.0 keV photon energy range using the EPIC-pn instrument of the XMM-Newton observatory. From figure \ref{result:lc-mrvel-xmm:200-1000-bestfit}, we can perform a visual assessment of the agreement between the observed data points with the fitted sinusoid models.
 				
-			\subsubsection{Best-fit sinusoids for 0.2--12.0 keV EPIC-pn lightcurve}
+			\subsubsection{Best-Fit Sinusoids for 0.2--12.0 keV EPIC-pn Lightcurve}
 				\paragraph{Fitting with phase-folded lightcurve:}
 				\begin{figure}[h!]
 					\centering
@@ -459,7 +461,7 @@
 				The best-fit sinusoids have been overlaid on the complete lightcurve for the 0.2--12.0 keV photon energy range using the EPIC-pn instrument of the XMM-Newton observatory, as shown in figure \ref{result:lc-mrvel-xmm:200-12000-bestfit}. Here as well, this allows for a visual assessment of how well the sinusoidal models align with the observed data across the entire energy range.
 			
 			\newpage
-			\subsubsection{Best-fit sinusoid for 0.2--12.0 keV RGS lightcurve}
+			\subsubsection{Best-Fit Sinusoid for 0.2--12.0 keV RGS Lightcurve}
 				\paragraph{Fitting with phase-folded lightcurve:}
 				\begin{figure}[h!]
 					\centering
@@ -511,3 +513,5 @@
 		\end{table}
 		\renewcommand{\arraystretch}{2.2}
 		\end{landscape}
+
+	\setcounter{footnotecount}{\value{footnote}}

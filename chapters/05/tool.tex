@@ -11,6 +11,8 @@
     \end{center}
     The identification of absorption and emission lines due to atomic species in the spectra of a X-ray binaries can reveal a wealth of information regarding the composition and physics of the stellar atmosphere. With the availability of high-resolution X-ray spectra from the RGS equipment on-board the XMM-Newton satellite, the study of such lines offers valuable diagnostics into the behaviour and evolution of the source object. Currently, data related to various atomic transitions, which lead to line formation, are made publicly available in the form of credible databases, one of them being the Atomic Spectra Database (ASD) at the National Institute of Standards and Technology (NIST). In this chapter, we present the development of a Python-based tool that accesses the relevant atomic data at NIST ASD for a given set of atomic species in a specific wavelength range and then overlays these lines on top of an X-ray spectrum obtained by the RGS spectrum of the XMM-Newton. With this tool, the astronomer can perform the important preliminary task of rudimentary line identification, before proceeding to advanced analysis of the X-ray data.
     
+    \setcounter{footnote}{\value{footnotecount}}
+    
     \newpage
     \section{\MakeUppercase{Introduction}} \label{tool:intro}
     	XMM-Newton is an X-ray space observatory which was launched by the European Space Agency on December 10, 1999. It is designed to be a high throughput X-ray spectroscopy mission with spectral resolution of up to 0.025 \AA\ at 1 keV from the \textit{Reflection Grating Spectrometer} (RGS) detectors and an angular resolution of up to 1.1 arcsec from the \textit{European Photon Imaging Cameras} (EPIC) \cite{ehle2003xmm,jansen2001xmm}. With a bandpass of 5--38 \AA, corresponding to the energy range 0.33--2.5 keV, the spectra detected by RGS spans a substantial number of X-ray emission lines, which include the K-shell transitions and He-like triplets of light elements, such as C, N, O, Ne, Mg and Si, as well as the L-shell transitions of heavier elements like Fe and Ni. These factors enable the RGS spectra to be useful as diagnostic tools that can be used to investigate the physical conditions as well as the composition of the source of the spectra.
@@ -39,12 +41,12 @@
         
         \subsection{Extraction of RGS Spectra} \label{tool:rgs-files:extraction}
         
-            \subsubsection{Obtaining source-specific science data} \label{tool:rgs-files:extraction:data}
+            \subsubsection{Obtaining Source-Specific Science Data} \label{tool:rgs-files:extraction:data}
                 XMM-Newton data is publicly available at the online multi-mission science data archive known as HEASARC\footnote{\url{https://heasarc.gsfc.nasa.gov/}}. The easiest way to access relevant data for any specific source is by using its browse service\footnote{\url{https://heasarc.gsfc.nasa.gov/db-perl/W3Browse/w3browse.pl}} where one can enter the name of the source (or its right ascension and declination, if these are known) and the mission name (such as XMM-Newton or Chandra). One can supply additional information about the source as well, such as the observation dates. The more specific the query, the lesser would be the time taken to access and download the data.
                 
                 HEASARC provides the relevant data products in the form of a \texttt{.tar} file, which may then be extracted to obtain the \textit{Observation Data Files} (ODF), in case of XMM-Newton.
             
-            \subsubsection{Reprocessing of science data} \label{tool:rgs-files:extraction:reprocess}
+            \subsubsection{Reprocessing of Science Data} \label{tool:rgs-files:extraction:reprocess}
                 The downloaded ODF files are compressed in \texttt{.gz} format and need to be extracted before reprocessing them using the software package SAS. Two SAS commands are used during the reprocessing – \texttt{cifbuild} and \texttt{odfingest}. While the former produces an index file of all the calibration data relevant to the specific source under consideration, the latter creates a summary file of the ODF using the house-keeping data files and the calibration database \cite{de2019users}.
                 
                 Subsequently, the data from both RGS instruments for the first and second spectral orders is extracted using the SAS task \texttt{rgsproc}. In five processing stages, this task extracts the events, the angles, the filter events, the spectra, the response matrices and the lightcurves.
@@ -52,12 +54,12 @@
         \subsection{Accessing Spectral Data from FITS Files} \label{tool:rgs-files:access}
             One of the outputs of the \texttt{rgsproc} task are two fluxed spectra -- one for each spectral order. Each of these files contain the spectra fluxed from both the RGS instruments. One must bear in mind that these fluxed spectra are inherently just a qualitative summary of the data, and should not be used for quantitative analysis. However, in the current work, because the objective is to merely aid the user in the identification of atomic lines -- which could be a preliminary step before serious spectral modeling, these fluxed spectra are more than sufficient as input files.
             
-            \subsubsection{The \texttt{astropy} Python module} \label{tool:rgs-files:access:astropy}
+            \subsubsection{The \texttt{AstroPy} Python Module} \label{tool:rgs-files:access:astropy}
                 The fluxed spectrum file is saved in the FITS format. So the appropriate way to read its contents and extract the data is by using \texttt{astropy}\footnote{\url{https://www.astropy.org/}} \cite{robitaille2013astropy}, which is an open-source and community-developed Python package providing various functionalities that are important to astronomical applications.
                 
                 The \texttt{astropy.io.fits} package provides the user with access to FITS files. One first reads the list of \textit{header data units} (HDU), which is the highest level component of a FITS file -- consisting of a header and a table (or data array). This can be done using the \texttt{astropy.io.fits.open()} function which takes the FITS filename as input and returns an object of the \texttt{HDUList} class -- a list-like collection of HDUs.
             
-            \subsubsection{Reading spectral data from FITS file} \label{tool:rgs-files:access:io}
+            \subsubsection{Reading Spectral Data from FITS File} \label{tool:rgs-files:access:io}
                 One can access the individual HDUs in a FITS file using the array indexing syntax -- the first index pointing to the primary HDU by default. For instance, if the object returned by the \texttt{astropy.io.fits.open()} function is named \texttt{hdul}, then \texttt{hdul[0]} would be the primary HDU, \texttt{hdul[1]} the first extension HDU and so on.
                 
                 In case of the fluxed spectra from RGS, the FITS files contain a single extension HDU corresponding to the spectrum -- accessed using \texttt{hdul[1]}, which is a table containing 3600 rows and 3 columns. Then the data attribute of \texttt{hdul[1]} (or \texttt{hdul[1].data}) would return a \texttt{NumPy} numerical array containing the channels/wavelengths (in \AA), the flux and the errors (both in s$^{-1}$cm$^{-2}$\AA$^{-1}$). The fluxes and errors corresponding to all bad channels contain \texttt{NaN} values, which can be filtered using the \texttt{isnan()} function and set to zero.
@@ -67,10 +69,10 @@
             
             So a code for qualitative atomic line identification in a spectrum becomes more reliable if it is able to access the current atomic data available online. This work achieves this objective by retrieving data for atomic transitions directly from ASD at NIST during runtime. So it is important to have an internet connection available while running the code for the first time or when one modifies the list of ions considered. As long as one keeps running the code subsequently on the same terminal session, using an unaltered ion list, the code would proceed to use the atomic data which is cached locally and one may work offline in that case.
             
-            \subsubsection{The astroquery Python module} \label{tool:rgs-files:line-collection:astroquery}
+            \subsubsection{The \texttt{AstroQuery} Python Module} \label{tool:rgs-files:line-collection:astroquery}
                 Atomic data from NIST can be accessed using the \texttt{astroquery} module\footnote{\url{https://astroquery.readthedocs.io/en/latest/}} \cite{ginsburg2019astroquery}, which uses the Python requests package for making HTTP requests and utilizes the data parsing functionality of the \texttt{astropy} package. The NIST ASD can be sent query requests and data retrieved therefrom using the \texttt{astroquery.nist} module.
             
-            \subsubsection{Reading atomic line data from NIST} \label{tool:rgs-files:line-collection:NIST}
+            \subsubsection{Reading Atomic Line Data from NIST} \label{tool:rgs-files:line-collection:NIST}
                 The \texttt{astroquery.nist.Nist.query()} function provides an easy way to send HTML requests to NIST ASD. This function takes, as inputs, the lower and upper wavelength values and the name of the ion to be considered. One can also make use of the \texttt{astropy.units.AA} attribute to convert the wavelength value to \AA\ units.
                 
                 This function returns an object of the \texttt{astropy.table.Table} class. Then individual table rows can be accessed by the indexing syntax. The elements of a row can be subsequently accessed using the corresponding column header as a dictionary key. For instance, if the object named \texttt{ion\_table} stores the output of the \texttt{query()} function, then one can access the Ritz wavelength on the 17$^\text{th}$ row as \texttt{ion\_table[16]['Ritz']}.
@@ -90,10 +92,10 @@
                 \item \texttt{line-shift.py}: displays the Doppler shifts in the Lyman $\alpha$, $\beta$, and $\gamma$ lines for the H-like and He-like C, N and O ions, as well as some common Fe ion lines.
             \end{enumerate}
         
-            \subsubsection{Reading fluxed spectrum from FITS file} \label{tool:rgs-files:demonstration:read-flux}
+            \subsubsection{Reading Fluxed Spectrum from FITS File} \label{tool:rgs-files:demonstration:read-flux}
                 The use of the \texttt{astropy.io.fits} module is wrapped up in a method named \texttt{get\_flux}. This method takes a single argument, which is the name of the FITS file containing the fluxed spectrum -- in this case, the file named \texttt{P0111150101OBX000fluxed1000.FIT}. It returns the wavelengths (in \AA), the normalized flux and the error (both in s$^{-1}$cm$^{-2}$\AA$^{-1}$) in the form of three lists, which can be subsequently manipulated.
                 
-            \subsubsection{Preview of spectrum} \label{tool:rgs-files:demonstration:preview}
+            \subsubsection{Preview of Spectrum} \label{tool:rgs-files:demonstration:preview}
                 When one is working with the spectrum of a new source, one may not be aware of the wavelength region which contains most of photon flux. Also, RGS spectra tend to have  a very low SNR in the small wavelengths up to $\sim$7 \AA. So, in order to help the user to ascertain a more pragmatic range, the function named \texttt{preview\_flux} quickly plots the entire spectrum. This method takes, as arguments, two lists -- the wavelengths in \AA~and the flux. The preview of the first-order fluxed RGS spectrum for RX J0925.7-4758 is shown in figure \ref{fig:spec-preview}.
                 
                 \begin{figure}[h!]
@@ -105,7 +107,7 @@
 			    
 			    As it can be seen from the preview in figure \ref{fig:spec-preview}, there seems to be plenty of information in the vicinity of 6 \AA. But this is not usable because it is just noise arising from the low effective area of the RGS instrument in the low wavelength region which severely limits the resolving power of the RGS instrument, as described in the XMM-Newton Users Handbook\footnote{\url{https://xmm-tools.cosmos.esa.int/external/xmm_user_support/documentation/uhb/node1.html}} \cite{ehle2003xmm}. Also, the region above 26 \AA~has a very low SNR. Looking at the wavelength region between 10 \AA~and 26 \AA~one can clearly visualise a typical spectrum as expected from a luminous X-ray binary source with a good SNR. These wavelength limits are subsequently taken as inputs from the user by the method \texttt{get\_wave\_limits()}.
 			 
-            \subsubsection{Line list within chosen wavelength range} \label{tool:rgs-files:demonstration:linelist}
+            \subsubsection{Line List Within Chosen Wavelength Range} \label{tool:rgs-files:demonstration:linelist}
                 One needs the line list from the NIST database for the given list of ions within a chosen wavelength range. To achieve this, a method called \texttt{get\_lines()} is provided. This takes, as input arguments, the lower and upper wavelength values (in \AA). It uses the list of ions provided in the file \texttt{ion.list}, which is accessed by the script using the \texttt{ASTRODAT} environment variable. Then it queries the NIST database using the \texttt{astroquery.nist.Nist.query()} method.
                 
                 The \texttt{get\_lines()} method  returns a list of dictionaries, with each dictionary containing four entries: the wavelength (in \AA), the associated ion, a boolean flag which indicates whether that line needs to be included and the colour with which the line is to be plotted. The colour of a line for a specific ion is obtained from another method called \texttt{get\_colour()}. This method uses a pre-defined dictionary of colour maps, from which a colour for a particular ion stage is sampled with the help of a \texttt{NumPy} array. One may add more colour maps corresponding to other ions which may not be included in the code at present.
@@ -122,7 +124,7 @@
                     \item A flag named \texttt{ground\_transitions\_only} which ensures that only those lines are considered which are a consequence of transitions into/from the ground level of the individual ion. The default value of this argument is \texttt{True}, which greatly reduces the density of lines being taken into account.
                 \end{enumerate}
             
-            \subsubsection{Line-overlaid spectrum} \label{tool:rgs-files:demonstration:lineoverlay}
+            \subsubsection{Line-Overlaid Spectrum} \label{tool:rgs-files:demonstration:lineoverlay}
                 Having read the FITS file containing the fluxed spectrum and queried the line list from NIST, one can then proceed to produce a plot of the spectrum, along with the lines overlaid on it. This can be done using the \texttt{plot\_spectrum()} method. This method takes, as input arguments, the lists containing the wavelengths, the fluxes, the errors in the flux, the line list and the lower and upper limits of wavelength.
                 
                 \begin{figure}[h!]
@@ -138,7 +140,7 @@
                 
                 One may also choose to normalize the fluxed spectrum to the range $[0, 1]$ in s$^{-1}$cm$^{-2}$\AA$^{-1}$ using the method \texttt{normalize()}, which takes a list of floats as input and returns another list of floats normalized appropriately. This is helpful in comparing the relative strengths of different lines.
             
-            \subsubsection{Inspecting regions of interest} \label{tool:rgs-files:demonstration:roi}
+            \subsubsection{Inspecting Regions of Interest} \label{tool:rgs-files:demonstration:roi}
                 While the previous method described produces the entire spectrum with overlaid lines, it can be more helpful if one could precisely zoom into any specific region of interest, say between 16.5 \AA~and 18.4 \AA. This can be done with the \texttt{examine\_ROI()} method, which takes the lists of wavelengths, fluxes and errors, the line list, the chosen wavelength range and the lower and upper wavelengths (in \AA) of the region of interest (e.g. 16.5 and 18.4).
                 
                 \begin{figure}[h!]
@@ -150,7 +152,7 @@
                 
                 Such an inspection of specific regions of interest was carried out for RX J0925.7-4758 and the resulting plots are shown in figure \ref{fig:roi}. One can observe here, for instance, two lines (one due to Fe XVII and the other due to O VIII) nearly overlapping with an emission line in the spectrum around 16.03  \AA. Further analysis of the flux of other lines due to both atomic species would resolve this ambiguity.
                 
-            \subsubsection{Doppler shifts of lines} \label{tool:rgs-files:demonstration:doppler}
+            \subsubsection{Doppler Shifts of Lines} \label{tool:rgs-files:demonstration:doppler}
                 The emitting matter in stellar sources often have a radial velocity along the line-of-sight because of which their atomic lines often exhibit a Doppler shift, which translates the lines either blue-ward (i.e. towards smaller wavelengths) if the radial velocity is negative (moving towards the observer) or red-ward (i.e. towards larger wavelengths) if the radial velocity is positive (moving away from the observer).
                 
                 This shift in the wavelength of a line can be obtained as
@@ -297,3 +299,5 @@
 			\item The excitation of the ion
 			\item The re-emission of a photon by the ion
 		\end{enumerate}
+
+	\setcounter{footnotecount}{\value{footnote}}

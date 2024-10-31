@@ -17,6 +17,9 @@
 \setlength{\headheight}{15pt}
 %\renewcommand{\baselinestretch}{1.5}
 
+\setlength{\footnotemargin}{1cm}
+\renewcommand\footnoterule{{\kern-3pt \hrule width 5cm \kern 2.6pt}}
+
 \renewcommand{\arraystretch}{1.6} % Controls spacing of table rows
 
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
@@ -67,3 +70,5 @@
     angle=0,
     contents={\includegraphics[width=\paperwidth,height=\paperheight]{images/adbu-letterhead.pdf}}
 }
+
+\newcounter{footnotecount}

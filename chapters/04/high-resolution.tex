@@ -156,15 +156,15 @@ where hotter plasmas exhibit broader lines.
 			
 			In this model, the absorption cross-sections for various species are sourced as follows:
 			\begin{itemize}
-				\item Neutral states of Si, S, Ar and Ca from Verner \etal\ \cite{vernerXS}
-				\item Singly and doubly ionized states of Si, S, Ar and Ca from Witthoeft \etal\ \cite{witthoeftXS1,witthoeftXS2}
-				\item Neutral, singly and doubly ionized states of N from Garcia \etal\ \cite{garciaXS1}
-				\item Neutral states of O from Gorczyca \etal\ \cite{gorczycaXS1}
-				\item Singly and doubly ionized states of O from Garcia \etal\ \cite{garciaXS2}, including corrections applied by Gatuzz \etal\ \cite{gatuzzXS}
-				\item Neutral state of Ne from Gorczyca \etal\ \cite{gorczycaXS2}
-				\item Singly and doubly ionized states of Ne from Gorczyca \etal\ \cite{gorczycaXS3}
-				\item For the Fe-L edge region we use the measurement of metallic iron by Kortright and Kim \cite{kortrightXS}
-				\item Neutral, singly and doubly ionized states of Mg from Hasoglu \etal\ (2014).
+				\item Neutral states of Si, S, Ar and Ca from Verner \etal\ (1995) \cite{vernerXS}.
+				\item Singly and doubly ionized states of Si, S, Ar and Ca from Witthoeft \etal\ (2009, 2011) \cite{witthoeftXS1,witthoeftXS2}.
+				\item Neutral, singly and doubly ionized states of N from Garcia \etal\ (2009) \cite{garciaXS1}.
+				\item Neutral states of O from Gorczyca \etal\ (2013) \cite{gorczycaXS1}.
+				\item Singly and doubly ionized states of O from Garcia \etal\ (2005) \cite{garciaXS2}, including corrections applied by Gatuzz \etal\ (2013) \cite{gatuzzXS}.
+				\item Neutral state of Ne from Gorczyca \etal\ (2000) \cite{gorczycaXS2}.
+				\item Singly and doubly ionized states of Ne from Gorczyca \etal\ (2005) \cite{gorczycaXS3}.
+				\item For the Fe-L edge region we use the measurement of metallic iron by Kortright and Kim (2000) \cite{kortrightXS}.
+				\item Neutral, singly and doubly ionized states of Mg from Hasoglu \etal\ (2014) \cite{hasogluXS}.
 			\end{itemize}
 			
 			The parameters for the \texttt{ismabs} model are given in table \ref{param:ismabs}.
@@ -217,7 +217,7 @@ where hotter plasmas exhibit broader lines.
 				\end{table}
 
 			\subsubsection{Model for Emission Due to Optically-Thin Plasma: \texttt{mekal}}
-				The additive model \texttt{mekal} in Xspec allows the simulation of an emission spectrum due to a diffuse plasma, whose electrons have a Maxwellian energy distribution. This model uses the spectral line list as calculated by Mewe and Kaastra \cite{meka}, additional calculations for L-shell of Fe ions by Liedahl \etal\ \cite{liedahl}. The model provides the option to either calculate the spectrum by running the \texttt{mekal} code, or by interpolation on a pre-calculated \texttt{mekal} table, or simply by using the AtomDB data.
+				The additive model \texttt{mekal} in Xspec allows the simulation of an emission spectrum due to a diffuse plasma, whose electrons have a Maxwellian energy distribution. This model uses the spectral line list as calculated by Mewe and Kaastra (1985) \cite{meka}, additional calculations for L-shell of Fe ions by Liedahl \etal\ (1995) \cite{liedahl}. The model provides the option to either calculate the spectrum by running the \texttt{mekal} code, or by interpolation on a pre-calculated \texttt{mekal} table, or simply by using the AtomDB data.
 				
 				The models \texttt{mekal} and \texttt{apec} both simulate emission due to optically-thin plasma, the difference being in the methodology of calculation of the line lists.
 				
